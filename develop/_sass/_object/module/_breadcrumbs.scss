@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------
+	パンくず
+----------------------------------------------------------*/
+.m-breadcrumbs {
+	position: relative;
+}
+.m-breadcrumbs_list {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	li {
+		a {
+			display: block;
+			@include transition;
+			@include resetLinkStyle;
+			&.is-hover {
+				text-decoration: underline;
+			}
+		}
+		&:first-child {
+			a {
+				@include iconFontInline(before, home, 2em);
+			}
+			span {
+				display: none;
+			}
+		}
+		&:last-child span {
+			display: block;
+		}
+		&:not(:first-child) a,
+		&:last-child span {
+			padding: 8px 8px 8px 16px;
+			@include iconFontAbsolute(before, right-open, 50%, null, null, 0);
+		}
+	}
+}
+@include media(tablet) {
+	.m-breadcrumbs {
+		position: relative;
+		width: 100%;
+		margin: 0;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		background: radial-gradient(ellipse at left, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 75%) 100% center;
+		background-size: 10px 100%, 10px 100%;
+		background-attachment: scroll, scroll;
+		background-repeat: no-repeat;
+	}
+	.m-breadcrumbs_list {
+		flex-wrap: nowrap;
+		li {
+			white-space: nowrap;
+			vertical-align: middle;
+			&:first-child {
+				background-image: linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+				background-repeat: no-repeat;
+				background-size: 20px 100%;
+			}
+			&:last-child {
+				flex: 1;
+				background-image: linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%);
+				background-repeat: no-repeat;
+				background-position: 100% 0;
+				background-size: 20px 100%;
+			}
+		}
+	}
+}

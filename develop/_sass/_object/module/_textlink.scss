@@ -1,0 +1,47 @@
+@charset "utf-8";
+/*
+#overview
+テキストリンク
+*/
+/* ---------------------------------------------------------
+	テキストリンク
+----------------------------------------------------------*/
+/*
+#styleguide
+```
+<p><a class="m-textLink" href="#"><span>テキストリンク</span></a></p>
+```
+*/
+.m-textLinkList a,
+.m-textLink {
+	display: inline-block;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	@include resetLinkStyle;
+	@include iconFontInline(before, angle-circled-right, 1em);
+	span {
+		text-decoration: underline;
+		@include transition;
+	}
+	&:before {
+		display: inline-block;
+		@include transition;
+	}
+	&:hover {
+		&:before {
+			transform: translateX(2px);
+		}
+		span {
+			text-decoration: none;
+		}
+	}
+	&.is-fluid {
+		display: block;
+		padding: 5px 0;
+	}
+	&.is-blank {
+		&:before {
+			content: map-get($fontMap, link-ext);
+		}
+	}
+}

@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------
+	ヘッダー
+----------------------------------------------------------*/
+#header {
+	width: 100%;
+	background-color: $keyColor01;
+}
+.header_inner {
+	position: relative;
+	width: $baseWidth;
+	margin: 0 auto;
+	@include media(minipc) {
+		width: 100%;
+		padding-right: $gutterWidthL;
+		padding-left: $gutterWidthL;
+	}
+	@include media(phablet) {
+		padding-right: $gutterWidthS;
+		padding-left: $gutterWidthS;
+	}
+}
+.header_logo {
+	@include media(tablet) {
+		width: 30%;
+	}
+}

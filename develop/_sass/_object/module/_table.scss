@@ -1,0 +1,74 @@
+@charset "utf-8";
+/*
+#overview
+表組み
+*/
+/*	表組み
+-------------------------------------------------- */
+/*
+#styleguide
+```
+<table class="m-table">
+<colgroup span="4" style="width: 25%;"></colgroup>
+<thead>
+<tr>
+	<th scope="col">見出し</th>
+	<th scope="col">見出し</th>
+	<th scope="col">見出し</th>
+	<th scope="col">見出し</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>セル</td>
+	<td>セル</td>
+	<td>セル</td>
+	<td>セル</td>
+</tr>
+</tbody>
+</table>
+```
+*/
+/*
+#styleguide
+```
+<table class="m-table">
+<colgroup span="2" style="width: 50%;"></colgroup>
+<tbody>
+<tr>
+	<th scope="row">見出し</th>
+	<td>セル</td>
+</tr>
+<tr>
+	<th scope="row">見出し</th>
+	<td>セル</td>
+</tr>
+<tr>
+	<th scope="row">見出し</th>
+	<td>セル</td>
+</tr>
+<tr>
+	<th scope="row">見出し</th>
+	<td>セル</td>
+</tr>
+</tbody>
+</table>
+```
+*/
+.m-table {
+	width: 100%;
+	margin-top: 20px;
+	&.is-auto {
+		width: auto;
+	}
+	th,
+	td {
+		border: 1px solid #ccc;
+		padding: 10px;
+		word-break: break-all;
+	}
+	th {
+		background-color: $keyColor01;
+		color: #fff;
+	}
+}

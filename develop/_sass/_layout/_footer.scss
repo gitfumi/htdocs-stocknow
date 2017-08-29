@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------
+	フッター
+----------------------------------------------------------*/
+#footer {
+	width: 100%;
+	padding: 50px 0;
+	background-color: $keyColor01;
+	color: #9ea2a3;
+}
+.footer_inner {
+	position: relative;
+	width: $baseWidth;
+	margin: 0 auto;
+	@include media(minipc) {
+		width: 100%;
+		padding-right: $gutterWidthL;
+		padding-left: $gutterWidthL;
+	}
+	@include media(phablet) {
+		padding-right: $gutterWidthS;
+		padding-left: $gutterWidthS;
+	}
+}
+.footer_copy {
+	text-align: center;
+	small {
+		font-size: $fontSizeM;
+	}
+}

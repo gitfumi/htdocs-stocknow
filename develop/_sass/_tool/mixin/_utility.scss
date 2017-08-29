@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+// ---------------------------------------------------------
+// メディアクエリ用のミックスイン
+// @include media(pc or tablet or phablet or sp or min or max, 横幅（初期値はnull）);
+// ---------------------------------------------------------
+// clearfix
+// @include clearfix;
+// ---------------------------------------------------------
+// transition
+// @include transition(プロパティ, 変化秒数, イージング, 変化開始秒数);
+// ---------------------------------------------------------
+// 画像にマウスオーバーしたら透明度を変える
+// @include imgOpacity(変化する秒数, 透明度);
+// ---------------------------------------------------------
+// ページの左右のマージンを消す
+// @include hiddenPageGutter(●●px);
+// ---------------------------------------------------------
+
+// メディアクエリ用のミックスイン
+// @include media(minipc or phablet or sp or min or max, 横幅（初期値はnull）);
+@mixin media(
+	$breakpoint,
+	$width: null
+	) {
+	@if $breakpoint == max {
+		@media only screen and (max-width: $width) {
+			@content;
+		}
+	}
+	@else if $breakpoint == min {
+		@media only screen and (min-width: $width) {
+			@content;
+		}
+	}
+	@else {
+		$breakpoint: map_get($breakpointMap, $breakpoint);
+		@media only screen and (max-width: $breakpoint) {
+			@content;
+		}
+	}
+}
+
+// clearfix
+// @include clearfix;
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+// transition
+// @include transition(プロパティ, 変化秒数, イージング, 変化開始秒数);
+@mixin transition(
+	$property: all,
+	$duration: .2s,
+	$timing  : ease-out,
+	$delay   : null
+	) {
+	transition: $property $duration $timing $delay;
+}
+
+// 画像にマウスオーバーしたら透明度を変える
+// @include imgOpacity;
+@mixin imgOpacity(
+	$time   : .5s,
+	$opacity: .7
+	) {
+	img {
+		transition: opacity .5s ease-out;
+	}
+	&.is-hover {
+		img {
+			opacity: $opacity;
+		}
+	}
+}
+
+// ページの左右のマージンを消す
+// @include hiddenPageGutter(●●px);
+@mixin hiddenPageGutter($size) {
+	margin-right: -$size;
+	margin-left: -$size;
+}
+
+// グリッドシステム
+@function gridsystemWidth($columns:$columns) {
+	@return ($columnWidth * $columns) + ($gutterWidth * $columns);
+}
+
+@mixin row($columns:$columns) {
+	display: block;
+	width: $totalWidth*(($gutterWidth + gridsystemWidth($columns))/gridsystemWidth($columns));
+	margin-right: $totalWidth*((($gutterWidth*.5)/gridsystemWidth($columns))*-1);
+	margin-left: $totalWidth*((($gutterWidth*.5)/gridsystemWidth($columns))*-1);
+	@include clearfix();
+}
+
+@mixin column($x,$columns:$columns) {
+	float: left;
+	width: $totalWidth*(((($gutterWidth+$columnWidth)*$x)-$gutterWidth) / gridsystemWidth($columns));
+	margin-right: $totalWidth*(($gutterWidth*.5)/gridsystemWidth($columns));
+	margin-left: $totalWidth*(($gutterWidth*.5)/gridsystemWidth($columns));
+}
+
+@mixin push($offset:1) {
+	margin-left: $totalWidth*((($gutterWidth+$columnWidth)*$offset) / gridsystemWidth($columns)) + $totalWidth*(($gutterWidth*.5)/gridsystemWidth($columns));
+}
+
+@mixin pull($offset:1) {
+	margin-right: $totalWidth*((($gutterWidth+$columnWidth)*$offset) / gridsystemWidth($columns)) + $totalWidth*(($gutterWidth*.5)/gridsystemWidth($columns));
+}

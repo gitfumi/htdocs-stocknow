@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------
+	大枠
+----------------------------------------------------------*/
+#contents {
+	position: relative;
+	width: $baseWidth;
+	margin: 50px auto 0;
+	@include clearfix;
+	@include media(minipc) {
+		width: 100%;
+		padding-right: $gutterWidthL;
+		padding-left: $gutterWidthL;
+	}
+	@include media(phablet) {
+		padding-right: $gutterWidthS;
+		padding-left: $gutterWidthS;
+	}
+}
+
+/* ---------------------------------------------------------
+	メインコンテンツ
+----------------------------------------------------------*/
+#main {
+	position: relative;
+	float: left;
+	width: $mainWidth;
+	padding: 30px;
+	background-color: #fff;
+	box-shadow: 0 0 30px rgba(0,0,0,.1);
+	@include media(minipc) {
+		width: 70%;
+	}
+	@include media(tablet) {
+		float: none;
+		width: 100%;
+	}
+	@include media(phablet) {
+		padding: 20px $gutterWidthS;
+	}
+}
+
+/* ---------------------------------------------------------
+	サイドバー
+----------------------------------------------------------*/
+#sub {
+	float: right;
+	width: $subWidth;
+	height: 500px;
+	background-color: #fff;
+	box-shadow: 0 0 30px rgba(0,0,0,.1);
+	@include media(minipc) {
+		width: 26%;
+	}
+	@include media(tablet) {
+		float: none;
+		width: 100%;
+		margin-top: 50px;
+	}
+}

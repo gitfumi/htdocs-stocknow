@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------
+	スライドメニュー
+----------------------------------------------------------*/
+#slideMenu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: none;
+	z-index: index($zIndex, slideMenu);
+	transform: translateY(-100%);
+}

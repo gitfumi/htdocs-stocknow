@@ -1,0 +1,157 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------
+	リセット
+----------------------------------------------------------*/
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+html {
+	overflow: auto;
+	height: 100%;
+	overflow-y: scroll;
+}
+body {
+	height: 100%;
+	background-color: $baseBackgroundColor;
+	color: $baseTextColor;
+	font-size: $fontSizeM;
+	font-family: $fontFamilySansSerif;
+	line-height: $lineHeightM;
+	word-wrap: break-word;
+	-webkit-text-size-adjust: 100%;
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,main {
+	display: block;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, figure {
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+em {
+	font-style: normal;
+}
+li {
+	list-style: none;
+}
+table {
+	border-collapse: collapse;
+	border: none;
+	border-spacing: 0;
+	font-size: 100%;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	border: 0;
+	vertical-align: top;
+}
+a {
+	color: $linkColor;
+	outline: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	&:visited {
+		color: $linkColor_visited;
+	}
+	&:hover {
+		color: $linkColor_hover;
+		text-decoration: none;
+	}
+	&:active {
+		color: $linkColor_active;
+	}
+	&.js_telLink {
+		color: $baseTextColor;
+		text-decoration: none;
+		pointer-events: none;
+	}
+}
+a[href^="tel:"] {
+	cursor: default;
+	text-decoration: none;
+}
+select,
+input,
+textarea,
+button {
+	font-family: inherit;
+	font-size: inherit;
+}
+input[type="text"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea {
+	padding: 8px 10px;
+	border: 1px solid #ccc;
+	&:focus {
+		background-color: #eff9f2;
+	}
+}
+input[type="radio"],
+input[type="checkbox"] {
+	margin-right: 5px;
+}
+select {
+	padding: 8px 5px;
+	border: 1px solid #ccc;
+}
+label {
+	cursor: pointer;
+}
+::selection {
+	color: $selectionTextColor;
+	background-color: $selectionBgColor;
+}
+::-moz-selection {
+	color: $selectionTextColor;
+	background-color: $selectionBgColor;
+}
+@font-face {
+	font-family: "icons";
+	src: url("/font/fontello.eot?36658702");
+	src: url("/font/fontello.eot?36658702#iefix") format("embedded-opentype"),
+		 url("/font/fontello.woff2?36658702") format("woff2"),
+		 url("/font/fontello.woff?36658702") format("woff"),
+		 url("/font/fontello.ttf?36658702") format("truetype"),
+		 url("/font/fontello.svg?36658702#fontello") format("svg");
+}
+@font-face {
+	font-family: "Noto Sans Japanese";
+	font-style: normal;
+	font-weight: normal;
+	src: url("/font/NotoSansCJKjp-Regular.eot");
+	src: url("/font/NotoSansCJKjp-Regular.eot?#iefix") format("embedded-opentype"),
+		 url("/font/NotoSansCJKjp-Regular.woff") format("woff"),
+		 url("/font/NotoSansCJKjp-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Noto Sans Japanese";
+	font-style: normal;
+	font-weight: bold;
+	src: url("/font/NotoSansCJKjp-Bold.eot");
+	src: url("/font/NotoSansCJKjp-Bold.eot?#iefix") format("embedded-opentype"),
+		 url("/font/NotoSansCJKjp-Bold.woff") format("woff"),
+		 url("/font/NotoSansCJKjp-Bold.ttf") format("truetype");
+}
+/* onmediaquery.js設定用
+-------------------------------------------------- */
+html {
+	font-family: pc;
+}
+@each $key, $value in $breakpointMap {
+	@include media($key) {
+		html {
+			font-family: $key;
+		}
+	}
+}

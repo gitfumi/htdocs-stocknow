@@ -1,0 +1,29 @@
+@charset "utf-8";
+/*
+#overview
+見出し
+*/
+
+/* ---------------------------------------------------------
+	見出し
+----------------------------------------------------------*/
+/*
+#styleguide
+各インデックスページで利用
+```
+<h2 class="headingStyle01">見出し</em></h2>
+```
+*/
+.m-headingStyle01 {
+
+}
+@include media(tablet) {
+	.m-headingStyle01 {
+
+	}
+}
+@include media(phablet) {
+	.m-headingStyle01 {
+
+	}
+}

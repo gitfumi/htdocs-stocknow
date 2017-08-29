@@ -1,0 +1,34 @@
+{
+  "name": "get-started-gulp",
+  "version": "0.0.0",
+  "devDependencies": {
+    "babelify": "*",
+    "babel-preset-es2015": "*",
+    "browserify": "*",
+    "browser-sync": "*",
+    "gulp": "*",
+    "gulp-clean": "*",
+    "gulp-combine-media-queries": "*",
+    "gulp-concat": "*",
+
+    "gulp-csscomb": "*",
+    "gulp-cssmin": "*",
+
+    "gulp-gzip": "*",
+    "gulp-imagemin": "*",
+    "gulp-notify": "*",
+    "gulp-plumber": "*",
+    "gulp-postcss": "*",
+    "gulp-replace": "*",
+    "gulp-sass": "*",
+    "gulp-sass-glob": "*",
+    "gulp-strip-debug": "*",
+    "gulp-uglify": "*",
+    "gulp-watch": "*",
+    "postcss-cssnext": "*",
+
+    "require-dir": "*",
+    "run-sequence": "*",
+    "vinyl-source-stream": "*"
+  }
+}

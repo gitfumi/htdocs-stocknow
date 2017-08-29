@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------
+	シェアボタン
+----------------------------------------------------------*/
+.m-btnShare {
+	display: flex;
+	margin: 30px -5px 0;
+	li {
+		width: 33.3%;
+		padding-right: 5px;
+		padding-left: 5px;
+		&:nth-child(2) {
+			width: 33.4%;
+		}
+		a {
+			display: table;
+			width: 100%;
+			height: 100%;
+			padding: 12px 10px;
+			text-align: center;
+			vertical-align: middle;
+			@include resetLinkStyle(#fff);
+			@include transition;
+			> span {
+				display: table-cell;
+				width: 100%;
+				vertical-align: middle;
+				&:before {
+					font-family: 'icons';
+					font-size: 1.4em;
+					line-height: 1;
+					speak: none;
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+				}
+			}
+		}
+		@each $name, $color in $snsColorMap {
+			&.is-#{$name} a {
+				background-color: $color;
+				&.is-hover {
+					background-color: lighten($color, 8%);
+				}
+				> span:before {
+					content: map-get($fontMap, $name);
+				}
+			}
+		}
+		&.is-line {
+			display: none;
+		}
+	}
+}
+@include media(tablet) {
+	.m-btnShare {
+		li {
+			width: 25%;
+			&:nth-child(2) {
+				width: 25%;
+			}
+			a {
+				&.is-hover {
+					transform: scale(.98);
+				}
+				> span:before {
+					font-size: 2em;
+				}
+				> span > span {
+					display: none;
+				}
+			}
+			&.is-line {
+				display: table-cell;
+			}
+		}
+	}
+}

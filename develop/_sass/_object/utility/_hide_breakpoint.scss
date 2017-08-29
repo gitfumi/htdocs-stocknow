@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------
+	ブレイクポイントによって要素を消す
+----------------------------------------------------------*/
+// tablet以上だったら要素を消す
+@include media(min, map_get($breakpointMap, tablet)) {
+	.u-moreTabletHide {
+		display: none;
+	}
+}
+// phablet以上だったら要素を消す
+@include media(min, map_get($breakpointMap, phablet)) {
+	.u-morePhabletHide {
+		display: none;
+	}
+}
+// sp以上だったら要素を消す
+@include media(min, map_get($breakpointMap, sp)) {
+	.u-moreSpHide {
+		display: none;
+	}
+}
+// pc以下なら要素を消す
+@include media(minipc) {
+	.u-lessPCHide {
+		display: none;
+	}
+}
+// tablet以下なら要素を消す
+@include media(tablet) {
+	.u-lessTabletHide {
+		display: none;
+	}
+}
+// phablet以下なら要素を消す
+@include media(phablet) {
+	.u-lessPhabletHide {
+		display: none;
+	}
+}
