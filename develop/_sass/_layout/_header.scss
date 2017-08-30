@@ -4,21 +4,27 @@
 	ヘッダー
 ----------------------------------------------------------*/
 #header {
-	width: 100%;
-	background-color: $keyColor01;
 }
-.header_inner {
-	position: relative;
-	width: $baseWidth;
-	margin: 0 auto;
+#headerInner {
+	background-color: #e2e2e2;
+	>ul{
+		max-width: $baseWidth;
+		margin: 0 auto;
+		display: flex;
+		justify-content: flex-end;
+		>li{
+			& + li{
+				margin-left: 20px;
+			}
+			a{
+				display: inline-block;
+				padding: 5px;
+			}
+		}
+	}
 	@include media(minipc) {
-		width: 100%;
-		padding-right: $gutterWidthL;
-		padding-left: $gutterWidthL;
 	}
 	@include media(phablet) {
-		padding-right: $gutterWidthS;
-		padding-left: $gutterWidthS;
 	}
 }
 .header_logo {

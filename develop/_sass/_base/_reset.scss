@@ -56,12 +56,13 @@ a {
 	color: $linkColor;
 	outline: none;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	text-decoration: none;
 	&:visited {
 		color: $linkColor_visited;
 	}
 	&:hover {
 		color: $linkColor_hover;
-		text-decoration: none;
+		text-decoration: underline;
 	}
 	&:active {
 		color: $linkColor_active;
