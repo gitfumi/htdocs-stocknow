@@ -62,7 +62,7 @@ a {
 	}
 	&:hover {
 		color: $linkColor_hover;
-		text-decoration: underline;
+		text-decoration: none;
 	}
 	&:active {
 		color: $linkColor_active;

@@ -29,7 +29,7 @@ $lineHeightL: 			1.8;
 $lineHeightLL: 			2.0;
 
 // キーカラー
-$keyColor01: 			#41454e;
+$keyColor: 			#e60012;
 
 // 標準テキストカラー
 $baseTextColor: 		#000;
@@ -102,48 +102,8 @@ $zIndex:
 
 // アイコンフォント
 $fontMap: (
-	home               : '\e800',
-	link-ext           : '\e801',
-	download           : '\e802',
-	reply              : '\e803',
-	forward            : '\e804',
-	doc-text           : '\e805',
-	menu               : '\e806',
-	clock              : '\e807',
-	down-dir           : '\e808',
-	up-dir             : '\e809',
-	left-dir           : '\e80a',
-	right-dir          : '\e80b',
-	down-open          : '\e80c',
-	left-open          : '\e80d',
-	right-open         : '\e80e',
-	up-open            : '\e80f',
-	angle-circled-left : '\e810',
-	angle-circled-right: '\e811',
-	angle-circled-up   : '\e812',
-	angle-circled-down : '\e813',
-	down-big           : '\e814',
-	left-big           : '\e815',
-	right-big          : '\e816',
-	up-big             : '\e817',
-	left-circled       : '\e818',
-	right-circled      : '\e819',
-	up-circled         : '\e81a',
-	down-circled       : '\e81b',
-	to-end             : '\e81c',
-	to-start           : '\e81d',
-	list-bullet        : '\e81e',
-	instagram          : '\e81f',
-	file-pdf           : '\e820',
-	plus-circle        : '\e821',
-	minus-circle       : '\e822',
-	line               : '\e823',
-	facebook           : '\e824',
-	twitter            : '\e825',
-	googleplus         : '\e826',
-	search             : '\e827',
-	check-empty        : '\e828',
-	check              : '\e829',
-	circle-empty       : '\e82a',
-	dot-circled        : '\e82b'
+	link-ext : '\f08e',
+	twitter  : '\f099',
+	facebook : '\f09a',
+	gplus    : '\f0d5',
 );

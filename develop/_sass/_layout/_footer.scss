@@ -4,28 +4,78 @@
 	フッター
 ----------------------------------------------------------*/
 #footer {
-	width: 100%;
 	padding: 50px 0;
-	background-color: $keyColor01;
-	color: #9ea2a3;
+	background-color: #3e3e3e;
 }
-.footer_inner {
-	position: relative;
+#footerInner{
 	width: $baseWidth;
 	margin: 0 auto;
+	position: relative;
+	text-align: center;
+}
+#footerSub {
+	>ul{
+		text-align: center;
+		>li{
+			display: inline-block;
+			margin: 0 10px;
+			a{
+				color: #fff;
+				@include motionLinkTxt(#fff);
+			}
+		}
+	}
 	@include media(minipc) {
-		width: 100%;
-		padding-right: $gutterWidthL;
-		padding-left: $gutterWidthL;
 	}
 	@include media(phablet) {
-		padding-right: $gutterWidthS;
-		padding-left: $gutterWidthS;
 	}
 }
-.footer_copy {
-	text-align: center;
-	small {
-		font-size: $fontSizeM;
+.footerLogo{
+margin-top: 20px;
+}
+.footerCopy {
+	margin-top: 20px;
+	color: #fff;
+	font-family: $fontFamilyQuantico;
+}
+.social{
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	transform :translateY(-50%);
+	display: flex;
+	li{
+		margin: 0 5px;
+		a{
+			width: 60px;
+			height: 60px;
+			border-radius: 60px;
+			background-color: #fff;
+			display: block;
+			font-size: 0;
+		}
+		&.is_facebook a{
+			@include iconFontAbsolute(before, facebook, 50%, 50%, 50%, 50%, 25px, #000);
+		}
+		&.is_twitter a{
+			@include iconFontAbsolute(before, twitter, 50%, 50%, 50%, 50%, 25px, #000);
+		}
+		&.is_google a{
+			@include iconFontAbsolute(before, gplus, 50%, 50%, 50%, 50%, 25px, #000);
+		}
+	}
+}
+.pagetop{
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	a{
+		width: 60px;
+		height: 60px;
+		border-radius: 60px;
+		background-color: #000;
+		display: block;
+		font-size: 0;
+		@include icoArrow(before, 50%, 50%, 50%, 50%, 16px, 3px, $keyColor, -45deg);
 	}
 }

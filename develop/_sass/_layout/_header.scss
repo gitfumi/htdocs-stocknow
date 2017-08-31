@@ -5,7 +5,7 @@
 ----------------------------------------------------------*/
 #header {
 }
-#headerInner {
+#headerSub {
 	background-color: #e2e2e2;
 	>ul{
 		max-width: $baseWidth;
@@ -17,8 +17,7 @@
 				margin-left: 20px;
 			}
 			a{
-				display: inline-block;
-				padding: 5px;
+				@include motionLinkTxt();
 			}
 		}
 	}
@@ -27,8 +26,69 @@
 	@include media(phablet) {
 	}
 }
-.header_logo {
+.headerNav {
+	padding: 30px 0;
+	display: flex;
+	align-items: flex-end;
+	text-align: center;
+	.navItem,.navLogo{
+		flex-basis: calc(100% / 3)
+	}
+	.navLogo{
+		span{
+			display: block;
+			margin-top: 5px;
+		}
+	}
+	.navItem{
+		display: flex;
+		justify-content: center;
+		>p{
+			margin: 0 10px;
+			a{
+				display: block;
+				padding-bottom: 25px;
+				@include icoArrow(before, null, 50%, 20px, 50%, 16px, 3px, $keyColor, 135deg);
+				&:before{
+					opacity : 0;
+					transition: all .5s
+				}
+				&:after{
+					content: '';
+					opacity: 0;
+					transition: all .5s;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					width: 0;
+					height: 0;
+					transform :translate(-50%,-50%);
+					border-radius: 30px;
+					background-color: rgba(0,0,0,.1);
+					z-index: -1;
+
+				}
+				&:hover{
+					&:before{
+						bottom: 0;
+						opacity: 1;
+					}
+					&:after{
+						opacity: 1;
+						width: 50px;
+						height: 50px;
+					}
+				}
+				span{
+
+					font-family: $fontFamilyQuantico;
+					font-size: 16px;
+					em{color: $keyColor;}
+				}
+			}
+		}
+	}
 	@include media(tablet) {
-		width: 30%;
+
 	}
 }

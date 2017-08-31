@@ -117,3 +117,32 @@
 	-webkit-background-clip: text;
 	display: inline-block;
 }
+
+// リンクテキスト
+// @include motionLinkTxt(色);
+@mixin motionLinkTxt(
+		$color : #000
+	){
+	display: inline-block;
+	padding: 5px;
+	position: relative;
+	z-index: 0;
+	&:before{
+		content: '';
+		position: absolute;
+		bottom: 5px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		transition: all .5s;
+		background-color: $color;
+		opacity: 0;
+		z-index: -1;
+	}
+	&:hover{
+		&:before{
+			opacity: 1;
+			bottom: 0;
+		}
+	}
+}
