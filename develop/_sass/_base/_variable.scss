@@ -5,7 +5,7 @@ $fontFamilySansSerif: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo,
 $fontFamilySerif    : "Yu Mincho", YuMincho, "Hiragino Mincho ProN", "MS PMincho", serif;
 
 $fontFamilyQuantico    : 'Quantico', sans-serif;
-
+$path : '/img/cmn';
 
 // フォントサイズ
 $fontSize2S: 			10px;
@@ -45,25 +45,33 @@ $selectionTextColor: 	#fff;
 $selectionBgColor: 		#ff6f6f;
 
 // ページ背景色
-$baseBackgroundColor: 	#ecf0f1;
+$baseBackgroundColor: 	#fff;
+$baseBackgroundColorGray: 	#e2e2e2;
+
+// ステータスカラー
+$statusColorMap: (
+	frozen : #0262b4,
+	cool   : #3a589a,
+	normal : #000
+);
 
 // カテゴリカラー
-$catColorMap: (
-	mixin: 				#26c6da,
-	module: 			#ab47bc,
-	embed : 			#26a69a,
-	page  : 			#ad1457,
-	effect: 			#3949ab,
-	jsTips: 			#fb8c00
-);
+// $catColorMap: (
+// 	mixin: 				#26c6da,
+// 	module: 			#ab47bc,
+// 	embed : 			#26a69a,
+// 	page  : 			#ad1457,
+// 	effect: 			#3949ab,
+// 	jsTips: 			#fb8c00
+// );
 
 // SNSカラー
-$snsColorMap: (
-	facebook  : 		#3a589a,
-	twitter   : 		#00aaf0,
-	googleplus: 		#dd4b39,
-	line      :			#00c300
-);
+// $snsColorMap: (
+// 	facebook  : 		#3a589a,
+// 	twitter   : 		#00aaf0,
+// 	googleplus: 		#dd4b39,
+// 	line      :			#00c300
+// );
 
 //グリッド設定
 $columnWidth: 			70px;

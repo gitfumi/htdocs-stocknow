@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------
+	list
+----------------------------------------------------------*/
+.m-list {
+	display: flex;
+	justify-content: center;
+	>*{
+		flex-basis: 230px;
+		& + *{
+			margin-left: 20px;
+		}
+	}
+	&.is_limit{
+		flex-wrap: wrap;
+		>*{
+			flex-basis: calc((100% - 60px) / 4);
+		}
+	}
+	.is_new{
+		position: relative;
+		&:before{
+			content: 'NEW';
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: #f6ff00;
+			padding: 3px 10px;
+			font-size: 12px;
+			font-family: $fontFamilyQuantico;
+			font-weight: 700;
+		}
+	}
+	.m-itemPrice{
+		em{
+			font-family: $fontFamilyQuantico;
+			font-weight: 700;
+			font-size: 20px;
+			color: $keyColor;
+		}
+	}
+	.m-itemBrand{
+		margin-top: 10px;
+		font-size: 12px;
+	}
+	.m-itemStatus{
+		position: relative;
+		&:before{
+			content: '冷蔵';
+			position: absolute;
+			top: 50%;
+			right: 0;
+			display: block;
+			border: 2px solid map-get($statusColorMap, frozen);
+			background-color: #fff;
+			color: map-get($statusColorMap, frozen);
+			transform: translateY(-50%);
+			font-size: 10px;
+			width: 68px;
+			text-align: center;
+		}
+	}
+	.m-itemParam{
+		display: flex;
+		.m-itemLimit,.m-itemStation{
+			flex-basis: 50%;
+			text-align: center;
+			span{
+				display: inline-block;
+				font-size: 10px;
+				&.ttl{width: 40%;}
+				&.txt{
+					width: 60%;
+					border: 2px solid #000;
+					background-color: #fff;
+					font-family: $fontFamilyQuantico;
+					font-weight: 700;
+					text-align: center;
+					padding: 0 5px;
+				}
+			}
+		}
+		.m-itemLimit{
+		}
+	}
+	@include media(minipc) {
+	}
+	@include media(phablet) {
+	}
+}

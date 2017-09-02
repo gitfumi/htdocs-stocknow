@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------
+	btn
+----------------------------------------------------------*/
+.m-btn {
+	text-align: center;
+	a{
+		display: inline-block;
+		margin: 0 auto;
+		max-width: 280px;
+		width: 100%;
+		background-color: $keyColor;
+		color: #fff;
+		font-weight: bold;
+		padding: 10px 20px;
+		border-radius: 20px;
+		font-size: 16px;
+	}
+	@include media(minipc) {
+	}
+	@include media(phablet) {
+	}
+}

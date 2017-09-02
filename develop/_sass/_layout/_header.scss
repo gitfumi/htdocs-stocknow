@@ -6,7 +6,7 @@
 #header {
 }
 #headerSub {
-	background-color: #e2e2e2;
+	background-color: $baseBackgroundColorGray;
 	>ul{
 		max-width: $baseWidth;
 		margin: 0 auto;
@@ -32,23 +32,27 @@
 	align-items: flex-end;
 	text-align: center;
 	.navItem,.navLogo{
-		flex-basis: calc(100% / 3)
+		flex-basis: calc((100% - 300px) / 2);
 	}
 	.navLogo{
+		flex-basis: 300px;
+		img{
+			width: 220px;
+		}
 		span{
 			display: block;
 			margin-top: 5px;
+			font-size: 12px;
 		}
 	}
 	.navItem{
 		display: flex;
 		justify-content: center;
 		>p{
-			margin: 0 10px;
+			margin: 0 20px;
 			a{
 				display: block;
-				padding-bottom: 25px;
-				@include icoArrow(before, null, 50%, 20px, 50%, 16px, 3px, $keyColor, 135deg);
+				@include icoArrow(before, null, 50%, 0, 50%, 14px, 2px, $keyColor, 135deg);
 				&:before{
 					opacity : 0;
 					transition: all .5s
@@ -58,30 +62,36 @@
 					opacity: 0;
 					transition: all .5s;
 					position: absolute;
-					top: 50%;
+					top: 0;
 					left: 50%;
-					width: 0;
-					height: 0;
-					transform :translate(-50%,-50%);
-					border-radius: 30px;
-					background-color: rgba(0,0,0,.1);
+					width: 19px;
+					height: 9px;
+					transform :translateX(-50%);
+					// border-radius: 30px;
+					// background-color: rgba(0,0,0,.1);
+					background-image: url(#{$path}/icon.svg);
+					background-repeat: no-repeat;
+					background-size: 100%;
 					z-index: -1;
 
 				}
 				&:hover{
 					&:before{
-						bottom: 0;
+						bottom: -15px;
 						opacity: 1;
 					}
 					&:after{
+						top: -12px;
 						opacity: 1;
-						width: 50px;
-						height: 50px;
+						width: 30px;
+						height: 13px;
+						// width: 50px;
+						// height: 50px;
 					}
 				}
 				span{
-
 					font-family: $fontFamilyQuantico;
+					font-weight: 700;
 					font-size: 16px;
 					em{color: $keyColor;}
 				}
