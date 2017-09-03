@@ -16,6 +16,9 @@
 		flex-wrap: wrap;
 		>*{
 			flex-basis: calc((100% - 60px) / 4);
+			&:nth-of-type(4n-3){
+				margin-left: 0;
+			}
 		}
 	}
 	.is_new{

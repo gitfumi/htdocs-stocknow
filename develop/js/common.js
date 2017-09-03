@@ -5,10 +5,6 @@ var _add_tap_class = require('./module/add_tap_class.js');
 
 var _add_tap_class2 = _interopRequireDefault(_add_tap_class);
 
-var _box_link = require('./module/box_link.js');
-
-var _box_link2 = _interopRequireDefault(_box_link);
-
 var _current_link = require('./module/current_link.js');
 
 var _current_link2 = _interopRequireDefault(_current_link);
@@ -21,49 +17,29 @@ var _glovalnav = require('./module/glovalnav.js');
 
 var _glovalnav2 = _interopRequireDefault(_glovalnav);
 
-var _img_liquid = require('./module/img_liquid.js');
-
-var _img_liquid2 = _interopRequireDefault(_img_liquid);
-
 var _magnific_popup = require('./module/magnific_popup.js');
 
 var _magnific_popup2 = _interopRequireDefault(_magnific_popup);
-
-var _match_height = require('./module/match_height.js');
-
-var _match_height2 = _interopRequireDefault(_match_height);
-
-var _on_portrait_change = require('./module/on_portrait_change.js');
-
-var _on_portrait_change2 = _interopRequireDefault(_on_portrait_change);
 
 var _popup = require('./module/popup.js');
 
 var _popup2 = _interopRequireDefault(_popup);
 
-var _replase_src = require('./module/replase_src.js');
-
-var _replase_src2 = _interopRequireDefault(_replase_src);
-
-var _rollover = require('./module/rollover.js');
-
-var _rollover2 = _interopRequireDefault(_rollover);
-
 var _scroll_anchor = require('./module/scroll_anchor.js');
 
 var _scroll_anchor2 = _interopRequireDefault(_scroll_anchor);
 
-var _scroll_table = require('./module/scroll_table.js');
+var _scroll_header_effect = require('./module/scroll_header_effect.js');
 
-var _scroll_table2 = _interopRequireDefault(_scroll_table);
-
-var _tab = require('./module/tab.js');
-
-var _tab2 = _interopRequireDefault(_tab);
+var _scroll_header_effect2 = _interopRequireDefault(_scroll_header_effect);
 
 var _toggle = require('./module/toggle.js');
 
 var _toggle2 = _interopRequireDefault(_toggle);
+
+var _toggle_category = require('./module/toggle_category.js');
+
+var _toggle_category2 = _interopRequireDefault(_toggle_category);
 
 var _on_media_query = require('./on_media_query.js');
 
@@ -71,7 +47,7 @@ var _on_media_query2 = _interopRequireDefault(_on_media_query);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./module/add_tap_class.js":2,"./module/box_link.js":3,"./module/current_link.js":4,"./module/disable_tel_link.js":5,"./module/glovalnav.js":6,"./module/img_liquid.js":7,"./module/magnific_popup.js":8,"./module/match_height.js":9,"./module/on_portrait_change.js":13,"./module/popup.js":14,"./module/replase_src.js":15,"./module/rollover.js":16,"./module/scroll_anchor.js":17,"./module/scroll_table.js":19,"./module/tab.js":20,"./module/toggle.js":21,"./on_media_query.js":22}],2:[function(require,module,exports){
+},{"./module/add_tap_class.js":2,"./module/current_link.js":3,"./module/disable_tel_link.js":4,"./module/glovalnav.js":5,"./module/magnific_popup.js":6,"./module/popup.js":8,"./module/scroll_anchor.js":9,"./module/scroll_header_effect.js":10,"./module/toggle.js":11,"./module/toggle_category.js":12,"./on_media_query.js":13}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -91,39 +67,6 @@ var addTapClass = function () {
 exports.default = addTapClass;
 
 },{}],3:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-// ボックス全体をリンク
-var boxLink = function () {
-	var $boxLink = $('.js-boxLink');
-	$boxLink.each(function () {
-		var $self = $(this);
-		$self.css('cursor', 'pointer').on({
-			mouseenter: function mouseenter() {
-				$self.addClass('is-hover');
-			},
-			mouseleave: function mouseleave() {
-				$self.removeClass('is-hover');
-			}
-		});
-		$self.on('click', function () {
-			var url = $self.find('a').attr('href');
-			$self.addClass('is-hover');
-			if ($(this).find('a').attr('target') === '_blank') {
-				window.open(url);
-			} else {
-				window.location = url;
-			}
-			return false;
-		});
-	});
-}();
-exports.default = boxLink;
-
-},{}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -192,7 +135,7 @@ exports.default = currentLink;
 
 currentLink.selflink();
 
-},{}],5:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -214,7 +157,7 @@ var disableTelLink = function () {
 }(); // モバイル端末以外はtelリンクを無効
 exports.default = disableTelLink;
 
-},{"../ua.js":23}],6:[function(require,module,exports){
+},{"../ua.js":14}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -242,19 +185,7 @@ var globalNav = function () {
 }();
 exports.default = globalNav;
 
-},{}],7:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-// 親要素に収まるように画像をリサイズ
-var imgLiquid = function () {
-	$('.js-imgLiquid').imgLiquid();
-}();
-exports.default = imgLiquid;
-
-},{}],8:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -300,21 +231,7 @@ var magnificPopup = function () {
 }();
 exports.default = magnificPopup;
 
-},{}],9:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-// ブロック要素の高さを行ごとに揃える
-var matchHeight = function () {
-	$(window).on('load', function () {
-		$('.js-matchHeight').matchHeight();
-	});
-}();
-exports.default = matchHeight;
-
-},{}],10:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -331,15 +248,28 @@ var menuDrawer = function menuDrawer() {
 	var $window = $window;
 	var $body = $('body');
 	var $header = $('#header');
-	var $globalNav = $('#globalNav');
-	var $cloneNav = $globalNav.clone(true);
-	$body.append(['<div id="drawerMenu"></div>', '<div id="drawerMenuOverlay"></div>', '<div id="btnDrawerMenuClose"><p><span><span></p></div>'].join(''));
-	$cloneNav.appendTo('#drawerMenu');
+	var $globalNav = $('#headerNav');
+	var $globalCat = $('#headerCat');
+	var $globalSub = $('#headerSub');
+	var $cloneGNav = $globalNav.clone(true);
+	var $cloneCNav = $globalCat.clone(true);
+	var $cloneSNav = $globalSub.clone(true);
+	$body.append(['<div id="drawerMenu"><div id="drawerMenuInner"></div></div>', '<div id="drawerMenuOverlay"></div>', '<div id="btnDrawerMenuClose"><p><span><span></p></div>'].join(''));
+	$cloneGNav.appendTo('#drawerMenuInner').attr('id', 'drawerNav').find('.navLogo').remove();
 	$header.append('<div id="btnMenu03"><p><span class="icoMenu"><span class="icoMenuInner"></span></span></p></div>');
 	var scrollY;
 	var $drawerMenu = $('#drawerMenu');
+	var $drawerMenuInner = $('#drawerMenuInner');
 	var $drawerMenuOverlay = $('#drawerMenuOverlay');
 	var $btnDrawerMenuClose = $('#btnDrawerMenuClose');
+
+	// 「Menu」テキストの追加
+	$drawerMenuInner.prepend('<p id="drawerTtl">MENU</p>');
+
+	// 「category」の追加
+	$cloneCNav.appendTo($drawerMenuInner).attr('id', 'drawerCat').removeClass('js-toggleCat_t').show();
+	// 「Sub Menu」の追加
+	$cloneSNav.appendTo($drawerMenuInner).attr('id', 'drawerSub');
 
 	// 開く
 	$('#btnMenu03').on('click', function () {
@@ -367,176 +297,7 @@ var menuDrawer = function menuDrawer() {
 }; // ドロワーメニュー
 exports.default = menuDrawer;
 
-},{"../valiable.js":24}],11:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _valiable = require('../valiable.js');
-
-var _valiable2 = _interopRequireDefault(_valiable);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var menuFloating = function menuFloating() {
-	var $window = $(window);
-	var $body = $('body');
-	var $header = $('#header');
-	var $globalNav = $('#globalNav');
-	var $cloneNav = $globalNav.clone(true);
-	$body.append(['<div id="floatingMenu">', '<div class="btnfloatingMenuClose"><p><span><span></p></div>', '</div>'].join(''));
-	$cloneNav.appendTo('#floatingMenu');
-	$header.append('<div id="btnMenu02"><p><span class="icoMenu"><span class="icoMenuInner"></span></span></p></div>');
-	var scrollY;
-	var $floationgNav = $('#floatingMenu');
-	var $floationgNavItem = $floationgNav.find('li');
-	var length = $floationgNavItem.length;
-
-	// 開く
-	$('#btnMenu02').on('click', function () {
-		scrollY = $window.scrollTop();
-		_valiable2.default.isMenuShow = true;
-		$floationgNav.removeClass('is-hide').addClass('is-show').find('a').removeAttr('style');
-		$body.css({
-			'position': 'fixed',
-			'width': '100%',
-			'top': '-' + scrollY + 'px'
-		});
-		getFloatingMenuHeight();
-	});
-
-	// 閉じる
-	$('.btnfloatingMenuClose').on('click', function () {
-		$body.removeAttr('style');
-		$floationgNav.removeClass('is-show').addClass('is-hide');
-		$('html, body').prop({ scrollTop: scrollY });
-	});
-	$window.on('resize', $.throttle(100, function () {
-		getFloatingMenuHeight();
-	}));
-
-	// ナビの高さを調整
-	function getFloatingMenuHeight() {
-		var windowHeigth = $window.height();
-		if (windowHeigth > $floationgNavItem.outerHeight() * length) {
-			$floationgNav.find('a').css({
-				'height': windowHeigth / length + 'px',
-				'padding': 0,
-				'lineHeight': windowHeigth / length + 'px'
-			});
-		}
-	}
-}; // フローティングメニュー
-exports.default = menuFloating;
-
-},{"../valiable.js":24}],12:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _valiable = require('../valiable.js');
-
-var _valiable2 = _interopRequireDefault(_valiable);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var menuSlide = function menuSlide() {
-	var $body = $('body');
-	var $header = $('#header');
-	var $globalNav = $('#globalNav');
-	var headerHeight = $header.outerHeight();
-	var $cloneNav = $globalNav.clone(true);
-	$body.append('<div id="slideMenu"></div>');
-	$cloneNav.appendTo('#slideMenu');
-	$header.append('<div id="btnMenu"><p><span class="icoMenu"><span class="icoMenuInner"></span></span></p></div>');
-	var $slideMenu = $('#slideMenu');
-	var slideMenuHeight = $slideMenu.height();
-	var scrollY;
-	$slideMenu.css('top', headerHeight);
-	hideSlideMenu();
-	$('#btnMenu').on('click', function () {
-		$(this).children().toggleClass('is-active');
-		if ($slideMenu.hasClass('is-show')) {
-			hideSlideMenu();
-		} else {
-			showSlideMenu();
-			getSlideMenuHeight();
-		}
-	});
-	$(window).on('resize', $.throttle(100, function () {
-		getSlideMenuHeight();
-	}));
-	$globalNav.find('span').on('click', function () {
-		alet('aa');
-		getSlideMenuHeight();
-	});
-
-	// 開く
-	function showSlideMenu() {
-		scrollY = $(window).scrollTop();
-		_valiable2.default.isMenuShow = true;
-		$slideMenu.removeClass('is-hide').addClass('is-show').velocity('stop').velocity({ translateY: 0 }, { display: 'block' });
-	}
-
-	// 閉じる
-	function hideSlideMenu() {
-		$slideMenu.removeClass('is-show').addClass('is-hide').css('height', 'auto').velocity('stop').velocity({ translateY: '-100%' }, { display: 'none' });
-		$body.removeAttr('style');
-		$('html, body').prop({ scrollTop: scrollY });
-	}
-
-	// ナビの高さを調整
-	function getSlideMenuHeight() {
-		if (_valiable2.default.isMenuShow) {
-			var windowHeigth = $(window).height();
-			// ウィンドウの高さよりナビの高さが大きかったら
-			if (slideMenuHeight > windowHeigth - headerHeight) {
-				$slideMenu.css({
-					'height': windowHeigth - headerHeight + 'px',
-					'overflow-y': 'scroll',
-					'-webkit-overflow-scrolling': 'touch'
-				});
-				$body.css({
-					'position': 'fixed',
-					'width': '100%',
-					'top': '-' + scrollY + 'px'
-				});
-			}
-			// ナビの高さよりウィンドウの高さが大きかったら
-			else {
-					$slideMenu.css({
-						'height': 'auto'
-					});
-					$body.css({
-						'position': 'static'
-					});
-				}
-		}
-	}
-}; // スライドメニュー
-exports.default = menuSlide;
-
-},{"../valiable.js":24}],13:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-// ランドスケープからポートレートに変更
-var onPortraitChange = function () {
-	$(window).on('orientationchange', function () {
-		if (Math.abs(window.orientation) != 90) {
-			location.reload();
-		}
-	});
-}();
-exports.default = onPortraitChange;
-
-},{}],14:[function(require,module,exports){
+},{"../valiable.js":15}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -575,48 +336,7 @@ var popup = function () {
 }();
 exports.default = popup;
 
-},{}],15:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-// PCとスマホで画像を変更
-var replaceSrc = function replaceSrc(before, after) {
-	var $replaceSrc = $('.js-replaceSrc');
-	$replaceSrc.each(function () {
-		$(this).attr('src', $(this).attr('src').replace(new RegExp('(.*)' + before + '.([a-zA-Z0-9]+)$'), '$1' + after + '.$2'));
-	});
-};
-exports.default = replaceSrc;
-
-},{}],16:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-// ロールオーバー
-var rollover = function () {
-	var postfix = '_on';
-	$('img.js-rollover, input[type="image"].js-rollover').each(function () {
-		var $self = $(this);
-		var src = $self.attr('src');
-		var src_on = src.substr(0, src.lastIndexOf('.')) + postfix + src.substring(src.lastIndexOf('.'));
-		$('<img>').attr('src', src_on);
-		$self.on({
-			mouseenter: function mouseenter() {
-				$self.attr('src', src_on);
-			},
-			mouseleave: function mouseleave() {
-				$self.attr('src', src);
-			}
-		});
-	});
-}();
-exports.default = rollover;
-
-},{}],17:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -682,181 +402,33 @@ var scrollAnchor = function () {
 }();
 exports.default = scrollAnchor;
 
-},{}],18:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+// 上にスクロールで表示
 
-var _valiable = require('../valiable.js');
-
-var _valiable2 = _interopRequireDefault(_valiable);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var scrollEffect = function () {
+var scrollHeaderEffect = function () {
 	var $window = $(window);
+	var $header = $('#header');
+	var headerHeight = $header.height();
 	var SHOW_POSITION = 200;
-	return {
-		common: function common() {
-			// ページトップボタン表示
-			var $btnPageTop = $('.m-btnPageTop');
-			var startPosition = 0;
-			$window.on('scroll.scrollEffectCommon', function () {
-				var currentPostion = $(this).scrollTop();
-				var scrollTop = $window.scrollTop();
-				var documentHeight = $(document).height();
-				var scrollPosition = $window.height() + scrollTop;
-				// 下にスクロール
-				if (currentPostion > startPosition) {
-					// SHOW_POSITIONより下にスクロールしたら
-					if ($window.scrollTop() > SHOW_POSITION) {
-						$btnPageTop.removeClass('is-show');
-					} else if (documentHeight === scrollPosition) {
-						$btnPageTop.addClass('is-show');
-					}
-				}
-				// 上にスクロール
-				else {
-						// SHOW_POSITIONより上にスクロールしたら
-						if ($window.scrollTop() < SHOW_POSITION) {
-							$btnPageTop.removeClass('is-show');
-						}
-						// 上にスクロール
-						else {
-								$btnPageTop.addClass('is-show');
-							}
-					}
-				startPosition = currentPostion;
-				// ページトップボタンを固定
-				(function fixedPageTop() {
-					var bottomY = 0;
-					var height = $window.height();
-					var scrollTop = $window.scrollTop();
-					var documentHeight = $(document).height();
-					var pageNavHeight = $('.m-pageNav').height();
-					var bottomHeight = pageNavHeight + height + scrollTop + bottomY - documentHeight;
-					if (scrollTop >= documentHeight - height - pageNavHeight + bottomY) {
-						$btnPageTop.css({
-							bottom: bottomHeight - bottomY
-						});
-					} else {
-						$btnPageTop.css({
-							bottom: bottomY
-						});
-					}
-				})();
-			});
-		},
-		pc: function pc() {
-			var $h1 = $('.m-h1');
-			var h1Height = $h1.outerHeight();
-			var h1PaddingTop = parseInt($h1.css('padding-top'), 10);
-			var h1Text = $h1.text();
-			$('#main').prepend('<h1 class="cloneH1">' + h1Text + '</h1>');
-			var $cloneH1 = $('.cloneH1');
-			$window.on('scroll.scrollEffectPC', $.throttle(100, function () {
-				if ($window.scrollTop() > h1PaddingTop) {
-					$h1.addClass('is-hidden');
-					$cloneH1.addClass('is-show');
-				} else {
-					$h1.removeClass('is-hidden');
-					$cloneH1.removeClass('is-show');
-				}
-				if ($window.scrollTop() > h1Height) {
-					$cloneH1.addClass('is-fixed');
-				} else {
-					$cloneH1.removeClass('is-fixed');
-				}
-			}));
-		},
-		sp: function sp() {
-			var $header = $('#header');
-			var startPosition = 0;
-			$window.on('scroll.scrollEffectSP', $.throttle(100, function () {
-				var currentPostion = $(this).scrollTop();
-				// 下にスクロール
-				if (currentPostion > startPosition && $window.scrollTop() >= SHOW_POSITION) {
-					if (_valiable2.default.isMenuShow) {
-						_valiable2.default.isMenuShow = false;
-					} else {
-						$header.removeClass('is-show').css({
-							'top': '-' + $header.outerHeight() + 'px'
-						});
-					}
-				}
-				// 上にスクロール
-				else {
-						$header.addClass('is-show').removeAttr('style');
-					}
-				startPosition = currentPostion;
-			}));
+
+	$window.on('scroll.scrollEffectCommon', function () {
+		var currentPostion = $(this).scrollTop();
+
+		if (currentPostion > headerHeight) {
+			$header.addClass('is-short');
+		} else {
+			$header.removeClass('is-short');
 		}
-	};
-}(); // 上にスクロールで表示
-exports.default = scrollEffect;
-
-},{"../valiable.js":24}],19:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-// 表組みをスクロール（スマホ）
-var scrollTable = function scrollTable() {
-	var text = {
-		open: '表を伸ばす',
-		close: '表を縮める'
-	};
-	var $scrollTable = $('.js-scrollTable');
-	var btnHtml = '<p class="m-table_btnScroll">' + text.open + '</p>';
-	var wrapHtml = '<div class="m-table_outer"><div class="m-table_inner"></div></div>';
-
-	$scrollTable.each(function () {
-		if (!$(this).prev('.m-table_btnScroll').length) {
-			$(this).before(btnHtml);
-		}
-		$(this).prev('.m-table_btnScroll').on('click', function () {
-			if ($(this).next().find($scrollTable).hasClass('is-scroll')) {
-				$(this).next().find($scrollTable).removeClass('is-scroll').unwrap().unwrap();
-				$(this).text(text.open);
-			} else {
-				$(this).next($scrollTable).addClass('is-scroll').wrap(wrapHtml);
-				$(this).text(text.close);
-			}
-		});
-	});
-};
-exports.default = scrollTable;
-
-},{}],20:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-// タブコンテンツ
-var tab = function () {
-	var $tab = $('.js-tab');
-	$tab.each(function () {
-		var $self = $(this);
-		var $tabBtn = $self.find('.js-tab_btn');
-		var $tabBody = $self.find('.js-tab_body');
-		$tabBtn.eq(0).addClass('is-active');
-		$tabBody.hide().eq(0).show();
-		$tabBtn.on('click', function () {
-			var num = $tabBtn.index(this);
-			$tabBtn.removeClass('is-active');
-			$(this).addClass('is-active');
-			$tabBody.hide().eq(num).show();
-			return false;
-		});
 	});
 }();
-exports.default = tab;
+exports.default = scrollHeaderEffect;
 
-},{}],21:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -895,96 +467,127 @@ var toggle = function () {
 }();
 exports.default = toggle;
 
-},{}],22:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+// コンテンツの表示、非表示
+var toggoleCategory = function () {
+	var $togglePoint = $('.js-toggleCat_p');
+	var $toggleTarget = $('.js-toggleCat_t');
+	var SLIDE_DOWN_SPEED = 300;
+	var SLIDE_UP_SPEED = 300;
+
+	// 現在ページだったら開く
+	if ($togglePoint.hasClass('is-current')) {
+		$togglePoint.addClass('is-show');
+	}
+	// 現在ページじゃなければ閉じる
+	else {
+			$togglePoint.addClass('is-hide');
+			$toggleTarget.hide();
+		}
+
+	$togglePoint.on('click', function () {
+		var $self = $(this);
+		// 開いていたら
+		if ($self.hasClass('is-show')) {
+			$self.removeClass('is-show is-current').addClass('is-hide');
+			$toggleTarget.not(':animated').slideUp(SLIDE_UP_SPEED);
+		}
+		// 閉じていたら
+		else {
+				$self.removeClass('is-hide').addClass('is-show');
+				$toggleTarget.not(':animated').slideDown(SLIDE_DOWN_SPEED);
+			}
+	});
+}();
+exports.default = toggoleCategory;
+
+},{}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _replase_src = require('./module/replase_src.js');
-
-var _replase_src2 = _interopRequireDefault(_replase_src);
-
-var _scroll_effect = require('./module/scroll_effect.js');
-
-var _scroll_effect2 = _interopRequireDefault(_scroll_effect);
-
 var _menu_drawer = require('./module/menu_drawer.js');
 
 var _menu_drawer2 = _interopRequireDefault(_menu_drawer);
 
-var _menu_floating = require('./module/menu_floating.js');
-
-var _menu_floating2 = _interopRequireDefault(_menu_floating);
-
-var _menu_slide = require('./module/menu_slide.js');
-
-var _menu_slide2 = _interopRequireDefault(_menu_slide);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import menuFloating  from './module/menu_floating.js';
+// import menuSlide     from './module/menu_slide.js';
 var onMediaQuery = function () {
 	var $window = $(window);
 	var $body = $('body');
 	var $header = $('#header');
-	var $main = $('#main');
+	// let $main   = $('#main');
 	var breadcrumbsScroll = void 0;
 	var queries = [{
 		context: ['pc', 'minipc'],
 		match: function match() {
-			_scroll_effect2.default.common();
-			_scroll_effect2.default.pc();
+			// scrollEffect.common();
+			// scrollEffect.pc();
 		},
 		unmatch: function unmatch() {
-			$window.off('scroll.scrollEffectPC');
-			$('.m-h1').removeClass('is-hidden');
-			$('.cloneH1').remove();
+			// $window.off('scroll.scrollEffectPC');
+			// $('.m-h1').removeClass('is-hidden');
+			// $('.cloneH1').remove();
 		}
 	}, {
 		context: ['tablet', 'phablet', 'sp'],
 		match: function match() {
-			_scroll_effect2.default.common();
-			_scroll_effect2.default.sp();
 			(0, _menu_drawer2.default)();
-			(0, _menu_floating2.default)();
-			(0, _menu_slide2.default)();
-			$main.css('padding-top', $header.height());
-			$(window).on('load', function () {
-				$main.css('padding-top', $header.height());
-			});
+			// scrollEffect.common();
+			// scrollEffect.sp();
+			// menuFloating();
+			// menuSlide();
+			// $main.css('padding-top', $header.height());
+			// $(window).on('load', function() {
+			// 	$main.css('padding-top', $header.height());
+			// });
 		},
 		unmatch: function unmatch() {
+			// if(menuFlg){
+			// 	console.log('unmatch');
+			// 	menuFlg = true;
+			// }
 			$(window).off('scroll.scrollEffectSP');
 			$body.removeAttr('style');
-			$header.removeClass();
-			$header.removeAttr('style');
-			$main.removeAttr('style');
-			$('#btnMenu').remove();
-			$('#btnMenu02').remove();
+			// $header.removeClass();
+			// $header.removeAttr('style');
+			// $main.removeAttr('style');
+			// $('#btnMenu').remove();
+			// $('#btnMenu02').remove();
 			$('#btnMenu03').remove();
-			$('#btnMenu04').remove();
-			$('#slideMenu').remove();
-			$('#floatingMenu').remove();
+			// $('#btnMenu04').remove();
+			// $('#slideMenu').remove();
+			// $('#floatingMenu').remove();
 			$('#drawerMenu').remove();
 			$('#drawerMenuOverlay').remove();
 			$('#btnDrawerMenuClose').remove();
-			$('#drawerMenu02').remove();
+			// $('#drawerMenu02').remove();
 		}
 	}, {
 		context: ['phablet', 'sp'],
 		match: function match() {
-			(0, _replase_src2.default)('_pc', '_sp');
+			// replaceSrc('_pc', '_sp');
 		},
 		unmatch: function unmatch() {
-			(0, _replase_src2.default)('_sp', '_pc');
+			// replaceSrc('_sp', '_pc');
 		}
 	}];
 	MQ.init(queries);
 }(); // メディアクエリでjsを切り替え
+// import replaceSrc    from './module/replase_src.js';
+// import scrollEffect  from './module/scroll_effect.js';
 exports.default = onMediaQuery;
 
-},{"./module/menu_drawer.js":10,"./module/menu_floating.js":11,"./module/menu_slide.js":12,"./module/replase_src.js":15,"./module/scroll_effect.js":18}],23:[function(require,module,exports){
+},{"./module/menu_drawer.js":7}],14:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1011,7 +614,7 @@ var ua = function () {
 }();
 exports.default = ua;
 
-},{}],24:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

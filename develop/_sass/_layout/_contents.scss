@@ -5,8 +5,11 @@
 ----------------------------------------------------------*/
 #contents {
 	position: relative;
-	@include media(minipc) {
+	margin-top: 147px;
+	@include media(tablet) {
+		margin-top: 98px;
 	}
 	@include media(phablet) {
+		margin-top: 78px;
 	}
 }

@@ -4,14 +4,67 @@
 	ヘッダー
 ----------------------------------------------------------*/
 #header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(255, 255, 255, .9);
+	z-index: index($zIndex, header);
+	&.is-short{
+		box-shadow: 0px 2px 5px rgba(0, 0, 0, .5);
+		#headerSub{
+			margin-top: -32px;
+		}
+		#headerNav{
+			padding: 25px 0 20px;
+			svg{
+				width: 200px;
+			}
+		}
+	}
+@include media(tablet) {
+	// position: relative;
+	#btnMenu03 {
+		position: absolute;
+		top: 50%;
+		right: 30px;
+		transform: translateY(-50%);
+		p {
+			@include icoMenu(30px, 30px, null, null, 50%, 50%, 30px, 3px, 30px, #000, 10px);
+		}
+	}
+	&.is-short{
+		#headerNav{
+			padding: 20px 0 10px;
+		}
+	}
 }
+@include media(phablet) {
+	#btnMenu03 {
+		right: 20px;
+	}
+	&.is-short{
+		#headerNav{
+			padding: 20px 0 10px;
+			.navLogo{
+				svg{width: 180px;}
+			}
+		}
+	}
+}
+}
+/* ---------------------------------------------------------
+	ヘッダー サブメニュー
+----------------------------------------------------------*/
 #headerSub {
 	background-color: $baseBackgroundColorGray;
+	transition: all .5s;
 	>ul{
 		max-width: $baseWidth;
 		margin: 0 auto;
 		display: flex;
 		justify-content: flex-end;
+		text-align: center;
 		>li{
 			& + li{
 				margin-left: 20px;
@@ -21,23 +74,25 @@
 			}
 		}
 	}
-	@include media(minipc) {
-	}
-	@include media(phablet) {
-	}
+@include media(tablet) {
+	display: none;
 }
-.headerNav {
+}
+/* ---------------------------------------------------------
+	ヘッダー メインメニュー
+----------------------------------------------------------*/
+#headerNav {
 	padding: 30px 0;
 	display: flex;
 	align-items: flex-end;
 	text-align: center;
-	.navItem,.navLogo{
-		flex-basis: calc((100% - 300px) / 2);
-	}
+	transition: all .5s;
+	position: relative;
 	.navLogo{
-		flex-basis: 300px;
-		img{
+		flex-basis: 240px;
+		svg{
 			width: 220px;
+			transition: all .5s;
 		}
 		span{
 			display: block;
@@ -46,13 +101,16 @@
 		}
 	}
 	.navItem{
+		flex-basis: calc((100% - 240px) / 2);
 		display: flex;
 		justify-content: center;
 		>p{
 			margin: 0 20px;
-			a{
+			>a,>span{
 				display: block;
+				cursor: pointer;
 				@include icoArrow(before, null, 50%, 0, 50%, 14px, 2px, $keyColor, 135deg);
+				color: #666666;
 				&:before{
 					opacity : 0;
 					transition: all .5s
@@ -89,16 +147,170 @@
 						// height: 50px;
 					}
 				}
-				span{
+				>span{
 					font-family: $fontFamilyQuantico;
 					font-weight: 700;
 					font-size: 16px;
+					color: #000;
 					em{color: $keyColor;}
 				}
 			}
 		}
 	}
-	@include media(tablet) {
-
+@include media(minipc) {
+	.navItem{
+		>p{
+			margin: 0 10px;
+		}
 	}
+}
+@include media(tablet) {
+	display: block;
+	padding: 30px 0 10px;
+	border-top: 3px solid #000;
+	.navItem{
+		display: none;
+	}
+}
+@include media(phablet) {
+	padding: 20px 0 10px;
+	.navLogo{
+		svg{
+			width: 180px;
+		}
+		span{
+			display: block;
+			margin-top: 3px;
+			font-size: 10px;
+		}
+	}
+}
+}
+/* ---------------------------------------------------------
+	ヘッダー カテゴリメニュー
+----------------------------------------------------------*/
+#headerCat{
+	position: absolute;
+	padding: 10px 0;
+	background-color: rgba(226, 226, 226, .9);
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, .5);
+	.c-category{
+		flex-wrap: nowrap;
+		section{
+			flex-basis: 90px;
+		}
+	}
+@include media(tablet){
+	display: none;
+}
+}
+/* ---------------------------------------------------------
+	ヘッダー ドロワーメニュータイトル
+----------------------------------------------------------*/
+#drawerTtl{
+@include media(tablet){
+	text-align: center;
+	font-family: $fontFamilyQuantico;
+	font-weight: 700;
+	font-size: 20px;
+	padding: 10px 20px;
+	border-bottom: 2px solid $baseBackgroundColorGray;
+}
+}
+/* ---------------------------------------------------------
+	ヘッダー ドロワーメニュー
+----------------------------------------------------------*/
+#drawerNav{
+@include media(tablet){
+	.navItem{
+		display: flex;
+		text-align: center;
+		>p{
+			flex-basis: 50%;
+			border-bottom: 2px solid $baseBackgroundColorGray;
+			&:nth-of-type(odd){
+				border-right: 2px solid $baseBackgroundColorGray;
+			}
+			>a,>span{
+				display: block;
+				padding: 10px;
+				>span{
+					font-family: $fontFamilyQuantico;
+					font-weight: 700;
+					font-size: 16px;
+					color: #000;
+					em{color: $keyColor;}
+				}
+			}
+			>span{
+				background-color: $baseBackgroundColorGray;
+			}
+		}
+	}
+}
+@include media(phablet){
+	.navItem{
+		>p{
+			>a,>span{
+				font-size: 12px;
+				>span{
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}
+@include media(sp){
+	.navItem{
+		>p{
+			>a,>span{
+				font-size: 10px;
+				>span{
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}
+}
+/* ---------------------------------------------------------
+	ヘッダー ドロワーメニュー
+----------------------------------------------------------*/
+#drawerCat{
+@include media(tablet){
+	background-color: $baseBackgroundColorGray;;
+	.c-category{
+		padding: 10px;
+		section{
+			flex-basis: calc((100% - 40px) / 3);
+			& + section{
+				margin-left: 10px;
+			}
+			&:nth-of-type(3n-2){margin-left: 0;}
+		}
+	}
+}
+@include media(phablet){
+	.c-category{
+		.m-catName{
+			font-size: 12px;
+		}
+	}
+}
+}
+/* ---------------------------------------------------------
+	ヘッダー ドロワーサブメニュー
+----------------------------------------------------------*/
+#drawerSub{
+@include media(tablet){
+	>ul >li{
+		a{
+			display: block;
+			padding: 5px 10px;
+			border-bottom: 2px solid $baseBackgroundColorGray;
+		}
+	}
+}
+@include media(phablet){
+}
 }
