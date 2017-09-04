@@ -25,6 +25,7 @@ $selectorRoot: "#p_home";
 -------------------------------------------------- */
 #{$selectorRoot} .sec-category{
 	background-color: #e2e2e2;
+	padding: 50px 0;
 @include media(tablet) {
 }
 @include media(phablet) {

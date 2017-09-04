@@ -31,6 +31,9 @@ $lineHeightLL: 			2.0;
 // キーカラー
 $keyColor: 			#e60012;
 
+// section Margin
+$sectionMargin : 80px;
+
 // 標準テキストカラー
 $baseTextColor: 		#000;
 
@@ -46,7 +49,7 @@ $selectionBgColor: 		#ff6f6f;
 
 // ページ背景色
 $baseBackgroundColor: 	#fff;
-$baseBackgroundColorGray: 	#e2e2e2;
+$baseBackgroundColorGray: 	#f3f3f3;
 
 // ステータスカラー
 $statusColorMap: (
@@ -112,4 +115,5 @@ $fontMap: (
 	twitter  : '\f099',
 	facebook : '\f09a',
 	gplus    : '\f0d5',
+	subway   : '\f239',
 );

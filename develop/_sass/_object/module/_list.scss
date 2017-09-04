@@ -87,7 +87,46 @@
 		.m-itemLimit{
 		}
 	}
+	.m-itemPic.is_train{
+		z-index: 0;
+		@include iconFontAbsolute(before, subway, null, 10px, -20px, null, 20px, $keyColor);
+		&:before{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 40px;
+			height: 40px;
+			text-align: center;
+			border-radius: 40px;
+			background-color: #fff;
+		}
+	}
 	@include media(minipc) {
+		.m-itemParam{
+			// display: flex;
+			.m-itemLimit,.m-itemStation{
+				// flex-basis: 100%;
+
+				// text-align: center;
+				span{
+					display: inline-block;
+					font-size: 10px;
+					&.ttl{width: 100%; line-height: 1;}
+					&.txt{
+						width: 80%;
+						// margin: 0 10px;
+						border: 2px solid #000;
+						background-color: #fff;
+						font-family: $fontFamilyQuantico;
+						font-weight: 700;
+						text-align: center;
+						padding: 0 5px;
+					}
+				}
+			}
+			.m-itemLimit{
+			}
+		}
 	}
 	@include media(phablet) {
 	}

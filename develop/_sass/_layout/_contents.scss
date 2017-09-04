@@ -6,6 +6,9 @@
 #contents {
 	position: relative;
 	margin-top: 147px;
+	>section{
+		margin-top: $sectionMargin;
+	}
 	@include media(tablet) {
 		margin-top: 98px;
 	}
