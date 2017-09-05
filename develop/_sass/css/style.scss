@@ -3,44 +3,5 @@
 @import "../_tool/mixin/**";
 @import "../_tool/function";
 
-$selectorRoot: "#p_home";
-/* ---------------------------------------------------------
-	ホーム
-----------------------------------------------------------*/
-/* mainSlide
--------------------------------------------------- */
-#{$selectorRoot} .mainSlide{
-	background-color: #e2e2e2;
-	.slideInner{
-		max-width: $baseWidth;
-		margin: 0 auto;
-	}
-@include media(tablet) {
-}
-@include media(phablet) {
-}
-}
-/* -----------------------------------------------
-/* sec-category
--------------------------------------------------- */
-#{$selectorRoot} .sec-category{
-	background-color: #e2e2e2;
-	padding: 50px 0;
-@include media(tablet) {
-}
-@include media(phablet) {
-}
-}
-/* -----------------------------------------------
-/* sec-mine
--------------------------------------------------- */
-#{$selectorRoot} .sec-mine{
-	.mineList{
-		max-width: $baseWidth;
-		margin: 0 auto;
-	}
-@include media(tablet) {
-}
-@include media(phablet) {
-}
-}
+// page style
+@import "p_home";
