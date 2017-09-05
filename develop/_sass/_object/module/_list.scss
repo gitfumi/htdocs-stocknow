@@ -7,12 +7,11 @@
 	display: flex;
 	justify-content: center;
 	>*{
-		flex-basis: 230px;
 		& + *{
 			margin-left: 20px;
 		}
 	}
-	&.is_limit{
+	&.is-limit{
 		flex-wrap: wrap;
 		>*{
 			flex-basis: calc((100% - 60px) / 4);
@@ -21,7 +20,7 @@
 			}
 		}
 	}
-	.is_new{
+	.is-new{
 		position: relative;
 		&:before{
 			content: 'NEW';
@@ -87,7 +86,7 @@
 		.m-itemLimit{
 		}
 	}
-	.m-itemPic.is_train{
+	.m-itemPic.is-train{
 		z-index: 0;
 		@include iconFontAbsolute(before, subway, null, 10px, -20px, null, 20px, $keyColor);
 		&:before{
@@ -102,32 +101,68 @@
 		}
 	}
 	@include media(minipc) {
-		.m-itemParam{
-			// display: flex;
-			.m-itemLimit,.m-itemStation{
-				// flex-basis: 100%;
-
-				// text-align: center;
-				span{
-					display: inline-block;
-					font-size: 10px;
-					&.ttl{width: 100%; line-height: 1;}
-					&.txt{
-						width: 80%;
-						// margin: 0 10px;
-						border: 2px solid #000;
-						background-color: #fff;
-						font-family: $fontFamilyQuantico;
-						font-weight: 700;
-						text-align: center;
-						padding: 0 5px;
-					}
+	.m-itemParam{
+		.m-itemLimit,.m-itemStation{
+			span{
+				display: block;
+				font-size: 10px;
+				&.ttl{width: 100%;}
+				&.txt{
+					width: 100%;
+					margin: 2px auto 0;
+					border: 2px solid #000;
+					background-color: #fff;
+					font-family: $fontFamilyQuantico;
+					font-weight: 700;
+					text-align: center;
+					padding: 0;
 				}
 			}
-			.m-itemLimit{
+		}
+		.m-itemStation{
+			margin-left: 20px;
+		}
+	}
+	.m-itemStatus{
+		&:before{
+			width: 30%;
+		}
+	}
+	}
+	@include media(tablet) {
+	&.is-limit{
+		>*{
+			flex-basis: calc((100% - 40px) / 3);
+			&:nth-of-type(4n-3){
+				margin-left: 20px;
+			}
+			&:nth-of-type(3n-2){
+				margin-left: 0;
 			}
 		}
 	}
+	.m-itemParam{
+		.m-itemStation{
+			margin-left: 5px;
+		}
+	}
+	.m-itemStatus{
+		&:before{
+			display: none;
+		}
+	}
+	}
 	@include media(phablet) {
+	&.is-limit{
+		>*{
+			flex-basis: calc((100% - 20px) / 2);
+			&:nth-of-type(3n-2){
+				margin-left: 20px;
+			}
+			&:nth-of-type(odd){
+				margin-left: 0;
+			}
+		}
+	}
 	}
 }

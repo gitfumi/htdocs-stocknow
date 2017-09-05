@@ -67,7 +67,7 @@ a {
 	&:active {
 		color: $linkColor_active;
 	}
-	&.js_telLink {
+	&.js-telLink {
 		color: $baseTextColor;
 		text-decoration: none;
 		pointer-events: none;

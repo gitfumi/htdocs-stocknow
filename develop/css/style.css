@@ -16,6 +16,14 @@
 /* -----------------------------------------------
 /* sec-category
 -------------------------------------------------- */
+#p_home .sec-temiyage .temiyageList {
+  max-width: 980px;
+  margin: 0 auto 40px;
+}
+
+/* -----------------------------------------------
+/* sec-category
+-------------------------------------------------- */
 #p_home .sec-category {
   background-color: #e2e2e2;
   padding: 50px 0;

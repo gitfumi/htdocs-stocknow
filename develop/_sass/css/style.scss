@@ -23,6 +23,19 @@ $selectorRoot: "#p_home";
 /* -----------------------------------------------
 /* sec-category
 -------------------------------------------------- */
+#{$selectorRoot} .sec-temiyage{
+	.temiyageList{
+		max-width: $baseWidth;
+		margin: 0 auto 40px;
+	}
+@include media(tablet) {
+}
+@include media(phablet) {
+}
+}
+/* -----------------------------------------------
+/* sec-category
+-------------------------------------------------- */
 #{$selectorRoot} .sec-category{
 	background-color: #e2e2e2;
 	padding: 50px 0;
