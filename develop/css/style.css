@@ -36,3 +36,49 @@
   max-width: 980px;
   margin: 0 auto;
 }
+
+/* -----------------------------------------------
+/* sec-station
+-------------------------------------------------- */
+#p_home .sec-station {
+  background-color: #e2e2e2;
+  padding: 50px 0;
+}
+
+#p_home .sec-station .stationList {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+#p_home .sec-station .stationList > section {
+  text-align: center;
+}
+
+#p_home .sec-station .stationList > section .stationTtl {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#p_home .sec-station .stationList > section .stationCont {
+  display: inline-block;
+}
+
+#p_home .sec-station .stationList > section .stationCont ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#p_home .sec-station .stationList > section .stationCont ul li {
+  margin: 0 10px;
+}
+
+#p_home .sec-station .stationList > section .stationCont ul li a {
+  padding: 15px;
+  display: block;
+  border: 4px solid #000;
+  font-weight: bold;
+  background-color: #fff;
+}
