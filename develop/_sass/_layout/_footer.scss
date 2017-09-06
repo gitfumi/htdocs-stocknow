@@ -87,15 +87,15 @@
 			}
 		}
 		&.is-facebook a{
-			@include iconFontAbsolute(before, facebook, 50%, 50%, 50%, 50%, 25px, #000);
+			@include iconFontAbsolute(before, facebook, 50%, 50%, 50%, 50%, 25px, $baseTextColor);
 			@include iconFontAbsolute(after, facebook, 50%, 50%, 50%, 50%, 25px, #fff);
 		}
 		&.is-twitter a{
-			@include iconFontAbsolute(before, twitter, 50%, 50%, 50%, 50%, 25px, #000);
+			@include iconFontAbsolute(before, twitter, 50%, 50%, 50%, 50%, 25px, $baseTextColor);
 			@include iconFontAbsolute(after, twitter, 50%, 50%, 50%, 50%, 25px, #fff);
 		}
 		&.is-google a{
-			@include iconFontAbsolute(before, gplus, 50%, 50%, 50%, 50%, 25px, #000);
+			@include iconFontAbsolute(before, gplus, 50%, 50%, 50%, 50%, 25px, $baseTextColor);
 			@include iconFontAbsolute(after, gplus, 50%, 50%, 50%, 50%, 25px, #fff);
 		}
 	}

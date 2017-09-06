@@ -36,8 +36,8 @@
 	}
 	.m-itemPrice{
 		em{
-			font-family: $fontFamilyQuantico;
-			font-weight: 700;
+			font-family: $fontFamilySaira;
+			font-weight: 600;
 			font-size: 20px;
 			color: $keyColor;
 		}
@@ -74,7 +74,7 @@
 				&.ttl{width: 40%;}
 				&.txt{
 					width: 60%;
-					border: 2px solid #000;
+					border: 2px solid $baseBorderColor;
 					background-color: #fff;
 					font-family: $fontFamilyQuantico;
 					font-weight: 700;
@@ -110,7 +110,7 @@
 				&.txt{
 					width: 100%;
 					margin: 2px auto 0;
-					border: 2px solid #000;
+					border: 2px solid $baseBorderColor;
 					background-color: #fff;
 					font-family: $fontFamilyQuantico;
 					font-weight: 700;

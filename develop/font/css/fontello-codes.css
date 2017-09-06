@@ -1,7 +1,10 @@
 
-.icon-home:before { content: '\e800'; } /* '' */
+.icon-gift:before { content: '\e800'; } /* '' */
+.icon-location:before { content: '\e801'; } /* '' */
+.icon-home:before { content: '\e815'; } /* '' */
 .icon-link-ext:before { content: '\f08e'; } /* '' */
 .icon-twitter:before { content: '\f099'; } /* '' */
 .icon-facebook:before { content: '\f09a'; } /* '' */
 .icon-gplus:before { content: '\f0d5'; } /* '' */
+.icon-child:before { content: '\f1ae'; } /* '' */
 .icon-subway:before { content: '\f239'; } /* '' */

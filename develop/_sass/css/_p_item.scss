@@ -1,0 +1,130 @@
+@charset "utf-8";
+
+$selectorRoot: "#p_item";
+/* ---------------------------------------------
+	商品詳細ページ
+----------------------------------------------------------*/
+/* mainItem
+-------------------------------------------------- */
+#{$selectorRoot} .mainItem{
+	background-color: $grayBackgroundColor;
+	.itemInner{
+		padding: 60px 0 20px;
+		max-width: $baseWidth;
+		margin: 0 auto;
+		display: flex;
+	}
+	.itemAlbum{
+		flex-basis: 60%;
+		&.is-new{
+			position: relative;
+			&:before{
+				content: 'NEW';
+				position: absolute;
+				top: -30px;
+				left: 0;
+				background-color: #f6ff00;
+				padding: 3px 10px;
+				font-size: 16px;
+				height: 30px;
+				font-family: $fontFamilyQuantico;
+				font-weight: 700;
+			}
+		}
+	}
+	.albumList{
+		margin-top: 20px;
+		display: flex;
+		>li{
+			flex-basis: calc((100% - 40px) / 5);
+			& + li{
+				margin-left: 10px;
+			}
+		}
+	}
+	.itemHead{
+		flex-basis: 40%;
+		padding: 20px 0 0 30px;
+	}
+	.itemBrand{
+		color: $grayTextColor;
+		font-size: 16px;
+	}
+	.itemName{
+		font-size: 20px;
+		font-weight: bold;
+	}
+	.itemPrice{
+		em{
+			font-family: $fontFamilySaira;
+			font-weight: 600;
+			font-size: 34px;
+			color: $keyColor;
+		}
+	}
+	.itemStatus{
+		position: relative;
+		&:before{
+			content: '冷蔵';
+			position: absolute;
+			top: 50%;
+			right: 0;
+			display: block;
+			border: 2px solid map-get($statusColorMap, frozen);
+			background-color: #fff;
+			color: map-get($statusColorMap, frozen);
+			transform: translateY(-50%);
+			width: 100px;
+			text-align: center;
+		}
+	}
+	.itemParam{
+		display: flex;
+		.itemLimit,.itemStation{
+			flex-basis: 50%;
+			text-align: center;
+			span{
+				display: inline-block;
+				&.ttl{width: 40%;}
+				&.txt{
+					width: 60%;
+					border: 2px solid $baseBorderColor;
+					background-color: #fff;
+					font-family: $fontFamilyQuantico;
+					font-weight: 700;
+					text-align: center;
+					padding: 0 5px;
+				}
+			}
+		}
+	}
+	.itemCredit{
+		.creditTtl{
+			font-weight: bold;
+		}
+		.creditList{
+			display: flex;
+			>li{
+				flex-grow: 1;
+
+				padding: 3px;
+				font-size: 12px;
+				& + li{
+					margin-left: 10px;
+				}
+				&.is-possible{
+					border: 2px solid $baseBorderColor;
+					color: $baseTextColor;
+				}
+				&:not(.is-possible){
+					border: 2px solid $lightgrayBorderColor;
+					color: $lightgrayTextColor;
+				}
+			}
+		}
+	}
+@include media(tablet) {
+}
+@include media(phablet) {
+}
+}

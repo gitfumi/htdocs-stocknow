@@ -4,7 +4,8 @@
 $fontFamilySansSerif: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 $fontFamilySerif    : "Yu Mincho", YuMincho, "Hiragino Mincho ProN", "MS PMincho", serif;
 
-$fontFamilyQuantico    : 'Quantico', sans-serif;
+$fontFamilyQuantico : 'Quantico', 'Noto Sans Japanese', sans-serif;
+$fontFamilySaira    : 'Saira', sans-serif;
 $path : '/img/cmn';
 
 // フォントサイズ
@@ -36,6 +37,13 @@ $sectionMargin : 80px;
 
 // 標準テキストカラー
 $baseTextColor: 		#000;
+$grayTextColor: 		#666;
+$lightgrayTextColor: 	#999;
+
+// 標準ボーダーカラー
+$baseBorderColor: 		#000;
+$grayBorderColor: 		#666;
+$lightgrayBorderColor: 	#999;
 
 // 標準リンクカラー
 $linkColor: 			$baseTextColor;
@@ -49,7 +57,7 @@ $selectionBgColor: 		#ff6f6f;
 
 // ページ背景色
 $baseBackgroundColor: 	#fff;
-$baseBackgroundColorGray: 	#f3f3f3;
+$grayBackgroundColor: 	#f3f3f3;
 
 // ステータスカラー
 $statusColorMap: (
@@ -111,10 +119,13 @@ $zIndex:
 
 // アイコンフォント
 $fontMap: (
-	home : '\f08e',
-	link-ext : '\f08e',
-	twitter  : '\f099',
-	facebook : '\f09a',
-	gplus    : '\f0d5',
-	subway   : '\f239',
+	gift    :'\e800',
+	location:'\e801',
+	home    :'\e815',
+	link-ext:'\f08e',
+	twitter :'\f099',
+	facebook:'\f09a',
+	gplus   :'\f0d5',
+	child   :'\f1ae',
+	subway  :'\f239',
 );

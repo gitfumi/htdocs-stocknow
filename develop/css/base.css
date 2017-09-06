@@ -420,7 +420,7 @@ html {
   display: block;
   cursor: pointer;
   position: relative;
-  color: #666666;
+  color: #666;
 }
 
 #headerNav .navItem > p > a:before, #headerNav .navItem > p > span:before {
@@ -478,7 +478,7 @@ html {
 }
 
 #headerNav .navItem > p > a > span, #headerNav .navItem > p > span > span {
-  font-family: "Quantico", sans-serif;
+  font-family: "Quantico", "Noto Sans Japanese", sans-serif;
   font-weight: 700;
   font-size: 16px;
   color: #000;
@@ -617,7 +617,7 @@ html {
 @media only screen and (max-width: 768px) {
   #drawerTtl {
     text-align: center;
-    font-family: "Quantico", sans-serif;
+    font-family: "Quantico", "Noto Sans Japanese", sans-serif;
     font-weight: 700;
     font-size: 20px;
     padding: 10px 20px;
@@ -648,7 +648,7 @@ html {
     padding: 10px;
   }
   #drawerNav .navItem > p > a > span, #drawerNav .navItem > p > span > span {
-    font-family: "Quantico", sans-serif;
+    font-family: "Quantico", "Noto Sans Japanese", sans-serif;
     font-weight: 700;
     font-size: 16px;
     color: #000;
@@ -732,6 +732,77 @@ html {
 
 #contents > section {
   margin-top: 80px;
+}
+
+#contents .dir {
+  border-top: 1px solid #f3f3f3;
+  padding: 10px 0;
+}
+
+#contents .dir ul {
+  max-width: 980px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#contents .dir ul > li {
+  padding: 0 10px 0 20px;
+}
+
+#contents .dir ul > li:first-of-type a {
+  font-size: 0;
+  height: 25px;
+  width: 25px;
+  display: block;
+  position: relative;
+}
+
+#contents .dir ul > li:first-of-type a:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  left: 0;
+  margin-top: -0.5em;
+  margin-bottom: -0.5em;
+  color: #000;
+  font-family: 'icons';
+  font-style: normal;
+  -webkit-font-feature-settings: normal;
+          font-feature-settings: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 1;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-transform: none;
+  text-decoration: none;
+}
+
+#contents .dir ul > li + li {
+  position: relative;
+}
+
+#contents .dir ul > li + li:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+  margin-top: -4px;
+  margin-bottom: -4px;
+  border-top: solid 1px #000;
+  border-right: solid 1px #000;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 @media only screen and (max-width: 768px) {
@@ -837,7 +908,7 @@ html {
 .footerCopy {
   margin-top: 20px;
   color: #fff;
-  font-family: "Quantico", sans-serif;
+  font-family: "Quantico", "Noto Sans Japanese", sans-serif;
 }
 
 @media only screen and (max-width: 480px) {
@@ -1181,7 +1252,7 @@ html {
 }
 
 .m-heading .m-hedingTtl span {
-  font-family: "Quantico", sans-serif;
+  font-family: "Quantico", "Noto Sans Japanese", sans-serif;
   font-weight: normal;
   margin-right: 20px;
 }
@@ -1238,13 +1309,13 @@ html {
   background-color: #f6ff00;
   padding: 3px 10px;
   font-size: 12px;
-  font-family: "Quantico", sans-serif;
+  font-family: "Quantico", "Noto Sans Japanese", sans-serif;
   font-weight: 700;
 }
 
 .m-list .m-itemPrice em {
-  font-family: "Quantico", sans-serif;
-  font-weight: 700;
+  font-family: "Saira", sans-serif;
+  font-weight: 600;
   font-size: 20px;
   color: #e60012;
 }
@@ -1299,7 +1370,7 @@ html {
   width: 60%;
   border: 2px solid #000;
   background-color: #fff;
-  font-family: "Quantico", sans-serif;
+  font-family: "Quantico", "Noto Sans Japanese", sans-serif;
   font-weight: 700;
   text-align: center;
   padding: 0 5px;
@@ -1361,7 +1432,7 @@ html {
     margin: 2px auto 0;
     border: 2px solid #000;
     background-color: #fff;
-    font-family: "Quantico", sans-serif;
+    font-family: "Quantico", "Noto Sans Japanese", sans-serif;
     font-weight: 700;
     text-align: center;
     padding: 0;
@@ -2273,6 +2344,7 @@ img.mfp-img {
   height: 100%;
   min-height: 1px;
   margin: 0 10px;
+  outline: none;
   display: none;
 }
 

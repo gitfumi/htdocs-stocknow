@@ -10,6 +10,28 @@
 	>section{
 		margin-top: $sectionMargin;
 	}
+	.dir{
+		border-top: 1px solid $grayBackgroundColor;
+		padding: 10px 0;
+		ul{
+			max-width: $baseWidth;
+			margin: 0 auto;
+			display: flex;
+			>li{
+				padding: 0 10px 0 20px;
+				&:first-of-type a{
+					font-size: 0;
+					height: 25px;
+					width: 25px;
+					display: block;
+					@include iconFontAbsolute(before, home, 50%, null, 50%, 0, 25px, $baseTextColor);
+				}
+				& + li{
+					@include icoArrow(before, 50%, null, 50%, 0, 8px, 1px, $baseTextColor, 45deg);
+				}
+			}
+		}
+	}
 	@include media(tablet) {
 		margin-top: 98px;
 	}

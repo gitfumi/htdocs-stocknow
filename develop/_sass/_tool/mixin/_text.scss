@@ -77,7 +77,7 @@
 // テキストの両端に斜め線（＼ テキスト ／）
 // @include bothSideBorder(線の色, 線の長さ, 線の幅, 線の位置, 角度);
 @mixin bothSideBorder (
-	$borderColor: #000,
+	$borderColor: $baseBorderColor,
 	$borderHeight: 1.2em,
 	$borderWidth: 1px,
 	$borderPosition: .3em,
@@ -121,7 +121,7 @@
 // リンクテキスト
 // @include motionLinkTxt(色);
 @mixin motionLinkTxt(
-		$color : #000
+		$color : $baseTextColor
 	){
 	display: inline-block;
 	padding: 5px 0;

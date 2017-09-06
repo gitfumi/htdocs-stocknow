@@ -30,7 +30,7 @@
 		right: 30px;
 		transform: translateY(-50%);
 		p {
-			@include icoMenu(30px, 30px, null, null, 50%, 50%, 30px, 3px, 30px, #000, 10px);
+			@include icoMenu(30px, 30px, null, null, 50%, 50%, 30px, 3px, 30px, $baseTextColor, 10px);
 		}
 	}
 	&.is-short{
@@ -57,7 +57,7 @@
 	ヘッダー サブメニュー
 ----------------------------------------------------------*/
 #headerSub {
-	background-color: $baseBackgroundColorGray;
+	background-color: $grayBackgroundColor;
 	transition: all .5s;
 	>ul{
 		max-width: $baseWidth;
@@ -110,7 +110,7 @@
 				display: block;
 				cursor: pointer;
 				@include icoArrow(before, null, 50%, 0, 50%, 14px, 2px, $keyColor, 135deg);
-				color: #666666;
+				color: $grayTextColor;
 				&:before{
 					opacity : 0;
 					transition: all .5s
@@ -151,7 +151,7 @@
 					font-family: $fontFamilyQuantico;
 					font-weight: 700;
 					font-size: 16px;
-					color: #000;
+					color: $baseTextColor;
 					em{color: $keyColor;}
 				}
 			}
@@ -167,7 +167,7 @@
 @include media(tablet) {
 	display: block;
 	padding: 30px 0 10px;
-	border-top: 3px solid #000;
+	border-top: 3px solid $baseBorderColor;
 	.navItem{
 		display: none;
 	}
@@ -231,7 +231,7 @@
 		height: 40px;
 		cursor: pointer;
 		transform :translateX(-50%);
-		@include icoSymbol(cross, null, 50%, 50%, null, 20px, 3px, #000);
+		@include icoSymbol(cross, null, 50%, 50%, null, 20px, 3px, $baseTextColor);
 	}
 @include media(tablet){
 	display: none;
@@ -247,7 +247,7 @@
 	font-weight: 700;
 	font-size: 20px;
 	padding: 10px 20px;
-	border-bottom: 2px solid $baseBackgroundColorGray;
+	border-bottom: 2px solid $grayBackgroundColor;
 }
 }
 /* ---------------------------------------------------------
@@ -260,9 +260,9 @@
 		text-align: center;
 		>p{
 			flex-basis: 50%;
-			border-bottom: 2px solid $baseBackgroundColorGray;
+			border-bottom: 2px solid $grayBackgroundColor;
 			&:nth-of-type(odd){
-				border-right: 2px solid $baseBackgroundColorGray;
+				border-right: 2px solid $grayBackgroundColor;
 			}
 			>a,>span{
 				display: block;
@@ -271,12 +271,12 @@
 					font-family: $fontFamilyQuantico;
 					font-weight: 700;
 					font-size: 16px;
-					color: #000;
+					color: $baseTextColor;
 					em{color: $keyColor;}
 				}
 			}
 			>span{
-				background-color: $baseBackgroundColorGray;
+				background-color: $grayBackgroundColor;
 			}
 		}
 	}
@@ -311,7 +311,7 @@
 ----------------------------------------------------------*/
 #drawerCat{
 @include media(tablet){
-	background-color: $baseBackgroundColorGray;;
+	background-color: $grayBackgroundColor;;
 	.c-category{
 		padding: 10px;
 		section{
@@ -341,7 +341,7 @@
 		a{
 			display: block;
 			padding: 5px 10px;
-			border-bottom: 2px solid $baseBackgroundColorGray;
+			border-bottom: 2px solid $grayBackgroundColor;
 		}
 	}
 }

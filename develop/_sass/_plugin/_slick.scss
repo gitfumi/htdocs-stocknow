@@ -64,6 +64,7 @@
 	height: 100%;
 	min-height: 1px;
 	margin: 0 10px;
+	outline: none;
 	[dir="rtl"] & {
 		float: right;
 	}
@@ -79,7 +80,7 @@
 	&.dragging img {
 		pointer-events: none;
 	}
-	
+
 	.slick-initialized & {
 		display: block;
 	}
