@@ -66,6 +66,7 @@
 	<!-- .mainDescription -->
 	<div class="mainDescription">
 		<div class="descriptionIner">
+			<p class="m-btn"><a href="">お店に買いに行く</a></p>
 			<section class="itemDescription">
 				<div class="descriptionInner">
 					<h2 class="itemTtl">商品のご説明</h2>
@@ -119,9 +120,9 @@
 					</ul>
 					<p class="m-btn"><a href=""><span>オンラインショップへ</span></a></p>
 				</div>
-				<div class="googleMap"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3267.8115402190333!2d135.7686516152405!3d35.01142248035595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60010892b447c7bd%3A0x129be69c2875fc7d!2z44K144Ot44Oz44O744OJ44O744Ot44Ov44Kk44Ok44Or!5e0!3m2!1sja!2sjp!4v1504685136405" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
 			</section>
 		</div>
+		<div id="googleMap"></div>
 	</div><!-- .mainDescription -->
 
 
@@ -129,7 +130,7 @@
 	<section class="sec-other">
 		<!-- .m-heading -->
 		<div class="m-heading">
-			<h2 class="m-hedingTtl"><span>For <em>Y</em>ou</span>手土産ギフト</h2>
+			<h2 class="m-hedingTtl"><span>Other item</span>その他の中島大正堂の商品</h2>
 			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
 		</div><!-- .m-heading -->
 
@@ -162,16 +163,16 @@
 		</div>
 	</section><!-- .sec-other -->
 
-	<!-- .sec-temiyage -->
-	<section class="sec-temiyage">
+	<!-- .sec-recommend -->
+	<section class="sec-recommend">
 		<!-- .m-heading -->
 		<div class="m-heading">
-			<h2 class="m-hedingTtl"><span>For <em>Y</em>ou</span>手土産ギフト</h2>
+			<h2 class="m-hedingTtl"><span>Recommend item</span>洋菓子のおすすめ商品</h2>
 			<p class="m-headingLead">ダミーダミーダミー</p>
 			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
 		</div><!-- .m-heading -->
 
-		<div class="temiyageList m-list js-slickResponsive">
+		<div class="recommendList m-list js-slickResponsive">
 			<section class="is-new">
 				<p class="m-itemPic"><img src="/img/pic_item_sample.jpg" alt=""></p>
 				<p class="m-itemBrand">中島大正堂</p>
@@ -243,15 +244,24 @@
 				</div>
 			</section>
 		</div>
-		<p class="m-btn"><a href="">もっとみる</a></p>
-	</section><!-- .sec-temiyage -->
+	</section><!-- .sec-recommend -->
 
 
 </div><!-- /#contents -->
 
 <!--#include virtual="/_inc/footer.html"-->
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDY_Zc_-lcgrKM1jqwjHgzJ-KupHG5iRmw"></script>
 <script>
 $(function(){
+	var googleMap = (function(){
+		var latlng = new google.maps.LatLng(35.166875,136.880485);/*表示したい場所の経度、緯度*/
+		var myOptions = {
+		zoom: 18, /*拡大比率*/
+		center: latlng, /*表示枠内の中心点*/
+		mapTypeId: google.maps.MapTypeId.ROADMAP/*表示タイプの指定*/
+		};
+		var map = new google.maps.Map(document.getElementById('googleMap'), myOptions);
+	}());
 	$(".js_slick").slick({
 	  dots: true,
 	  infinite: true,

@@ -1235,7 +1235,7 @@ html {
   color: #fff;
   font-weight: bold;
   padding: 10px 20px;
-  border-radius: 20px;
+  border-radius: 30px;
   font-size: 16px;
 }
 
@@ -1315,7 +1315,7 @@ html {
 
 .m-list .m-itemPrice em {
   font-family: "Saira", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 20px;
   color: #e60012;
 }

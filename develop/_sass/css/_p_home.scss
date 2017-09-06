@@ -29,6 +29,19 @@ $selectorRoot: "#p_home";
 }
 }
 /* -----------------------------------------------
+/* sec-temiyage
+-------------------------------------------------- */
+#{$selectorRoot} .sec-temiyage{
+	.temiyageList{
+		max-width: $baseWidth;
+		margin: 0 auto;
+	}
+@include media(tablet) {
+}
+@include media(phablet) {
+}
+}
+/* -----------------------------------------------
 /* sec-mine
 -------------------------------------------------- */
 #{$selectorRoot} .sec-mine{

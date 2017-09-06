@@ -4,7 +4,7 @@ $selectorRoot: "#p_item";
 /* ---------------------------------------------
 	商品詳細ページ
 ----------------------------------------------------------*/
-/* mainItem
+/* メイン
 -------------------------------------------------- */
 #{$selectorRoot} .mainItem{
 	background-color: $grayBackgroundColor;
@@ -57,7 +57,7 @@ $selectorRoot: "#p_item";
 	.itemPrice{
 		em{
 			font-family: $fontFamilySaira;
-			font-weight: 600;
+			font-weight: 500;
 			font-size: 34px;
 			color: $keyColor;
 		}
@@ -106,7 +106,7 @@ $selectorRoot: "#p_item";
 			display: flex;
 			>li{
 				flex-grow: 1;
-
+				text-align: center;
 				padding: 3px;
 				font-size: 12px;
 				& + li{
@@ -122,6 +122,126 @@ $selectorRoot: "#p_item";
 				}
 			}
 		}
+	}
+@include media(tablet) {
+}
+@include media(phablet) {
+}
+}
+
+/* ---------------------------------------------
+/* 商品のご説明
+-------------------------------------------------- */
+#{$selectorRoot} .mainDescription{
+	.descriptionIner{
+		max-width: $baseWidth;
+		margin: 0 auto;
+	}
+	.itemTtl{
+		font-size: 18px;
+	}
+	.descriptionTxt{
+		margin-top: 20px;
+	}
+	.variationList{
+		display: flex;
+		>li{
+			position: relative;
+			margin-left: 10px;
+			flex-basis: 20%;
+			span{
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: inline-block;
+				border: 2px solid $baseBorderColor;
+				background-color: #fff;
+				text-align: center;
+				padding: 0 5px;
+				font-size: 12px;
+			}
+		}
+	}
+	.shopList{
+		display: flex;
+		flex-wrap: wrap;
+		>li{
+			flex-basis: calc((100% - 20px) / 2);
+			&:nth-of-type(even){
+				margin-left: 20px;
+			}
+		}
+	}
+@include media(tablet) {
+}
+@include media(phablet) {
+}
+}
+#googleMap{
+	width: 100%;
+	height: 400px;
+}
+/* ---------------------------------------------
+/* 商品のご説明
+-------------------------------------------------- */
+#{$selectorRoot} .mainDescription{
+	.descriptionIner{
+		max-width: $baseWidth;
+		margin: 0 auto;
+	}
+@include media(tablet) {
+}
+@include media(phablet) {
+}
+}
+/* -----------------------------------------------
+/* sec-other
+-------------------------------------------------- */
+#{$selectorRoot} .sec-other{
+	.otherList{
+		max-width: $baseWidth;
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+	}
+	.otherPic{
+		width: 160px;
+		height: 160px;
+		background-color: #f00;
+		border-radius: 100%;
+		overflow: hidden;
+		position: relative;
+		img{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			height: 100%;
+			max-width: none;
+			width: auto;
+			transform: translate(-50%,-50%);
+		}
+	}
+	.otherPrice{
+		em{
+			font-family: $fontFamilySaira;
+			font-weight: 500;
+			font-size: 20px;
+			color: $keyColor;
+		}
+	}
+@include media(tablet) {
+}
+@include media(phablet) {
+}
+}
+/* -----------------------------------------------
+/* sec-recommend
+-------------------------------------------------- */
+#{$selectorRoot} .sec-recommend{
+	.recommendList{
+		max-width: $baseWidth;
+		margin: 0 auto;
 	}
 @include media(tablet) {
 }

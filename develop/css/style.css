@@ -22,6 +22,14 @@
 }
 
 /* -----------------------------------------------
+/* sec-temiyage
+-------------------------------------------------- */
+#p_home .sec-temiyage .temiyageList {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* -----------------------------------------------
 /* sec-mine
 -------------------------------------------------- */
 #p_home .sec-mine .mineList {
@@ -78,7 +86,7 @@
 /* ---------------------------------------------
 	商品詳細ページ
 ----------------------------------------------------------*/
-/* mainItem
+/* メイン
 -------------------------------------------------- */
 #p_item .mainItem {
   background-color: #f3f3f3;
@@ -149,7 +157,7 @@
 
 #p_item .mainItem .itemPrice em {
   font-family: "Saira", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 34px;
   color: #e60012;
 }
@@ -217,6 +225,7 @@
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  text-align: center;
   padding: 3px;
   font-size: 12px;
 }
@@ -233,4 +242,125 @@
 #p_item .mainItem .itemCredit .creditList > li:not(.is-possible) {
   border: 2px solid #999;
   color: #999;
+}
+
+/* ---------------------------------------------
+/* 商品のご説明
+-------------------------------------------------- */
+#p_item .mainDescription .descriptionIner {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+#p_item .mainDescription .itemTtl {
+  font-size: 18px;
+}
+
+#p_item .mainDescription .descriptionTxt {
+  margin-top: 20px;
+}
+
+#p_item .mainDescription .variationList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#p_item .mainDescription .variationList > li {
+  position: relative;
+  margin-left: 10px;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+}
+
+#p_item .mainDescription .variationList > li span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  border: 2px solid #000;
+  background-color: #fff;
+  text-align: center;
+  padding: 0 5px;
+  font-size: 12px;
+}
+
+#p_item .mainDescription .shopList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#p_item .mainDescription .shopList > li {
+  -ms-flex-preferred-size: calc(50% - 10px);
+      flex-basis: calc(50% - 10px);
+}
+
+#p_item .mainDescription .shopList > li:nth-of-type(even) {
+  margin-left: 20px;
+}
+
+#googleMap {
+  width: 100%;
+  height: 400px;
+}
+
+/* ---------------------------------------------
+/* 商品のご説明
+-------------------------------------------------- */
+#p_item .mainDescription .descriptionIner {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* -----------------------------------------------
+/* sec-other
+-------------------------------------------------- */
+#p_item .sec-other .otherList {
+  max-width: 980px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+#p_item .sec-other .otherPic {
+  width: 160px;
+  height: 160px;
+  background-color: #f00;
+  border-radius: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+#p_item .sec-other .otherPic img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  max-width: none;
+  width: auto;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#p_item .sec-other .otherPrice em {
+  font-family: "Saira", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: #e60012;
+}
+
+/* -----------------------------------------------
+/* sec-recommend
+-------------------------------------------------- */
+#p_item .sec-recommend .recommendList {
+  max-width: 980px;
+  margin: 0 auto;
 }
