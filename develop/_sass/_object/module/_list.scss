@@ -76,14 +76,16 @@
 					width: 60%;
 					border: 2px solid $baseBorderColor;
 					background-color: #fff;
-					font-family: $fontFamilyQuantico;
-					font-weight: 700;
+					// font-family: $fontFamilyQuantico;
+					// font-weight: 700;
 					text-align: center;
 					padding: 0 5px;
 				}
 			}
 		}
-		.m-itemLimit{
+		.itemLimit span.txt{
+			font-family: $fontFamilyQuantico;
+			font-weight: 700;
 		}
 	}
 	.m-itemPic.is-train{

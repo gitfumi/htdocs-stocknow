@@ -478,7 +478,7 @@ html {
 }
 
 #headerNav .navItem > p > a > span, #headerNav .navItem > p > span > span {
-  font-family: "Quantico", "Noto Sans Japanese", sans-serif;
+  font-family: "Quantico", sans-serif;
   font-weight: 700;
   font-size: 16px;
   color: #000;
@@ -617,7 +617,7 @@ html {
 @media only screen and (max-width: 768px) {
   #drawerTtl {
     text-align: center;
-    font-family: "Quantico", "Noto Sans Japanese", sans-serif;
+    font-family: "Quantico", sans-serif;
     font-weight: 700;
     font-size: 20px;
     padding: 10px 20px;
@@ -648,7 +648,7 @@ html {
     padding: 10px;
   }
   #drawerNav .navItem > p > a > span, #drawerNav .navItem > p > span > span {
-    font-family: "Quantico", "Noto Sans Japanese", sans-serif;
+    font-family: "Quantico", sans-serif;
     font-weight: 700;
     font-size: 16px;
     color: #000;
@@ -908,7 +908,7 @@ html {
 .footerCopy {
   margin-top: 20px;
   color: #fff;
-  font-family: "Quantico", "Noto Sans Japanese", sans-serif;
+  font-family: "Quantico", sans-serif;
 }
 
 @media only screen and (max-width: 480px) {
@@ -1252,7 +1252,7 @@ html {
 }
 
 .m-heading .m-hedingTtl span {
-  font-family: "Quantico", "Noto Sans Japanese", sans-serif;
+  font-family: "Quantico", sans-serif;
   font-weight: normal;
   margin-right: 20px;
 }
@@ -1309,7 +1309,7 @@ html {
   background-color: #f6ff00;
   padding: 3px 10px;
   font-size: 12px;
-  font-family: "Quantico", "Noto Sans Japanese", sans-serif;
+  font-family: "Quantico", sans-serif;
   font-weight: 700;
 }
 
@@ -1370,10 +1370,13 @@ html {
   width: 60%;
   border: 2px solid #000;
   background-color: #fff;
-  font-family: "Quantico", "Noto Sans Japanese", sans-serif;
-  font-weight: 700;
   text-align: center;
   padding: 0 5px;
+}
+
+.m-list .m-itemParam .itemLimit span.txt {
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
 }
 
 .m-list .m-itemPic.is-train {
@@ -1432,7 +1435,7 @@ html {
     margin: 2px auto 0;
     border: 2px solid #000;
     background-color: #fff;
-    font-family: "Quantico", "Noto Sans Japanese", sans-serif;
+    font-family: "Quantico", sans-serif;
     font-weight: 700;
     text-align: center;
     padding: 0;

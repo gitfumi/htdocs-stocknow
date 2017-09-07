@@ -34,7 +34,7 @@ $selectorRoot: "#p_home";
 #{$selectorRoot} .sec-temiyage{
 	.temiyageList{
 		max-width: $baseWidth;
-		margin: 0 auto;
+		margin: 0 auto 30px;
 	}
 @include media(tablet) {
 }
