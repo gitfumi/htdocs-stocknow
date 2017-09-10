@@ -19,6 +19,7 @@
 			display: flex;
 			>li{
 				padding: 0 10px 0 20px;
+				color: #999;
 				&:first-of-type a{
 					font-size: 0;
 					height: 25px;
@@ -27,7 +28,13 @@
 					@include iconFontAbsolute(before, home, 50%, null, 50%, 0, 25px, $baseTextColor);
 				}
 				& + li{
-					@include icoArrow(before, 50%, null, 50%, 0, 8px, 1px, $baseTextColor, 45deg);
+					@include icoArrow(before, 8px, null, null, 0, 8px, 1px, $baseTextColor, 45deg);
+				}
+				&:not(:first-of-type){
+					a{
+						@include motionLinkTxt();
+						padding: 0 0 5px;
+					}
 				}
 			}
 		}
@@ -37,5 +44,8 @@
 	}
 	@include media(phablet) {
 		margin-top: 78px;
+		>section{
+			margin-top: $sectionMargin / 2;
+		}
 	}
 }

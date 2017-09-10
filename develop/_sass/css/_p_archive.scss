@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+$selectorRoot: "#p_archive";
+/* ---------------------------------------------
+	アーカイブページ
+----------------------------------------------------------*/
+/* -----------------------------------------------
+/* sec-archive
+-------------------------------------------------- */
+#{$selectorRoot} .sec-archive{
+	margin-top: 0;
+	.m-heading{
+		background-color: $grayBackgroundColor;
+		padding: 50px 0;
+	}
+	.archiveList{
+		max-width: $baseWidth;
+		margin: 0 auto 30px;
+		>*{
+			&:nth-of-type(n+5){
+				margin-top: $paramMarginM;
+			}
+		}
+	}
+@include media(tablet) {
+	.archiveList{
+		>*{
+			&:nth-of-type(4){
+				margin-top: $paramMarginM;
+			}
+		}
+	}
+}
+@include media(phablet) {
+	.archiveList{
+		>*{
+			&:nth-of-type(3){
+				margin-top: $paramMarginM;
+			}
+		}
+	}
+}
+}
+
+/* -----------------------------------------------
+/* sec-category
+-------------------------------------------------- */
+#{$selectorRoot} .sec-category{
+	background-color: $grayBackgroundColor;
+	padding: 50px 0;
+@include media(tablet) {
+}
+@include media(phablet) {
+}
+}

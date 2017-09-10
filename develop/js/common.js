@@ -357,6 +357,7 @@ var scrollAnchor = function () {
 		var $self = $(this);
 		var target = this.hash;
 		var top = void 0;
+		var headerHeight = void 0;
 		// リンク先が#topの場合
 		if (target == PAGE_TOP_HASH) {
 			// ページの先頭へスクロール
@@ -367,7 +368,13 @@ var scrollAnchor = function () {
 				// 指定した要素が存在しない場合、a要素にclass（js-noScroll）を指定してた場合は未処理とする
 				if ($(target).length < 1 || $self.hasClass(NO_SCROLL_CLASS)) return false;
 				// スクロール先の座標を調整する
-				top = $(target).offset().top;
+				headerHeight = $('#header').outerHeight();
+				if ($('#header').hasClass('is-short')) {
+					headerHeight = headerHeight + 20;
+				} else {
+					headerHeight = headerHeight - 20;
+				}
+				top = $(target).offset().top - headerHeight;
 				top = Math.min(top, $doc.height() - $win.height());
 			}
 		// ウィールイベントをキャンセルしておく
@@ -477,6 +484,7 @@ Object.defineProperty(exports, "__esModule", {
 var toggoleCategory = function () {
 	var $togglePoint = $('.js-toggleCat_p');
 	var $toggleTarget = $('.js-toggleCat_t');
+	var $closeBtn = $('.js-toggleClose');
 	var SLIDE_DOWN_SPEED = 300;
 	var SLIDE_UP_SPEED = 300;
 
@@ -502,6 +510,11 @@ var toggoleCategory = function () {
 				$self.removeClass('is-hide').addClass('is-show');
 				$toggleTarget.not(':animated').slideDown(SLIDE_DOWN_SPEED);
 			}
+	});
+	$closeBtn.on('click', function () {
+		var $self = $togglePoint;
+		$self.removeClass('is-show is-current').addClass('is-hide');
+		$toggleTarget.not(':animated').slideUp(SLIDE_UP_SPEED);
 	});
 }();
 exports.default = toggoleCategory;

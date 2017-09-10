@@ -2,6 +2,7 @@
 let toggoleCategory = (function() {
 	let $togglePoint= $('.js-toggleCat_p');
 	let $toggleTarget= $('.js-toggleCat_t');
+	let $closeBtn= $('.js-toggleClose');
 	const SLIDE_DOWN_SPEED = 300;
 	const SLIDE_UP_SPEED   = 300;
 
@@ -27,6 +28,11 @@ let toggoleCategory = (function() {
 			$self.removeClass('is-hide').addClass('is-show');
 			$toggleTarget.not(':animated').slideDown(SLIDE_DOWN_SPEED);
 		}
+	});
+	$closeBtn.on('click', function(){
+		let $self              = $togglePoint;
+		$self.removeClass('is-show is-current').addClass('is-hide');
+		$toggleTarget.not(':animated').slideUp(SLIDE_UP_SPEED);
 	});
 }());
 export default toggoleCategory;

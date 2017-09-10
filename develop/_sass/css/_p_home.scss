@@ -7,10 +7,11 @@ $selectorRoot: "#p_home";
 /* mainSlide
 -------------------------------------------------- */
 #{$selectorRoot} .mainSlide{
-	background-color: #e2e2e2;
+	background-color: $grayBackgroundColor;
 	.slideInner{
 		max-width: $baseWidth;
-		margin: 0 auto;
+		margin: 0 auto 30px;
+		padding-bottom: 0;
 	}
 @include media(tablet) {
 }
@@ -21,7 +22,7 @@ $selectorRoot: "#p_home";
 /* sec-category
 -------------------------------------------------- */
 #{$selectorRoot} .sec-category{
-	background-color: #e2e2e2;
+	background-color: $grayBackgroundColor;
 	padding: 50px 0;
 @include media(tablet) {
 }
@@ -39,6 +40,9 @@ $selectorRoot: "#p_home";
 @include media(tablet) {
 }
 @include media(phablet) {
+	.temiyageList{
+		margin: 0 auto;
+	}
 }
 }
 /* -----------------------------------------------
@@ -47,18 +51,37 @@ $selectorRoot: "#p_home";
 #{$selectorRoot} .sec-mine{
 	.mineList{
 		max-width: $baseWidth;
-		margin: 0 auto;
+		margin: 0 auto 30px;
+		>*{
+			&:nth-of-type(n+5){
+				margin-top: $paramMarginM;
+			}
+		}
 	}
 @include media(tablet) {
+	.mineList{
+		>*{
+			&:nth-of-type(4){
+				margin-top: $paramMarginM;
+			}
+		}
+	}
 }
 @include media(phablet) {
+	.mineList{
+		>*{
+			&:nth-of-type(3){
+				margin-top: $paramMarginM;
+			}
+		}
+	}
 }
 }
 /* -----------------------------------------------
 /* sec-station
 -------------------------------------------------- */
 #{$selectorRoot} .sec-station{
-	background-color: #e2e2e2;
+	background-color: $grayBackgroundColor;
 	padding: 50px 0;
 	.stationList{
 		max-width: $baseWidth;
@@ -72,18 +95,45 @@ $selectorRoot: "#p_home";
 				font-weight: bold;
 			}
 			.stationCont{
+				margin-left: 20px;
 				display: inline-block;
 				ul{
 					display: flex;
 					li{
-						margin: 0 10px;
+						margin: 0 5px;
 						a{
-							padding: 15px;
+							padding: 5px 20px;
 							display: block;
 							border: 4px solid $baseBorderColor;
 							font-weight: bold;
 							background-color: #fff;
 							// color: #fff;
+							border-radius: 20px;
+							position: relative;
+							transition: all .5s;
+							&:before{
+								content: '';
+								position: absolute;
+								top: -10px;
+								left: -10px;
+								width: calc(100% + 20px);
+								height: calc(100% + 20px);
+								border: 4px solid #000;
+								border-radius: 30px;
+								transition: all .5s;
+								opacity: 0;
+							}
+							&:hover{
+								color: #fff;
+								background-color: #000;
+								&:before{
+									top: 0;
+									left: 0;
+									width: 100%;
+									height: 100%;
+									opacity: 1;
+								}
+							}
 						}
 					}
 				}
@@ -91,6 +141,25 @@ $selectorRoot: "#p_home";
 		}
 	}
 @include media(tablet) {
+	.stationList{
+		>section{
+			.stationTtl{
+				display: block;
+			}
+			.stationCont{
+				margin: 0;
+				display: inline-block;
+				ul{
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+					li{
+						margin-top: 10px;
+					}
+				}
+			}
+		}
+	}
 }
 @include media(phablet) {
 }

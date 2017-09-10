@@ -34,11 +34,16 @@ $keyColor: 			#e60012;
 
 // section Margin
 $sectionMargin : 80px;
+$paramMarginS : 10px;
+$paramMarginM : $paramMarginS *2;
+$paramMarginL : $paramMarginS *4;
+$paramMarginLL : $paramMarginS *8;
 
 // 標準テキストカラー
 $baseTextColor: 		#000;
 $grayTextColor: 		#666;
 $lightgrayTextColor: 	#999;
+$whiteTextColor: 	#fff;
 
 // 標準ボーダーカラー
 $baseBorderColor: 		#000;

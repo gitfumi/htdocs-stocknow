@@ -13,6 +13,7 @@ let scrollAnchor = (function() {
 		let $self = $(this);
 		let target = this.hash;
 		let top;
+		let headerHeight;
 		// リンク先が#topの場合
 		if (target == PAGE_TOP_HASH) {
 			// ページの先頭へスクロール
@@ -23,7 +24,13 @@ let scrollAnchor = (function() {
 			// 指定した要素が存在しない場合、a要素にclass（js-noScroll）を指定してた場合は未処理とする
 			if ($(target).length < 1 || $self.hasClass(NO_SCROLL_CLASS)) return false;
 			// スクロール先の座標を調整する
-			top = $(target).offset().top;
+			headerHeight = $('#header').outerHeight();
+			if($('#header').hasClass('is-short')){
+				headerHeight = headerHeight + 20;
+			}else{
+				headerHeight = headerHeight - 20;
+			}
+			top = $(target).offset().top - headerHeight;
 			top = Math.min(top, $doc.height() - $win.height());
 		}
 		// ウィールイベントをキャンセルしておく
