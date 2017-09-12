@@ -1,0 +1,20 @@
+name: Custom Fields Listing
+id: CustomFieldsListing
+author_name: <__trans phrase="Hajime Fujimoto">
+author_link: http://www.h-fj.com/blog/
+description: <__trans phrase="View values of custom fields in listing screen.">
+plugin_link: http://www.h-fj.com/blog/mtplgdoc/customfieldslisting.php
+doc_link: http://www.h-fj.com/blog/mtplgdoc/customfieldslisting.php
+version: 1.20
+l10n_class: CustomFieldsListing::L10N
+blog_config_template: plugin_config.tmpl
+system_config_template: plugin_config.tmpl
+settings:
+  fjcfl_enable_native_sort:
+    Default: 0
+applications:
+  cms:
+    callbacks:
+      init_request: $CustomFieldsListing::CustomFieldsListing::Plugin::init_request
+      template_param.header: $CustomFieldsListing::CustomFieldsListing::Plugin::header_add_styles
+list_properties: $CustomFieldsListing::CustomFieldsListing::Plugin::list_props
