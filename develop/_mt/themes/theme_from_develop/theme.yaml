@@ -6,6 +6,159 @@ elements:
   custom_fields:
     component: commercial
     data:
+      categorybrandlogo:
+        default: ''
+        description: ''
+        name: ブランドロゴ
+        obj_type: category
+        options: ~
+        required: '0'
+        tag: CategoryBrandLogo
+        type: image
+      categoryonlinepay:
+        default: '0'
+        description: ''
+        name: オンライン支払方法
+        obj_type: category
+        options: ~
+        required: '0'
+        tag: CategoryOnlinePay
+        type: checkbox
+      categoryonlineurl:
+        default: http://
+        description: ''
+        name: オンラインURL
+        obj_type: category
+        options: ~
+        required: '0'
+        tag: CategoryOnlineURL
+        type: url
+      categoryshopaddress1:
+        default: ''
+        description: ''
+        name: 実店舗--店舗住所1
+        obj_type: category
+        options: ~
+        required: '0'
+        tag: CategoryShopAddress1
+        type: text
+      categoryshopaddress2:
+        default: ''
+        description: ''
+        name: 実店舗--店舗住所2
+        obj_type: category
+        options: ~
+        required: '0'
+        tag: CategoryShopAddress2
+        type: text
+      categoryshopaddress3:
+        default: ''
+        description: ''
+        name: 実店舗--店舗住所3
+        obj_type: category
+        options: ~
+        required: '0'
+        tag: CategoryShopAddress3
+        type: text
+      categoryshopaddress4:
+        default: ''
+        description: ''
+        name: 実店舗--店舗住所4
+        obj_type: category
+        options: ~
+        required: '0'
+        tag: CategoryShopAddress4
+        type: text
+      categoryshopname1:
+        default: ''
+        description: ''
+        name: 実店舗--店舗名1
+        obj_type: category
+        options: ~
+        required: '0'
+        tag: CategoryShopName1
+        type: text
+      categoryshopname2:
+        default: ''
+        description: ''
+        name: 実店舗--店舗名2
+        obj_type: category
+        options: ~
+        required: '0'
+        tag: CategoryShopName2
+        type: text
+      categoryshopname3:
+        default: ''
+        description: ''
+        name: 実店舗--店舗名3
+        obj_type: category
+        options: ~
+        required: '0'
+        tag: CategoryData3
+        type: text
+      categoryshopname4:
+        default: ''
+        description: ''
+        name: 実店舗--店舗名4
+        obj_type: category
+        options: ~
+        required: '0'
+        tag: CategoryShopName4
+        type: text
+      categoryshopoverview1:
+        default: ''
+        description: ''
+        name: 実店舗--店舗概要1
+        obj_type: category
+        options: ~
+        required: '0'
+        tag: CategoryShopOverview1
+        type: textarea
+      categoryshopoverview2:
+        default: ''
+        description: ''
+        name: 実店舗--店舗概要2
+        obj_type: category
+        options: ~
+        required: '0'
+        tag: CategoryShopOverview2
+        type: textarea
+      categoryshopoverview3:
+        default: ''
+        description: ''
+        name: 実店舗--店舗概要3
+        obj_type: category
+        options: ~
+        required: '0'
+        tag: CategoryShopOverview3
+        type: textarea
+      categoryshopoverview4:
+        default: ''
+        description: ''
+        name: 実店舗--店舗概要4
+        obj_type: category
+        options: ~
+        required: '0'
+        tag: CategoryShopOverview4
+        type: textarea
+      categoryshopurl:
+        default: http://
+        description: ''
+        name: 他店舗リンク
+        obj_type: category
+        options: ~
+        required: '0'
+        tag: CategoryShopURL
+        type: url
+      categorystate:
+        default: '0'
+        description: ''
+        name: 配送・状態
+        obj_type: category
+        options: ~
+        required: '0'
+        tag: CategoryState
+        type: checkbox
       entrydetails:
         default: ''
         description: ''
@@ -60,24 +213,6 @@ elements:
         required: '0'
         tag: EntryLimitDate
         type: text
-      entryonlinepay:
-        default: '0'
-        description: ''
-        name: オンライン支払方法
-        obj_type: entry
-        options: ~
-        required: '0'
-        tag: EntryOnlinePay
-        type: checkbox
-      entryonlineurl:
-        default: http://
-        description: ''
-        name: オンラインURL
-        obj_type: entry
-        options: ~
-        required: '0'
-        tag: EntryOnlineURL
-        type: url
       entryprice:
         default: ''
         description: 例：10000
@@ -87,132 +222,6 @@ elements:
         required: '0'
         tag: EntryPrice
         type: text
-      entryshopaddress1:
-        default: ''
-        description: ''
-        name: 実店舗--店舗住所1
-        obj_type: entry
-        options: ~
-        required: '0'
-        tag: EntryShopAddress1
-        type: text
-      entryshopaddress2:
-        default: ''
-        description: ''
-        name: 実店舗--店舗住所2
-        obj_type: entry
-        options: ~
-        required: '0'
-        tag: EntryShopAddress2
-        type: text
-      entryshopaddress3:
-        default: ''
-        description: ''
-        name: 実店舗--店舗住所3
-        obj_type: entry
-        options: ~
-        required: '0'
-        tag: EntryShopAddress3
-        type: text
-      entryshopaddress4:
-        default: ''
-        description: ''
-        name: 実店舗--店舗住所4
-        obj_type: entry
-        options: ~
-        required: '0'
-        tag: EntryShopAddress4
-        type: text
-      entryshopname1:
-        default: ''
-        description: ''
-        name: 実店舗--店舗名1
-        obj_type: entry
-        options: ~
-        required: '0'
-        tag: EntryShopName1
-        type: text
-      entryshopname2:
-        default: ''
-        description: ''
-        name: 実店舗--店舗名2
-        obj_type: entry
-        options: ~
-        required: '0'
-        tag: EntryShopName2
-        type: text
-      entryshopname3:
-        default: ''
-        description: ''
-        name: 実店舗--店舗名3
-        obj_type: entry
-        options: ~
-        required: '0'
-        tag: EntryShopName3
-        type: text
-      entryshopname4:
-        default: ''
-        description: ''
-        name: 実店舗--店舗名4
-        obj_type: entry
-        options: ~
-        required: '0'
-        tag: EntryShopName4
-        type: text
-      entryshopoverview1:
-        default: ''
-        description: ''
-        name: 実店舗--店舗概要1
-        obj_type: entry
-        options: ~
-        required: '0'
-        tag: EntryShopOverview1
-        type: textarea
-      entryshopoverview2:
-        default: ''
-        description: ''
-        name: 実店舗--店舗概要2
-        obj_type: entry
-        options: ~
-        required: '0'
-        tag: EntryShopOverview2
-        type: textarea
-      entryshopoverview3:
-        default: ''
-        description: ''
-        name: 実店舗--店舗概要3
-        obj_type: entry
-        options: ~
-        required: '0'
-        tag: EntryShopOverview3
-        type: textarea
-      entryshopoverview4:
-        default: ''
-        description: ''
-        name: 実店舗--店舗概要4
-        obj_type: entry
-        options: ~
-        required: '0'
-        tag: EntryShopOverview4
-        type: textarea
-      entryshopurl:
-        default: http://
-        description: ''
-        name: 他店舗リンク
-        obj_type: entry
-        options: ~
-        required: '0'
-        tag: EntryShopURL
-        type: url
-      entrystate:
-        default: '0'
-        description: ''
-        name: 配送・状態
-        obj_type: entry
-        options: ~
-        required: '0'
-        tag: EntryState
-        type: checkbox
       entryvariationimage1:
         default: ''
         description: ''
