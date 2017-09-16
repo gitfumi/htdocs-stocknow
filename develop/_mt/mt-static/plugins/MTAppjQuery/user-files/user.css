@@ -2,6 +2,132 @@
 /* ブログ記事編集画面の[表示オプション]を非表示にする */
 /*
 #display-options {
-    display: none;
+	display: none;
 }
 */
+/* ---------------------------------------------
+	MT　新規・編集ページ
+----------------------------------------------------------*/
+/* 管理画面 共通
+-------------------------------------------------- */
+body {
+  font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+body input, body textarea {
+  font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  height: auto !important;
+  padding: 5px !important;
+}
+
+body input:focus, body textarea:focus {
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, .4) !important;
+          box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, .4) !important;
+}
+
+body .field-header {
+  color: #999 !important;
+}
+
+body .basename-label {
+  font-weight: bold !important;
+}
+
+/*------------------------------------------------
+   カテゴリ
+-------------------------------------------------- */
+#edit-category .mtapp-shop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-left: 40px;
+  margin-bottom: 20px;
+}
+
+#edit-category .mtapp-shop * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#edit-category .mtapp-shop > .mtapp-shopBlock {
+  -ms-flex-preferred-size: calc(50% - 10px);
+      flex-basis: calc(50% - 10px);
+  background-color: #fcfcfc;
+  padding: 10px;
+}
+
+#edit-category .mtapp-shop > .mtapp-shopBlock:nth-of-type(even) {
+  margin-left: 20px;
+}
+
+#edit-category .mtapp-shop > .mtapp-shopBlock:nth-of-type(n+3) {
+  margin-top: 20px;
+}
+
+#edit-category .mtapp-shop .field {
+  margin-bottom: 0;
+}
+
+#edit-category .mtapp-shop .field-header {
+  width: 110px;
+}
+
+#edit-category .mtapp-shop .field-content {
+  margin-left: 130px;
+  width: calc(100% - 130px);
+}
+
+#edit-category .mtapp-shop .field-content input, #edit-category .mtapp-shop .field-content textarea {
+  width: 100%;
+}
+
+#edit-category .mtapp-shop .field-content textarea {
+  min-height: 110px;
+}
+
+#edit-category .mcb-container label + label {
+  margin-left: 20px;
+}
+
+/*------------------------------------------------
+   商品詳細
+-------------------------------------------------- */
+#edit-entry .mtapp-vertical {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+#edit-entry .mtapp-vertical * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#edit-entry .mtapp-vertical > .mtapp-verticalBlock .field {
+  margin-bottom: 0;
+}
+
+#edit-entry .mtapp-vertical.is-picture > .mtapp-verticalBlock, #edit-entry .mtapp-vertical.is-variation > .mtapp-verticalBlock {
+  -ms-flex-preferred-size: 33.33333%;
+      flex-basis: 33.33333%;
+  background-color: #fcfcfc;
+  padding: 10px;
+}
+
+#edit-entry .mtapp-vertical.is-picture > .mtapp-verticalBlock .field:first-of-type, #edit-entry .mtapp-vertical.is-variation > .mtapp-verticalBlock .field:first-of-type {
+  margin-bottom: 10px;
+}
+
+#edit-entry .mtapp-vertical.is-pli > .mtapp-verticalBlock {
+  -ms-flex-preferred-size: calc(33.33333% - 13.33333px);
+      flex-basis: calc(33.33333% - 13.33333px);
+}
+
+#edit-entry .mtapp-vertical.is-pli > .mtapp-verticalBlock + .mtapp-verticalBlock {
+  margin-left: 20px;
+}

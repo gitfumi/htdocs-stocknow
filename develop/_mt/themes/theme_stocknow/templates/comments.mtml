@@ -1,0 +1,14 @@
+<mt:IfCommentsActive>
+<section id="comments" class="feedback">
+  <h2><$mt:EntryCommentCount singular="コメント" plural="コメント" none="コメント"$></h2>
+  <mt:Comments>
+  <$mt:Include module="コメント詳細"$>
+  </mt:Comments>
+  <mt:IfCommentsAccepted>
+    <mt:IfRegistrationAllowed>
+  <p id="comment-greeting" class="message">コメントする</p>
+    </mt:IfRegistrationAllowed>
+  <$mt:Include module="コメント入力フォーム"$>
+  </mt:IfCommentsAccepted>
+</section>
+</mt:IfCommentsActive>

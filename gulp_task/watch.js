@@ -14,6 +14,7 @@ gulp.task('watch', function() {
 	var w_sass          = gulp.watch([conf.src + '/**/*.scss'], ['sass', reload]);
 	var w_babelify      = gulp.watch([conf.src + '/**/js/_common/**/*.js'], ['babelify', reload]);
 	var w_concat        = gulp.watch([conf.src + '/**/js/_plugin/**/*.js'], ['concat', reload]);
+	var w_uglify_MTAppjQuery = gulp.watch([conf.src + '/**/js/_MTAppjQuery/**/*.js'], ['uglify_MTAppjQuery', reload]);
 	// var w_frontnote     = gulp.watch([
 	// 	conf.src + '/_sass/object/component/**/*.scss',
 	// 	conf.src + '/_sass/object/module/**/*.scss'
@@ -29,6 +30,9 @@ gulp.task('watch', function() {
 		console.log('javascript File ' + event.path + ' was ' + event.type);
 	});
 	w_concat.on('change', function(event){
+		console.log('javascript File ' + event.path + ' was ' + event.type + ', running task concat...');
+	});
+	w_uglify_MTAppjQuery.on('change', function(event){
 		console.log('javascript File ' + event.path + ' was ' + event.type + ', running task concat...');
 	});
 });
