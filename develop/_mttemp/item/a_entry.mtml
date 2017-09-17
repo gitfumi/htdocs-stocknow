@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title><mt:EntryTitle encode_html="1">｜<mt:BlogName encode_html="1"></title>
+<meta name="description" content="ディスクリプションディスクリプションディスクリプション">
+<!--#include virtual="/_inc/meta.html"-->
+<meta property="og:type" content="article">
+<meta property="og:title" content="<mt:EntryTitle encode_html="1">｜<mt:BlogName encode_html="1">">
+<meta property="og:description" content="ディスクリプションディスクリプションディスクリプション">
+<meta property="og:url" content="<mt:EntryPermalink encode_html="1">">
+<meta property="og:image" content="サムネイル画像のURL">
+<!--#include virtual="/_inc/ogp.html"-->
+<!--#include virtual="/_inc/link.html"-->
+</head>
+
+<body id="p_item">
+<!--#include virtual="/_inc/analytics.html"-->
+<!--#include virtual="/_inc/header.html"-->
+
+<!-- #contents -->
+<div id="contents">
+
+	<div class="dir">
+		<ul>
+			<li><a href="/">home</a></li>
+			<li><a href="">カテゴリ名</a></li>
+			<li><mt:EntryTitle encode_html="1"></li>
+		</ul>
+	</div>
+
+<mt:For regex_replace="/^\s*\n/gm",""><mt:ignore><!-- 改行削除 --></mt:ignore>
+<mt:Truncateurl>
+
+	<!-- .mainItem -->
+	<div class="mainItem">
+		<div class="itemInner">
+			<div class="itemAlbum is-new">
+				<div id="js-slickMain" class="albumMain">
+					<mt:If tag="EntryImage"><mt:EntryImageAsset>
+					<div class="mainItem"><img src="<mt:AssetURL>" alt=""></div></mt:EntryImageAsset></mt:If>
+					<mt:If tag="EntryImageSub1"><mt:EntryImageSub1Asset>
+					<div class="mainItem"><img src="<mt:AssetURL>" alt=""></div></mt:EntryImageSub1Asset></mt:If>
+					<mt:If tag="EntryImageSub2"><mt:EntryImageSub2Asset>
+					<div class="mainItem"><img src="<mt:AssetURL>" alt=""></div></mt:EntryImagesub2Asset></mt:If>
+				</div>
+				<div id="js-slickThum" class="albumList">
+					<mt:If tag="EntryImage"><mt:EntryImageAsset>
+					<div class="listItem"><img src="<mt:AssetURL>" alt=""></div></mt:EntryImageAsset></mt:If>
+					<mt:If tag="EntryImageSub1"><mt:EntryImageSub1Asset>
+					<div class="listItem"><img src="<mt:AssetURL>" alt=""></div></mt:EntryImageSub1Asset></mt:If>
+					<mt:If tag="EntryImageSub2"><mt:EntryImageSub2Asset>
+					<div class="listItem"><img src="<mt:AssetURL>" alt=""></div></mt:EntryImagesub2Asset></mt:If>
+				</div>
+			</div>
+
+			<section class="itemHead">
+				<p class="itemBrand"><mt:EntryCategories><mt:CategoryLabel></mt:EntryCategories></p>
+				<h1 class="itemName"><mt:EntryTitle encode_html="1"></h1>
+				<p class="itemPrice itemStatus is-frozen"><em>1,280</em>円（税込）</p>
+				<div class="itemParam">
+					<p class="itemLimit"><span class="ttl">賞味期限</span><span class="txt">5~10 days</span></p>
+					<p class="itemStation"><span class="ttl">販売店</span><span class="txt">新宿駅</span></p>
+				</div>
+				<div class="itemCredit">
+					<p class="creditTtl">オンラインショップの支払方法</p>
+					<ul class="creditList">
+						<li>銀行振込</li>
+						<li>代金引換</li>
+						<li>クレジットカード</li>
+						<li>コンビニ決済</li>
+					</ul>
+				</div>
+				<p class="itemBtn m-btn is-blank"><a href=""><span>オンラインショップへ</span></a></p>
+			</section>
+		</div>
+	</div><!-- .mainItem -->
+
+	<!-- .mainDetails -->
+	<div class="mainDetails">
+		<div class="detailsInner">
+			<p class="m-btn detailsBtn is-shop"><a href="#anc-shop"><span>お店に買いに行く</span></a></p>
+			<section class="itemDescription">
+				<div class="descriptionInner">
+					<h2 class="itemTtl">商品のご説明</h2>
+					<p class="descriptionTxt">キャンディコーティングした希少な天然のピーカンナッツを、 後口の良いホワイトチョコで包み、キャラメルパウダーを まぶして仕上げました。<br>
+					香ばしいナッツと、オリジナルレシピで仕上げた後口の良い ホワイトチョコの相性が抜群。<br>
+					<br>
+					第25回全国菓子大博覧会で日本商工会議所会頭賞を受賞した当店自慢の逸品。<br>
+					手土産にも最適なパッケージで加わりました。</p>
+				</div>
+			</section>
+
+			<section class="itemVariation">
+				<div class="variationInner">
+					<h2 class="itemTtl">容量バリエーション（個数）</h2>
+					<ul class="variationList">
+						<li><img src="/img/item/pic_bake_var01.png" alt=""><span>1 PIECE</span></li>
+						<li><img src="/img/item/pic_bake_var02.png" alt=""><span>6 PIEACE(BOX)</span></li>
+					</ul>
+				</div>
+			</section>
+
+			<section id="anc-shop" class="itemShop">
+				<div class="shopInner">
+					<h2 class="itemTtl">実店舗情報</h2>
+					<ul class="shopList">
+						<li>
+							<p class="shopName">京都本店</p>
+							<p class="shopAdress">京都市中京区木屋町通御池上る上樵木町502<br>
+							11：00～20：00(L.O.19:30)<br>
+							地下鉄東西線「市役所前駅」</p>
+						</li>
+						<li>
+							<p class="shopName">京都本店</p>
+							<p class="shopAdress">京都市中京区木屋町通御池上る上樵木町502<br>
+							11：00～20：00(L.O.19:30)<br>
+							地下鉄東西線「市役所前駅」</p>
+						</li>
+						<li>
+							<p class="shopName">三番街店</p>
+							<p class="shopAdress">京大阪府北区芝田1-1-3阪急三番街南館B2F<br>
+							10:00～21:00<br>
+							阪急「梅田駅」</p>
+						</li>
+						<li>
+							<p class="shopName">三番街店</p>
+							<p class="shopAdress">京大阪府北区芝田1-1-3阪急三番街南館B2F<br>
+							10:00～21:00<br>
+							阪急「梅田駅」</p>
+						</li>
+					</ul>
+					<p class="m-btn shopBtn is-place"><a href=""><span>その他の店舗を探す</span></a></p>
+				</div>
+			</section>
+		</div>
+		<div id="googleMap"></div>
+	</div><!-- .mainDetails -->
+
+
+	<!-- .sec-other -->
+	<section class="sec-other">
+		<!-- .m-heading -->
+		<div class="m-heading">
+			<h2 class="m-hedingTtl"><span>Other item</span>その他の中島大正堂の商品</h2>
+			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
+		</div><!-- .m-heading -->
+
+		<div class="otherList">
+			<section class="is_new"><a href="">
+				<p class="otherPic"><img src="/img/pic_item_sample.jpg" alt=""></p>
+				<h3 class="otherName">ピーカンナッツチョコレート ピーカンナッツチョコレート</h3>
+				<p class="otherPrice"><em>1,280</em>円（税込）</p>
+			</a></section>
+			<section class="is_new"><a href="">
+				<p class="otherPic"><img src="/img/pic_item_sample.jpg" alt=""></p>
+				<h3 class="otherName">ピーカンナッツチョコレート ピーカンナッツチョコレート</h3>
+				<p class="otherPrice"><em>1,280</em>円（税込）</p>
+			</a></section>
+			<section><a href="">
+				<p class="otherPic"><img src="/img/pic_item_sample.jpg" alt=""></p>
+				<h3 class="otherName">ピーカンナッツチョコレート ピーカンナッツチョコレート</h3>
+				<p class="otherPrice"><em>1,280</em>円（税込）</p>
+			</a></section>
+			<section><a href="">
+				<p class="otherPic"><img src="/img/pic_item_sample.jpg" alt=""></p>
+				<h3 class="otherName">ピーカンナッツチョコレート ピーカンナッツチョコレート</h3>
+				<p class="otherPrice"><em>1,280</em>円（税込）</p>
+			</a></section>
+			<section><a href="">
+				<p class="otherPic"><img src="/img/pic_item_sample.jpg" alt=""></p>
+				<h3 class="otherName">ピーカンナッツチョコレート ピーカンナッツチョコレート</h3>
+				<p class="otherPrice"><em>1,280</em>円（税込）</p>
+			</a></section>
+		</div>
+	</section><!-- .sec-other -->
+
+	<!-- .sec-recommend -->
+	<section class="sec-recommend">
+		<!-- .m-heading -->
+		<div class="m-heading">
+			<h2 class="m-hedingTtl"><span>Recommend item</span>洋菓子のおすすめ商品</h2>
+			<p class="m-headingLead">ダミーダミーダミー</p>
+			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
+		</div><!-- .m-heading -->
+
+		<div class="recommendList m-list js-slickResponsive">
+			<section class="is-new"><a href="">
+				<p class="m-itemPic"><img src="/img/pic_item_sample.jpg" alt=""></p>
+				<p class="m-itemBrand">中島大正堂</p>
+				<h3 class="m-itemName">ピーカンナッツチョコレート ピーカンナッツチョコレート</h3>
+				<p class="m-itemPrice m-itemStatus is-frozen"><em>1,280</em>円（税込）</p>
+				<div class="m-itemParam">
+					<p class="m-itemLimit"><span class="ttl">賞味期限</span><span class="txt">5~10 days</span></p>
+					<p class="m-itemStation"><span class="ttl">販売店</span><span class="txt">新宿駅</span></p>
+				</div>
+			</a></section>
+			<section class="is-new"><a href="">
+				<p class="m-itemPic is-train"><img src="/img/pic_item_sample.jpg" alt=""></p>
+				<p class="m-itemBrand">中島大正堂</p>
+				<h3 class="m-itemName">ピーカンナッツチョコレート ピーカンナッツチョコレート</h3>
+				<p class="m-itemPrice m-itemStatus is-frozen"><em>1,280</em>円（税込）</p>
+				<div class="m-itemParam">
+					<p class="m-itemLimit"><span class="ttl">賞味期限</span><span class="txt">5~10 days</span></p>
+					<p class="m-itemStation"><span class="ttl">販売店</span><span class="txt">新宿駅</span></p>
+				</div>
+			</a></section>
+			<section><a href="">
+				<p class="m-itemPic"><img src="/img/pic_item_sample.jpg" alt=""></p>
+				<p class="m-itemBrand">中島大正堂</p>
+				<h3 class="m-itemName">ピーカンナッツチョコレート ピーカンナッツチョコレート</h3>
+				<p class="m-itemPrice m-itemStatus is-frozen"><em>1,280</em>円（税込）</p>
+				<div class="m-itemParam">
+					<p class="m-itemLimit"><span class="ttl">賞味期限</span><span class="txt">5~10 days</span></p>
+					<p class="m-itemStation"><span class="ttl">販売店</span><span class="txt">新宿駅</span></p>
+				</div>
+			</a></section>
+			<section><a href="">
+				<p class="m-itemPic"><img src="/img/pic_item_sample.jpg" alt=""></p>
+				<p class="m-itemBrand">中島大正堂</p>
+				<h3 class="m-itemName">ピーカンナッツチョコレート ピーカンナッツチョコレート</h3>
+				<p class="m-itemPrice m-itemStatus is-frozen"><em>1,280</em>円（税込）</p>
+				<div class="m-itemParam">
+					<p class="m-itemLimit"><span class="ttl">賞味期限</span><span class="txt">5~10 days</span></p>
+					<p class="m-itemStation"><span class="ttl">販売店</span><span class="txt">新宿駅</span></p>
+				</div>
+			</a></section>
+			<section><a href="">
+				<p class="m-itemPic"><img src="/img/pic_item_sample.jpg" alt=""></p>
+				<p class="m-itemBrand">中島大正堂</p>
+				<h3 class="m-itemName">ピーカンナッツチョコレート ピーカンナッツチョコレート</h3>
+				<p class="m-itemPrice m-itemStatus is-frozen"><em>1,280</em>円（税込）</p>
+				<div class="m-itemParam">
+					<p class="m-itemLimit"><span class="ttl">賞味期限</span><span class="txt">5~10 days</span></p>
+					<p class="m-itemStation"><span class="ttl">販売店</span><span class="txt">新宿駅</span></p>
+				</div>
+			</a></section>
+			<section><a href="">
+				<p class="m-itemPic"><img src="/img/pic_item_sample.jpg" alt=""></p>
+				<p class="m-itemBrand">中島大正堂</p>
+				<h3 class="m-itemName">ピーカンナッツチョコレート ピーカンナッツチョコレート</h3>
+				<p class="m-itemPrice m-itemStatus is-frozen"><em>1,280</em>円（税込）</p>
+				<div class="m-itemParam">
+					<p class="m-itemLimit"><span class="ttl">賞味期限</span><span class="txt">5~10 days</span></p>
+					<p class="m-itemStation"><span class="ttl">販売店</span><span class="txt">新宿駅</span></p>
+				</div>
+			</a></section>
+			<section><a href="">
+				<p class="m-itemPic"><img src="/img/pic_item_sample.jpg" alt=""></p>
+				<p class="m-itemBrand">中島大正堂</p>
+				<h3 class="m-itemName">ピーカンナッツチョコレート ピーカンナッツチョコレート</h3>
+				<p class="m-itemPrice m-itemStatus is-frozen"><em>1,280</em>円（税込）</p>
+				<div class="m-itemParam">
+					<p class="m-itemLimit"><span class="ttl">賞味期限</span><span class="txt">5~10 days</span></p>
+					<p class="m-itemStation"><span class="ttl">販売店</span><span class="txt">新宿駅</span></p>
+				</div>
+			</a></section>
+		</div>
+		<p class="m-btn"><a href="">もっとみる</a></p>
+	</section><!-- .sec-recommend -->
+
+</mt:Truncateurl>
+</mt:For><mt:ignore><!-- //改行削除 --></mt:ignore>
+
+</div><!-- /#contents -->
+
+<!--#include virtual="/_inc/footer.html"-->
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDY_Zc_-lcgrKM1jqwjHgzJ-KupHG5iRmw"></script>
+<script src="/js/item.js"></script>
+</body>
+</html>
