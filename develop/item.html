@@ -41,14 +41,14 @@
 					<li><img src="/img/pic_main_sample.jpg" alt=""></li>
 				</ul> -->
 				<div id="js-slickMain" class="albumMain">
-					<div class="mainItem"><img src="/img/pic_main_sample.jpg" alt=""></div>
-					<div class="mainItem"><img src="/img/pic_main_sample02.jpg" alt=""></div>
-					<div class="mainItem"><img src="/img/pic_main_sample03.jpg" alt=""></div>
+					<div class="mainItem"><img src="/img/item/pic_bake_main.png" alt=""></div>
+					<div class="mainItem"><img src="/img/item/pic_bake_sub01.jpg" alt=""></div>
+					<div class="mainItem"><img src="/img/item/pic_bake_sub02.jpg" alt=""></div>
 				</div>
 				<div id="js-slickThum" class="albumList">
-					<div class="listItem"><img src="/img/pic_main_sample.jpg" alt=""></div>
-					<div class="listItem"><img src="/img/pic_main_sample02.jpg" alt=""></div>
-					<div class="listItem"><img src="/img/pic_main_sample03.jpg" alt=""></div>
+					<div class="listItem"><img src="/img/item/pic_bake_main.png" alt=""></div>
+					<div class="listItem"><img src="/img/item/pic_bake_sub01.jpg" alt=""></div>
+					<div class="listItem"><img src="/img/item/pic_bake_sub02.jpg" alt=""></div>
 				</div>
 			</div>
 			<section class="itemHead">
@@ -92,9 +92,8 @@
 				<div class="variationInner">
 					<h2 class="itemTtl">容量バリエーション（個数）</h2>
 					<ul class="variationList">
-						<li><img src="/img/pic_main_sample_var01.png" alt=""><span>10袋入り</span></li>
-						<li><img src="/img/pic_main_sample_var01.png" alt=""><span>10袋入り×2</span></li>
-						<li><img src="/img/pic_main_sample_var01.png" alt=""><span>10袋入り×3</span></li>
+						<li><img src="/img/item/pic_bake_var01.png" alt=""><span>1 PIECE</span></li>
+						<li><img src="/img/item/pic_bake_var02.png" alt=""><span>6 PIEACE(BOX)</span></li>
 					</ul>
 				</div>
 			</section>
@@ -262,62 +261,6 @@
 
 <!--#include virtual="/_inc/footer.html"-->
 <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDY_Zc_-lcgrKM1jqwjHgzJ-KupHG5iRmw"></script>
-<script>
-$(function(){
-	var googleMap = (function(){
-		var latlng = new google.maps.LatLng(35.166875,136.880485);/*表示したい場所の経度、緯度*/
-		var myOptions = {
-		zoom: 18, /*拡大比率*/
-		center: latlng, /*表示枠内の中心点*/
-		mapTypeId: google.maps.MapTypeId.ROADMAP/*表示タイプの指定*/
-		};
-		var map = new google.maps.Map(document.getElementById('googleMap'), myOptions);
-	}());
-	$('#js-slickMain').slick({
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		arrows: false,
-		fade: true,
-		asNavFor: '#js-slickThum'
-	});
-	$('#js-slickThum').slick({
-		slidesToShow: 3,
-		slidesToScroll: 1,
-		asNavFor: '#js-slickMain',
-		dots: true,
-		centerMode: true,
-		focusOnSelect: true
-	});
-
-	$('.js-slickResponsive').slick({
-		dots: true,
-		infinite: true,
-		arrows : false,
-		speed: 1000,
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		autoplay: true,
-		autoplaySpeed: 2000,
-		// centerMode: true, //要素を中央寄せ
-		// centerPadding:'100px', //両サイドの見えている部分のサイズ
-		responsive: [
-			{
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 3,
-					slidesToScroll: 3
-				}
-			},
-			{
-				breakpoint: 480,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 2
-				}
-			}
-		]
-	});
-})
-</script>
+<script src="/js/item.js"></script>
 </body>
 </html>
