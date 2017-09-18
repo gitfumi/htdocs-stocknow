@@ -33,6 +33,35 @@
 <mt:For regex_replace="/^\s*\n/gm",""><mt:ignore><!-- 改行削除 --></mt:ignore>
 <mt:Truncateurl>
 
+<mt:entrycategories>
+<mt:ParentCategory>
+	<mt:SetVarBlock name="parentCategory"><mt:CategoryBasename></mt:SetVarBlock>
+	<mt:ParentCategory><mt:SetVarBlock name="parentTopCategory"><mt:CategoryBasename></mt:SetVarBlock></mt:ParentCategory>
+</mt:ParentCategory>
+<mt:if name="parentCategory" eq="brand">
+	<mt:SetVarBlock name="brand"><mt:CategoryLabel encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopName1"><mt:CategoryShopName1 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopAddress1"><mt:CategoryShopAddress1 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopOverview1"><mt:CategoryShopOverview1 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopName2"><mt:CategoryShopName2 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopAddress2"><mt:CategoryShopAddress2 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopOverview2"><mt:CategoryShopOverview2 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopName3"><mt:CategoryShopName3 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopAddress3"><mt:CategoryShopAddress3 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopOverview3"><mt:CategoryShopOverview3 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopName4"><mt:CategoryShopName4 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopAddress4"><mt:CategoryShopAddress4 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopOverview4"><mt:CategoryShopOverview4 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml"></mt:SetVarBlock>
+	<mt:CategoryOnlinePay setvar="onlinePay">
+	<mt:var name="onlinePay" split=",","onlinePayArray">
+	<mt:SetVarBlock name="onlinePay"><mt:CategoryOnlinePay encode_html="1"></mt:SetVarBlock>
+	<mt:Var name="onlinePayArray">
+</mt:if>
+<mt:if name="parentTopCategory" eq="station">
+	<mt:SetVarBlock name="station"><mt:CategoryLabel encode_html="1"></mt:SetVarBlock>
+</mt:if>
+</mt:entrycategories>
+
 	<!-- .mainItem -->
 	<div class="mainItem">
 		<div class="itemInner">
@@ -56,12 +85,12 @@
 			</div>
 
 			<section class="itemHead">
-				<p class="itemBrand"><mt:EntryCategories><mt:CategoryLabel></mt:EntryCategories></p>
+				<mt:If name="brand"><p class="itemBrand"><mt:Var name="brand"></p></mt:If>
 				<h1 class="itemName"><mt:EntryTitle encode_html="1"></h1>
-				<p class="itemPrice itemStatus is-frozen"><em>1,280</em>円（税込）</p>
+				<mt:If tag="EntryPrice"><p class="itemPrice itemStatus is-frozen"><em><mt:EntryPrice sprintf="%d" numify="1"></em>円（税込）</p></mt:If>
 				<div class="itemParam">
-					<p class="itemLimit"><span class="ttl">賞味期限</span><span class="txt">5~10 days</span></p>
-					<p class="itemStation"><span class="ttl">販売店</span><span class="txt">新宿駅</span></p>
+					<mt:If tag="EntryLimitDate"><p class="itemLimit"><span class="ttl">賞味期限</span><span class="txt"><mt:EntryLimitDate> days</span></p></mt:If>
+					<mt:If name="station"><p class="itemStation"><span class="ttl">販売店</span><span class="txt"><mt:Var name="station">駅</span></p></mt:If>
 				</div>
 				<div class="itemCredit">
 					<p class="creditTtl">オンラインショップの支払方法</p>
@@ -84,11 +113,7 @@
 			<section class="itemDescription">
 				<div class="descriptionInner">
 					<h2 class="itemTtl">商品のご説明</h2>
-					<p class="descriptionTxt">キャンディコーティングした希少な天然のピーカンナッツを、 後口の良いホワイトチョコで包み、キャラメルパウダーを まぶして仕上げました。<br>
-					香ばしいナッツと、オリジナルレシピで仕上げた後口の良い ホワイトチョコの相性が抜群。<br>
-					<br>
-					第25回全国菓子大博覧会で日本商工会議所会頭賞を受賞した当店自慢の逸品。<br>
-					手土産にも最適なパッケージで加わりました。</p>
+					<mt:If tag="EntryDetails"><p class="descriptionTxt"><mt:EntryDetails remove_html="1" convert_breaks="0" nl2br="xhtml"></p></mt:If>
 				</div>
 			</section>
 
@@ -96,44 +121,53 @@
 				<div class="variationInner">
 					<h2 class="itemTtl">容量バリエーション（個数）</h2>
 					<ul class="variationList">
-						<li><img src="/img/item/pic_bake_var01.png" alt=""><span>1 PIECE</span></li>
-						<li><img src="/img/item/pic_bake_var02.png" alt=""><span>6 PIEACE(BOX)</span></li>
+						<mt:If tag="EntryVariationImage1"><mt:If tag="EntryVariationText1"><mt:EntryVariationImage1Asset>
+						<li><img src="<mt:AssetURL>" alt=""><span><mt:EntryVariationText1></span></li></mt:EntryVariationImage1Asset></mt:If></mt:If>
+						<mt:If tag="EntryVariationImage2"><mt:If tag="EntryVariationText2"><mt:EntryVariationImage2Asset>
+						<li><img src="<mt:AssetURL>" alt=""><span><mt:EntryVariationText2></span></li></mt:EntryVariationImage2Asset></mt:If></mt:If>
+						<mt:If tag="EntryVariationImage3"><mt:If tag="EntryVariationText3"><mt:EntryVariationImage3Asset>
+						<li><img src="<mt:AssetURL>" alt=""><span><mt:EntryVariationText3></span></li></mt:EntryVariationImage3Asset></mt:If></mt:If>
 					</ul>
 				</div>
 			</section>
 
+			<mt:If name="shopName1">
 			<section id="anc-shop" class="itemShop">
 				<div class="shopInner">
 					<h2 class="itemTtl">実店舗情報</h2>
 					<ul class="shopList">
 						<li>
-							<p class="shopName">京都本店</p>
-							<p class="shopAdress">京都市中京区木屋町通御池上る上樵木町502<br>
-							11：00～20：00(L.O.19:30)<br>
-							地下鉄東西線「市役所前駅」</p>
+							<p class="shopName1"><mt:Var name="shopName1"></p>
+							<mt:If name="shopAddress1"><p class="shopAddress"><mt:Var name="shopAddress1"><br>
+							<mt:Var name="shopOverview1"></p></mt:If>
 						</li>
+						<mt:If name="shopName2">
 						<li>
-							<p class="shopName">京都本店</p>
-							<p class="shopAdress">京都市中京区木屋町通御池上る上樵木町502<br>
-							11：00～20：00(L.O.19:30)<br>
-							地下鉄東西線「市役所前駅」</p>
+							<p class="shopName2"><mt:Var name="shopName2"></p>
+							<mt:If name="shopAddress2"><p class="shopAddress"><mt:Var name="shopAddress2"><br>
+							<mt:Var name="shopOverview2"></p></mt:If>
 						</li>
+						</mt:If>
+						<mt:If name="shopName3">
 						<li>
-							<p class="shopName">三番街店</p>
-							<p class="shopAdress">京大阪府北区芝田1-1-3阪急三番街南館B2F<br>
-							10:00～21:00<br>
-							阪急「梅田駅」</p>
+							<p class="shopName3"><mt:Var name="shopName3"></p>
+							<mt:If name="shopAddress3"><p class="shopAddress"><mt:Var name="shopAddress3"><br>
+							<mt:Var name="shopOverview3"></p></mt:If>
 						</li>
+						</mt:If>
+						<mt:If name="shopName4">
 						<li>
-							<p class="shopName">三番街店</p>
-							<p class="shopAdress">京大阪府北区芝田1-1-3阪急三番街南館B2F<br>
-							10:00～21:00<br>
-							阪急「梅田駅」</p>
+							<p class="shopName4"><mt:Var name="shopName4"></p>
+							<mt:If name="shopAddress4"><p class="shopAddress"><mt:Var name="shopAddress4"><br>
+							<mt:Var name="shopOverview4"></p></mt:If>
 						</li>
+						</mt:If>
 					</ul>
-					<p class="m-btn shopBtn is-place"><a href=""><span>その他の店舗を探す</span></a></p>
+					<mt:If tag="CategoryShopURL">
+					<p class="m-btn shopBtn is-place"><a href="<mt:CategoryShopURL>"><span>その他の店舗を探す</span></a></p></mt:If>
 				</div>
 			</section>
+			</mt:If>
 		</div>
 		<div id="googleMap"></div>
 	</div><!-- .mainDetails -->
@@ -259,6 +293,7 @@
 		</div>
 		<p class="m-btn"><a href="">もっとみる</a></p>
 	</section><!-- .sec-recommend -->
+
 
 </mt:Truncateurl>
 </mt:For><mt:ignore><!-- //改行削除 --></mt:ignore>
