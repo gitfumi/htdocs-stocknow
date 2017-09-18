@@ -37,6 +37,17 @@ $selectorRoot: "#p_item";
 	}
 	.listItem{
 		padding: 0 10px;
+		img{
+			cursor: pointer;
+			transition: all .5s;
+			border: 2px dashed rgba(0,0,0,0);
+		}
+		&.slick-current img{
+			border: 2px dashed #000;
+		}
+		&:hover img{
+			opacity: .7;
+		}
 	}
 	.itemHead{
 		max-width: 400px;

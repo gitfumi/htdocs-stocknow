@@ -208,6 +208,21 @@
   padding: 0 10px;
 }
 
+#p_item .mainItem .listItem img {
+  cursor: pointer;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  border: 2px dashed transparent;
+}
+
+#p_item .mainItem .listItem.slick-current img {
+  border: 2px dashed #000;
+}
+
+#p_item .mainItem .listItem:hover img {
+  opacity: .7;
+}
+
 #p_item .mainItem .itemHead {
   max-width: 400px;
   padding: 10px 0 60px 30px;
