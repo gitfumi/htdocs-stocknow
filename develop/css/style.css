@@ -224,7 +224,7 @@
 }
 
 #p_item .mainItem .itemHead {
-  max-width: 400px;
+  width: 400px;
   padding: 10px 0 60px 30px;
   position: relative;
 }
