@@ -1563,19 +1563,34 @@ html {
 }
 
 .m-list .m-itemStatus:before {
-  content: '冷蔵';
   position: absolute;
   top: 50%;
   right: 0;
   display: block;
-  border: 2px solid #0262b4;
   background-color: #fff;
-  color: #0262b4;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   font-size: 10px;
   width: 68px;
   text-align: center;
+}
+
+.m-list .m-itemStatus.is-normal:before {
+  content: '常温';
+  border: 2px solid #999;
+  color: #999;
+}
+
+.m-list .m-itemStatus.is-cool:before {
+  content: '冷蔵';
+  border: 2px solid #3a589a;
+  color: #3a589a;
+}
+
+.m-list .m-itemStatus.is-frozen:before {
+  content: '冷凍';
+  border: 2px solid #0262b4;
+  color: #0262b4;
 }
 
 .m-list .m-itemParam {
