@@ -1,7 +1,6 @@
 ## Movable Type Configuration File
 ##
 ## This file defines system-wide
-<<<<<<< HEAD
 ## settings for Movable Type. In
 ## total, there are over a hundred
 ## options, but only those
@@ -9,16 +8,6 @@
 ## below.
 ##
 ## Information on all others can be
-=======
-## settings for Movable Type. In
-## total, there are over a hundred
-## options, but only those
-## critical for everyone are listed
-## below.
-##
-## Information on all others can be
->>>>>>> 8485a955de7ec6c7d7faba7245654bf81df658c4
-## found at:
 ##  http://www.movabletype.jp/documentation/config
 
 #======== REQUIRED SETTINGS ==========
