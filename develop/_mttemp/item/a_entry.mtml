@@ -33,34 +33,7 @@
 <mt:For regex_replace="/^\s*\n/gm",""><mt:ignore><!-- 改行削除 --></mt:ignore>
 <mt:Truncateurl>
 
-<mt:entrycategories>
-<mt:ParentCategory>
-	<mt:SetVarBlock name="parentCategory"><mt:CategoryBasename></mt:SetVarBlock>
-	<mt:ParentCategory><mt:SetVarBlock name="parentTopCategory"><mt:CategoryBasename></mt:SetVarBlock></mt:ParentCategory>
-</mt:ParentCategory>
-<mt:if name="parentCategory" eq="brand">
-	<mt:SetVarBlock name="brand"><mt:CategoryLabel encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopName1"><mt:CategoryShopName1 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopAddress1"><mt:CategoryShopAddress1 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopOverview1"><mt:CategoryShopOverview1 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopName2"><mt:CategoryShopName2 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopAddress2"><mt:CategoryShopAddress2 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopOverview2"><mt:CategoryShopOverview2 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopName3"><mt:CategoryShopName3 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopAddress3"><mt:CategoryShopAddress3 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopOverview3"><mt:CategoryShopOverview3 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopName4"><mt:CategoryShopName4 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopAddress4"><mt:CategoryShopAddress4 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopOverview4"><mt:CategoryShopOverview4 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml"></mt:SetVarBlock>
-	<mt:CategoryOnlinePay setvar="onlinePay">
-	<mt:var name="onlinePay" split=",","onlinePayArray">
-	<mt:SetVarBlock name="onlinePay"><mt:CategoryOnlinePay encode_html="1"></mt:SetVarBlock>
-	<mt:Var name="onlinePayArray">
-</mt:if>
-<mt:if name="parentTopCategory" eq="station">
-	<mt:SetVarBlock name="station"><mt:CategoryLabel encode_html="1"></mt:SetVarBlock>
-</mt:if>
-</mt:entrycategories>
+<mt:Include module="カテゴリ">
 
 	<!-- .mainItem -->
 	<div class="mainItem">
@@ -87,21 +60,22 @@
 			<section class="itemHead">
 				<mt:If name="brand"><p class="itemBrand"><mt:Var name="brand"></p></mt:If>
 				<h1 class="itemName"><mt:EntryTitle encode_html="1"></h1>
-				<mt:If tag="EntryPrice"><p class="itemPrice itemStatus is-frozen"><em><mt:EntryPrice sprintf="%d" numify="1"></em>円（税込）</p></mt:If>
+				<mt:If tag="EntryPrice"><p class="itemPrice itemStatus <mt:Var name="classState">"><em><mt:EntryPrice sprintf="%d" numify="1"></em>円（税込）</p></mt:If>
 				<div class="itemParam">
 					<mt:If tag="EntryLimitDate"><p class="itemLimit"><span class="ttl">賞味期限</span><span class="txt"><mt:EntryLimitDate> days</span></p></mt:If>
 					<mt:If name="station"><p class="itemStation"><span class="ttl">販売店</span><span class="txt"><mt:Var name="station">駅</span></p></mt:If>
 				</div>
 				<div class="itemCredit">
 					<p class="creditTtl">オンラインショップの支払方法</p>
+					<mt:Var name="payBank">
 					<ul class="creditList">
-						<li>銀行振込</li>
-						<li>代金引換</li>
-						<li>クレジットカード</li>
-						<li>コンビニ決済</li>
+						<li<mt:If name="payBank" eq="true"> class="is-possible"</mt:If>>銀行振込</li>
+						<li<mt:If name="payChange" eq="true"> class="is-possible"</mt:If>>代金引換</li>
+						<li<mt:If name="payCard" eq="true"> class="is-possible"</mt:If>>クレジットカード</li>
+						<li<mt:If name="payConvenience" eq="true"> class="is-possible"</mt:If>>コンビニ決済</li>
 					</ul>
 				</div>
-				<p class="itemBtn m-btn is-blank"><a href=""><span>オンラインショップへ</span></a></p>
+				<mt:If name="onlineURL" ne=""><p class="itemBtn m-btn is-blank"><a target="_blank" href="<mt:Var name="onlineURL">"><span>オンラインショップへ</span></a></p></mt:If>
 			</section>
 		</div>
 	</div><!-- .mainItem -->
@@ -109,7 +83,7 @@
 	<!-- .mainDetails -->
 	<div class="mainDetails">
 		<div class="detailsInner">
-			<p class="m-btn detailsBtn is-shop"><a href="#anc-shop"><span>お店に買いに行く</span></a></p>
+			<mt:If name="shopName1" ne=""><p class="m-btn detailsBtn is-shop"><a href="#anc-shop"><span>お店に買いに行く</span></a></p></mt:If>
 			<section class="itemDescription">
 				<div class="descriptionInner">
 					<h2 class="itemTtl">商品のご説明</h2>
@@ -177,7 +151,7 @@
 	<section class="sec-other">
 		<!-- .m-heading -->
 		<div class="m-heading">
-			<h2 class="m-hedingTtl"><span>Other item</span>その他の中島大正堂の商品</h2>
+			<h2 class="m-hedingTtl"><span>Other item</span>その他の<mt:Var name="brand">の商品</h2>
 			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
 		</div><!-- .m-heading -->
 
@@ -214,7 +188,7 @@
 	<section class="sec-recommend">
 		<!-- .m-heading -->
 		<div class="m-heading">
-			<h2 class="m-hedingTtl"><span>Recommend item</span>洋菓子のおすすめ商品</h2>
+			<h2 class="m-hedingTtl"><span>Recommend item</span><mt:Var name="itemCategory">のおすすめ商品</h2>
 			<p class="m-headingLead">ダミーダミーダミー</p>
 			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
 		</div><!-- .m-heading -->
@@ -301,7 +275,7 @@
 </div><!-- /#contents -->
 
 <!--#include virtual="/_inc/footer.html"-->
-<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDY_Zc_-lcgrKM1jqwjHgzJ-KupHG5iRmw"></script>
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyD29DdDt14xcI-AuwSD8ZAHlKt6OKySBzc"></script>
 <script src="/js/item.js"></script>
 </body>
 </html>
