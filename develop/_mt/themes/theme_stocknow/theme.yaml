@@ -1,12 +1,12 @@
---- 
+---
 author_link: ''
 class: blog
 description: ''
-elements: 
-  custom_fields: 
+elements:
+  custom_fields:
     component: commercial
-    data: 
-      categorybrandlogo: 
+    data:
+      categorybrandlogo:
         default: ''
         description: ''
         name: ブランドロゴ
@@ -15,16 +15,7 @@ elements:
         required: 0
         tag: CategoryBrandLogo
         type: image
-      categoryonlinepay: 
-        default: 0
-        description: ''
-        name: オンライン支払方法
-        obj_type: category
-        options: ~
-        required: 0
-        tag: CategoryOnlinePay
-        type: checkbox
-      categoryonlineurl: 
+      categoryonlineurl:
         default: http://
         description: ''
         name: オンラインURL
@@ -33,7 +24,7 @@ elements:
         required: 0
         tag: CategoryOnlineURL
         type: url
-      categoryshopaddress1: 
+      categoryshopaddress1:
         default: ''
         description: ''
         name: 実店舗--店舗住所1
@@ -42,7 +33,7 @@ elements:
         required: 0
         tag: CategoryShopAddress1
         type: text
-      categoryshopaddress2: 
+      categoryshopaddress2:
         default: ''
         description: ''
         name: 実店舗--店舗住所2
@@ -51,7 +42,7 @@ elements:
         required: 0
         tag: CategoryShopAddress2
         type: text
-      categoryshopaddress3: 
+      categoryshopaddress3:
         default: ''
         description: ''
         name: 実店舗--店舗住所3
@@ -60,7 +51,7 @@ elements:
         required: 0
         tag: CategoryShopAddress3
         type: text
-      categoryshopaddress4: 
+      categoryshopaddress4:
         default: ''
         description: ''
         name: 実店舗--店舗住所4
@@ -69,7 +60,7 @@ elements:
         required: 0
         tag: CategoryShopAddress4
         type: text
-      categoryshopname1: 
+      categoryshopname1:
         default: ''
         description: ''
         name: 実店舗--店舗名1
@@ -78,7 +69,7 @@ elements:
         required: 0
         tag: CategoryShopName1
         type: text
-      categoryshopname2: 
+      categoryshopname2:
         default: ''
         description: ''
         name: 実店舗--店舗名2
@@ -87,7 +78,7 @@ elements:
         required: 0
         tag: CategoryShopName2
         type: text
-      categoryshopname3: 
+      categoryshopname3:
         default: ''
         description: ''
         name: 実店舗--店舗名3
@@ -96,7 +87,7 @@ elements:
         required: 0
         tag: CategoryData3
         type: text
-      categoryshopname4: 
+      categoryshopname4:
         default: ''
         description: ''
         name: 実店舗--店舗名4
@@ -105,7 +96,7 @@ elements:
         required: 0
         tag: CategoryShopName4
         type: text
-      categoryshopoverview1: 
+      categoryshopoverview1:
         default: ''
         description: ''
         name: 実店舗--店舗概要1
@@ -114,7 +105,7 @@ elements:
         required: 0
         tag: CategoryShopOverview1
         type: textarea
-      categoryshopoverview2: 
+      categoryshopoverview2:
         default: ''
         description: ''
         name: 実店舗--店舗概要2
@@ -123,7 +114,7 @@ elements:
         required: 0
         tag: CategoryShopOverview2
         type: textarea
-      categoryshopoverview3: 
+      categoryshopoverview3:
         default: ''
         description: ''
         name: 実店舗--店舗概要3
@@ -132,7 +123,7 @@ elements:
         required: 0
         tag: CategoryShopOverview3
         type: textarea
-      categoryshopoverview4: 
+      categoryshopoverview4:
         default: ''
         description: ''
         name: 実店舗--店舗概要4
@@ -141,7 +132,7 @@ elements:
         required: 0
         tag: CategoryShopOverview4
         type: textarea
-      categoryshopurl: 
+      categoryshopurl:
         default: http://
         description: ''
         name: 他店舗リンク
@@ -150,16 +141,25 @@ elements:
         required: 0
         tag: CategoryShopURL
         type: url
-      categorystate: 
-        default: 0
+      categorystate:
+        default: ''
         description: ''
         name: 配送・状態
         obj_type: category
         options: ~
         required: 0
-        tag: CategoryState
-        type: checkbox
-      entrydetails: 
+        tag: categorystate
+        type: text
+      categoryonlinepay:
+        default: ''
+        description: ''
+        name: オンライン支払方法
+        obj_type: category
+        options: ~
+        required: 0
+        tag: categoryonlinepay
+        type: text
+      entrydetails:
         default: ''
         description: ''
         name: 商品のご説明
@@ -168,7 +168,7 @@ elements:
         required: 0
         tag: EntryDetails
         type: textarea
-      entryiconnew: 
+      entryiconnew:
         default: 0
         description: ''
         name: NEWアイコン
@@ -177,7 +177,7 @@ elements:
         required: 0
         tag: EntryIconNew
         type: checkbox
-      entryimage: 
+      entryimage:
         default: ''
         description: （600px × 390px）
         name: メイン画像
@@ -186,7 +186,7 @@ elements:
         required: 0
         tag: EntryImage
         type: image
-      entryimagesub1: 
+      entryimagesub1:
         default: ''
         description: （600px × 390px）
         name: サブ画像1
@@ -195,7 +195,7 @@ elements:
         required: 0
         tag: EntryImageSub1
         type: image
-      entryimagesub2: 
+      entryimagesub2:
         default: ''
         description: （600px × 390px）
         name: サブ画像2
@@ -204,7 +204,7 @@ elements:
         required: 0
         tag: EntryImageSub2
         type: image
-      entrylimitdate: 
+      entrylimitdate:
         default: ''
         description: 例：5~10
         name: 賞味期限
@@ -213,7 +213,7 @@ elements:
         required: 0
         tag: EntryLimitDate
         type: text
-      entryprice: 
+      entryprice:
         default: ''
         description: 例：10000
         name: 価格
@@ -222,7 +222,7 @@ elements:
         required: 0
         tag: EntryPrice
         type: text
-      entryvariationimage1: 
+      entryvariationimage1:
         default: ''
         description: ''
         name: 容量バリエーション--画像1
@@ -231,7 +231,7 @@ elements:
         required: 0
         tag: EntryVariationImage1
         type: image
-      entryvariationimage2: 
+      entryvariationimage2:
         default: ''
         description: ''
         name: 容量バリエーション--画像2
@@ -240,7 +240,7 @@ elements:
         required: 0
         tag: EntryVariationImage2
         type: image
-      entryvariationimage3: 
+      entryvariationimage3:
         default: ''
         description: ''
         name: 容量バリエーション--画像3
@@ -249,7 +249,7 @@ elements:
         required: 0
         tag: EntryVariationImage3
         type: image
-      entryvariationtext1: 
+      entryvariationtext1:
         default: ''
         description: ''
         name: 容量バリエーション--テキスト1
@@ -258,7 +258,7 @@ elements:
         required: 0
         tag: EntryVariationText1
         type: text
-      entryvariationtext2: 
+      entryvariationtext2:
         default: ''
         description: ''
         name: 容量バリエーション--テキスト2
@@ -267,7 +267,7 @@ elements:
         required: 0
         tag: EntryVariationText2
         type: text
-      entryvariationtext3: 
+      entryvariationtext3:
         default: ''
         description: ''
         name: 容量バリエーション--テキスト3
@@ -277,207 +277,58 @@ elements:
         tag: EntryVariationText3
         type: text
     importer: custom_fields
-  default_categories: 
+  default_categories:
     component: ~
-    data: 
-      brand: 
+    data:
+      brand:
+        children:
+          bake:
+            label: BAKE
         label: ブランド
-      item: 
-        children: 
-          beef: 
+      item:
+        children:
+          beef:
             label: 肉・ハム・ソーセージ
-          drink: 
+          drink:
             label: ドリンク・アルコール
-          fruits: 
+          fruits:
             label: フルーツ・果物
-          seafood: 
+          seafood:
             label: 魚介類・シーフード
-          sidedish: 
+          sidedish:
             label: おかず・お惣菜
-          sweets: 
+          sweets:
             label: スイーツ・洋菓子
-          sweets-jp: 
+          sweets-jp:
             label: 和菓子・和スイーツ
         label: 商品カテゴリ
-      mine: 
+      mine:
         label: 自分へのご褒美
-      station: 
-        children: 
-          oosaka: 
+      station:
+        children:
+          oosaka:
             label: 大阪府
-          tokyo: 
-            children: 
-              akihabara: 
+          tokyo:
+            children:
+              akihabara:
                 label: 秋葉原
-              ikebukuro: 
+              ikebukuro:
                 label: 池袋
-              shibuya: 
+              shibuya:
                 label: 渋谷
-              shinagawa: 
+              shinagawa:
                 label: 品川
-              shinjuku: 
+              shinjuku:
                 label: 新宿
-              tokyo: 
+              tokyo:
                 label: 東京
-              ueno: 
+              ueno:
                 label: 上野
             label: 東京都
         label: 最寄り駅ギフト
-      temiyage: 
+      temiyage:
         label: 手土産ギフト
     importer: default_categories
-  default_folders: 
-    component: ~
-    data: 
-      about: 
-        label: about
-    importer: default_folders
-  template_set: 
-    component: ~
-    data: 
-      base_path: templates
-      label: exported_template set
-      templates: 
-        archive: 
-          category_entry_listing: 
-            label: カテゴリ別記事リスト
-            mappings: 
-              category: 
-                archive_type: Category
-                file_template: blog/%-c/%i
-                preferred: 1
-          yearly_entry_listing: 
-            label: 年別ブログ記事リスト
-            mappings: 
-              yearly: 
-                archive_type: Yearly
-                file_template: blog/%y/%i
-                preferred: 1
-        index: 
-          feed_recent: 
-            label: 最新記事のフィード
-            outfile: atom.xml
-            rebuild_me: 1
-          index_page: 
-            label: インデックスページ
-            outfile: index.html
-            rebuild_me: 1
-          javascript: 
-            label: JavaScript
-            outfile: mt.js
-            rebuild_me: 1
-          javascript_theme: 
-            label: Javascript テーマ用
-            outfile: mt-theme-eiger.js
-            rebuild_me: 1
-          main_index: 
-            label: ブログ用インデックスページ
-            outfile: blog/index.html
-            rebuild_me: 1
-          styles: 
-            label: スタイルシート
-            outfile: styles.css
-            rebuild_me: 1
-          styles_ie: 
-            label: スタイルシート (IE8 以下用)
-            outfile: styles_ie.css
-            rebuild_me: 1
-        individual: 
-          entry: 
-            label: 記事
-            mappings: 
-              individual: 
-                archive_type: Individual
-                file_template: blog/%y/%m/%-f
-                preferred: 1
-        module: 
-          banner_footer: 
-            label: バナーフッター
-          banner_header: 
-            label: バナーヘッダー
-          comment_detail: 
-            label: コメント詳細
-          comment_form: 
-            label: コメント入力フォーム
-          comments: 
-            label: コメント
-          entries_list: 
-            label: 記事の一覧
-          entry_summary: 
-            label: 記事の概要
-          html_head: 
-            label: HTMLヘッダー
-          mainimage: 
-            label: メインイメージ
-          navigation: 
-            label: ナビゲーション
-          pagination: 
-            label: ページネーション
-          trackbacks: 
-            label: トラックバック
-          zenback: 
-            label: Zenback
-        page: 
-          page: 
-            label: ウェブページ
-            mappings: 
-              page: 
-                archive_type: Page
-                preferred: 1
-        system: 
-          comment_preview: 
-            label: コメントプレビュー
-          comment_response: 
-            label: コメント完了
-          dynamic_error: 
-            label: ダイナミックパブリッシングエラー
-          popup_image: 
-            label: ポップアップ画像
-          search_results: 
-            label: 検索結果
-        widget: 
-          category_archive_list: 
-            label: カテゴリアーカイブ
-          pages_list: 
-            label: ページ一覧
-          recent_entries: 
-            label: 最近の記事
-          sample_widget_01: 
-            label: サンプルウィジェット 01
-          sample_widget_02: 
-            label: サンプルウィジェット 02
-          sample_widget_03: 
-            label: サンプルウィジェット 03
-          sample_widget_04: 
-            label: サンプルウィジェット 04
-          search: 
-            label: 検索
-          syndication: 
-            label: 購読
-          yearly_archive_dropdown: 
-            label: 年別アーカイブ (ドロップダウン)
-          yearly_archive_list: 
-            label: 年別アーカイブ
-        widgetset: 
-          related_contents_blog: 
-            label: 関連コンテンツ (ブログ)
-            order: 1000
-            widgets: 
-              - 検索
-              - 年別アーカイブ
-              - カテゴリアーカイブ
-              - サンプルウィジェット 02
-              - サンプルウィジェット 03
-              - 購読
-          related_contents_index: 
-            label: 関連コンテンツ (インデックス)
-            order: 1000
-            widgets: 
-              - 検索
-              - ページ一覧
-              - サンプルウィジェット 01
-              - サンプルウィジェット 03
-    importer: template_set
 id: theme_stocknow
 label: 商品詳細のテーマ
 name: 商品詳細のテーマ

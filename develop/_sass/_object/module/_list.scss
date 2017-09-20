@@ -74,18 +74,30 @@
 	.m-itemStatus{
 		position: relative;
 		&:before{
-			content: '冷蔵';
 			position: absolute;
 			top: 50%;
 			right: 0;
 			display: block;
-			border: 2px solid map-get($statusColorMap, frozen);
 			background-color: #fff;
-			color: map-get($statusColorMap, frozen);
 			transform: translateY(-50%);
 			font-size: 10px;
 			width: 68px;
 			text-align: center;
+		}
+		&.is-normal:before{
+			content: '常温';
+			border: 2px solid map-get($statusColorMap, normal);
+			color: map-get($statusColorMap, normal);
+		}
+		&.is-cool:before{
+			content: '冷蔵';
+			border: 2px solid map-get($statusColorMap, cool);
+			color: map-get($statusColorMap, cool);
+		}
+		&.is-frozen:before{
+			content: '冷凍';
+			border: 2px solid map-get($statusColorMap, frozen);
+			color: map-get($statusColorMap, frozen);
 		}
 	}
 	.m-itemParam{
