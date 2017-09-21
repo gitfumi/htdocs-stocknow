@@ -1,6 +1,6 @@
 $(function(){
 	var googleMap = function(){
-		var latlng = new google.maps.LatLng(35.166875,136.880485);/*表示したい場所の経度、緯度*/
+		var latlng = new google.maps.LatLng(35.6983373,139.6461661);/*表示したい場所の経度、緯度*/
 		var myOptions = {
 			zoom: 18, /*拡大比率*/
 			center: latlng, /*表示枠内の中心点*/
@@ -9,15 +9,15 @@ $(function(){
 		var map = new google.maps.Map(document.getElementById('googleMap'), myOptions);
 
 		/*アイコン設定▼*/
-		var icon = new google.maps.MarkerImage('/img/cmn/icon_googlemap.png',
-			new google.maps.Size(55,72),/*アイコンサイズ設定*/
-			new google.maps.Point(0,0)/*アイコン位置設定*/
-		);
+		var icon = {
+			url: '/img/cmn/icon_googlemap.png',
+			scaledSize : new google.maps.Size(51.5,65.5)
+		}
 		var markerOptions = {
 			position: latlng,
 			map: map,
 			icon: icon,
-			title: '株式会社Lig'
+			title: 'SPOT'
 		};
 		var marker = new google.maps.Marker(markerOptions);
 
