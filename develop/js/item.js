@@ -1,42 +1,7 @@
 $(function(){
-	var googleMap = function(){
-		var latlng = new google.maps.LatLng(35.166875,136.880485);/*表示したい場所の経度、緯度*/
-		var myOptions = {
-			zoom: 18, /*拡大比率*/
-			center: latlng, /*表示枠内の中心点*/
-			mapTypeControlOptions: { mapTypeIds: ['sample', google.maps.MapTypeId.ROADMAP] }
-		};
-		var map = new google.maps.Map(document.getElementById('googleMap'), myOptions);
-
-		/*アイコン設定▼*/
-		var icon = new google.maps.MarkerImage('/img/cmn/icon_googlemap.png',
-			new google.maps.Size(55,72),/*アイコンサイズ設定*/
-			new google.maps.Point(0,0)/*アイコン位置設定*/
-		);
-		var markerOptions = {
-			position: latlng,
-			map: map,
-			icon: icon,
-			title: '株式会社Lig'
-		};
-		var marker = new google.maps.Marker(markerOptions);
-
-		/*取得スタイルの貼り付け*/
-		var styleOptions = [
-			{
-				'stylers': [
-					{ 'saturation': -100 },
-					{ 'visibility': 'simplified' },
-					{ 'lightness': 22 }
-				]
-			}
-		];
-		var styledMapOptions = { name: '株式会社Lig' }
-		var sampleType = new google.maps.StyledMapType(styleOptions, styledMapOptions);
-		map.mapTypes.set('sample', sampleType);
-		map.setMapTypeId('sample');
-	};
-	google.maps.event.addDomListener(window, 'load', googleMap);
+/*************************
+	slick 関連
+*************************/
 	$('#js-slickMain').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -52,7 +17,6 @@ $(function(){
 		centerMode: true,
 		focusOnSelect: true
 	});
-
 	$('.js-slickResponsive').slick({
 		dots: true,
 		infinite: true,
@@ -81,4 +45,8 @@ $(function(){
 			}
 		]
 	});
-})
+});
+
+var hhhhh = function() {
+	console.log('ggggg');
+}

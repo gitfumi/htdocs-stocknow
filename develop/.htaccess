@@ -1,2 +1,10 @@
-Options +ExecCGI
-AddType application/x-httpd-cgi .cgi .pl
+# PHP設定
+# .htmlファイルでPHPを使用する　その他
+#AddType application/x-httpd-php .htm .html .js
+
+RewriteEngine on
+
+# MT DATA API 用にURLを偽装
+RewriteRule ^api/s/(.*)/c/(.*)$ /_mt/mt-data-api.cgi/v3/sites/$1/categories/$2
+#RewriteRule ^js/mt-data-api.min.js$ /_mt/mt-static/data-api/v3/js/mt-data-api.min.js
+#RewriteRule ^api/(.*)$ /_mt/mt-data-api.cgi/$1
