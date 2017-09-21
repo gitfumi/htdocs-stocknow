@@ -5,19 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title><mt:EntryTitle encode_html="1">｜<mt:BlogName encode_html="1"></title>
 <meta name="description" content="ディスクリプションディスクリプションディスクリプション">
-<!--#include virtual="/_inc/meta.html"-->
+<!--#include virtual='/_inc/meta.html'-->
 <meta property="og:type" content="article">
 <meta property="og:title" content="<mt:EntryTitle encode_html="1">｜<mt:BlogName encode_html="1">">
 <meta property="og:description" content="ディスクリプションディスクリプションディスクリプション">
 <meta property="og:url" content="<mt:EntryPermalink encode_html="1">">
 <meta property="og:image" content="サムネイル画像のURL">
-<!--#include virtual="/_inc/ogp.html"-->
-<!--#include virtual="/_inc/link.html"-->
+<!--#include virtual='/_inc/ogp.html'-->
+<!--#include virtual='/_inc/link.html'-->
 </head>
 
 <body id="p_item">
-<!--#include virtual="/_inc/analytics.html"-->
-<!--#include virtual="/_inc/header.html"-->
+<!--#include virtual='/_inc/analytics.html'-->
+<!--#include virtual='/_inc/header.html'-->
 
 <!-- #contents -->
 <div id="contents">
@@ -67,7 +67,6 @@
 				</div>
 				<div class="itemCredit">
 					<p class="creditTtl">オンラインショップの支払方法</p>
-					<mt:Var name="payBank">
 					<ul class="creditList">
 						<li<mt:If name="payBank" eq="true"> class="is-possible"</mt:If>>銀行振込</li>
 						<li<mt:If name="payChange" eq="true"> class="is-possible"</mt:If>>代金引換</li>
@@ -87,7 +86,7 @@
 			<section class="itemDescription">
 				<div class="descriptionInner">
 					<h2 class="itemTtl">商品のご説明</h2>
-					<mt:If tag="EntryDetails"><p class="descriptionTxt"><mt:EntryDetails remove_html="1" convert_breaks="0" nl2br="xhtml"></p></mt:If>
+					<mt:If tag="EntryDetails"><p class="descriptionTxt"><mt:EntryDetails remove_html="1" convert_breaks="0" nl2br="xhtml" regex_replace="/<br \/>/g","<br>"></p></mt:If>
 				</div>
 			</section>
 
@@ -143,7 +142,9 @@
 			</section>
 			</mt:If>
 		</div>
+		<mt:If name="shopName1">
 		<div id="googleMap"></div>
+		</mt:If>
 	</div><!-- .mainDetails -->
 
 
@@ -274,8 +275,96 @@
 
 </div><!-- /#contents -->
 
-<!--#include virtual="/_inc/footer.html"-->
+<!--#include virtual='/_inc/footer.html'-->
 <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyD29DdDt14xcI-AuwSD8ZAHlKt6OKySBzc"></script>
 <script src="/js/item.js"></script>
+<mt:If name="shopName1">
+<script>
+$(function(){
+	var googleMap = function(){
+		var map,geocoder,latlng,shopList,addressJP,shopName;
+		shopList = [
+			{
+				'shopname' : '<mt:Var name="shopName1">',
+				'address' : '<mt:Var name="shopAddress1">',
+			}<mt:If name="shopName2">,
+			{
+				'shopname' : '<mt:Var name="shopName2">',
+				'address' : '<mt:Var name="shopAddress2">',
+			}</mt:If><mt:If name="shopName3">,
+			{
+				'shopname' : '<mt:Var name="shopName3">',
+				'address' : '<mt:Var name="shopAddress3">',
+			}</mt:If><mt:If name="shopName4">,
+			{
+				'shopname' : '<mt:Var name="shopName4">',
+				'address' : '<mt:Var name="shopAddress4">',
+			}</mt:If>
+		]
+		// 店舗数分マップに埋め込み
+		$.each(shopList, function(index, val){
+			// Geocoderを使用して住所から緯度・経度を取得する
+			geocoder = new google.maps.Geocoder();
+			addressJP = val.address;
+			shopName  = val.shoname;
+			geocoder.geocode({
+				'address': addressJP // TAM 東京
+			}, function(results, status) { // 結果
+				if (status === google.maps.GeocoderStatus.OK) { // ステータスがOKの場合
+					latlng = {
+						lat : results[0].geometry.location.lat(),	//緯度
+						lng : results[0].geometry.location.lng()	//経度
+					}
+					// googleMapを書き込む
+					getGoogleMap(latlng,shopName,index);
+				} else { // 失敗した場合
+					alert(status);
+				}
+			});
+		});
+
+		function getGoogleMap(LATLNG, SHOPNAME, i){
+
+			var myOptions = {
+				zoom: 18, /*拡大比率*/
+				center: LATLNG, /*表示枠内の中心点*/
+				mapTypeControlOptions: { mapTypeIds: ['sample', google.maps.MapTypeId.ROADMAP] }
+			};
+			var map = new google.maps.Map(document.getElementById('googleMap'), myOptions);
+			if(i == 0){
+				/*取得スタイルの貼り付け*/
+				var styleOptions = [
+					{
+						'stylers': [
+							{ 'saturation': -100 },
+							{ 'visibility': 'simplified' },
+							{ 'lightness': 22 }
+						]
+					}
+				];
+				var styledMapOptions = { name: 'STOCKNOW仕様' }
+				var sampleType = new google.maps.StyledMapType(styleOptions, styledMapOptions);
+				map.mapTypes.set('sample', sampleType);
+				map.setMapTypeId('sample');
+			}
+
+			/*アイコン設定▼*/
+			var icon = {
+				url: '/img/cmn/icon_googlemap.png',
+				scaledSize : new google.maps.Size(51.5,65.5)
+			}
+			var markerOptions = {
+				position: LATLNG,
+				map: map,
+				icon: icon,
+				title: SHOPNAME
+			};
+			var marker = new google.maps.Marker(markerOptions);
+		}
+	};
+	google.maps.event.addDomListener(window, 'load', googleMap);
+});
+</script>
+</mt:If>
 </body>
 </html>
