@@ -1,8 +1,28 @@
 (function($){
 
 /* ---------------------------------------------
+	MT　共通ページ
+----------------------------------------------------------*/
+	$(function(){
+		$.getJSON(
+			"http://stocknow.dev.localhost/_mt/mt-data-api.cgi/v3/sites",
+			function(data){
+				console.log(data);
+			}
+		);
+	})
+	$.ajax({
+		type: "get",
+		url: "/_mt/mt-data-api.cgi/v3/sites",
+		dataType: "json"
+		success: function(data, dataType){
+
+		}
+	});
+/* ---------------------------------------------
 	MT　カテゴリページ
 ----------------------------------------------------------*/
+
 	if($('body#edit-category').length){
 
 		// 説明項目をコメントアウト
@@ -76,7 +96,7 @@
 		$('#customfield_entryimagesub2-field').wrapAll("<section class='mtapp-verticalBlock'></section>");
 
 		// 価格と賞味期限をまとめる
-		$("#customfield_entryprice-field, #customfield_entrylimitdate-field, #customfield_entryiconnew-field").wrapAll("<div class='mtapp-vertical is-pli'></div>");
+		$("#customfield_entryprice-field, #customfield_entrylimitdate-field, #customfield_entr※ハチミツを使用しているため、1歳未満の乳児には与えないでください。ss='mtapp-vertical is-pli'></div>");
 		// .mtapp-verticalBlockで括る
 		$('#customfield_entryprice-field').wrapAll("<section class='mtapp-verticalBlock'></section>");
 		$('#customfield_entrylimitdate-field').wrapAll("<section class='mtapp-verticalBlock'></section>");

@@ -3,7 +3,7 @@
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title><mt:EntryTitle encode_html="1">｜<mt:BlogName encode_html="1"></title>
+<title><mt:EntryTitle encode_html="1">｜<mt:Var name="itemCategoryName">｜<mt:BlogName encode_html="1"></title>
 <meta name="description" content="ディスクリプションディスクリプションディスクリプション">
 <!--#include virtual='/_inc/meta.html'-->
 <meta property="og:type" content="article">
@@ -25,7 +25,7 @@
 	<div class="dir">
 		<ul>
 			<li><a href="/">home</a></li>
-			<li><a href="">カテゴリ名</a></li>
+			<li><a href=""><mt:Var name="itemCategoryName"></a></li>
 			<li><mt:EntryTitle encode_html="1"></li>
 		</ul>
 	</div>
@@ -58,12 +58,12 @@
 			</div>
 
 			<section class="itemHead">
-				<mt:If name="brand"><p class="itemBrand"><mt:Var name="brand"></p></mt:If>
+				<mt:If name="brandName"><p class="itemBrand"><mt:Var name="brandName"></p></mt:If>
 				<h1 class="itemName"><mt:EntryTitle encode_html="1"></h1>
 				<mt:If tag="EntryPrice"><p class="itemPrice itemStatus <mt:Var name="classState">"><em><mt:EntryPrice sprintf="%d" numify="1"></em>円（税込）</p></mt:If>
 				<div class="itemParam">
 					<mt:If tag="EntryLimitDate"><p class="itemLimit"><span class="ttl">賞味期限</span><span class="txt"><mt:EntryLimitDate> days</span></p></mt:If>
-					<mt:If name="station"><p class="itemStation"><span class="ttl">販売店</span><span class="txt"><mt:Var name="station">駅</span></p></mt:If>
+					<mt:If name="stationName"><p class="itemStation"><span class="ttl">販売店</span><span class="txt"><mt:Var name="stationName">駅</span></p></mt:If>
 				</div>
 				<div class="itemCredit">
 					<p class="creditTtl">オンラインショップの支払方法</p>
@@ -74,7 +74,7 @@
 						<li<mt:If name="payConvenience" eq="true"> class="is-possible"</mt:If>>コンビニ決済</li>
 					</ul>
 				</div>
-				<mt:If name="onlineURL" ne=""><p class="itemBtn m-btn is-blank"><a target="_blank" href="<mt:Var name="onlineURL">"><span>オンラインショップへ</span></a></p></mt:If>
+				<mt:If name="brandOnlineURL" ne=""><p class="itemBtn m-btn is-blank"><a target="_blank" href="<mt:Var name="brandOnlineURL">"><span>オンラインショップへ</span></a></p></mt:If>
 			</section>
 		</div>
 	</div><!-- .mainItem -->
@@ -82,7 +82,7 @@
 	<!-- .mainDetails -->
 	<div class="mainDetails">
 		<div class="detailsInner">
-			<mt:If name="shopName1" ne=""><p class="m-btn detailsBtn is-shop"><a href="#anc-shop"><span>お店に買いに行く</span></a></p></mt:If>
+			<mt:If name="brandShopName1" ne=""><p class="m-btn detailsBtn is-shop"><a href="#anc-shop"><span>お店に買いに行く</span></a></p></mt:If>
 			<section class="itemDescription">
 				<div class="descriptionInner">
 					<h2 class="itemTtl">商品のご説明</h2>
@@ -104,45 +104,45 @@
 				</div>
 			</section>
 
-			<mt:If name="shopName1">
+			<mt:If name="brandShopName1">
 			<section id="anc-shop" class="itemShop">
 				<div class="shopInner">
 					<h2 class="itemTtl">実店舗情報</h2>
 					<ul class="shopList">
 						<li>
-							<p id="shop01" class="shopName"><mt:Var name="shopName1"><span class="m-btn shopMapActive">MAP ACTIVE</span></p>
-							<mt:If name="shopAddress1"><p class="shopAddress"><mt:Var name="shopAddress1"><br>
-							<mt:Var name="shopOverview1"></p></mt:If>
+							<p id="shop01" class="shopName"><mt:Var name="brandShopName1"><span class="m-btn shopMapActive">MAP ACTIVE</span></p>
+							<mt:If name="brandShopAddress1"><p class="shopAddress"><mt:Var name="brandShopAddress1"><br>
+							<mt:Var name="brandShopOverview1"></p></mt:If>
 						</li>
-						<mt:If name="shopName2">
+						<mt:If name="brandShopName2">
 						<li>
-							<p class="shopName"><mt:Var name="shopName2"><span class="shopMapActive">MAP ACTIVE</span></p>
-							<mt:If name="shopAddress2"><p class="shopAddress"><mt:Var name="shopAddress2"><br>
-							<mt:Var name="shopOverview2"></p></mt:If>
-						</li>
-						</mt:If>
-						<mt:If name="shopName3">
-						<li>
-							<p class="shopName"><mt:Var name="shopName3"><span class="shopMapActive">MAP ACTIVE</span></p>
-							<mt:If name="shopAddress3"><p class="shopAddress"><mt:Var name="shopAddress3"><br>
-							<mt:Var name="shopOverview3"></p></mt:If>
+							<p class="shopName"><mt:Var name="brandShopName2"><span class="shopMapActive">MAP ACTIVE</span></p>
+							<mt:If name="brandShopAddress2"><p class="shopAddress"><mt:Var name="brandShopAddress2"><br>
+							<mt:Var name="brandShopOverview2"></p></mt:If>
 						</li>
 						</mt:If>
-						<mt:If name="shopName4">
+						<mt:If name="brandShopName3">
 						<li>
-							<p class="shopName"><mt:Var name="shopName4"><span class="shopMapActive">MAP ACTIVE</span></p>
-							<mt:If name="shopAddress4"><p class="shopAddress"><mt:Var name="shopAddress4"><br>
-							<mt:Var name="shopOverview4"></p></mt:If>
+							<p class="shopName"><mt:Var name="brandShopName3"><span class="shopMapActive">MAP ACTIVE</span></p>
+							<mt:If name="brandShopAddress3"><p class="shopAddress"><mt:Var name="brandShopAddress3"><br>
+							<mt:Var name="brandShopOverview3"></p></mt:If>
+						</li>
+						</mt:If>
+						<mt:If name="brandShopName4">
+						<li>
+							<p class="shopName"><mt:Var name="brandShopName4"><span class="shopMapActive">MAP ACTIVE</span></p>
+							<mt:If name="brandShopAddress4"><p class="shopAddress"><mt:Var name="brandShopAddress4"><br>
+							<mt:Var name="brandShopOverview4"></p></mt:If>
 						</li>
 						</mt:If>
 					</ul>
-					<mt:If name="shopURL">
-					<p class="m-btn shopBtn is-place"><a target="_blank" href="<mt:Var name="shopURL">"><span>その他の店舗を探す</span></a></p></mt:If>
+					<mt:If name="brandShopURL">
+					<p class="m-btn shopBtn is-place"><a target="_blank" href="<mt:Var name="brandShopURL">"><span>その他の店舗を探す</span></a></p></mt:If>
 				</div>
 			</section>
 			</mt:If>
 		</div>
-		<mt:If name="shopName1">
+		<mt:If name="brandShopName1">
 		<div id="googleMap"></div>
 		</mt:If>
 	</div><!-- .mainDetails -->
@@ -152,7 +152,7 @@
 	<section class="sec-other">
 		<!-- .m-heading -->
 		<div class="m-heading">
-			<h2 class="m-hedingTtl"><span>Other item</span>その他の<mt:Var name="brand">の商品</h2>
+			<h2 class="m-hedingTtl"><span>Other item</span>その他の<mt:Var name="brandName">の商品</h2>
 			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
 		</div><!-- .m-heading -->
 
@@ -189,7 +189,7 @@
 	<section class="sec-recommend">
 		<!-- .m-heading -->
 		<div class="m-heading">
-			<h2 class="m-hedingTtl"><span>Recommend item</span><mt:Var name="itemCategory">のおすすめ商品</h2>
+			<h2 class="m-hedingTtl"><span>Recommend item</span><mt:Var name="itemCategoryName">のおすすめ商品</h2>
 			<p class="m-headingLead">ダミーダミーダミー</p>
 			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
 		</div><!-- .m-heading -->
@@ -278,24 +278,24 @@
 <!--#include virtual='/_inc/footer.html'-->
 <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyD29DdDt14xcI-AuwSD8ZAHlKt6OKySBzc"></script>
 <script src="/js/item.js"></script>
-<mt:If name="shopName1">
+<mt:If name="brandShopName1">
 <script>
 var shopList = [
 	{
-		'shopname' : '<mt:Var name="shopName1">',
-		'address' : '<mt:Var name="shopAddress1">',
-	}<mt:If name="shopName2">,
+		'shopname' : '<mt:Var name="brandShopName1">',
+		'address' : '<mt:Var name="brandShopAddress1">',
+	}<mt:If name="brandShopName2">,
 	{
-		'shopname' : '<mt:Var name="shopName2">',
-		'address' : '<mt:Var name="shopAddress2">',
-	}</mt:If><mt:If name="shopName3">,
+		'shopname' : '<mt:Var name="brandShopName2">',
+		'address' : '<mt:Var name="brandShopAddress2">',
+	}</mt:If><mt:If name="brandShopName3">,
 	{
-		'shopname' : '<mt:Var name="shopName3">',
-		'address' : '<mt:Var name="shopAddress3">',
-	}</mt:If><mt:If name="shopName4">,
+		'shopname' : '<mt:Var name="brandShopName3">',
+		'address' : '<mt:Var name="brandShopAddress3">',
+	}</mt:If><mt:If name="brandShopName4">,
 	{
-		'shopname' : '<mt:Var name="shopName4">',
-		'address' : '<mt:Var name="shopAddress4">',
+		'shopname' : '<mt:Var name="brandShopName4">',
+		'address' : '<mt:Var name="brandShopAddress4">',
 	}</mt:If>
 ]
 var shopCode = [];
