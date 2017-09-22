@@ -1,8 +1,28 @@
 (function($){
 
 /* ---------------------------------------------
+	MT　共通ページ
+----------------------------------------------------------*/
+	$(function(){
+		$.getJSON(
+			"http://stocknow.dev.localhost/_mt/mt-data-api.cgi/v3/sites",
+			function(data){
+				console.log(data);
+			}
+		);
+	})
+	$.ajax({
+		type: "get",
+		url: "/_mt/mt-data-api.cgi/v3/sites",
+		dataType: "json"
+		success: function(data, dataType){
+
+		}
+	});
+/* ---------------------------------------------
 	MT　カテゴリページ
 ----------------------------------------------------------*/
+
 	if($('body#edit-category').length){
 
 		// 説明項目をコメントアウト
@@ -22,6 +42,7 @@
 			basename: 'categorystate',
 			label:    '常温,冷蔵,冷凍',
 			custom:   1,
+			skin: 'tags',
 			debug:    0
 		});
 
@@ -29,6 +50,7 @@
 		$.MTAppMultiCheckbox({
 			basename: 'categoryonlinepay',
 			label:    '銀行振込,代金引換,クレジットカード,コンビニ決済',
+			skin: 'tags',
 			custom:   1,
 			debug:    0
 		});
@@ -50,10 +72,21 @@
 	MT　商品詳細
 ----------------------------------------------------------*/
 	if($('body#edit-entry').length){
+		// 説明文、タグ、フェードバックを非表示に
+		$('#text-field, #tags-field, #feedback-field').hide();
+		//並び替え
 		$.MTAppFieldSort({
 			'sort': 'title,c:entryimage,c:entryimagesub1,c:entryimagesub2,c:entryprice,c:entrylimitdate,c:entryiconnew,c:entrydetails,c:entryvariationtext1,c:entryvariationimage1,c:entryvariationtext2,c:entryvariationimage2,c:entryvariationtext3,c:entryvariationimage3'
 		});
-		$('#text-field, #tags-field, #feedback-field').hide();
+
+		// NEWアイコンをタグ化
+		$.MTAppMultiCheckbox({
+			basename: 'entryiconnew',
+			label:    'ON',
+			skin: 'tags',
+			custom:   1,
+			debug:    0
+		});
 
 		// 画像をまとめる
 		$("#customfield_entryimage-field, #customfield_entryimagesub1-field, #customfield_entryimagesub2-field").wrapAll("<div class='mtapp-vertical is-picture'></div>");
@@ -63,7 +96,7 @@
 		$('#customfield_entryimagesub2-field').wrapAll("<section class='mtapp-verticalBlock'></section>");
 
 		// 価格と賞味期限をまとめる
-		$("#customfield_entryprice-field, #customfield_entrylimitdate-field, #customfield_entryiconnew-field").wrapAll("<div class='mtapp-vertical is-pli'></div>");
+		$("#customfield_entryprice-field, #customfield_entrylimitdate-field, #customfield_entr※ハチミツを使用しているため、1歳未満の乳児には与えないでください。ss='mtapp-vertical is-pli'></div>");
 		// .mtapp-verticalBlockで括る
 		$('#customfield_entryprice-field').wrapAll("<section class='mtapp-verticalBlock'></section>");
 		$('#customfield_entrylimitdate-field').wrapAll("<section class='mtapp-verticalBlock'></section>");

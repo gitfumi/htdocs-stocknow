@@ -89,10 +89,6 @@ body .basename-label {
   min-height: 110px;
 }
 
-#edit-category .mcb-container label + label {
-  margin-left: 20px;
-}
-
 /*------------------------------------------------
    商品詳細
 -------------------------------------------------- */

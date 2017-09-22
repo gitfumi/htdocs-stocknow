@@ -3,13 +3,13 @@
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title><mt:EntryTitle encode_html="1">｜<mt:Var name="itemCategoryName">｜<mt:BlogName encode_html="1"></title>
+<title>BAKEのチーズケーキ2｜商品詳細</title>
 <meta name="description" content="ディスクリプションディスクリプションディスクリプション">
 <!--#include virtual='/_inc/meta.html'-->
 <meta property="og:type" content="article">
-<meta property="og:title" content="<mt:EntryTitle encode_html="1">｜<mt:BlogName encode_html="1">">
+<meta property="og:title" content="BAKEのチーズケーキ2｜商品詳細">
 <meta property="og:description" content="ディスクリプションディスクリプションディスクリプション">
-<meta property="og:url" content="<mt:EntryPermalink encode_html="1">">
+<meta property="og:url" content="http://stocknow.dev.localhost/item/sweets/bake2.html">
 <meta property="og:image" content="サムネイル画像のURL">
 <!--#include virtual='/_inc/ogp.html'-->
 <!--#include virtual='/_inc/link.html'-->
@@ -25,137 +25,103 @@
 	<div class="dir">
 		<ul>
 			<li><a href="/">home</a></li>
-			<li><a href=""><mt:Var name="itemCategoryName"></a></li>
-			<li><mt:EntryTitle encode_html="1"></li>
+			<li><a href="">カテゴリ名</a></li>
+			<li>BAKEのチーズケーキ2</li>
 		</ul>
 	</div>
-
-<mt:For regex_replace="/^\s*\n/gm",""><mt:ignore><!-- 改行削除 --></mt:ignore>
-<mt:Truncateurl>
-
-<mt:Include module="カテゴリ">
 
 	<!-- .mainItem -->
 	<div class="mainItem">
 		<div class="itemInner">
 			<div class="itemAlbum is-new">
 				<div id="js-slickMain" class="albumMain">
-					<mt:If tag="EntryImage"><mt:EntryImageAsset>
-					<div class="mainItem"><img src="<mt:AssetURL>" alt=""></div></mt:EntryImageAsset></mt:If>
-					<mt:If tag="EntryImageSub1"><mt:EntryImageSub1Asset>
-					<div class="mainItem"><img src="<mt:AssetURL>" alt=""></div></mt:EntryImageSub1Asset></mt:If>
-					<mt:If tag="EntryImageSub2"><mt:EntryImageSub2Asset>
-					<div class="mainItem"><img src="<mt:AssetURL>" alt=""></div></mt:EntryImagesub2Asset></mt:If>
+					<div class="mainItem"><img src="/cms/item/img/pic_bake_main.png" alt=""></div>
+					<div class="mainItem"><img src="/cms/item/img/pic_bake_sub01.jpg" alt=""></div>
+					<div class="mainItem"><img src="/cms/item/img/pic_bake_sub02.jpg" alt=""></div>
 				</div>
 				<div id="js-slickThum" class="albumList">
-					<mt:If tag="EntryImage"><mt:EntryImageAsset>
-					<div class="listItem"><img src="<mt:AssetURL>" alt=""></div></mt:EntryImageAsset></mt:If>
-					<mt:If tag="EntryImageSub1"><mt:EntryImageSub1Asset>
-					<div class="listItem"><img src="<mt:AssetURL>" alt=""></div></mt:EntryImageSub1Asset></mt:If>
-					<mt:If tag="EntryImageSub2"><mt:EntryImageSub2Asset>
-					<div class="listItem"><img src="<mt:AssetURL>" alt=""></div></mt:EntryImagesub2Asset></mt:If>
+					<div class="listItem"><img src="/cms/item/img/pic_bake_main.png" alt=""></div>
+					<div class="listItem"><img src="/cms/item/img/pic_bake_sub01.jpg" alt=""></div>
+					<div class="listItem"><img src="/cms/item/img/pic_bake_sub02.jpg" alt=""></div>
 				</div>
 			</div>
-
 			<section class="itemHead">
-				<mt:If name="brandName"><p class="itemBrand"><mt:Var name="brandName"></p></mt:If>
-				<h1 class="itemName"><mt:EntryTitle encode_html="1"></h1>
-				<mt:If tag="EntryPrice"><p class="itemPrice itemStatus <mt:Var name="classState">"><em><mt:EntryPrice sprintf="%d" numify="1"></em>円（税込）</p></mt:If>
+				<p class="itemBrand">BAKE</p>
+				<h1 class="itemName">BAKEのチーズケーキ2</h1>
+				<p class="itemPrice itemStatus is-normal"><em>216</em>円（税込）</p>
 				<div class="itemParam">
-					<mt:If tag="EntryLimitDate"><p class="itemLimit"><span class="ttl">賞味期限</span><span class="txt"><mt:EntryLimitDate> days</span></p></mt:If>
-					<mt:If name="stationName"><p class="itemStation"><span class="ttl">販売店</span><span class="txt"><mt:Var name="stationName">駅</span></p></mt:If>
+					<p class="itemLimit"><span class="ttl">賞味期限</span><span class="txt">~4 days</span></p>
+					<p class="itemStation"><span class="ttl">販売店</span><span class="txt">池袋駅</span></p>
 				</div>
 				<div class="itemCredit">
 					<p class="creditTtl">オンラインショップの支払方法</p>
 					<ul class="creditList">
-						<li<mt:If name="payBank" eq="true"> class="is-possible"</mt:If>>銀行振込</li>
-						<li<mt:If name="payChange" eq="true"> class="is-possible"</mt:If>>代金引換</li>
-						<li<mt:If name="payCard" eq="true"> class="is-possible"</mt:If>>クレジットカード</li>
-						<li<mt:If name="payConvenience" eq="true"> class="is-possible"</mt:If>>コンビニ決済</li>
+						<li class="is-possible">銀行振込</li>
+						<li class="is-possible">代金引換</li>
+						<li>クレジットカード</li>
+						<li>コンビニ決済</li>
 					</ul>
 				</div>
-				<mt:If name="brandOnlineURL" ne=""><p class="itemBtn m-btn is-blank"><a target="_blank" href="<mt:Var name="brandOnlineURL">"><span>オンラインショップへ</span></a></p></mt:If>
 			</section>
 		</div>
 	</div><!-- .mainItem -->
-
 	<!-- .mainDetails -->
 	<div class="mainDetails">
 		<div class="detailsInner">
-			<mt:If name="brandShopName1" ne=""><p class="m-btn detailsBtn is-shop"><a href="#anc-shop"><span>お店に買いに行く</span></a></p></mt:If>
+			<p class="m-btn detailsBtn is-shop"><a href="#anc-shop"><span>お店に買いに行く</span></a></p>
 			<section class="itemDescription">
 				<div class="descriptionInner">
 					<h2 class="itemTtl">商品のご説明</h2>
-					<mt:If tag="EntryDetails"><p class="descriptionTxt"><mt:EntryDetails remove_html="1" convert_breaks="0" nl2br="xhtml" regex_replace="/<br \/>/g","<br>"></p></mt:If>
+					<p class="descriptionTxt">2度焼きの“サクサク”タルト生地と、“フワフワ”のクリームチーズを使った北海道生まれのチーズタルト。<br>食べ方の4種類もあり、それぞれの変化を味わってみてください！<br><br>1. FRESH まずはそのままで。<br>2. CHILLED 冷蔵庫で冷やして。<br>3. FROZEN 冷凍庫で凍らして。<br>4. WARM オーブンで。</p>
 				</div>
 			</section>
-
 			<section class="itemVariation">
 				<div class="variationInner">
 					<h2 class="itemTtl">容量バリエーション（個数）</h2>
 					<ul class="variationList">
-						<mt:If tag="EntryVariationImage1"><mt:If tag="EntryVariationText1"><mt:EntryVariationImage1Asset>
-						<li><img src="<mt:AssetURL>" alt=""><span><mt:EntryVariationText1></span></li></mt:EntryVariationImage1Asset></mt:If></mt:If>
-						<mt:If tag="EntryVariationImage2"><mt:If tag="EntryVariationText2"><mt:EntryVariationImage2Asset>
-						<li><img src="<mt:AssetURL>" alt=""><span><mt:EntryVariationText2></span></li></mt:EntryVariationImage2Asset></mt:If></mt:If>
-						<mt:If tag="EntryVariationImage3"><mt:If tag="EntryVariationText3"><mt:EntryVariationImage3Asset>
-						<li><img src="<mt:AssetURL>" alt=""><span><mt:EntryVariationText3></span></li></mt:EntryVariationImage3Asset></mt:If></mt:If>
+						<li><img src="/cms/item/img/pic_bake_var01.png" alt=""><span>1 PIECE</span></li>
+						<li><img src="/cms/item/img/pic_bake_var02.png" alt=""><span>6 PIECE（BOX）</span></li>
 					</ul>
 				</div>
 			</section>
-
-			<mt:If name="brandShopName1">
 			<section id="anc-shop" class="itemShop">
 				<div class="shopInner">
 					<h2 class="itemTtl">実店舗情報</h2>
 					<ul class="shopList">
 						<li>
-							<p id="shop01" class="shopName"><mt:Var name="brandShopName1"><span class="m-btn shopMapActive">MAP ACTIVE</span></p>
-							<mt:If name="brandShopAddress1"><p class="shopAddress"><mt:Var name="brandShopAddress1"><br>
-							<mt:Var name="brandShopOverview1"></p></mt:If>
+							<p id="shop01" class="shopName">グランスタ丸の内店<span class="m-btn shopMapActive">MAP ACTIVE</span></p>
+							<p class="shopAddress">東京都千代田区丸の内1-9-1<br>
+							JR東日本東京駅構内地下1階(改札外)<br>営業時間：8:00-22:00（月曜〜土曜、祝日）<br>　　　　　8:00-21:00（日曜、休前日）<br>TEL：03-6259-1866</p>
 						</li>
-						<mt:If name="brandShopName2">
 						<li>
-							<p class="shopName"><mt:Var name="brandShopName2"><span class="shopMapActive">MAP ACTIVE</span></p>
-							<mt:If name="brandShopAddress2"><p class="shopAddress"><mt:Var name="brandShopAddress2"><br>
-							<mt:Var name="brandShopOverview2"></p></mt:If>
+							<p class="shopName">ルミネエスト新宿店<span class="shopMapActive">MAP ACTIVE</span></p>
+							<p class="shopAddress">東京都新宿区新宿3-38-1ルミネエスト1F<br>
+							営業時間：11:00-22:00（月曜〜金曜）<br>　　　　　8:00-21:00（土曜、日曜、祝日）<br>TEL：03-5925-8170</p>
 						</li>
-						</mt:If>
-						<mt:If name="brandShopName3">
 						<li>
-							<p class="shopName"><mt:Var name="brandShopName3"><span class="shopMapActive">MAP ACTIVE</span></p>
-							<mt:If name="brandShopAddress3"><p class="shopAddress"><mt:Var name="brandShopAddress3"><br>
-							<mt:Var name="brandShopOverview3"></p></mt:If>
+							<p class="shopName">自由が丘店<span class="shopMapActive">MAP ACTIVE</span></p>
+							<p class="shopAddress">東京都目黒区自由が丘1-31-10<br>
+							営業時間：11:00-20:00<br>TEL：03-5726-8861</p>
 						</li>
-						</mt:If>
-						<mt:If name="brandShopName4">
 						<li>
-							<p class="shopName"><mt:Var name="brandShopName4"><span class="shopMapActive">MAP ACTIVE</span></p>
-							<mt:If name="brandShopAddress4"><p class="shopAddress"><mt:Var name="brandShopAddress4"><br>
-							<mt:Var name="brandShopOverview4"></p></mt:If>
+							<p class="shopName">ラゾーナ川崎店<span class="shopMapActive">MAP ACTIVE</span></p>
+							<p class="shopAddress">神奈川県川崎市幸区堀川町72-1 ラゾーナ川崎1F<br>
+							営業時間：10:00-21:00<br>TEL：044-874-8553</p>
 						</li>
-						</mt:If>
 					</ul>
-					<mt:If name="brandShopURL">
-					<p class="m-btn shopBtn is-place"><a target="_blank" href="<mt:Var name="brandShopURL">"><span>その他の店舗を探す</span></a></p></mt:If>
+					<p class="m-btn shopBtn is-place"><a target="_blank" href="https://cheesetart.com/shop/"><span>その他の店舗を探す</span></a></p>
 				</div>
 			</section>
-			</mt:If>
 		</div>
-		<mt:If name="brandShopName1">
 		<div id="googleMap"></div>
-		</mt:If>
 	</div><!-- .mainDetails -->
-
-
 	<!-- .sec-other -->
 	<section class="sec-other">
 		<!-- .m-heading -->
 		<div class="m-heading">
-			<h2 class="m-hedingTtl"><span>Other item</span>その他の<mt:Var name="brandName">の商品</h2>
+			<h2 class="m-hedingTtl"><span>Other item</span>その他のBAKEの商品</h2>
 			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
 		</div><!-- .m-heading -->
-
 		<div class="otherList">
 			<section class="is_new"><a href="">
 				<p class="otherPic"><img src="/img/pic_item_sample.jpg" alt=""></p>
@@ -184,16 +150,14 @@
 			</a></section>
 		</div>
 	</section><!-- .sec-other -->
-
 	<!-- .sec-recommend -->
 	<section class="sec-recommend">
 		<!-- .m-heading -->
 		<div class="m-heading">
-			<h2 class="m-hedingTtl"><span>Recommend item</span><mt:Var name="itemCategoryName">のおすすめ商品</h2>
+			<h2 class="m-hedingTtl"><span>Recommend item</span>手土産ギフトのおすすめ商品</h2>
 			<p class="m-headingLead">ダミーダミーダミー</p>
 			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
 		</div><!-- .m-heading -->
-
 		<div class="recommendList m-list js-slickResponsive">
 			<section class="is-new"><a href="">
 				<p class="m-itemPic"><img src="/img/pic_item_sample.jpg" alt=""></p>
@@ -270,33 +234,30 @@
 	</section><!-- .sec-recommend -->
 
 
-</mt:Truncateurl>
-</mt:For><mt:ignore><!-- //改行削除 --></mt:ignore>
-
 </div><!-- /#contents -->
 
 <!--#include virtual='/_inc/footer.html'-->
 <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyD29DdDt14xcI-AuwSD8ZAHlKt6OKySBzc"></script>
 <script src="/js/item.js"></script>
-<mt:If name="brandShopName1">
+
 <script>
 var shopList = [
 	{
-		'shopname' : '<mt:Var name="brandShopName1">',
-		'address' : '<mt:Var name="brandShopAddress1">',
-	}<mt:If name="brandShopName2">,
+		'shopname' : 'グランスタ丸の内店',
+		'address' : '東京都千代田区丸の内1-9-1',
+	},
 	{
-		'shopname' : '<mt:Var name="brandShopName2">',
-		'address' : '<mt:Var name="brandShopAddress2">',
-	}</mt:If><mt:If name="brandShopName3">,
+		'shopname' : 'ルミネエスト新宿店',
+		'address' : '東京都新宿区新宿3-38-1ルミネエスト1F',
+	},
 	{
-		'shopname' : '<mt:Var name="brandShopName3">',
-		'address' : '<mt:Var name="brandShopAddress3">',
-	}</mt:If><mt:If name="brandShopName4">,
+		'shopname' : '自由が丘店',
+		'address' : '東京都目黒区自由が丘1-31-10',
+	},
 	{
-		'shopname' : '<mt:Var name="brandShopName4">',
-		'address' : '<mt:Var name="brandShopAddress4">',
-	}</mt:If>
+		'shopname' : 'ラゾーナ川崎店',
+		'address' : '神奈川県川崎市幸区堀川町72-1 ラゾーナ川崎1F',
+	}
 ]
 var shopCode = [];
 // ショップリストの緯度経度を取得
@@ -386,6 +347,6 @@ function markup(LATLNG, SHOPNAME, MAP){
 	var marker = new google.maps.Marker(markerOptions);
 }
 </script>
-</mt:If>
+
 </body>
 </html>
