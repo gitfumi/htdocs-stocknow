@@ -57,9 +57,9 @@
 					<p class="creditTtl">オンラインショップの支払方法</p>
 					<ul class="creditList">
 						<li class="is-possible">銀行振込</li>
-						<li>代金引換</li>
+						<li class="is-possible">代金引換</li>
 						<li>クレジットカード</li>
-						<li class="is-possible">コンビニ決済</li>
+						<li>コンビニ決済</li>
 					</ul>
 				</div>
 			</section>
@@ -89,26 +89,27 @@
 					<h2 class="itemTtl">実店舗情報</h2>
 					<ul class="shopList">
 						<li>
-							<p id="shop01" class="shopName">グランスタ丸の内店</p>
+							<p id="shop01" class="shopName">グランスタ丸の内店<span class="m-btn shopMapActive">MAP ACTIVE</span></p>
 							<p class="shopAddress">東京都千代田区丸の内1-9-1<br>
 							JR東日本東京駅構内地下1階(改札外)<br>営業時間：8:00-22:00（月曜〜土曜、祝日）<br>　　　　　8:00-21:00（日曜、休前日）<br>TEL：03-6259-1866</p>
 						</li>
 						<li>
-							<p class="shopName">ルミネエスト新宿店</p>
+							<p class="shopName">ルミネエスト新宿店<span class="shopMapActive">MAP ACTIVE</span></p>
 							<p class="shopAddress">東京都新宿区新宿3-38-1ルミネエスト1F<br>
 							営業時間：11:00-22:00（月曜〜金曜）<br>　　　　　8:00-21:00（土曜、日曜、祝日）<br>TEL：03-5925-8170</p>
 						</li>
 						<li>
-							<p class="shopName">自由が丘店</p>
+							<p class="shopName">自由が丘店<span class="shopMapActive">MAP ACTIVE</span></p>
 							<p class="shopAddress">東京都目黒区自由が丘1-31-10<br>
 							営業時間：11:00-20:00<br>TEL：03-5726-8861</p>
 						</li>
 						<li>
-							<p class="shopName">ラゾーナ川崎店</p>
+							<p class="shopName">ラゾーナ川崎店<span class="shopMapActive">MAP ACTIVE</span></p>
 							<p class="shopAddress">神奈川県川崎市幸区堀川町72-1 ラゾーナ川崎1F<br>
 							営業時間：10:00-21:00<br>TEL：044-874-8553</p>
 						</li>
 					</ul>
+					<p class="m-btn shopBtn is-place"><a target="_blank" href="https://cheesetart.com/shop/"><span>その他の店舗を探す</span></a></p>
 				</div>
 			</section>
 		</div>
@@ -153,7 +154,7 @@
 	<section class="sec-recommend">
 		<!-- .m-heading -->
 		<div class="m-heading">
-			<h2 class="m-hedingTtl"><span>Recommend item</span>スイーツ・洋菓子のおすすめ商品</h2>
+			<h2 class="m-hedingTtl"><span>Recommend item</span>手土産ギフトのおすすめ商品</h2>
 			<p class="m-headingLead">ダミーダミーダミー</p>
 			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
 		</div><!-- .m-heading -->
@@ -326,8 +327,8 @@ $.when(
 	}
 	google.maps.event.addDomListener(window, 'load', googleMap);
 
-	$('.shopList li').on('click',function(){
-		var eq = $(this).index();
+	$('.shopList li .shopMapActive').on('click',function(){
+		var eq = $(this).parents('li').index();
 		map.panTo(new google.maps.LatLng(shopCode[eq]));
 	})
 })

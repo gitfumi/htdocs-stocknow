@@ -5,23 +5,12 @@
 </mt:ParentCategory>
 <mt:if name="parentCategory" eq="brand">
 
+	<mt:ignore><!-- ブランドID --></mt:ignore>
+	<mt:SetVarBlock name="brandID"><mt:CategoryID></mt:SetVarBlock>
 	<mt:ignore><!-- ブランド名 --></mt:ignore>
 	<mt:SetVarBlock name="brand"><mt:CategoryLabel encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="brandID"><mt:CategoryID></mt:SetVarBlock>
-
-	<mt:ignore><!-- 店舗情報 --></mt:ignore>
-	<mt:SetVarBlock name="shopName1"><mt:CategoryShopName1 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopAddress1"><mt:CategoryShopAddress1 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopOverview1"><mt:CategoryShopOverview1 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml" regex_replace="/<br \/>/g","<br>"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopName2"><mt:CategoryShopName2 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopAddress2"><mt:CategoryShopAddress2 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopOverview2"><mt:CategoryShopOverview2 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml" regex_replace="/<br \/>/g","<br>"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopName3"><mt:CategoryShopName3 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopAddress3"><mt:CategoryShopAddress3 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopOverview3"><mt:CategoryShopOverview3 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml" regex_replace="/<br \/>/g","<br>"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopName4"><mt:CategoryShopName4 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopAddress4"><mt:CategoryShopAddress4 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="shopOverview4"><mt:CategoryShopOverview4 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml" regex_replace="/<br \/>/g","<br>"></mt:SetVarBlock>
+	<mt:ignore><!-- ベースネーム名 --></mt:ignore>
+	<mt:SetVarBlock name="brandBasename"><mt:CategoryBaseName encode_html="1"></mt:SetVarBlock>
 
 	<mt:ignore><!-- 配送・状態 --></mt:ignore>
 	<mt:SetVarBlock name="classState"><mt:If tag="CategoryState" eq="常温">is-normal<mt:Elseif eq="冷蔵">is-cool<mt:Elseif eq="冷凍">is-frozen</mt:if></mt:SetVarBlock>
@@ -37,8 +26,26 @@
 		</mt:if>
 	</mt:loop>
 
-	<mt:ignore><!-- 配送・状態 --></mt:ignore>
+	<mt:ignore><!-- オンラインURL --></mt:ignore>
 	<mt:SetVarBlock name="onlineURL"><mt:If tag="CategoryOnlineURL" ne="http://"><mt:CategoryOnlineURL encode_html="1"></mt:If></mt:SetVarBlock>
+
+	<mt:ignore><!-- 店舗情報 --></mt:ignore>
+	<mt:SetVarBlock name="shopName1"><mt:CategoryShopName1 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopAddress1"><mt:CategoryShopAddress1 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopOverview1"><mt:CategoryShopOverview1 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml" regex_replace="/<br \/>/g","<br>"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopName2"><mt:CategoryShopName2 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopAddress2"><mt:CategoryShopAddress2 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopOverview2"><mt:CategoryShopOverview2 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml" regex_replace="/<br \/>/g","<br>"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopName3"><mt:CategoryShopName3 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopAddress3"><mt:CategoryShopAddress3 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopOverview3"><mt:CategoryShopOverview3 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml" regex_replace="/<br \/>/g","<br>"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopName4"><mt:CategoryShopName4 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopAddress4"><mt:CategoryShopAddress4 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="shopOverview4"><mt:CategoryShopOverview4 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml" regex_replace="/<br \/>/g","<br>"></mt:SetVarBlock>
+
+	<mt:ignore><!-- 他店舗リンク --></mt:ignore>
+	<mt:SetVarBlock name="shopURL"><mt:CategoryShopURL encode_html="1"></mt:SetVarBlock>
+
 <mt:Elseif eq="item">
 	<mt:ignore><!-- プライマリーカテゴリ --></mt:ignore>
 	<mt:SetVarBlock name="itemCategory"><mt:CategoryLabel encode_html="1"></mt:SetVarBlock>
