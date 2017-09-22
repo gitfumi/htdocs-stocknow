@@ -15,23 +15,21 @@
 
 CGIPath        /_mt/
 StaticWebPath  /_mt/mt-static/
-StaticFilePath D:\htdocs\stocknow\develop\_mt\mt-static
+StaticFilePath /srv/www/vhosts/stocknow/develop/_mt/mt-static
 
 #======== DATABASE SETTINGS ==========
 
 ObjectDriver DBI::mysql
 Database stocknow
-DBUser stocknow
-DBPassword stock
-DBHost localhost
+DBUser root
+DBPassword root
+DBHost d-mysql
 
 #======== MAIL =======================
 EmailAddressMain deep.blue.f23@gmail.com
 MailTransfer sendmail
 SendMailPath /
-
-TempDir C:\Windows\Temp
     
 DefaultLanguage ja
 
-ImageDriver GD
+ImageDriver ImageMagick
