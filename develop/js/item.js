@@ -17,7 +17,8 @@ $(function(){
 		centerMode: true,
 		focusOnSelect: true
 	});
-	$('.js-slickResponsive').slick({
+	if($('.js-slickResponsive').length > 2){
+		$('.js-slickResponsive').slick({
 		dots: true,
 		infinite: true,
 		arrows : false,
@@ -45,8 +46,5 @@ $(function(){
 			}
 		]
 	});
+	}
 });
-
-var hhhhh = function() {
-	console.log('ggggg');
-}

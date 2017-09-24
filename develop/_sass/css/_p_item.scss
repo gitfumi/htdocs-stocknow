@@ -222,7 +222,7 @@ $selectorRoot: "#p_item";
 		margin-top: $sectionMargin;
 	}
 	.variationList{
-		margin-top: $paramMarginM;
+		margin: $paramMarginM 0 $paramMarginL;
 		display: flex;
 		>li{
 			position: relative;
@@ -468,7 +468,7 @@ $selectorRoot: "#p_item";
 }
 @include media(phablet) {
 	.recommendList{
-		margin: 0 auto;
+		// margin: 0 auto;
 	}
 }
 }
