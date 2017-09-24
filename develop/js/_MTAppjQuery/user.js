@@ -10,11 +10,11 @@
 				console.log(data);
 			}
 		);
-	})
+	});
 	$.ajax({
 		type: "get",
 		url: "/_mt/mt-data-api.cgi/v3/sites",
-		dataType: "json"
+		dataType: "json",
 		success: function(data, dataType){
 
 		}
@@ -80,13 +80,14 @@
 		});
 
 		// NEWアイコンをタグ化
-		$.MTAppMultiCheckbox({
-			basename: 'entryiconnew',
-			label:    'ON',
-			skin: 'tags',
-			custom:   1,
-			debug:    0
-		});
+		// $.MTAppMultiCheckbox({
+		// 	basename: 'entryiconnew',
+		// 	label:    'ON',
+		// 	skin: 'tags',
+		// 	custom:   1,
+		// 	debug:    0
+		// });
+
 
 		// 画像をまとめる
 		$("#customfield_entryimage-field, #customfield_entryimagesub1-field, #customfield_entryimagesub2-field").wrapAll("<div class='mtapp-vertical is-picture'></div>");
@@ -96,7 +97,8 @@
 		$('#customfield_entryimagesub2-field').wrapAll("<section class='mtapp-verticalBlock'></section>");
 
 		// 価格と賞味期限をまとめる
-		$("#customfield_entryprice-field, #customfield_entrylimitdate-field, #customfield_entr※ハチミツを使用しているため、1歳未満の乳児には与えないでください。ss='mtapp-vertical is-pli'></div>");
+		$("#customfield_entryprice-field, #customfield_entrylimitdate-field, #customfield_entryiconnew-field").wrapAll("<div class='mtapp-vertical is-pli'></div>");
+
 		// .mtapp-verticalBlockで括る
 		$('#customfield_entryprice-field').wrapAll("<section class='mtapp-verticalBlock'></section>");
 		$('#customfield_entrylimitdate-field').wrapAll("<section class='mtapp-verticalBlock'></section>");
