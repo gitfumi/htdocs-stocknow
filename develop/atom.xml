@@ -4,9 +4,38 @@
     <link rel="alternate" type="text/html" href="http://stocknow.dev.localhost/" />
     <link rel="self" type="application/atom+xml" href="http://stocknow.dev.localhost/atom.xml" />
     <id>tag:stocknow.dev.localhost,2017-09-16:/2</id>
-    <updated>2017-09-23T04:28:09Z</updated>
+    <updated>2017-09-24T15:59:20Z</updated>
     
     <generator uri="http://www.sixapart.com/movabletype/">Movable Type Pro 6.3.5</generator>
+
+<entry>
+    <title>バターフィナンシェ</title>
+    <link rel="alternate" type="text/html" href="http://stocknow.dev.localhost/item/sweets/butterfinancier.html" />
+    <id>tag:stocknow.dev.localhost,2017://2.9</id>
+
+    <published>2017-09-24T15:40:56Z</published>
+    <updated>2017-09-24T15:59:20Z</updated>
+
+    <summary></summary>
+    <author>
+        <name>yoshida</name>
+        
+    </author>
+    
+        <category term="Butter Butler" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="スイーツ・洋菓子" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="手土産ギフト" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="新宿" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="ja" xml:base="http://stocknow.dev.localhost/">
+        
+        
+    </content>
+</entry>
 
 <entry>
     <title>サンプル</title>
