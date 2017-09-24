@@ -4,17 +4,46 @@
     <link rel="alternate" type="text/html" href="http://stocknow.dev.localhost/" />
     <link rel="self" type="application/atom+xml" href="http://stocknow.dev.localhost/atom.xml" />
     <id>tag:stocknow.dev.localhost,2017-09-16:/2</id>
-    <updated>2017-09-22T13:18:07Z</updated>
+    <updated>2017-09-23T04:28:09Z</updated>
     
     <generator uri="http://www.sixapart.com/movabletype/">Movable Type Pro 6.3.5</generator>
 
 <entry>
-    <title>BAKEのチーズケーキ</title>
-    <link rel="alternate" type="text/html" href="http://stocknow.dev.localhost/item/sweets/bake.html" />
+    <title>サンプル</title>
+    <link rel="alternate" type="text/html" href="http://stocknow.dev.localhost/item/sweets-jp/sample.html" />
     <id>tag:stocknow.dev.localhost,2017://2.5</id>
 
     <published>2017-09-17T07:34:55Z</published>
-    <updated>2017-09-22T13:18:07Z</updated>
+    <updated>2017-09-23T04:28:09Z</updated>
+
+    <summary></summary>
+    <author>
+        <name>yoshida</name>
+        
+    </author>
+    
+        <category term="中島大祥堂" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="和菓子・和スイーツ" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="東京" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="渋谷" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="ja" xml:base="http://stocknow.dev.localhost/">
+        
+        
+    </content>
+</entry>
+
+<entry>
+    <title>自分用ギフト</title>
+    <link rel="alternate" type="text/html" href="http://stocknow.dev.localhost/item/sweets/bake03.html" />
+    <id>tag:stocknow.dev.localhost,2017://2.5</id>
+
+    <published>2017-09-17T07:34:55Z</published>
+    <updated>2017-09-24T01:46:59Z</updated>
 
     <summary></summary>
     <author>
@@ -25,6 +54,72 @@
         <category term="BAKE" scheme="http://www.sixapart.com/ns/types#category" />
     
         <category term="スイーツ・洋菓子" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="新宿" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="東京" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="自分へのご褒美" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="ja" xml:base="http://stocknow.dev.localhost/">
+        
+        
+    </content>
+</entry>
+
+<entry>
+    <title>手土産ギフト</title>
+    <link rel="alternate" type="text/html" href="http://stocknow.dev.localhost/item/sweets/bake02.html" />
+    <id>tag:stocknow.dev.localhost,2017://2.5</id>
+
+    <published>2017-09-17T07:34:55Z</published>
+    <updated>2017-09-23T05:53:52Z</updated>
+
+    <summary></summary>
+    <author>
+        <name>yoshida</name>
+        
+    </author>
+    
+        <category term="BAKE" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="スイーツ・洋菓子" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="手土産ギフト" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="新宿" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="東京" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="池袋" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="ja" xml:base="http://stocknow.dev.localhost/">
+        
+        
+    </content>
+</entry>
+
+<entry>
+    <title>BAKEのチーズケーキ</title>
+    <link rel="alternate" type="text/html" href="http://stocknow.dev.localhost/item/sweets/bake.html" />
+    <id>tag:stocknow.dev.localhost,2017://2.5</id>
+
+    <published>2017-09-17T07:34:55Z</published>
+    <updated>2017-09-23T05:07:32Z</updated>
+
+    <summary></summary>
+    <author>
+        <name>yoshida</name>
+        
+    </author>
+    
+        <category term="BAKE" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="スイーツ・洋菓子" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="手土産ギフト" scheme="http://www.sixapart.com/ns/types#category" />
     
         <category term="新宿" scheme="http://www.sixapart.com/ns/types#category" />
     
