@@ -4,7 +4,7 @@
     <link rel="alternate" type="text/html" href="http://stocknow.dev.localhost/" />
     <link rel="self" type="application/atom+xml" href="http://stocknow.dev.localhost/atom.xml" />
     <id>tag:stocknow.dev.localhost,2017-09-16:/2</id>
-    <updated>2017-09-24T15:59:20Z</updated>
+    <updated>2017-09-25T14:26:05Z</updated>
     
     <generator uri="http://www.sixapart.com/movabletype/">Movable Type Pro 6.3.5</generator>
 
@@ -14,7 +14,7 @@
     <id>tag:stocknow.dev.localhost,2017://2.9</id>
 
     <published>2017-09-24T15:40:56Z</published>
-    <updated>2017-09-24T15:59:20Z</updated>
+    <updated>2017-09-25T14:26:05Z</updated>
 
     <summary></summary>
     <author>
@@ -43,7 +43,7 @@
     <id>tag:stocknow.dev.localhost,2017://2.5</id>
 
     <published>2017-09-17T07:34:55Z</published>
-    <updated>2017-09-23T04:28:09Z</updated>
+    <updated>2017-09-25T14:46:48Z</updated>
 
     <summary></summary>
     <author>
@@ -59,6 +59,8 @@
     
         <category term="渋谷" scheme="http://www.sixapart.com/ns/types#category" />
     
+        <category term="自分へのご褒美" scheme="http://www.sixapart.com/ns/types#category" />
+    
     
     <content type="html" xml:lang="ja" xml:base="http://stocknow.dev.localhost/">
         
@@ -72,7 +74,7 @@
     <id>tag:stocknow.dev.localhost,2017://2.5</id>
 
     <published>2017-09-17T07:34:55Z</published>
-    <updated>2017-09-24T01:46:59Z</updated>
+    <updated>2017-09-25T14:41:37Z</updated>
 
     <summary></summary>
     <author>
@@ -87,6 +89,8 @@
         <category term="新宿" scheme="http://www.sixapart.com/ns/types#category" />
     
         <category term="東京" scheme="http://www.sixapart.com/ns/types#category" />
+    
+        <category term="池袋" scheme="http://www.sixapart.com/ns/types#category" />
     
         <category term="自分へのご褒美" scheme="http://www.sixapart.com/ns/types#category" />
     
