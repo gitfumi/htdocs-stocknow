@@ -1,4 +1,3 @@
-<mt:Include blog_id="1" module="カテゴリ">
 <!DOCTYPE html>
 <html lang="ja">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
@@ -33,14 +32,10 @@
 
 <mt:ignore><!-- 手土産カテゴリの商品リストを取得 --></mt:ignore>
 <mt:Entries blog_ids="2" category="手土産ギフト">
+<mt:Include blog_id="1" module="カテゴリ">
 <mt:ignore><!-- ブランドの記事数をカウントしあったら表示する --></mt:ignore>
 <mt:SetVarBlock name="cnt"><mt:EntriesCount></mt:SetVarBlock>
-<mt:ignore><!-- ブランド名の取得 --></mt:ignore>
-<mt:entrycategories>
-<mt:If name="parentCategory" eq="brand">
-<mt:SetVarBlock name="brandName"><mt:CategoryLabel encode_html="1"></mt:SetVarBlock>
-</mt:If>
-</mt:entrycategories>
+
 <mt:If name="cnt" ne="0">
 
 <mt:If name='__first__'>
@@ -79,6 +74,7 @@
 
 <mt:ignore><!-- 手土産カテゴリの商品リストを取得 --></mt:ignore>
 <mt:Entries blog_ids="2" category="自分へのご褒美">
+<mt:Include blog_id="1" module="カテゴリ">
 <mt:ignore><!-- ブランドの記事数をカウントしあったら表示する --></mt:ignore>
 <mt:SetVarBlock name="cnt"><mt:EntriesCount></mt:SetVarBlock>
 <mt:ignore><!-- ブランド名の取得 --></mt:ignore>

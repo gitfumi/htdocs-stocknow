@@ -191,14 +191,10 @@
 
 <mt:ignore><!-- 商品カテゴリの商品リストを取得 --></mt:ignore>
 <mt:Entries category="$itemCategoryName">
+<mt:Include blog_id="1" module="カテゴリ">
 <mt:ignore><!-- ブランドの記事数をカウントしあったら表示する --></mt:ignore>
 <mt:SetVarBlock name="cnt"><mt:EntriesCount></mt:SetVarBlock>
-<mt:ignore><!-- ブランド名の取得 --></mt:ignore>
-<mt:entrycategories>
-<mt:if name="parentCategory" eq="brand">
-<mt:SetVarBlock name="brandName"><mt:CategoryLabel encode_html="1"></mt:SetVarBlock>
-</mt:if>
-</mt:entrycategories>
+
 <mt:If name="cnt" ne="1">
 
 <mt:ignore><!-- ループの記事IDの設定 --></mt:ignore>
