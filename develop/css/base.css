@@ -1490,6 +1490,7 @@ html {
   display: block;
   padding: 10px;
   position: relative;
+  z-index: 0;
 }
 
 .m-list > * a:before {

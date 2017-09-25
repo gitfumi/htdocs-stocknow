@@ -1,8 +1,28 @@
 (function($){
 
 /* ---------------------------------------------
+	MT　共通ページ
+----------------------------------------------------------*/
+	$(function(){
+		$.getJSON(
+			"http://stocknow.dev.localhost/_mt/mt-data-api.cgi/v3/sites",
+			function(data){
+				console.log(data);
+			}
+		);
+	});
+	$.ajax({
+		type: "get",
+		url: "/_mt/mt-data-api.cgi/v3/sites",
+		dataType: "json",
+		success: function(data, dataType){
+
+		}
+	});
+/* ---------------------------------------------
 	MT　カテゴリページ
 ----------------------------------------------------------*/
+
 	if($('body#edit-category').length){
 
 		// 説明項目をコメントアウト
@@ -60,13 +80,14 @@
 		});
 
 		// NEWアイコンをタグ化
-		$.MTAppMultiCheckbox({
-			basename: 'entryiconnew',
-			label:    'ON',
-			skin: 'tags',
-			custom:   1,
-			debug:    0
-		});
+		// $.MTAppMultiCheckbox({
+		// 	basename: 'entryiconnew',
+		// 	label:    'ON',
+		// 	skin: 'tags',
+		// 	custom:   1,
+		// 	debug:    0
+		// });
+
 
 		// 画像をまとめる
 		$("#customfield_entryimage-field, #customfield_entryimagesub1-field, #customfield_entryimagesub2-field").wrapAll("<div class='mtapp-vertical is-picture'></div>");
@@ -77,6 +98,7 @@
 
 		// 価格と賞味期限をまとめる
 		$("#customfield_entryprice-field, #customfield_entrylimitdate-field, #customfield_entryiconnew-field").wrapAll("<div class='mtapp-vertical is-pli'></div>");
+
 		// .mtapp-verticalBlockで括る
 		$('#customfield_entryprice-field').wrapAll("<section class='mtapp-verticalBlock'></section>");
 		$('#customfield_entrylimitdate-field').wrapAll("<section class='mtapp-verticalBlock'></section>");

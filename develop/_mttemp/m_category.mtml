@@ -1,0 +1,66 @@
+<mt:Entries blog_ids="2">
+<mt:SetVarBlock name="sitename">おしゃれな手土産、お取り寄せギフト探し。STOCKNOW</mt:SetVarBlock>
+<mt:SetVarBlock name="discription">ワンランクアップの手土産ギフトや、自分用のお取り寄せ、ご褒美ギフト探しならSTOCKNOW！おしゃれな最新スイーツ情報をお届けします。</mt:SetVarBlock>
+<mt:entrycategories>
+<mt:ParentCategory>
+	<mt:SetVarBlock name="parentCategory"><mt:CategoryBasename></mt:SetVarBlock>
+	<mt:ParentCategory><mt:SetVarBlock name="parentTopCategory"><mt:CategoryBasename></mt:SetVarBlock></mt:ParentCategory>
+</mt:ParentCategory>
+<mt:if name="parentCategory" eq="brand">
+
+	<mt:ignore><!-- ブランドID --></mt:ignore>
+	<mt:SetVarBlock name="brandID"><mt:CategoryID></mt:SetVarBlock>
+	<mt:ignore><!-- ブランド名 --></mt:ignore>
+	<mt:SetVarBlock name="brandName"><mt:CategoryLabel encode_html="1"></mt:SetVarBlock>
+	<mt:ignore><!-- ベースネーム名 --></mt:ignore>
+	<mt:SetVarBlock name="brandBasename"><mt:CategoryBaseName encode_html="1"></mt:SetVarBlock>
+
+	<mt:ignore><!-- 配送・状態 --></mt:ignore>
+	<mt:SetVarBlock name="classState"><mt:If tag="CategoryState" eq="常温">is-normal<mt:Elseif eq="冷蔵">is-cool<mt:Elseif eq="冷凍">is-frozen</mt:if></mt:SetVarBlock>
+
+	<mt:ignore><!-- オンライン支払方法 --></mt:ignore>
+	<mt:SetVarBlock name="brandOnlinePay"><mt:CategoryOnlinePay encode_html="1"></mt:SetVarBlock>
+	<mt:var name="brandOnlinePay" split=",","lines">
+	<mt:loop name="lines">
+		<mt:If name="__value__" eq="銀行振込"><mt:SetVarBlock name="payBank">true</mt:SetVarBlock>
+		<mt:Elseif eq="代金引換"><mt:SetVarBlock name="payChange">true</mt:SetVarBlock>
+		<mt:Elseif eq="クレジットカード"><mt:SetVarBlock name="payCard">true</mt:SetVarBlock>
+		<mt:Elseif eq="コンビニ決済"><mt:SetVarBlock name="payConvenience">true</mt:SetVarBlock>
+		</mt:if>
+	</mt:loop>
+
+	<mt:ignore><!-- オンラインURL --></mt:ignore>
+	<mt:SetVarBlock name="brandOnlineURL"><mt:If tag="CategoryOnlineURL" ne="http://"><mt:CategoryOnlineURL encode_html="1"></mt:If></mt:SetVarBlock>
+
+	<mt:ignore><!-- 店舗情報 --></mt:ignore>
+	<mt:SetVarBlock name="brandShopName1"><mt:CategoryShopName1 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="brandShopAddress1"><mt:CategoryShopAddress1 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="brandShopOverview1"><mt:CategoryShopOverview1 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml" regex_replace="/<br \/>/g","<br>"></mt:SetVarBlock>
+	<mt:SetVarBlock name="brandShopName2"><mt:CategoryShopName2 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="brandShopAddress2"><mt:CategoryShopAddress2 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="brandShopOverview2"><mt:CategoryShopOverview2 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml" regex_replace="/<br \/>/g","<br>"></mt:SetVarBlock>
+	<mt:SetVarBlock name="brandShopName3"><mt:CategoryShopName3 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="brandShopAddress3"><mt:CategoryShopAddress3 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="brandShopOverview3"><mt:CategoryShopOverview3 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml" regex_replace="/<br \/>/g","<br>"></mt:SetVarBlock>
+	<mt:SetVarBlock name="brandShopName4"><mt:CategoryShopName4 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="brandShopAddress4"><mt:CategoryShopAddress4 encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name="brandShopOverview4"><mt:CategoryShopOverview4 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml" regex_replace="/<br \/>/g","<br>"></mt:SetVarBlock>
+
+	<mt:ignore><!-- 他店舗リンク --></mt:ignore>
+	<mt:SetVarBlock name="brandShopURL"><mt:CategoryShopURL encode_html="1"></mt:SetVarBlock>
+
+<mt:Elseif eq="item">
+	<mt:ignore><!-- プライマリーカテゴリ --></mt:ignore>
+	<mt:SetVarBlock name="itemCategoryName"><mt:CategoryLabel encode_html="1"></mt:SetVarBlock>
+
+	<mt:ignore><!-- プライマリーカテゴリ --></mt:ignore>
+	<mt:SetVarBlock name="itemCategoryBasename"><mt:CategoryBasename encode_html="1"></mt:SetVarBlock>
+</mt:if>
+
+<mt:if name="parentTopCategory" eq="station">
+	<mt:ignore><!-- プライマリーカテゴリ --></mt:ignore>
+	<mt:SetVarBlock name="stationName"><mt:CategoryLabel encode_html="1"></mt:SetVarBlock>
+</mt:if>
+
+</mt:entrycategories>
+</mt:Entries>

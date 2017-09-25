@@ -427,7 +427,7 @@
 }
 
 #p_item .mainDetails .variationList {
-  margin-top: 20px;
+  margin: 20px 0 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -715,12 +715,6 @@
 
 #p_item .sec-recommend .recommendList > * a:before {
   background-color: #fff;
-}
-
-@media only screen and (max-width: 480px) {
-  #p_item .sec-recommend .recommendList {
-    margin: 0 auto;
-  }
 }
 
 /* ---------------------------------------------

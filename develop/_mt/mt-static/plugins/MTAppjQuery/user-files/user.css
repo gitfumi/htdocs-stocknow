@@ -119,6 +119,10 @@ body .basename-label {
   margin-bottom: 10px;
 }
 
+#edit-entry .mtapp-vertical.is-picture img, #edit-entry .mtapp-vertical.is-variation img {
+  max-width: 100%;
+}
+
 #edit-entry .mtapp-vertical.is-pli > .mtapp-verticalBlock {
   -ms-flex-preferred-size: calc(33.33333% - 13.33333px);
       flex-basis: calc(33.33333% - 13.33333px);

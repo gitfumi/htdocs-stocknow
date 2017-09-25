@@ -73,7 +73,9 @@ body{
 				background-color: #fcfcfc;
 				padding: 10px;
 				.field:first-of-type{margin-bottom: 10px;}
+
 			}
+			img{max-width: 100%;}
 		}
 		&.is-pli{
 			>.mtapp-verticalBlock{
