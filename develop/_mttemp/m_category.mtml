@@ -1,12 +1,9 @@
 <mt:ignore><!-- 変数宣言 --></mt:ignore>
 <mt:SetVarBlock name="sitename">おしゃれな手土産、お取り寄せギフト探し。STOCKNOW</mt:SetVarBlock>
 <mt:SetVarBlock name="discription">ワンランクアップの手土産ギフトや、自分用のお取り寄せ、ご褒美ギフト探しならSTOCKNOW！おしゃれな最新スイーツ情報をお届けします。</mt:SetVarBlock>
-
+<mt:SetVar name="cnt" value="0">
 <mt:entrycategories>
-<mt:ParentCategory>
-	<mt:CategoryBasename setvar="parentC">
-	<mt:ParentCategory><mt:CategoryBasename setvar="parentTopC"></mt:ParentCategory>
-</mt:ParentCategory>
+<mt:ParentCategory><mt:CategoryBasename setvar="parentC"></mt:ParentCategory>
 
 <mt:ignore><!-- ブランドカテゴリ設定 --></mt:ignore>
 <mt:If name="parentC" eq="brand">
@@ -19,7 +16,7 @@
 	<mt:Elseif eq="冷蔵"><mt:SetVar name="classState" value="is-cool">
 	<mt:Elseif eq="冷凍"><mt:SetVar name="classState" value="is-frozen">
 	</mt:If>
-	
+
 	<mt:ignore><!-- オンライン支払方法 --></mt:ignore>
 	<mt:CategoryOnlinePay setvar="brandOnlinePay">
 	<mt:SetVar name="brandOnlinePay" split=",","lines">
@@ -60,12 +57,14 @@
 		<mt:ignore><!-- プライマリーカテゴリ --></mt:ignore>
 		<mt:SetVarBlock name="itemCategoryBasename"><mt:CategoryBasename encode_html="1"></mt:SetVarBlock>
 	</mt:If></mt:If>
-</mt:If>
-
-<mt:ignore><!-- 駅カテゴリ設定 --></mt:ignore>
-<mt:If name="parentTopC" eq="station">
-	<mt:ignore><!-- 駅カテゴリ --></mt:ignore>
-	<mt:SetVarBlock name="stationName"><mt:CategoryLabel encode_html="1"></mt:SetVarBlock>
+<mt:Else>
+	<mt:ParentCategory><mt:ParentCategory><mt:CategoryBasename setvar="parentTopC"></mt:ParentCategory></mt:ParentCategory>
+	<mt:ignore><!-- 駅カテゴリ設定 --></mt:ignore>
+	<mt:If name="parentTopC" eq="station"><mt:If name="cnt" eq="0">
+		<mt:ignore><!-- 駅カテゴリ --></mt:ignore>
+		<mt:SetVarBlock name="stationName"><mt:CategoryLabel encode_html="1"></mt:SetVarBlock>
+		<mt:Setvar name="cnt" value="1" op="+">
+	</mt:If></mt:If>
 </mt:If>
 
 </mt:entrycategories>
