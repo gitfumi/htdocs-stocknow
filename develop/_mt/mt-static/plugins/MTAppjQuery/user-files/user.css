@@ -14,7 +14,7 @@ body {
   font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 }
 
-body input, body textarea {
+body input, body textarea, body select {
   font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   -webkit-transition: all .5s;
   transition: all .5s;
@@ -22,7 +22,7 @@ body input, body textarea {
   padding: 5px !important;
 }
 
-body input:focus, body textarea:focus {
+body input:focus, body textarea:focus, body select:focus {
   -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, .4) !important;
           box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, .4) !important;
 }
