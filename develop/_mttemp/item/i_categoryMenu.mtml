@@ -1,0 +1,26 @@
+<mt:For regex_replace="/^\s*\n/gm",""><mt:ignore><!-- 改行削除 --></mt:ignore>
+<mt:Truncateurl>
+
+		<div class="c-category">
+<mt:categories sort_by="user_custom">
+<mt:ParentCategory><mt:CategoryBasename setvar="parentC"></mt:ParentCategory>
+
+<mt:ignore><!-- ブランドカテゴリ設定 --></mt:ignore>
+<mt:If name="parentC" eq="item">
+	<mt:If tag="CategoryBasename" ne="temiyage"><mt:If tag="CategoryBasename" ne="mine"><mt:If tag="CategoryBasename" ne="brand">
+	<mt:ignore><!-- プライマリーカテゴリ --></mt:ignore>
+	<mt:SetVarBlock name="itemCategoryName"><mt:CategoryLabel encode_html="1"></mt:SetVarBlock>
+
+	<mt:ignore><!-- プライマリーカテゴリ --></mt:ignore>
+	<mt:SetVarBlock name="itemCategoryBasename"><mt:CategoryBasename encode_html="1"></mt:SetVarBlock>
+			<section><a href="/item/<mt:Var name="itemCategoryBasename">/">
+				<p class="m-catPic"><img src="/img/cmn/pic_cat_<mt:Var name="itemCategoryBasename">.png" alt="<mt:Var name="itemCategoryName">のイメージ画像"></p>
+				<h3 class="m-catName"><mt:Var name="itemCategoryName"></h3>
+			</a></section>
+	</mt:If></mt:If></mt:If>
+</mt:If>
+</mt:categories>
+		</div>
+
+		</mt:Truncateurl>
+		</mt:For><mt:ignore><!-- //改行削除 --></mt:ignore>

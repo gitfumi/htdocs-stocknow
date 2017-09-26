@@ -16,7 +16,7 @@ $selectorRootEntry: "#edit-entry";
 -------------------------------------------------- */
 body{
 	font-family: $fontFamilySansSerif;
-	input,textarea{
+	input,textarea,select{
 		font-family: $fontFamilySansSerif;
 		transition: all .5s;
 		height: auto !important;

@@ -7,7 +7,7 @@
 		$.getJSON(
 			"http://stocknow.dev.localhost/_mt/mt-data-api.cgi/v3/sites",
 			function(data){
-				console.log(data);
+				// console.log(data);
 			}
 		);
 	});
@@ -19,6 +19,7 @@
 
 		}
 	});
+	console.log(mtappVars);
 /* ---------------------------------------------
 	MT　カテゴリページ
 ----------------------------------------------------------*/

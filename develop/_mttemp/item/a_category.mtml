@@ -1,0 +1,80 @@
+<mt:Include blog_id="1" module="カテゴリ">
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title><mt:Var name="itemCategoryName">｜<mt:Var name="sitename"></title>
+<meta name="description" content="ブランド<mt:Var name="brandName">のページです。<mt:Var name="discription">">
+<!--#include virtual="/_inc/meta.html"-->
+<meta property="og:type" content="website">
+<meta property="og:title" content="<mt:Var name="itemCategoryName">｜<mt:Var name="sitename">">
+<meta property="og:description" content="ブランド<mt:Var name="brandName">のページです。<mt:Var name="discription">">
+<meta property="og:url" content="<mt:EntryPermalink encode_html="1">">
+<meta property="og:image" content="サムネイル画像のURL">
+<!--#include virtual="/_inc/ogp.html"-->
+<!--#include virtual="/_inc/link.html"-->
+</head>
+
+<body id="p_category">
+<!--#include virtual="/_inc/analytics.html"-->
+<!--#include virtual="/_inc/header.html"-->
+
+<!-- #contents -->
+<div id="contents">
+
+	<div class="dir">
+		<ul>
+			<li><a href="/">home</a></li>
+			<li><a href=""><mt:Var name="itemCategoryName"></a></li>
+			<li><mt:EntryTitle encode_html="1"></li>
+		</ul>
+	</div>
+
+<mt:ignore><!-- 手土産カテゴリの商品リストを取得 --></mt:ignore>
+<mt:Entries blog_ids="2" category="手土産ギフト">
+<mt:Include blog_id="1" module="カテゴリ">
+<mt:ignore><!-- ブランドの記事数をカウントしあったら表示する --></mt:ignore>
+<mt:SetVarBlock name="cnt"><mt:EntriesCount></mt:SetVarBlock>
+
+<mt:If name="cnt" ne="0">
+
+<mt:If name='__first__'>
+
+	<!-- .sec-temiyage -->
+	<section class="sec-temiyage">
+		<!-- .m-heading -->
+		<div class="m-heading">
+			<h2 class="m-hedingTtl"><span>For <em>Y</em>ou</span>手土産ギフト</h2>
+			<p class="m-headingLead">ダミーダミーダミー</p>
+			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
+		</div><!-- .m-heading -->
+
+		<div class="temiyageList m-list is-limit">
+</mt:If>
+<mt:Include blog_id="1" module="アイテム">
+<mt:If name='__last__'>
+		</div>
+		<p class="m-btn"><a href="/temiyage/">もっとみる</a></p>
+	</section><!-- .sec-temiyage -->
+</mt:If>
+</mt:If>
+</mt:Entries>
+
+	<!-- .sec-category -->
+	<section class="sec-category">
+		<!-- .m-heading -->
+		<div class="m-heading">
+			<h2 class="m-hedingTtl"><span>Category</span>商品カテゴリ</h2>
+			<p class="m-headingLead">ダミーダミーダミー</p>
+			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
+		</div><!-- .m-heading -->
+
+<!--#include virtual="/_inc/mt_category.html"-->
+	</section><!-- .sec-category -->
+
+</div><!-- /#contents -->
+
+<!--#include virtual="/_inc/footer.html"-->
+</body>
+</html>
