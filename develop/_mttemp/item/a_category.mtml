@@ -1,16 +1,17 @@
 <mt:Include blog_id="1" module="共通設定">
-<mt:Entries blog_ids="2"><mt:Include blog_id="1" module="カテゴリ"></mt:Entries>
+<mt:ParentCategory><mt:CategoryBasename setvar="parentBasename"></mt:ParentCategory>
+<mt:ParentCategory><mt:CategoryLabel setvar="parentName"></mt:ParentCategory>
 <!DOCTYPE html>
 <html lang="ja">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title><mt:Var name="itemCategoryName">｜<mt:Var name="sitename"></title>
-<meta name="description" content="ブランド<mt:Var name="brandName">のページです。<mt:Var name="discription">">
+<title><mt:CategoryLabel encode_html="1">｜<mt:Var name-"parentName" encode_html="1">｜<mt:Var name="sitename"></title>
+<meta name="description" content="<mt:Var name="parentName">。<mt:CategoryLabel encode_html="1">のページです。<mt:Var name="discription">">
 <!--#include virtual="/_inc/meta.html"-->
 <meta property="og:type" content="website">
-<meta property="og:title" content="<mt:Var name="itemCategoryName">｜<mt:Var name="sitename">">
-<meta property="og:description" content="ブランド<mt:Var name="brandName">のページです。<mt:Var name="discription">">
+<meta property="og:title" content="<mt:CategoryLabel encode_html="1">｜<mt:Var name-"parentName" encode_html="1">｜<mt:Var name="sitename">">
+<meta property="og:description" content="<mt:Var name="parentName">。<mt:CategoryLabel encode_html="1">のページです。<mt:Var name="discription">">
 <meta property="og:url" content="">
 <meta property="og:image" content="サムネイル画像のURL">
 <!--#include virtual="/_inc/ogp.html"-->
@@ -27,13 +28,13 @@
 	<div class="dir">
 		<ul>
 			<li><a href="/">home</a></li>
-			<li><mt:Var name="parentName"></li>
-			<li><mt:Var name="itemCategoryName"></li>
+			<li><a href="/<mt:Var name="parentName">/"><mt:Var name="parentName"></a></li>
+			<li><mt:CategoryLabel encode_html="1"></li>
 		</ul>
 	</div>
 
 <mt:ignore><!-- 手土産カテゴリの商品リストを取得 --></mt:ignore>
-<mt:Entries blog_ids="2" category="手土産ギフト">
+<mt:Entries>
 <mt:Include blog_id="1" module="カテゴリ">
 <mt:ignore><!-- ブランドの記事数をカウントしあったら表示する --></mt:ignore>
 <mt:SetVarBlock name="cnt"><mt:EntriesCount></mt:SetVarBlock>
@@ -42,22 +43,15 @@
 
 <mt:If name='__first__'>
 
-	<!-- .sec-temiyage -->
-	<section class="sec-temiyage">
-		<!-- .m-heading -->
-		<div class="m-heading">
-			<h2 class="m-hedingTtl"><span>For <em>Y</em>ou</span>手土産ギフト</h2>
-			<p class="m-headingLead">ダミーダミーダミー</p>
-			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
-		</div><!-- .m-heading -->
+	<!-- .sec-item -->
+	<section class="sec-item">
 
-		<div class="temiyageList m-list is-limit">
+		<div class="m-list is-limit">
 </mt:If>
 			<mt:Include blog_id="1" module="アイテム">
 <mt:If name='__last__'>
 		</div>
-		<p class="m-btn"><a href="/temiyage/">もっとみる</a></p>
-	</section><!-- .sec-temiyage -->
+	</section><!-- .sec-item -->
 </mt:If>
 </mt:If>
 </mt:Entries>
