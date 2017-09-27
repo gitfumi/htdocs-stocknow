@@ -1,3 +1,4 @@
+<mt:Include blog_id="1" module="共通設定">
 <!DOCTYPE html>
 <html lang="ja">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
@@ -30,6 +31,9 @@
 		</div>
 	</div><!-- .mainSlide -->
 
+<mt:For regex_replace="/^\s*\n/gm",""><mt:ignore><!-- 改行削除 --></mt:ignore>
+<mt:Truncateurl>
+
 <mt:ignore><!-- 手土産カテゴリの商品リストを取得 --></mt:ignore>
 <mt:Entries blog_ids="2" category="手土産ギフト">
 <mt:Include blog_id="1" module="カテゴリ">
@@ -51,7 +55,7 @@
 
 		<div class="temiyageList m-list is-limit js-slickResponsive">
 </mt:If>
-<mt:Include module="アイテム">
+			<mt:Include module="アイテム">
 <mt:If name='__last__'>
 		</div>
 		<p class="m-btn"><a href="/temiyage/">もっとみる</a></p>
@@ -69,7 +73,7 @@
 			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
 		</div><!-- .m-heading -->
 
-<!--#include virtual="/_inc/category.html"-->
+<!--#include virtual="/_inc/mt_category.html"-->
 	</section><!-- .sec-category -->
 
 <mt:ignore><!-- 自分へのご褒美の商品リストを取得 --></mt:ignore>
@@ -92,7 +96,7 @@
 
 		<div class="mineList m-list is-limit">
 </mt:If>
-<mt:Include module="アイテム">
+			<mt:Include module="アイテム">
 <mt:If name='__last__'>
 		</div>
 		<p class="m-btn"><a href="">もっとみる</a></p>
@@ -110,25 +114,30 @@
 			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
 		</div><!-- .m-heading -->
 
-		<div class="stationList">
-			<section>
-				<h3 class="stationTtl">東京</h3><!--
-				--><div class="stationCont">
-					<ul>
-						<li><a href="">新宿</a></li>
-						<li><a href="">渋谷</a></li>
-						<li><a href="">池袋</a></li>
-						<li><a href="">品川</a></li>
-						<li><a href="">東京</a></li>
-						<li><a href="">上野</a></li>
-						<li><a href="">秋葉原</a></li>
-					</ul>
+	<mt:categories blog_ids="2" show_empty="1">
+	<mt:CategoryBasename setVar="basename">
+	<mt:If name="basename" eq="station">
+		<mt:SubCategories sort_by="user_custom">
+			<mt:CategoryBasename setVar="parentBasename">
+				<div class="stationList">
+					<section>
+						<h3 class="stationTtl"><mt:CategoryLabel></h3><!--
+						--><div class="stationCont">
+							<ul>
+			<mt:SubCategories sort_by="user_custom">
+							<li><a href="/station/<mt:Var name="parentBasename">/<mt:CategoryBasename>/"><mt:CategoryLabel></a></li>
+			</mt:SubCategories>
+							</ul>
+						</div>
+					</section>
 				</div>
-			</section>
-		</div>
+		</mt:SubCategories>
+	</mt:If>
+	</mt:categories>
 
 	</section><!-- .sec-station -->
-
+</mt:Truncateurl>
+</mt:For><mt:ignore><!-- //改行削除 --></mt:ignore>
 
 </div><!-- /#contents -->
 
