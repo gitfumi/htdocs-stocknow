@@ -3,23 +3,35 @@
 /* ---------------------------------------------
 	MT　共通ページ
 ----------------------------------------------------------*/
-	$(function(){
-		$.getJSON(
-			"http://stocknow.dev.localhost/_mt/mt-data-api.cgi/v3/sites",
-			function(data){
-				// console.log(data);
-			}
-		);
-	});
+/*****************************
+ ブログ一覧を左メニューに追加
+******************************/
+	var siteId = 1; //サイトIDを指定
+	var protocol = location.protocol;
+	var host = location.host;
+	var path = location.pathname.replace("mt.cgi", "");
+	var $blogMenu = $('#blog-wide-menu');
+	$blogMenu.prepend(
+		'<li class="item top-menu">' +
+		'<div><a href="/_mt/mt.cgi?__mode=list&amp;_type=blog&amp;blog_id=' + siteId + '" class="top-menu-link menu-link"><span class="menu-label">ブログ一覧</span></a></div>' +
+		'<ul class="sub-menu">' +
+		'</ul>' +
+		'</li>'
+	);
 	$.ajax({
 		type: "get",
-		url: "/_mt/mt-data-api.cgi/v3/sites",
+		url: protocol + '//' + host + path + "mt-data-api.cgi/v3/sites/1/children",
 		dataType: "json",
-		success: function(data, dataType){
-
+		success: function(data){
+			var dataArray = data.items;
+			var code;
+			var $subMenu = $blogMenu.find('.sub-menu');
+			$.each(dataArray, function(i){
+				code = '<li class="item"><a href="/_mt/mt.cgi?__mode=list&amp;_type=blog&amp;blog_id=' + dataArray[i].id + '" class="sub-menu-link menu-link"><span class="menu-label">' + dataArray[i].name + '</span></a></li>'
+				$subMenu.append(code);
+			});
 		}
 	});
-	console.log(mtappVars);
 /* ---------------------------------------------
 	MT　カテゴリページ
 ----------------------------------------------------------*/

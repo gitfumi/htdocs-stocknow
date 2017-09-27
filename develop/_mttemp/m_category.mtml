@@ -1,12 +1,11 @@
-<mt:ignore><!-- 変数宣言 --></mt:ignore>
-<mt:SetVarBlock name="sitename">おしゃれな手土産、お取り寄せギフト探し。STOCKNOW</mt:SetVarBlock>
-<mt:SetVarBlock name="discription">ワンランクアップの手土産ギフトや、自分用のお取り寄せ、ご褒美ギフト探しならSTOCKNOW！おしゃれな最新スイーツ情報をお届けします。</mt:SetVarBlock>
 <mt:SetVar name="cnt" value="0">
 <mt:entrycategories>
-<mt:ParentCategory><mt:CategoryBasename setvar="parentC"></mt:ParentCategory>
+<mt:HasParentCategory><mt:ignore><!-- 親がいるカテゴリのみ --></mt:ignore>
+<mt:ParentCategory><mt:CategoryBasename setvar="parentBasename"></mt:ParentCategory>
+<mt:ParentCategory><mt:CategoryLabel setvar="parentName"></mt:ParentCategory>
 
 <mt:ignore><!-- ブランドカテゴリ設定 --></mt:ignore>
-<mt:If name="parentC" eq="brand">
+<mt:If name="parentBasename" eq="brand">
 	<mt:CategoryID setvar="brandID"><mt:ignore><!-- ブランドID --></mt:ignore>
 	<mt:CategoryLabel setvar="brandname"><mt:ignore><!-- ブランド名 --></mt:ignore>
 	<mt:CategoryBaseName setvar="brandBasename"><mt:ignore><!-- ベースネーム名 --></mt:ignore>
@@ -50,13 +49,11 @@
 
 <mt:ignore><!-- 商品カテゴリ設定 --></mt:ignore>
 <mt:Elseif eq="item">
-	<mt:If tag="CategoryBasename" ne="temiyage"><mt:If tag="CategoryBasename" ne="mine">
-		<mt:ignore><!-- プライマリーカテゴリ --></mt:ignore>
-		<mt:SetVarBlock name="itemCategoryName"><mt:CategoryLabel encode_html="1"></mt:SetVarBlock>
+	<mt:ignore><!-- プライマリーカテゴリ --></mt:ignore>
+	<mt:SetVarBlock name="itemCategoryName"><mt:CategoryLabel encode_html="1"></mt:SetVarBlock>
 
-		<mt:ignore><!-- プライマリーカテゴリ --></mt:ignore>
-		<mt:SetVarBlock name="itemCategoryBasename"><mt:CategoryBasename encode_html="1"></mt:SetVarBlock>
-	</mt:If></mt:If>
+	<mt:ignore><!-- プライマリーカテゴリ --></mt:ignore>
+	<mt:SetVarBlock name="itemCategoryBasename"><mt:CategoryBasename encode_html="1"></mt:SetVarBlock>
 <mt:Else>
 	<mt:ParentCategory><mt:ParentCategory><mt:CategoryBasename setvar="parentTopC"></mt:ParentCategory></mt:ParentCategory>
 	<mt:ignore><!-- 駅カテゴリ設定 --></mt:ignore>
@@ -66,5 +63,5 @@
 		<mt:Setvar name="cnt" value="1" op="+">
 	</mt:If></mt:If>
 </mt:If>
-
+</mt:HasParentCategory>
 </mt:entrycategories>
