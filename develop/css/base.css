@@ -1273,7 +1273,7 @@ html {
   text-align: center;
 }
 
-.m-btn a {
+.m-btn a, .m-btn > span {
   display: inline-block;
   margin: 0 auto;
   max-width: 280px;
@@ -1289,7 +1289,7 @@ html {
   position: relative;
 }
 
-.m-btn a:before {
+.m-btn a:before, .m-btn > span:before {
   content: '';
   position: absolute;
   top: -10px;
@@ -1303,17 +1303,17 @@ html {
   opacity: 0;
 }
 
-.m-btn a span:before, .m-btn a span:after {
+.m-btn a span:before, .m-btn a span:after, .m-btn > span span:before, .m-btn > span span:after {
   -webkit-transition: all .5s;
   transition: all .5s;
 }
 
-.m-btn a:hover {
+.m-btn a:hover, .m-btn > span:hover {
   color: #e60012;
   background-color: #fff;
 }
 
-.m-btn a:hover:before {
+.m-btn a:hover:before, .m-btn > span:hover:before {
   top: 0;
   left: 0;
   width: 100%;
@@ -1354,28 +1354,29 @@ html {
   color: #e60012;
 }
 
-.m-btn.is-shop a, .m-btn.is-place a {
+.m-btn.is-shop a, .m-btn.is-place a, .m-btn.is-back a {
   background-color: #fff;
   color: #000;
   border: 4px solid #000;
+  padding: 6px 20px;
 }
 
-.m-btn.is-shop a span, .m-btn.is-place a span {
-  padding-right: 30px;
-}
-
-.m-btn.is-shop a:before, .m-btn.is-place a:before {
+.m-btn.is-shop a:before, .m-btn.is-place a:before, .m-btn.is-back a:before {
   border: 2px solid #000;
 }
 
-.m-btn.is-shop a:hover, .m-btn.is-place a:hover {
+.m-btn.is-shop a:hover, .m-btn.is-place a:hover, .m-btn.is-back a:hover {
   background-color: #000;
   color: #fff;
 }
 
-.m-btn.is-shop a:hover span:before, .m-btn.is-place a:hover span:before {
+.m-btn.is-shop a:hover span:before, .m-btn.is-place a:hover span:before, .m-btn.is-back a:hover span:before {
   border-color: #fff;
   color: #fff;
+}
+
+.m-btn.is-shop a span, .m-btn.is-place a span {
+  padding-right: 30px;
 }
 
 .m-btn.is-shop a span {
@@ -1436,18 +1437,18 @@ html {
   margin-bottom: 20px;
 }
 
-.m-heading .m-hedingTtl {
+.m-heading .m-headingTtl {
   font-size: 20px;
   font-weight: bold;
 }
 
-.m-heading .m-hedingTtl span {
+.m-heading .m-headingTtl span {
   font-family: "Quantico", sans-serif;
   font-weight: normal;
   margin-right: 20px;
 }
 
-.m-heading .m-hedingTtl span em {
+.m-heading .m-headingTtl span em {
   color: #e60012;
 }
 
@@ -1469,7 +1470,7 @@ html {
 }
 
 @media only screen and (max-width: 480px) {
-  .m-heading .m-hedingTtl span {
+  .m-heading .m-headingTtl span {
     display: block;
   }
 }
@@ -1598,6 +1599,9 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .m-list .m-itemParam .m-itemLimit, .m-list .m-itemParam .m-itemStation {
@@ -1609,6 +1613,7 @@ html {
 .m-list .m-itemParam .m-itemLimit span, .m-list .m-itemParam .m-itemStation span {
   display: inline-block;
   font-size: 10px;
+  line-height: 1.0;
 }
 
 .m-list .m-itemParam .m-itemLimit span.ttl, .m-list .m-itemParam .m-itemStation span.ttl {
@@ -1620,7 +1625,7 @@ html {
   border: 2px solid #000;
   background-color: #fff;
   text-align: center;
-  padding: 0 5px;
+  padding: 3px 5px;
 }
 
 .m-list .m-itemParam .m-itemLimit span.txt {
@@ -1945,6 +1950,106 @@ html {
   opacity: 1;
   width: 100%;
   height: 100%;
+}
+
+/* ---------------------------------------------------------
+	category
+----------------------------------------------------------*/
+.c-stationList {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.c-stationList > section {
+  text-align: center;
+}
+
+.c-stationList > section .stationTtl {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.c-stationList > section + section {
+  margin-top: 20px;
+}
+
+.c-stationList > section .stationCont {
+  margin-left: 20px;
+  display: inline-block;
+}
+
+.c-stationList > section .stationCont ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c-stationList > section .stationCont ul li {
+  margin: 0 5px;
+}
+
+.c-stationList > section .stationCont ul li a {
+  padding: 5px 20px;
+  display: block;
+  border: 4px solid #000;
+  font-weight: bold;
+  background-color: #fff;
+  border-radius: 20px;
+  position: relative;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.c-stationList > section .stationCont ul li a:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  border: 4px solid #000;
+  border-radius: 30px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  opacity: 0;
+}
+
+.c-stationList > section .stationCont ul li a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+.c-stationList > section .stationCont ul li a:hover:before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .c-stationList > section .stationTtl {
+    display: block;
+  }
+  .c-stationList > section .stationCont {
+    margin: 0;
+    display: inline-block;
+  }
+  .c-stationList > section .stationCont ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .c-stationList > section .stationCont ul li {
+    margin-top: 10px;
+  }
 }
 
 /* Magnific Popup CSS */
