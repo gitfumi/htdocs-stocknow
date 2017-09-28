@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------
+	category
+----------------------------------------------------------*/
+.c-stationList{
+	max-width: $baseWidth;
+	margin: 0 auto;
+	>section{
+		text-align: center;
+		.stationTtl{
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		& + section{
+			margin-top: $paramMarginM;
+		}
+		.stationCont{
+			margin-left: 20px;
+			display: inline-block;
+			ul{
+				display: flex;
+				li{
+					margin: 0 5px;
+					a{
+						padding: 5px 20px;
+						display: block;
+						border: 4px solid $baseBorderColor;
+						font-weight: bold;
+						background-color: #fff;
+						// color: #fff;
+						border-radius: 20px;
+						position: relative;
+						transition: all .5s;
+						&:before{
+							content: '';
+							position: absolute;
+							top: -10px;
+							left: -10px;
+							width: calc(100% + 20px);
+							height: calc(100% + 20px);
+							border: 4px solid #000;
+							border-radius: 30px;
+							transition: all .5s;
+							opacity: 0;
+						}
+						&:hover{
+							color: #fff;
+							background-color: #000;
+							&:before{
+								top: 0;
+								left: 0;
+								width: 100%;
+								height: 100%;
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	@include media(tablet) {
+	>section{
+		.stationTtl{
+			display: block;
+		}
+		.stationCont{
+			margin: 0;
+			display: inline-block;
+			ul{
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				li{
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+	}
+	@include media(phablet) {
+	}
+}

@@ -27,7 +27,9 @@
 	<div class="dir">
 		<ul>
 			<li><a href="/">home</a></li>
+			<mt:If name="parentTopCBasename" ne="">
 			<li><a href="<mt:Var name='categoryParentLink'>"><mt:Var name='parentTopCName'></a></li>
+			</mt:If>
 			<li><mt:Var name='categoryTitle'></li>
 		</ul>
 	</div>
@@ -46,7 +48,7 @@
 	<section class="sec-archive">
 		<!-- .heading -->
 		<div class="heading">
-			<h1 class="headingTtl"><mt:Var name="categoryTitle"></h1>
+			<h1 class="headingTtl"><mt:Var name='categoryTitle'></h1>
 		</div><!-- .heading -->
 
 		<div class="archiveList m-list is-limit">
@@ -59,6 +61,19 @@
 </mt:If>
 </mt:Entries>
 
+	<mt:If name="parentTopCBasename" eq="station">
+	<!-- .sec-station -->
+	<section class="sec-station">
+		<!-- .m-heading -->
+		<div class="m-heading">
+			<h2 class="m-headingTtl"><span>At the <em>S</em>tation</span>立ち寄り駅ギフト</h2>
+			<p class="m-headingLead">ダミーダミーダミー</p>
+			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
+		</div><!-- .m-heading -->
+
+		<!--#include virtual="/_inc/mt_station.html"-->
+	</section><!-- .sec-station -->
+	<mt:Else>
 	<!-- .sec-category -->
 	<section class="sec-category">
 		<!-- .m-heading -->
@@ -68,9 +83,9 @@
 			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
 		</div><!-- .m-heading -->
 
-<!--#include virtual="/_inc/mt_category.html"-->
+		<!--#include virtual="/_inc/mt_category.html"-->
 	</section><!-- .sec-category -->
-
+	</mt:If>
 </div><!-- /#contents -->
 
 <!--#include virtual="/_inc/footer.html"-->

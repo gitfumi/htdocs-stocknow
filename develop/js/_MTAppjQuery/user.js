@@ -4,12 +4,13 @@
 	MT　共通ページ
 ----------------------------------------------------------*/
 /*****************************
+ 少しのイライラ解消コード：
  ブログ一覧を左メニューに追加
 ******************************/
 	var siteId = 1; //サイトIDを指定
 	var protocol = location.protocol;
 	var host = location.host;
-	var path = location.pathname.replace("mt.cgi", "");
+	var path = location.pathname.replace('mt.cgi', '');
 	var $blogMenu = $('#blog-wide-menu');
 	$blogMenu.prepend(
 		'<li class="item top-menu">' +
@@ -19,9 +20,9 @@
 		'</li>'
 	);
 	$.ajax({
-		type: "get",
-		url: protocol + '//' + host + path + "mt-data-api.cgi/v3/sites/1/children",
-		dataType: "json",
+		type: 'get',
+		url: protocol + '//' + host + path + 'mt-data-api.cgi/v3/sites/' + siteId + '/children',
+		dataType: 'json',
 		success: function(data){
 			var dataArray = data.items;
 			var code;

@@ -103,12 +103,14 @@
 	}
 	.m-itemParam{
 		display: flex;
+		align-items: center;
 		.m-itemLimit,.m-itemStation{
 			flex-basis: 50%;
 			text-align: center;
 			span{
 				display: inline-block;
 				font-size: 10px;
+				line-height: 1.0;
 				&.ttl{width: 40%;}
 				&.txt{
 					width: 60%;
@@ -117,13 +119,14 @@
 					// font-family: $fontFamilyQuantico;
 					// font-weight: 700;
 					text-align: center;
-					padding: 0 5px;
+					padding: 3px 5px;
 				}
 			}
 		}
 		.m-itemLimit span.txt{
 			font-family: $fontFamilyQuantico;
 			font-weight: 700;
+			// padding: 4px 5px;
 		}
 	}
 	.m-itemPic.is-train{
