@@ -26,14 +26,14 @@
 </mt:ParentCategory></mt:ParentCategory>
 
 <mt:If name='parentTopCBasename' eq='station'>
-<mt:SetVarBlock name="categoryTitle"><mt:CategoryLabel>駅の最寄り駅ギフト</mt:SetVarBlock>
-<mt:SetVarBlock name="categoryParentLink">/<mt:Var name="parentTopCBasename">/</mt:SetVarBlock>
+<mt:SetVarBlock name='categoryTitle'><mt:CategoryLabel>駅の最寄り駅ギフト</mt:SetVarBlock>
+<mt:SetVarBlock name='categoryParentLink'>/<mt:Var name='parentTopCBasename'>/</mt:SetVarBlock>
 
 <mt:Else>
 <mt:ParentCategory><mt:CategoryBasename setvar='parentTopCBasename'><mt:CategoryLabel setvar='parentTopCName'></mt:ParentCategory>
-<mt:SetVarBlock name="categoryTitle"><mt:CategoryLabel></mt:SetVarBlock>
-<mt:SetVarBlock name="categoryParentLink">/<mt:Var name="parentTopCBasename">/</mt:SetVarBlock>
+<mt:SetVarBlock name='categoryTitle'><mt:CategoryLabel></mt:SetVarBlock>
+<mt:SetVarBlock name='categoryParentLink'>/<mt:Var name='parentTopCBasename'>/</mt:SetVarBlock>
 </mt:if>
-<mt:SetVarBlock name='headTitle'><mt:Var name="categoryTitle">｜<mt:Var name='sitename'></mt:SetVarBlock>
-<mt:SetVarBlock name='headDescription'><mt:Var name="categoryTitle">の一覧ページです。<mt:Var name='headDescription'></mt:SetVarBlock>
+<mt:SetVarBlock name='headTitle'><mt:Var name='categoryTitle'>｜<mt:Var name='sitename'></mt:SetVarBlock>
+<mt:SetVarBlock name='headDescription'><mt:Var name='categoryTitle'>の一覧ページです。<mt:Var name='headDescription'></mt:SetVarBlock>
 </mt:if>

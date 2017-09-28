@@ -48,6 +48,17 @@ $selectorRoot: "#p_category";
 }
 
 /* -----------------------------------------------
+/* sec-station
+-------------------------------------------------- */
+#{$selectorRoot} .sec-station{
+	background-color: $grayBackgroundColor;
+	padding: 50px 0;
+@include media(tablet) {
+}
+@include media(phablet) {
+}
+}
+/* -----------------------------------------------
 /* sec-category
 -------------------------------------------------- */
 #{$selectorRoot} .sec-category{
