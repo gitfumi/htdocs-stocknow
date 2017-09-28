@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>お問い合わせ | おしゃれな手土産ギフト、ご褒美ギフトなら STOCKNOW</title>
+<meta name="description" content="お問い合わせのページ。ワンランクアップの手土産ギフトや、自分用のお取り寄せ、ご褒美ギフト探しならSTOCKNOW！おしゃれな最新スイーツ情報をお届けします。">
+<!--#include virtual="/_inc/meta.html"-->
+<meta property="og:type" content="website">
+<meta property="og:title" content="お問い合わせ | おしゃれな手土産ギフト、ご褒美ギフトなら STOCKNOW">
+<meta property="og:description" content="お問い合わせのページ。ワンランクアップの手土産ギフトや、自分用のお取り寄せ、ご褒美ギフト探しならSTOCKNOW！おしゃれな最新スイーツ情報をお届けします。">
+<meta property="og:url" content="http://stocknow.dev.localhost/con">
+<meta property="og:image" content="http://stocknow.dev.localhost/img/cmn/pic_ogp.jpg">
+<!--#include virtual="/_inc/ogp.html"-->
+<!--#include virtual="/_inc/link.html"-->
+</head>
+
+<body id="p_contact">
+<!--#include virtual="/_inc/analytics.html"-->
+<!--#include virtual="/_inc/header.html"-->
+
+<!-- #contents -->
+<div id="contents">
+
+	<div class="dir">
+		<ul>
+			<li><a href="/">home</a></li>
+			<li>お問い合わせ</li>
+		</ul>
+	</div>
+
+	<!-- .sec-contact -->
+	<section class='sec-contact'>
+
+		<!-- .heading -->
+		<div class="heading">
+			<h1 class="headingTtl">お問い合わせ</h1>
+		</div><!-- .heading -->
+
+		<section class="form_body">
+		<form action="confirm.php" method="post">
+			<div class="form_field">
+
+				<div class="field_item">
+					<p class="item_head is_require">お名前：</p>
+					<div class="item_cont">
+						<input type="text">
+					</div>
+				</div>
+
+				<div class="field_item">
+					<p class="item_head is_require">メールアドレス：</p>
+					<div class="item_cont">
+						<p class="item_group">
+							<input id="" class="js_validate js_required js_email" name="email" type="text" value="" autocomplete="email" placeholder="例：stocknow@stocknow.co.jp" maxlength="100">
+						</p>
+						<p class="item_group">※半角英数字でご入力ください</p>
+					</div>
+				</div>
+
+				<div class="field_item">
+					<p class="item_head">ご用件の種類：</p>
+					<div class="item_cont">
+						<p class="item_group">
+							<select id="" name="require" class="js_validate js_required">
+							<option value="" selected="selected">選択して下さい</option>
+							<option value="サイトに関する質問">サイトに関する質問</option>
+							<option value="記事に関する間違い指摘・クレーム">記事に関する間違い指摘・クレーム</option>
+							<option value="広告の掲載依頼">広告の掲載依頼</option>
+							<option value="その他">その他</option>
+							</select>
+						</p>
+					</div>
+				</div>
+
+				<div class="field_item">
+					<p class="item_head">メッセージ等：</p>
+					<div class="item_cont">
+						<p class="item_group">
+							<textarea name="inquiries" id="" cols="30" rows="10" maxlength="1000"></textarea>
+						</p>
+					</div>
+				</div>
+			</div>
+			<ul class="form_btn">
+				<li class="m-btn is-next js_submit"><a href="confirm.html"><span>入力内容を確認する</span></a></li>
+			</ul>
+		</form>
+		</section>
+
+	</section><!-- .sec-contact -->
+
+</div><!-- /#contents -->
+
+<!--#include virtual="/_inc/footer.html"-->
+</body>
+</html>
