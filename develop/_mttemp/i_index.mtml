@@ -1,17 +1,17 @@
-<mt:Include blog_id="1" module="共通設定">
+<mt:Include blog_id='1' module='共通設定'>
 <!DOCTYPE html>
 <html lang="ja">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>おしゃれな手土産ギフト、ご褒美ギフトなら-STOCKNOW-</title>
-<meta name="description" content="ワンランクアップの手土産ギフトや、自分用のお取り寄せ、ご褒美ギフト探しならSTOCKNOW！おしゃれな最新スイーツ情報をお届けします。">
+<title><mt:Var name='headTitle'></title>
+<meta name="description" content="<mt:Var name='headDescription'>">
 <!--#include virtual="/_inc/meta.html"-->
-<meta property="og:type" content="website">
-<meta property="og:title" content="タイトルタイトルタイトルタイトル">
-<meta property="og:description" content="ワンランクアップの手土産ギフトや、自分用のお取り寄せご褒美ギフト探しならSTOCKNOW！おしゃれな最新スイーツ情報をお届けします。">
-<meta property="og:url" content="ページのURL">
-<meta property="og:image" content="サムネイル画像のURL">
+<meta property="og:type" content="<mt:Var name='headOGPType'>">
+<meta property="og:title" content="<mt:Var name='headTitle'>">
+<meta property="og:description" content="<mt:Var name='headDescription'>">
+<meta property="og:url" content="<mt:Var name='headOGPUrl'>">
+<meta property="og:image" content="<mt:Var name='headOGPImage'>">
 <!--#include virtual="/_inc/ogp.html"-->
 <!--#include virtual="/_inc/link.html"-->
 </head>
@@ -31,31 +31,31 @@
 		</div>
 	</div><!-- .mainSlide -->
 
-<mt:For regex_replace="/^\s*\n/gm",""><mt:ignore><!-- 改行削除 --></mt:ignore>
+<mt:For regex_replace='/^\s*\n/gm',''><mt:ignore><!-- 改行削除 --></mt:ignore>
 <mt:Truncateurl>
 
 <mt:ignore><!-- 手土産カテゴリの商品リストを取得 --></mt:ignore>
-<mt:Entries blog_ids="2" category="手土産ギフト">
-<mt:Include blog_id="1" module="カテゴリ">
+<mt:Entries blog_ids='2' category='手土産ギフト'>
+<mt:Include blog_id='1' module='カテゴリ'>
 <mt:ignore><!-- ブランドの記事数をカウントしあったら表示する --></mt:ignore>
-<mt:SetVarBlock name="cnt"><mt:EntriesCount></mt:SetVarBlock>
+<mt:SetVarBlock name='cnt'><mt:EntriesCount></mt:SetVarBlock>
 
-<mt:If name="cnt" ne="0">
+<mt:If name='cnt' ne='0'>
 
 <mt:If name='__first__'>
 
 	<!-- .sec-temiyage -->
-	<section class="sec-temiyage">
+	<section class='sec-temiyage'>
 		<!-- .m-heading -->
 		<div class="m-heading">
-			<h2 class="m-hedingTtl"><span>For <em>Y</em>ou</span>手土産ギフト</h2>
+			<h2 class="m-headingTtl"><span>For <em>Y</em>ou</span>手土産ギフト</h2>
 			<p class="m-headingLead">ダミーダミーダミー</p>
 			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
 		</div><!-- .m-heading -->
 
 		<div class="temiyageList m-list is-limit js-slickResponsive">
 </mt:If>
-			<mt:Include module="アイテム">
+			<mt:Include module='アイテム'>
 <mt:If name='__last__'>
 		</div>
 		<p class="m-btn"><a href="/temiyage/">もっとみる</a></p>
@@ -68,35 +68,35 @@
 	<section class="sec-category">
 		<!-- .m-heading -->
 		<div class="m-heading">
-			<h2 class="m-hedingTtl"><span>Category</span>商品カテゴリ</h2>
+			<h2 class="m-headingTtl"><span>Category</span>商品カテゴリ</h2>
 			<p class="m-headingLead">ダミーダミーダミー</p>
 			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
 		</div><!-- .m-heading -->
 
-<!--#include virtual="/_inc/mt_category.html"-->
+		<!--#include virtual="/_inc/mt_category.html"-->
 	</section><!-- .sec-category -->
 
 <mt:ignore><!-- 自分へのご褒美の商品リストを取得 --></mt:ignore>
-<mt:Entries blog_ids="2" category="自分へのご褒美">
-<mt:Include blog_id="1" module="カテゴリ">
+<mt:Entries blog_ids='2' category='自分へのご褒美'>
+<mt:Include blog_id='1' module='カテゴリ'>
 <mt:ignore><!-- ブランドの記事数をカウントしあったら表示する --></mt:ignore>
-<mt:SetVarBlock name="cnt"><mt:EntriesCount></mt:SetVarBlock>
+<mt:SetVarBlock name='cnt'><mt:EntriesCount></mt:SetVarBlock>
 
-<mt:If name="cnt" ne="0">
+<mt:If name='cnt' ne='0'>
 
 <mt:If name='__first__'>
 	<!-- .sec-mine -->
 	<section class="sec-mine">
 		<!-- .m-heading -->
 		<div class="m-heading">
-			<h2 class="m-hedingTtl"><span>For <em>M</em>e</span>自分へのご褒美</h2>
+			<h2 class="m-headingTtl"><span>For <em>M</em>e</span>自分へのご褒美</h2>
 			<p class="m-headingLead">ダミーダミーダミー</p>
 			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
 		</div><!-- .m-heading -->
 
 		<div class="mineList m-list is-limit">
 </mt:If>
-			<mt:Include module="アイテム">
+			<mt:Include module='アイテム'>
 <mt:If name='__last__'>
 		</div>
 		<p class="m-btn"><a href="">もっとみる</a></p>
@@ -109,22 +109,22 @@
 	<section class="sec-station">
 		<!-- .m-heading -->
 		<div class="m-heading">
-			<h2 class="m-hedingTtl"><span>At the <em>S</em>tation</span>立ち寄り駅ギフト</h2>
+			<h2 class="m-headingTtl"><span>At the <em>S</em>tation</span>立ち寄り駅ギフト</h2>
 			<p class="m-headingLead">ダミーダミーダミー</p>
 			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
 		</div><!-- .m-heading -->
 
-	<mt:categories blog_ids="2" show_empty="1">
-	<mt:CategoryBasename setVar="basename">
-	<mt:If name="basename" eq="station">
-		<mt:SubCategories sort_by="user_custom">
-			<mt:CategoryBasename setVar="parentBasename">
+	<mt:categories blog_ids='2' show_empty='1'>
+	<mt:CategoryBasename setVar='basename'>
+	<mt:If name='basename' eq='station'>
+		<mt:SubCategories sort_by='user_custom'>
+			<mt:CategoryBasename setVar='parentBasename'>
 				<div class="stationList">
 					<section>
 						<h3 class="stationTtl"><mt:CategoryLabel></h3><!--
 						--><div class="stationCont">
 							<ul>
-			<mt:SubCategories sort_by="user_custom">
+			<mt:SubCategories sort_by='user_custom'>
 							<li><a href="/station/<mt:Var name="parentBasename">/<mt:CategoryBasename>/"><mt:CategoryLabel></a></li>
 			</mt:SubCategories>
 							</ul>
