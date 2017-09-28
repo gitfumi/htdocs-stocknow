@@ -1,19 +1,18 @@
-<mt:Include blog_id="1" module="共通設定">
-<mt:ParentCategory><mt:CategoryBasename setvar="parentBasename"></mt:ParentCategory>
-<mt:ParentCategory><mt:CategoryLabel setvar="parentName"></mt:ParentCategory>
+<mt:Entries blog_ids='2'><mt:Include blog_id='1' module='カテゴリ'></mt:Entries>
+<mt:Include blog_id='1' module='共通設定'>
 <!DOCTYPE html>
 <html lang="ja">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title><mt:CategoryLabel encode_html="1">｜<mt:Var name-"parentName" encode_html="1">｜<mt:Var name="sitename"></title>
-<meta name="description" content="<mt:Var name="parentName">。<mt:CategoryLabel encode_html="1">のページです。<mt:Var name="discription">">
-<!--#include virtual="/_inc/meta.html"-->
-<meta property="og:type" content="website">
-<meta property="og:title" content="<mt:CategoryLabel encode_html="1">｜<mt:Var name-"parentName" encode_html="1">｜<mt:Var name="sitename">">
-<meta property="og:description" content="<mt:Var name="parentName">。<mt:CategoryLabel encode_html="1">のページです。<mt:Var name="discription">">
-<meta property="og:url" content="">
-<meta property="og:image" content="サムネイル画像のURL">
+<title><mt:Var name='headTitle'></title>
+<meta name="description" content="<mt:Var name='headDescription'>">
+<!--#include virtual='/_inc/meta.html'-->
+<meta property="og:type" content="<mt:Var name='headOGPType'>">
+<meta property="og:title" content="<mt:Var name='headTitle'>">
+<meta property="og:description" content="<mt:Var name='headDescription'>">
+<meta property="og:url" content="<mt:Var name='headOGPUrl'>">
+<meta property="og:image" content="<mt:Var name='headOGPImage'>">
 <!--#include virtual="/_inc/ogp.html"-->
 <!--#include virtual="/_inc/link.html"-->
 </head>
@@ -28,46 +27,65 @@
 	<div class="dir">
 		<ul>
 			<li><a href="/">home</a></li>
-			<li><a href="/<mt:Var name="parentName">/"><mt:Var name="parentName"></a></li>
-			<li><mt:CategoryLabel encode_html="1"></li>
+			<mt:If name="parentTopCBasename" ne="">
+			<li><a href="<mt:Var name='categoryParentLink'>"><mt:Var name='parentTopCName'></a></li>
+			</mt:If>
+			<li><mt:Var name='categoryTitle'></li>
 		</ul>
 	</div>
 
 <mt:ignore><!-- 手土産カテゴリの商品リストを取得 --></mt:ignore>
 <mt:Entries>
-<mt:Include blog_id="1" module="カテゴリ">
+<mt:Include blog_id='1' module='カテゴリ'>
 <mt:ignore><!-- ブランドの記事数をカウントしあったら表示する --></mt:ignore>
-<mt:SetVarBlock name="cnt"><mt:EntriesCount></mt:SetVarBlock>
+<mt:SetVarBlock name='cnt'><mt:EntriesCount></mt:SetVarBlock>
 
-<mt:If name="cnt" ne="0">
+<mt:If name='cnt' ne="0">
 
 <mt:If name='__first__'>
 
-	<!-- .sec-item -->
-	<section class="sec-item">
+<!-- .sec-archive -->
+<section class="sec-archive">
+	<!-- .heading -->
+	<div class="heading">
+		<h1 class="headingTtl"><mt:Var name='categoryTitle'></h1>
+	</div><!-- .heading -->
 
-		<div class="m-list is-limit">
+	<div class="archiveList m-list is-limit">
 </mt:If>
-			<mt:Include blog_id="1" module="アイテム">
+			<mt:Include blog_id='1' module='アイテム'>
 <mt:If name='__last__'>
 		</div>
-	</section><!-- .sec-item -->
+	</section><!-- .sec-archive -->
 </mt:If>
 </mt:If>
 </mt:Entries>
 
-	<!-- .sec-category -->
-	<section class="sec-category">
+	<mt:If name="parentTopCBasename" eq="station">
+	<!-- .sec-station -->
+	<section class="sec-station">
 		<!-- .m-heading -->
 		<div class="m-heading">
-			<h2 class="m-hedingTtl"><span>Category</span>商品カテゴリ</h2>
+			<h2 class="m-headingTtl"><span>At the <em>S</em>tation</span>立ち寄り駅ギフト</h2>
 			<p class="m-headingLead">ダミーダミーダミー</p>
 			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
 		</div><!-- .m-heading -->
 
-<!--#include virtual="/_inc/mt_category.html"-->
-	</section><!-- .sec-category -->
+		<!--#include virtual="/_inc/mt_station.html"-->
+	</section><!-- .sec-station -->
+	<mt:Else>
+	<!-- .sec-category -->
+	<section class="sec-category">
+		<!-- .m-heading -->
+		<div class="m-heading">
+			<h2 class="m-headingTtl"><span>Category</span>商品カテゴリ</h2>
+			<p class="m-headingLead">ダミーダミーダミー</p>
+			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
+		</div><!-- .m-heading -->
 
+		<!--#include virtual="/_inc/mt_category.html"-->
+	</section><!-- .sec-category -->
+	</mt:If>
 </div><!-- /#contents -->
 
 <!--#include virtual="/_inc/footer.html"-->

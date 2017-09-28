@@ -1,66 +1,74 @@
-<mt:SetVar name="cnt" value="0">
+<mt:SetVar name='cnt' value='0'>
 <mt:entrycategories>
 <mt:HasParentCategory><mt:ignore><!-- 親がいるカテゴリのみ --></mt:ignore>
-<mt:ParentCategory><mt:CategoryBasename setvar="parentBasename"></mt:ParentCategory>
-<mt:ParentCategory><mt:CategoryLabel setvar="parentName"></mt:ParentCategory>
+<mt:ParentCategory><mt:CategoryBasename setvar='parentBasename'></mt:ParentCategory>
+<mt:ParentCategory><mt:CategoryLabel setvar='parentName'></mt:ParentCategory>
 
 <mt:ignore><!-- ブランドカテゴリ設定 --></mt:ignore>
-<mt:If name="parentBasename" eq="brand">
-	<mt:CategoryID setvar="brandID"><mt:ignore><!-- ブランドID --></mt:ignore>
-	<mt:CategoryLabel setvar="brandname"><mt:ignore><!-- ブランド名 --></mt:ignore>
-	<mt:CategoryBaseName setvar="brandBasename"><mt:ignore><!-- ベースネーム名 --></mt:ignore>
+<mt:If name='parentBasename' eq='brand'>
+	<mt:CategoryID setvar='brandID'><mt:ignore><!-- ブランドID --></mt:ignore>
+	<mt:CategoryLabel setvar='brandname'><mt:ignore><!-- ブランド名 --></mt:ignore>
+	<mt:CategoryBaseName setvar='brandBasename'><mt:ignore><!-- ベースネーム名 --></mt:ignore>
 
 	<mt:ignore><!-- 配送・状態 --></mt:ignore>
-	<mt:If tag="CategoryState" eq="常温"><mt:SetVar name="classState" value="is-normal">
-	<mt:Elseif eq="冷蔵"><mt:SetVar name="classState" value="is-cool">
-	<mt:Elseif eq="冷凍"><mt:SetVar name="classState" value="is-frozen">
+	<mt:If tag='CategoryState' eq='常温'><mt:SetVar name='classState' value='is-normal'>
+	<mt:Elseif eq='冷蔵'><mt:SetVar name='classState' value='is-cool'>
+	<mt:Elseif eq='冷凍'><mt:SetVar name='classState' value='is-frozen'>
 	</mt:If>
 
 	<mt:ignore><!-- オンライン支払方法 --></mt:ignore>
-	<mt:CategoryOnlinePay setvar="brandOnlinePay">
-	<mt:SetVar name="brandOnlinePay" split=",","lines">
-	<mt:loop name="lines">
-		<mt:If name="__value__" eq="銀行振込"><mt:SetVar name="payBank" value="true">
-		<mt:Elseif eq="代金引換"><mt:SetVar name="payChange" value="true">
-		<mt:Elseif eq="クレジットカード"><mt:SetVar name="payCard" value="true">
-		<mt:Elseif eq="コンビニ決済"><mt:SetVar name="payConvenience" value="true">
-		</mt:If>
+	<mt:SetVarBlock name='brandOnlinePay'><mt:CategoryOnlinePay encode_html='1'></mt:SetVarBlock>
+	<mt:var name='brandOnlinePay' split=',','lines'>
+	<mt:SetVar name='payContact' value='false'>
+	<mt:loop name='lines'>
+		<mt:If name='__value__' eq='銀行振込'><mt:SetVarBlock name='payBank'>true</mt:SetVarBlock>
+		<mt:Elseif eq='代金引換'><mt:SetVarBlock name='payChange'>true</mt:SetVarBlock>
+		<mt:Elseif eq='クレジットカード'><mt:SetVarBlock name='payCard'>true</mt:SetVarBlock>
+		<mt:Elseif eq='コンビニ決済'><mt:SetVarBlock name='payConvenience'>true</mt:SetVarBlock>
+		<mt:Else><mt:SetVar name='payContact' value='true'>
+		</mt:if>
 	</mt:loop>
 
 	<mt:ignore><!-- オンラインURL --></mt:ignore>
-	<mt:SetVarBlock name="brandOnlineURL"><mt:If tag="CategoryOnlineURL" ne="http://"><mt:CategoryOnlineURL encode_html="1"></mt:If></mt:SetVarBlock>
+	<mt:SetVarBlock name='brandOnlineURL'><mt:If tag='CategoryOnlineURL' ne='http://'><mt:CategoryOnlineURL encode_html='1'></mt:If></mt:SetVarBlock>
 
 	<mt:ignore><!-- 店舗情報 --></mt:ignore>
-	<mt:SetVarBlock name="brandShopName1"><mt:CategoryShopName1 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="brandShopAddress1"><mt:CategoryShopAddress1 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="brandShopOverview1"><mt:CategoryShopOverview1 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml" regex_replace="/<br \/>/g","<br>"></mt:SetVarBlock>
-	<mt:SetVarBlock name="brandShopName2"><mt:CategoryShopName2 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="brandShopAddress2"><mt:CategoryShopAddress2 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="brandShopOverview2"><mt:CategoryShopOverview2 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml" regex_replace="/<br \/>/g","<br>"></mt:SetVarBlock>
-	<mt:SetVarBlock name="brandShopName3"><mt:CategoryShopName3 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="brandShopAddress3"><mt:CategoryShopAddress3 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="brandShopOverview3"><mt:CategoryShopOverview3 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml" regex_replace="/<br \/>/g","<br>"></mt:SetVarBlock>
-	<mt:SetVarBlock name="brandShopName4"><mt:CategoryShopName4 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="brandShopAddress4"><mt:CategoryShopAddress4 encode_html="1"></mt:SetVarBlock>
-	<mt:SetVarBlock name="brandShopOverview4"><mt:CategoryShopOverview4 encode_html="1" remove_html="1" convert_breaks="0" nl2br="xhtml" regex_replace="/<br \/>/g","<br>"></mt:SetVarBlock>
+	<mt:SetVarBlock name='brandShopName1'><mt:CategoryShopName1 encode_html='1'></mt:SetVarBlock>
+	<mt:SetVarBlock name='brandShopAddress1'><mt:CategoryShopAddress1 encode_html='1'></mt:SetVarBlock>
+	<mt:SetVarBlock name='brandShopOverview1'><mt:CategoryShopOverview1 encode_html='1' remove_html='1' convert_breaks='0' nl2br='xhtml' regex_replace='/<br \/>/g','<br>'></mt:SetVarBlock>
+	<mt:SetVarBlock name='brandShopName2'><mt:CategoryShopName2 encode_html='1'></mt:SetVarBlock>
+	<mt:SetVarBlock name='brandShopAddress2'><mt:CategoryShopAddress2 encode_html='1'></mt:SetVarBlock>
+	<mt:SetVarBlock name='brandShopOverview2'><mt:CategoryShopOverview2 encode_html='1' remove_html='1' convert_breaks='0' nl2br='xhtml' regex_replace='/<br \/>/g','<br>'></mt:SetVarBlock>
+	<mt:SetVarBlock name='brandShopName3'><mt:CategoryShopName3 encode_html='1'></mt:SetVarBlock>
+	<mt:SetVarBlock name='brandShopAddress3'><mt:CategoryShopAddress3 encode_html='1'></mt:SetVarBlock>
+	<mt:SetVarBlock name='brandShopOverview3'><mt:CategoryShopOverview3 encode_html='1' remove_html='1' convert_breaks='0' nl2br='xhtml' regex_replace='/<br \/>/g','<br>'></mt:SetVarBlock>
+	<mt:SetVarBlock name='brandShopName4'><mt:CategoryShopName4 encode_html='1'></mt:SetVarBlock>
+	<mt:SetVarBlock name='brandShopAddress4'><mt:CategoryShopAddress4 encode_html='1'></mt:SetVarBlock>
+	<mt:SetVarBlock name='brandShopOverview4'><mt:CategoryShopOverview4 encode_html='1' remove_html='1' convert_breaks='0' nl2br='xhtml' regex_replace='/<br \/>/g','<br>'></mt:SetVarBlock>
 
 	<mt:ignore><!-- 他店舗リンク --></mt:ignore>
-	<mt:SetVarBlock name="brandShopURL"><mt:CategoryShopURL encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name='brandShopURL'><mt:CategoryShopURL encode_html='1'></mt:SetVarBlock>
 
 <mt:ignore><!-- 商品カテゴリ設定 --></mt:ignore>
-<mt:Elseif eq="item">
-	<mt:ignore><!-- プライマリーカテゴリ --></mt:ignore>
-	<mt:SetVarBlock name="itemCategoryName"><mt:CategoryLabel encode_html="1"></mt:SetVarBlock>
+<mt:Elseif eq='item'>
+	<mt:ignore><!-- プライマリー親カテゴリ --></mt:ignore>
+	<mt:SetVarBlock name='itemPriCategoryName'><mt:Var name='parentName' encode_html='1'></mt:SetVarBlock>
+
+	<mt:ignore><!-- プライマリー親カテゴリ --></mt:ignore>
+	<mt:SetVarBlock name='itemPriCategoryBasename'><mt:Var name='parentBasename' encode_html='1'></mt:SetVarBlock>
 
 	<mt:ignore><!-- プライマリーカテゴリ --></mt:ignore>
-	<mt:SetVarBlock name="itemCategoryBasename"><mt:CategoryBasename encode_html="1"></mt:SetVarBlock>
+	<mt:SetVarBlock name='itemCategoryName'><mt:CategoryLabel encode_html='1'></mt:SetVarBlock>
+
+	<mt:ignore><!-- プライマリーカテゴリ --></mt:ignore>
+	<mt:SetVarBlock name='itemCategoryBasename'><mt:CategoryBasename encode_html='1'></mt:SetVarBlock>
 <mt:Else>
-	<mt:ParentCategory><mt:ParentCategory><mt:CategoryBasename setvar="parentTopC"></mt:ParentCategory></mt:ParentCategory>
+	<mt:ParentCategory><mt:ParentCategory><mt:CategoryBasename setvar='parentTopC'></mt:ParentCategory></mt:ParentCategory>
 	<mt:ignore><!-- 駅カテゴリ設定 --></mt:ignore>
-	<mt:If name="parentTopC" eq="station"><mt:If name="cnt" eq="0">
+	<mt:If name='parentTopC' eq='station'><mt:If name='cnt' eq='0'>
 		<mt:ignore><!-- 駅カテゴリ --></mt:ignore>
-		<mt:SetVarBlock name="stationName"><mt:CategoryLabel encode_html="1"></mt:SetVarBlock>
-		<mt:Setvar name="cnt" value="1" op="+">
+		<mt:SetVarBlock name='stationName'><mt:CategoryLabel encode_html='1'></mt:SetVarBlock>
+		<mt:Setvar name='cnt' value='1' op='+'>
 	</mt:If></mt:If>
 </mt:If>
 </mt:HasParentCategory>

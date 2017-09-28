@@ -6,7 +6,7 @@
 .m-heading {
 	text-align: center;
 	margin-bottom: $paramMarginM;
-	.m-hedingTtl{
+	.m-headingTtl{
 		font-size: 20px;
 		font-weight: bold;
 		span{
@@ -31,7 +31,7 @@
 		padding: 0 20px;
 	}
 	@include media(phablet) {
-		.m-hedingTtl{
+		.m-headingTtl{
 			span{display: block;}
 		}
 	}
