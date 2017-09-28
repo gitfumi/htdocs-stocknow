@@ -224,7 +224,8 @@
 }
 
 #p_item .mainItem .itemHead {
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
   padding: 10px 0 60px 30px;
   position: relative;
 }
@@ -323,6 +324,7 @@
 }
 
 #p_item .mainItem .itemCredit .creditList {
+  margin-top: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -335,20 +337,13 @@
   text-align: center;
   padding: 3px;
   font-size: 12px;
+  border: 2px solid #000;
+  color: #000;
+  max-width: 120px;
 }
 
 #p_item .mainItem .itemCredit .creditList > li + li {
   margin-left: 10px;
-}
-
-#p_item .mainItem .itemCredit .creditList > li.is-possible {
-  border: 2px solid #000;
-  color: #000;
-}
-
-#p_item .mainItem .itemCredit .creditList > li:not(.is-possible) {
-  border: 2px solid #999;
-  color: #999;
 }
 
 #p_item .mainItem .itemBtn {
@@ -375,6 +370,7 @@
             justify-content: center;
   }
   #p_item .mainItem .itemHead {
+    max-width: 100%;
     padding: 20px 20px 60px 20px;
   }
   #p_item .mainItem .itemParam {
@@ -723,32 +719,38 @@
 /* -----------------------------------------------
 /* sec-archive
 -------------------------------------------------- */
-#p_archive .sec-archive {
+#p_category .sec-archive {
   margin-top: 0;
 }
 
-#p_archive .sec-archive .m-heading {
+#p_category .sec-archive .heading {
   background-color: #f3f3f3;
   padding: 50px 0;
+  text-align: center;
 }
 
-#p_archive .sec-archive .archiveList {
+#p_category .sec-archive .heading .headingTtl {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#p_category .sec-archive .archiveList {
   max-width: 980px;
-  margin: 0 auto 30px;
+  margin: 80px auto 0;
 }
 
-#p_archive .sec-archive .archiveList > *:nth-of-type(n+5) {
+#p_category .sec-archive .archiveList > *:nth-of-type(n+5) {
   margin-top: 20px;
 }
 
 @media only screen and (max-width: 768px) {
-  #p_archive .sec-archive .archiveList > *:nth-of-type(4) {
+  #p_category .sec-archive .archiveList > *:nth-of-type(4) {
     margin-top: 20px;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  #p_archive .sec-archive .archiveList > *:nth-of-type(3) {
+  #p_category .sec-archive .archiveList > *:nth-of-type(3) {
     margin-top: 20px;
   }
 }
@@ -756,7 +758,7 @@
 /* -----------------------------------------------
 /* sec-category
 -------------------------------------------------- */
-#p_archive .sec-category {
+#p_category .sec-category {
   background-color: #f3f3f3;
   padding: 50px 0;
 }

@@ -1436,18 +1436,18 @@ html {
   margin-bottom: 20px;
 }
 
-.m-heading .m-hedingTtl {
+.m-heading .m-headingTtl {
   font-size: 20px;
   font-weight: bold;
 }
 
-.m-heading .m-hedingTtl span {
+.m-heading .m-headingTtl span {
   font-family: "Quantico", sans-serif;
   font-weight: normal;
   margin-right: 20px;
 }
 
-.m-heading .m-hedingTtl span em {
+.m-heading .m-headingTtl span em {
   color: #e60012;
 }
 
@@ -1469,7 +1469,7 @@ html {
 }
 
 @media only screen and (max-width: 480px) {
-  .m-heading .m-hedingTtl span {
+  .m-heading .m-headingTtl span {
     display: block;
   }
 }
