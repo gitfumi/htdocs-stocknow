@@ -121,7 +121,7 @@ input[type="email"]:focus,
 input[type="password"]:focus,
 input[type="number"]:focus,
 textarea:focus {
-  background-color: #eff9f2;
+  background-color: #ffeeee;
 }
 
 input[type="radio"],
@@ -716,7 +716,6 @@ html {
 }
 
 #contents .dir {
-  border-top: 1px solid #f3f3f3;
   padding: 10px 0;
 }
 
