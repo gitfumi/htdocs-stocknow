@@ -1,5 +1,26 @@
 @charset "utf-8";
 
+@-webkit-keyframes moveUp {
+	0% {
+		top: 10px;
+		opacity: 0;
+	}
+	100% {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes moveUp {
+	0% {
+		top: 10px;
+		opacity: 0;
+	}
+	100% {
+		top: 0;
+		opacity: 1;
+	}
+}
 $selectorRoot: "#p_contact";
 /* -----------------------------------------------
 /* お問い合わせ
@@ -15,46 +36,117 @@ $selectorRoot: "#p_contact";
 			font-weight: bold;
 		}
 	}
-	.form_body{
+	.formField{
+		margin-top: 30px;
+	}
+	.formBody{
 		max-width: $baseWidth - 200px;
 		margin: $sectionMargin auto;
 	}
-	.field_item{
+	.formMessage{
+		em{
+			font-size: 16px;
+			font-weight: bold;
+		}
+		& + .formMessage{
+			margin-top: 40px;
+		}
+	}
+	.fieldItem{
 		display: flex;
 		padding: 20px 0;
 		&:not(:first-of-type){
 			// border-top: 1px solid #ccc;
 		}
 	}
-	.item_group{
-		& + .item_group{
+	.itemGroup{
+		& + .itemGroup{
 			margin-top: 5px;
 		}
 	}
-	.item_head{
+	.itemHead{
 		flex-basis: 220px;
-		font-size: 18px;
-		font-weight: bold;
+		span{
+			font-size: 16px;
+			font-weight: bold;
+		}
 		text-align: right;
-		padding: 5px 20px 0 0 ;
+		padding: 5px 35px 0 0 ;
+		position: relative;
+		&:before{
+			content: '：';
+			position: absolute;
+			top: 5px;
+			right: 15px;
+			font-size: 16px;
+		}
+		&.is-require span{
+			position: relative;
+			padding-bottom: 20px;
+			&:before{
+				content: '必須';
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				font-size: 12px;
+				background-color: #000;
+				color: #fff;
+				line-height: 1.0;
+				padding: 3px 10px;
+				border-radius: 20px;
+			}
+		}
 	}
-	.item_cont{
+	.formItemError{
+		margin-top: 5px;
+		color: $keyColor;
+		padding-left: 30px;
+		position: relative;
+		animation: moveUp .3s both;
+		&:before{
+			content: '!';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			text-align: center;
+			transform: translateY(-50%);
+			width: 20px;
+			height: 20px;
+			border-radius: 20px;
+			background-color: $keyColor;
+			color: #fff;
+			font-family: $fontFamilyQuantico;
+			font-weight: 700;
+			font-size: 12px;
+			// font-family: $fontFamilySaira;
+		}
+	}
+	.itemCont{
 		flex-basis: calc(100% - 220px);
 		input[type="text"],select,textarea{
 			width: 100%;
 			font-size: 16px;
 			border-radius: 5px;
+			&.is-error{
+				background-color: #ffeeee;
+			}
 		}
 		select{
 			appearance: none;
 			padding: 8px 10px;
-			background-color: #fff;
+			// background-color: #fff;
 		}
 		.selectBox{
-			@include icoArrow(before, 50%, 10px, 50%, null, 12px, 3px, $baseTextColor, 135deg);
+			z-index: 0;
+			@include icoArrow(after, 50%, 15px, 50%, null, 12px, 3px, $baseTextColor, 135deg);
+			&:after{
+				z-index: 1;
+				pointer-events: none;
+			}
 		}
 	}
-	.form_btn{
+	.formBtn{
+		margin-top: $paramMarginL;
 		text-align: center;
 		display: flex;
 		justify-content: center;
@@ -67,33 +159,35 @@ $selectorRoot: "#p_contact";
 		}
 	}
 @include media(tablet) {
-	.form_body{
+	.formBody{
 		padding: 0 20px;
 	}
-	.item_head{
+	.itemHead{
 		flex-basis: 30%;
 		font-size: 16px;
-		padding: 5px 10px 0 0 ;
+		padding: 5px 30px 0 0 ;
 	}
-	.item_cont{
+	.itemCont{
 		flex-basis: 70%;
 	}
 }
 @include media(phablet) {
-	.form_body{
+	.formBody{
 		margin: $sectionMargin/2 auto;
 	}
-	.field_item{
-		display: block
+	.fieldItem{
+		display: block;
+		padding: 10px 0;
 	}
-	.item_head{
+	.itemHead{
 		text-align: left;
+		&.is-require span{
+			padding-bottom: 0;
+			padding-right: 50px;
+		}
 	}
-	.item_cont{
+	.itemCont{
 		margin-top: 10px;
-	}
-	.field_item{
-		padding: 0 0 20px;
 	}
 }
 }
@@ -101,7 +195,7 @@ $selectorRoot: "#p_contact";
 /* お問い合わせ 確認
 -------------------------------------------------- */
 #{$selectorRoot} .sec-contact.is-confirm{
-	.item_cont{
+	.itemCont{
 		font-size: 16px;
 		padding-top: 6px;
 	}
