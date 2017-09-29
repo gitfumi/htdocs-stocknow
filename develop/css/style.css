@@ -677,3 +677,148 @@
   background-color: #f3f3f3;
   padding: 50px 0;
 }
+
+/* -----------------------------------------------
+/* お問い合わせ
+-------------------------------------------------- */
+#p_contact .sec-contact {
+  margin: 0;
+}
+
+#p_contact .sec-contact .heading {
+  background-color: #f3f3f3;
+  padding: 50px 0;
+  text-align: center;
+}
+
+#p_contact .sec-contact .heading .headingTtl {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#p_contact .sec-contact .form_body {
+  max-width: 780px;
+  margin: 80px auto;
+}
+
+#p_contact .sec-contact .field_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 0;
+}
+
+#p_contact .sec-contact .item_group + .item_group {
+  margin-top: 5px;
+}
+
+#p_contact .sec-contact .item_head {
+  -ms-flex-preferred-size: 220px;
+      flex-basis: 220px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+  padding: 5px 20px 0 0;
+}
+
+#p_contact .sec-contact .item_cont {
+  -ms-flex-preferred-size: calc(100% - 220px);
+      flex-basis: calc(100% - 220px);
+}
+
+#p_contact .sec-contact .item_cont input[type="text"], #p_contact .sec-contact .item_cont select, #p_contact .sec-contact .item_cont textarea {
+  width: 100%;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+#p_contact .sec-contact .item_cont select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 8px 10px;
+  background-color: #fff;
+}
+
+#p_contact .sec-contact .item_cont .selectBox {
+  position: relative;
+}
+
+#p_contact .sec-contact .item_cont .selectBox:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  bottom: 50%;
+  width: 12px;
+  height: 12px;
+  background-color: transparent;
+  margin-top: -9px;
+  margin-bottom: -3px;
+  border-top: solid 3px #000;
+  border-right: solid 3px #000;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+#p_contact .sec-contact .form_btn {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#p_contact .sec-contact .form_btn > li {
+  max-width: 260px;
+  width: 100%;
+}
+
+#p_contact .sec-contact .form_btn > li + li {
+  margin-left: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  #p_contact .sec-contact .form_body {
+    padding: 0 20px;
+  }
+  #p_contact .sec-contact .item_head {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+    font-size: 16px;
+    padding: 5px 10px 0 0;
+  }
+  #p_contact .sec-contact .item_cont {
+    -ms-flex-preferred-size: 70%;
+        flex-basis: 70%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #p_contact .sec-contact .form_body {
+    margin: 40px auto;
+  }
+  #p_contact .sec-contact .field_item {
+    display: block;
+  }
+  #p_contact .sec-contact .item_head {
+    text-align: left;
+  }
+  #p_contact .sec-contact .item_cont {
+    margin-top: 10px;
+  }
+  #p_contact .sec-contact .field_item {
+    padding: 0 0 20px;
+  }
+}
+
+/* -----------------------------------------------
+/* お問い合わせ 確認
+-------------------------------------------------- */
+#p_contact .sec-contact.is-confirm .item_cont {
+  font-size: 16px;
+  padding-top: 6px;
+}

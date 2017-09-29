@@ -1273,7 +1273,7 @@ html {
   text-align: center;
 }
 
-.m-btn a {
+.m-btn a, .m-btn > span {
   display: inline-block;
   margin: 0 auto;
   max-width: 280px;
@@ -1289,7 +1289,7 @@ html {
   position: relative;
 }
 
-.m-btn a:before {
+.m-btn a:before, .m-btn > span:before {
   content: '';
   position: absolute;
   top: -10px;
@@ -1303,17 +1303,17 @@ html {
   opacity: 0;
 }
 
-.m-btn a span:before, .m-btn a span:after {
+.m-btn a span:before, .m-btn a span:after, .m-btn > span span:before, .m-btn > span span:after {
   -webkit-transition: all .5s;
   transition: all .5s;
 }
 
-.m-btn a:hover {
+.m-btn a:hover, .m-btn > span:hover {
   color: #e60012;
   background-color: #fff;
 }
 
-.m-btn a:hover:before {
+.m-btn a:hover:before, .m-btn > span:hover:before {
   top: 0;
   left: 0;
   width: 100%;
@@ -1354,28 +1354,29 @@ html {
   color: #e60012;
 }
 
-.m-btn.is-shop a, .m-btn.is-place a {
+.m-btn.is-shop a, .m-btn.is-place a, .m-btn.is-back a {
   background-color: #fff;
   color: #000;
   border: 4px solid #000;
+  padding: 6px 20px;
 }
 
-.m-btn.is-shop a span, .m-btn.is-place a span {
-  padding-right: 30px;
-}
-
-.m-btn.is-shop a:before, .m-btn.is-place a:before {
+.m-btn.is-shop a:before, .m-btn.is-place a:before, .m-btn.is-back a:before {
   border: 2px solid #000;
 }
 
-.m-btn.is-shop a:hover, .m-btn.is-place a:hover {
+.m-btn.is-shop a:hover, .m-btn.is-place a:hover, .m-btn.is-back a:hover {
   background-color: #000;
   color: #fff;
 }
 
-.m-btn.is-shop a:hover span:before, .m-btn.is-place a:hover span:before {
+.m-btn.is-shop a:hover span:before, .m-btn.is-place a:hover span:before, .m-btn.is-back a:hover span:before {
   border-color: #fff;
   color: #fff;
+}
+
+.m-btn.is-shop a span, .m-btn.is-place a span {
+  padding-right: 30px;
 }
 
 .m-btn.is-shop a span {
