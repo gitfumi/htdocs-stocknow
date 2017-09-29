@@ -1,3 +1,8 @@
+<mt:if name='category_archive'>
+<mt:If name='parentTopCBasename' eq='station'>
+	<mt:SetVarBlock name="stationName"><mt:CategoryLabel encode_html='1'></mt:SetVarBlock>
+</mt:if>
+</mt:if>
 			<section<mt:If tag='EntryIconNew' eq='1'> class="is-new"</mt:If>><a href="<mt:EntryPermalink encode_html='1'>">
 				<mt:If tag='EntryImage'><mt:EntryImageAsset>
 				<p class="m-itemPic"><img src="<mt:AssetURL>" alt="<mt:EntryTitle encode_html='1'>の商品画像"></p></mt:EntryImageAsset></mt:If>
