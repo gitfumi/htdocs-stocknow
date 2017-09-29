@@ -24,6 +24,9 @@
 <!-- #contents -->
 <div id="contents">
 
+<mt:For regex_replace="/^\s*\n/gm",""><mt:ignore><!-- 改行削除 --></mt:ignore>
+<mt:Truncateurl>
+
 	<div class="dir">
 		<ul>
 			<li><a href="/">home</a></li>
@@ -87,6 +90,9 @@
 	</section><!-- .sec-category -->
 	</mt:If>
 </div><!-- /#contents -->
+
+</mt:Truncateurl>
+</mt:For><mt:ignore><!-- //改行削除 --></mt:ignore>
 
 <!--#include virtual="/_inc/footer.html"-->
 </body>
