@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>お問い合わせ | おしゃれな手土産ギフト、ご褒美ギフトなら STOCKNOW</title>
+<meta name="description" content="お問い合わせのページ。ワンランクアップの手土産ギフトや、自分用のお取り寄せ、ご褒美ギフト探しならSTOCKNOW！おしゃれな最新スイーツやグルメ情報をお届けします。">
+<?php include(DIR_INC . 'meta.html'); ?>
+<meta property="og:type" content="article">
+<meta property="og:title" content="お問い合わせ | おしゃれな手土産ギフト、ご褒美ギフトなら STOCKNOW">
+<meta property="og:description" content="お問い合わせのページ。ワンランクアップの手土産ギフトや、自分用のお取り寄せ、ご褒美ギフト探しならSTOCKNOW！おしゃれな最新スイーツやグルメ情報をお届けします。">
+<meta property="og:url" content="<?php echo $_SERVER["REQUEST_URI"]; ?>">
+<meta property="og:image" content="http://stocknow.dev.localhost/img/cmn/pic_ogp.jpg">
+<?php include(DIR_INC . 'ogp.html'); ?>
+<?php include(DIR_INC . 'link.html'); ?>
+</head>
+
+<body id="p_contact">
+<?php include(DIR_INC . 'analytics.html'); ?>
+<?php include(DIR_INC . 'header.html'); ?>
+
+<!-- #contents -->
+<div id="contents">
+
+	<div class="dir">
+		<ul>
+			<li><a href="/">home</a></li>
+			<li>お問い合わせ</li>
+		</ul>
+	</div>
+
+	<!-- .sec-contact -->
+	<section class='sec-contact'>
+
+		<!-- .heading -->
+		<div class="heading">
+			<h1 class="headingTtl">お問い合わせ</h1>
+		</div><!-- .heading -->
+
+		<section class="formBody">
+			<p>STOCKNOWに関するお問い合わせはこちらからお願いします。<br>
+			また、個人で運営しているため返信まで少々お時間をいただきますこと、予めご了承くださいませ。</p>
+		<form action="confirm.php" method="post">
+			<div class="formField">
+
+				<div class="fieldItem js-formItem">
+					<p class="itemHead is-require"><span class="js-formItemLabel">お名前</span></p>
+					<div class="itemCont js-formItemBody">
+						<input class="js-validate js-required" type="text" name="name" autocomplete="name" placeholder="ストック太郎" maxlength="100" value="<?php echo hsc($name);?>">
+					</div>
+				</div>
+
+				<div class="fieldItem js-formItem">
+					<p class="itemHead is-require"><span class="js-formItemLabel">メールアドレス</span></p>
+					<div class="itemCont js-formItemBody">
+						<p class="itemGroup">
+							<input id="" class="js-validate js-required js-email js-emailCheck js-alphabet" name="email" type="text" autocomplete="email" placeholder="例：stocknow@stocknow.co.jp" maxlength="100" value="<?php echo hsc($email);?>">
+						</p>
+						<p class="itemGroup">※半角英数字でご入力ください</p>
+					</div>
+				</div>
+
+				<div class="fieldItem js-formItem">
+					<p class="itemHead is-require"><span class="js-formItemLabel">お問い合わせの種類</span></p>
+					<div class="itemCont js-formItemBody">
+						<p class="itemGroup">
+							<div class="selectBox">
+							<select id="" name="type" class="js-validate js-required">
+							<option value="">選択して下さい</option>
+							<option value="サイトに関する質問" <?php if($type=="サイトに関する質問"){echo "selected";}?>>サイトに関する質問</option>
+							<option value="記事に関する間違い指摘・クレーム" <?php if($type=="記事に関する間違い指摘・クレーム"){echo "selected";}?>>記事に関する間違い指摘・クレーム</option>
+							<option value="広告の掲載依頼" <?php if($type=="広告の掲載依頼"){echo "selected";}?>>広告の掲載依頼</option>
+							<option value="その他" <?php if($type=="その他"){echo "selected";}?>>その他</option>
+							</select>
+							</div>
+						</p>
+					</div>
+				</div>
+
+				<div class="fieldItem js-formItem">
+					<p class="itemHead is-require"><span class="js-formItemLabel">お問い合わせの内容</span></p>
+					<div class="itemCont js-formItemBody">
+						<p class="itemGroup">
+							<textarea name="inquiries" class="js-validate js-required" id="" cols="30" rows="10" maxlength="1000"><?php echo hsc($inquiries);?></textarea>
+						</p>
+					</div>
+				</div>
+			</div>
+			<ul class="formBtn">
+				<li class="m-btn is-next js-submit"><span><span>入力内容を確認する</span></span></a></li>
+			</ul><input type="hidden" name="ticketcontact" value="<?php echo $ticketcontact; ?>">
+		</form>
+		</section>
+
+	</section><!-- .sec-contact -->
+
+</div><!-- /#contents -->
+
+<?php include(DIR_INC . 'footer.html'); ?>
+<script src="/js/form_validation.js"></script>
+</body>
+</html>

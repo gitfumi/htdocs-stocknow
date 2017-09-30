@@ -2,7 +2,7 @@
 <mt:Include blog_id='1' module='共通設定'>
 <!DOCTYPE html>
 <html lang="ja">
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title><mt:Var name='headTitle'></title>
@@ -23,6 +23,9 @@
 
 <!-- #contents -->
 <div id="contents">
+
+<mt:For regex_replace="/^\s*\n/gm",""><mt:ignore><!-- 改行削除 --></mt:ignore>
+<mt:Truncateurl>
 
 	<div class="dir">
 		<ul>
@@ -87,6 +90,9 @@
 	</section><!-- .sec-category -->
 	</mt:If>
 </div><!-- /#contents -->
+
+</mt:Truncateurl>
+</mt:For><mt:ignore><!-- //改行削除 --></mt:ignore>
 
 <!--#include virtual="/_inc/footer.html"-->
 </body>
