@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+$selectorRoot: "#p_about";
+/* -----------------------------------------------
+/* STOCKNOWについて
+-------------------------------------------------- */
+#{$selectorRoot} .sec-about{
+	max-width: $baseWidth;
+	margin: 0 auto 30px;
+@include media(tablet) {
+}
+@include media(phablet) {
+}
+}
+/* -----------------------------------------------
+/* お問い合わせ 確認
+-------------------------------------------------- */
+#{$selectorRoot} .sec-contact.is-confirm{
+	.itemCont{
+		font-size: 16px;
+		padding-top: 6px;
+	}
+}

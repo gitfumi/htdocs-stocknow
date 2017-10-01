@@ -316,11 +316,6 @@
   padding-left: 30px;
 }
 
-#p_item .mainDetails .itemTtl {
-  font-size: 18px;
-  font-weight: bold;
-}
-
 #p_item .mainDetails .descriptionTxt {
   margin-top: 20px;
 }
@@ -923,6 +918,22 @@
 /* お問い合わせ 確認
 -------------------------------------------------- */
 #p_contact .sec-contact.is-confirm .itemCont {
+  font-size: 16px;
+  padding-top: 6px;
+}
+
+/* -----------------------------------------------
+/* STOCKNOWについて
+-------------------------------------------------- */
+#p_about .sec-about {
+  max-width: 980px;
+  margin: 0 auto 30px;
+}
+
+/* -----------------------------------------------
+/* お問い合わせ 確認
+-------------------------------------------------- */
+#p_about .sec-contact.is-confirm .itemCont {
   font-size: 16px;
   padding-top: 6px;
 }
