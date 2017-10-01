@@ -80,21 +80,21 @@
 			</section>
 		</div>
 	</div><!-- .mainItem -->
-<mt:EntryPermalink encode_html='1'>
+
 	<!-- .mainDetails -->
 	<div class="mainDetails">
 		<div class="detailsInner">
 			<mt:If name='brandShopName1' ne=""><p class="m-btn detailsBtn is-shop"><a href="#anc-shop"><span>お店に買いに行く</span></a></p></mt:If>
 			<section class="itemDescription">
 				<div class="descriptionInner">
-					<h2 class="itemTtl">商品のご説明</h2>
+					<h2 class="m-subHeading">商品のご説明</h2>
 					<mt:If tag='EntryDetails'><p class="descriptionTxt"><mt:EntryDetails remove_html="1" convert_breaks="0" nl2br="xhtml" regex_replace="/<br \/>/g","<br>"></p></mt:If>
 				</div>
 			</section>
 
 			<section class="itemVariation">
 				<div class="variationInner">
-					<h2 class="itemTtl">容量バリエーション（個数）</h2>
+					<h2 class="m-subHeading">容量バリエーション（個数）</h2>
 					<ul class="variationList">
 						<mt:If tag='EntryVariationImage1'><mt:If tag='EntryVariationText1'><mt:EntryVariationImage1Asset>
 						<li><img src="<mt:AssetURL>" alt=""><span><mt:EntryVariationText1></span></li></mt:EntryVariationImage1Asset></mt:If></mt:If>
@@ -109,7 +109,7 @@
 			<mt:If name='brandShopName1'>
 			<section id="anc-shop" class="itemShop">
 				<div class="shopInner">
-					<h2 class="itemTtl">実店舗情報</h2>
+					<h2 class="m-subHeading">実店舗情報</h2>
 					<ul class="shopList">
 						<li>
 							<p id="shop01" class="shopName"><mt:Var name='brandShopName1'><span class="m-btn shopMapActive">MAP ACTIVE</span></p>
