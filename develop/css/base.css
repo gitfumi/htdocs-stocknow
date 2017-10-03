@@ -62,6 +62,10 @@ img {
   vertical-align: top;
 }
 
+svg {
+  max-width: 100%;
+}
+
 a {
   color: #000;
   outline: none;
@@ -728,8 +732,12 @@ html {
 }
 
 #contents .dir ul > li {
-  padding: 0 10px 0 20px;
   color: #999;
+  line-height: 1.2;
+}
+
+#contents .dir ul > li:first-of-type {
+  padding: 0 10px 0 20px;
 }
 
 #contents .dir ul > li:first-of-type a {
@@ -765,6 +773,7 @@ html {
 }
 
 #contents .dir ul > li + li {
+  padding: 3px 10px 0 20px;
   position: relative;
 }
 
@@ -783,14 +792,14 @@ html {
           transform: rotate(45deg);
 }
 
-#contents .dir ul > li:not(:first-of-type) a {
+#contents .dir ul > li + li a {
   display: inline-block;
   position: relative;
   z-index: 0;
   padding: 0 0 5px;
 }
 
-#contents .dir ul > li:not(:first-of-type) a:before {
+#contents .dir ul > li + li a:before {
   content: '';
   position: absolute;
   bottom: 5px;
@@ -804,7 +813,7 @@ html {
   z-index: -1;
 }
 
-#contents .dir ul > li:not(:first-of-type) a:hover:before {
+#contents .dir ul > li + li a:hover:before {
   opacity: 1;
   bottom: 0px;
 }
@@ -821,6 +830,15 @@ html {
   }
   #contents > section {
     margin-top: 40px;
+  }
+  #contents .dir ul > li {
+    font-size: 12px;
+  }
+  #contents .dir ul > li + li {
+    padding: 5px 10px 0 20px;
+  }
+  #contents .dir ul > li a {
+    font-size: 12px;
   }
 }
 
@@ -1455,11 +1473,33 @@ html {
   margin-top: 20px;
   font-size: 16px;
   font-weight: bold;
-  color: #666;
+  color: #999;
+  display: inline-block;
+  position: relative;
+}
+
+.m-heading .m-headingLead:before, .m-heading .m-headingLead:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 2px;
+  border-top: 1px solid #999;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.m-heading .m-headingLead:before {
+  left: -40px;
+}
+
+.m-heading .m-headingLead:after {
+  right: -40px;
 }
 
 .m-heading .m-headingTxt {
   margin-top: 10px;
+  color: #999;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1699,7 +1739,6 @@ html {
     font-family: "Quantico", sans-serif;
     font-weight: 700;
     text-align: center;
-    padding: 0;
   }
   .m-list .m-itemParam .m-itemStation {
     margin-left: 20px;

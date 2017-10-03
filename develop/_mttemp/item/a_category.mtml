@@ -3,22 +3,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title><mt:Var name='headTitle'></title>
-<meta name="description" content="<mt:Var name='headDescription'>">
-<!--#include virtual='/_inc/meta.html'-->
-<meta property="og:type" content="<mt:Var name='headOGPType'>">
-<meta property="og:title" content="<mt:Var name='headTitle'>">
-<meta property="og:description" content="<mt:Var name='headDescription'>">
-<meta property="og:url" content="<mt:Var name='headOGPUrl'>">
-<meta property="og:image" content="<mt:Var name='headOGPImage'>">
-<!--#include virtual="/_inc/ogp.html"-->
-<!--#include virtual="/_inc/link.html"-->
+<mt:Include blog_id='1' module='headタグ'>
+<!--#include virtual="/_inc/tagmanager.html"-->
 </head>
 
 <body id="p_category">
-<!--#include virtual="/_inc/analytics.html"-->
+<!--#include virtual="/_inc/tagmanager-non.html"-->
 <!--#include virtual="/_inc/header.html"-->
 
 <!-- #contents -->
@@ -51,6 +41,7 @@
 <section class="sec-archive">
 	<!-- .heading -->
 	<div class="heading">
+		<mt:If name="parentTopCBasename" ne=""><p class="headingParent"><mt:Var name='parentTopCName'></p></mt:If>
 		<h1 class="headingTtl"><mt:Var name='categoryTitle'></h1>
 	</div><!-- .heading -->
 
@@ -70,8 +61,8 @@
 		<!-- .m-heading -->
 		<div class="m-heading">
 			<h2 class="m-headingTtl"><span>At the <em>S</em>tation</span>立ち寄り駅ギフト</h2>
-			<p class="m-headingLead">ダミーダミーダミー</p>
-			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
+			<p class="m-headingLead">ふと立ち寄った駅で出会った、最高のギフト</p>
+			<p class="m-headingTxt">いつも立ち寄る駅、たまたま降りた駅でも出会える、ワンランクアップの手土産ギフトをご紹介します。</p>
 		</div><!-- .m-heading -->
 
 		<!--#include virtual="/_inc/mt_station.html"-->
@@ -82,8 +73,8 @@
 		<!-- .m-heading -->
 		<div class="m-heading">
 			<h2 class="m-headingTtl"><span>Category</span>商品カテゴリ</h2>
-			<p class="m-headingLead">ダミーダミーダミー</p>
-			<p class="m-headingTxt">ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
+			<p class="m-headingLead">迷ったらまずは定番の洋菓子・和菓子から</p>
+			<p class="m-headingTxt">定番・人気の洋菓子・和菓子、シーン別でも役立つ幅広いラインナップを取り揃えました。</p>
 		</div><!-- .m-heading -->
 
 		<!--#include virtual="/_inc/mt_category.html"-->

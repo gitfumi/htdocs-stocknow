@@ -13,9 +13,27 @@ $selectorRoot: "#p_category";
 		background-color: $grayBackgroundColor;
 		padding: 50px 0;
 		text-align: center;
+		position: relative;
 		.headingTtl{
 			font-size: 20px;
 			font-weight: bold;
+		}
+		.headingParent{
+			color: #999;
+			font-weight: bold;
+			display: inline-block;
+			position: relative;
+			&:before,&:after{
+				content: '';
+				position: absolute;
+				top: 50%;
+				width: 30px;
+				height: 2px;
+				border-top: 1px solid #999;
+				transform: translateY(-50%);
+			}
+			&:before{left: -40px;}
+			&:after{right: -40px;}
 		}
 	}
 	.archiveList{

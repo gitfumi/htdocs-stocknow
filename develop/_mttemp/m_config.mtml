@@ -7,9 +7,16 @@
 
 
 <mt:ignore><!-- TOPページ --></mt:ignore>
-<mt:if name='main_index'>
+<mt:if name='pageName' eq='index'>
 <mt:SetVar name='headOGPType' value='website'>
 <mt:SetVar name='headTitle' value='おしゃれな手土産ギフト、ご褒美ギフトなら STOCKNOW'>
+</mt:if>
+
+<mt:ignore><!-- サイトマップページ --></mt:ignore>
+<mt:if name='pageName' eq='sitemap'>
+<mt:SetVar name="pageName" value="サイトマップ">
+<mt:SetVarBlock name='headTitle'><mt:Var name="pageName">｜<mt:Var name='sitename'></mt:SetVarBlock>
+<mt:SetVarBlock name='headDescription'><mt:Var name="pageName">のページです。<mt:Var name='headDescription'></mt:SetVarBlock>
 </mt:if>
 
 <mt:ignore><!-- 記事詳細ページ --></mt:ignore>
@@ -26,7 +33,7 @@
 </mt:ParentCategory></mt:ParentCategory>
 
 <mt:If name='parentTopCBasename' eq='station'>
-<mt:SetVarBlock name='categoryTitle'><mt:CategoryLabel encode_html='1'>駅の最寄り駅ギフト</mt:SetVarBlock>
+<mt:SetVarBlock name='categoryTitle'><mt:CategoryLabel encode_html='1'>駅ギフト</mt:SetVarBlock>
 <mt:SetVarBlock name='categoryParentLink'>/<mt:Var name='parentTopCBasename'>/</mt:SetVarBlock>
 
 <mt:Else>
