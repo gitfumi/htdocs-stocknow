@@ -421,17 +421,21 @@ var scrollHeaderEffect = function () {
 	var $window = $(window);
 	var $header = $('#header');
 	var headerHeight = $header.height();
+	var scrollPosi = $window.scrollTop();
 	var SHOW_POSITION = 200;
+	judgment(scrollPosi);
 
 	$window.on('scroll.scrollEffectCommon', function () {
 		var currentPostion = $(this).scrollTop();
-
+		judgment(currentPostion);
+	});
+	function judgment(currentPostion) {
 		if (currentPostion > headerHeight) {
 			$header.addClass('is-short');
 		} else {
 			$header.removeClass('is-short');
 		}
-	});
+	}
 }();
 exports.default = scrollHeaderEffect;
 

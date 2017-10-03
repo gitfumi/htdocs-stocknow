@@ -1,23 +1,77 @@
 @charset "utf-8";
 
-$selectorRoot: "#p_about";
+$selectorAboutRoot: "#p_about";
+$selectorMasterRoot: "#p_master";
 /* -----------------------------------------------
-/* STOCKNOWについて
+/* STOCKNOWについて、サイト運営者について
 -------------------------------------------------- */
-#{$selectorRoot} .sec-about{
-	max-width: $baseWidth;
-	margin: 0 auto 30px;
-@include media(tablet) {
-}
-@include media(phablet) {
-}
-}
-/* -----------------------------------------------
-/* お問い合わせ 確認
--------------------------------------------------- */
-#{$selectorRoot} .sec-contact.is-confirm{
-	.itemCont{
-		font-size: 16px;
-		padding-top: 6px;
+#{$selectorAboutRoot},#{$selectorMasterRoot}{
+	.sec-filed{
+		margin: 0 0 $sectionMargin;
+		.heading{
+			background-color: $grayBackgroundColor;
+			padding: 50px 0;
+			text-align: center;
+			.headingTtl{
+				font-size: 20px;
+				font-weight: bold;
+			}
+		}
+		>section{
+			max-width: $baseWidth;
+			margin: $sectionMargin auto 0;
+			.filedTxt,.filedList{
+				margin-top: 10px;
+				line-height: 2;
+				a{
+					text-decoration: underline;
+					@include motionLinkTxt(#000);
+					&:hover{text-decoration: none;}
+				}
+			}
+			.filedList li{
+				margin-top: 10px;
+				position: relative;
+				counter-increment: cnt;
+				padding-left: 40px;
+				&:before{
+					content: counter(cnt) '.';
+					position: absolute;
+					top: 0;
+					left: 0;
+					font-size: 20px;
+					font-family: $fontFamilySaira;
+					font-weight: bold;
+				}
+				&:after{
+					content: '';
+					position: absolute;
+					top: 10px;
+					left: 0px;
+					width: 20px;
+					height: 20px;
+					border-right: 1px solid #000;
+					transform: rotate(45deg);
+				}
+			}
+			em{
+				font-weight: bold;
+				color: $keyColor;
+			}
+			.m-btn{
+				margin-top: $paramMarginM;
+			}
+		}
+	@include media(tablet) {
+		>section{
+			padding: 0 20px;
+		}
+	}
+	@include media(phablet) {
+		margin: 0 0 $sectionMargin/2;
+		>section{
+			margin: $sectionMargin/2 auto 0;
+		}
+	}
 	}
 }
