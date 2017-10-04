@@ -1,10 +1,11 @@
 @charset "utf-8";
 
-$selectorRoot: "#p_sitemap";
+$selectorSitemapRoot: "#p_sitemap";
+$selectorErrorRoot: "#p_error";
 /* -----------------------------------------------
-/* サイトマップ
+/* サイトマップ・404・503ページ
 -------------------------------------------------- */
-#{$selectorRoot}{
+#{$selectorSitemapRoot},#{$selectorErrorRoot}{
 	.sec-filed{
 		margin: 0 0 $sectionMargin;
 		.heading{
@@ -15,10 +16,41 @@ $selectorRoot: "#p_sitemap";
 				font-size: 20px;
 				font-weight: bold;
 			}
+			.headingTag{
+				color: #999;
+				font-weight: bold;
+				display: inline-block;
+				position: relative;
+				&:before,&:after{
+					content: '';
+					position: absolute;
+					top: 50%;
+					width: 30px;
+					height: 2px;
+					border-top: 1px solid #999;
+					transform: translateY(-50%);
+				}
+				&:before{left: -40px;}
+				&:after{right: -40px;}
+			}
 		}
 		>section{
 			max-width: $baseWidth;
 			margin: $sectionMargin auto 0;
+			.m-subHeading{
+				text-align: center;
+				em{color: $keyColor;}
+				padding-top: 100px;
+				background-image: url(/img/cmn/icon.svg);
+				background-repeat: no-repeat;
+				background-position: center 0;
+				background-size: 150px 80px;
+			}
+			.filedTxt{
+				max-width: 640px;
+				margin: 20px auto 0;
+				line-height: 2;
+			}
 			.filedTtl{
 				margin-top: 10px;
 				font-size: 16px;
