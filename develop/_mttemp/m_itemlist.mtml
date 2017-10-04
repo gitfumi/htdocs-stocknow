@@ -1,3 +1,6 @@
+<mt:For regex_replace='/^\s*\n/gm',''><mt:ignore><!-- 改行削除 --></mt:ignore>
+<mt:Truncateurl>
+
 <mt:if name='category_archive'>
 <mt:If name='parentTopCBasename' eq='station'>
 	<mt:SetVarBlock name="stationName"><mt:CategoryLabel encode_html='1'></mt:SetVarBlock>
@@ -14,3 +17,6 @@
 					<mt:If name='stationName'><p class="m-itemStation"><span class="ttl">販売店</span><span class="txt"><mt:Var name='stationName'>駅</span></p></mt:If>
 				</div>
 			</a></section>
+
+</mt:Truncateurl>
+</mt:For><mt:ignore><!-- //改行削除 --></mt:ignore>

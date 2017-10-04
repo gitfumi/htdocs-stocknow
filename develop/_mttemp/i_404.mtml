@@ -38,8 +38,8 @@
 	<section>
 		<h2 class="m-subHeading">For ギフト</h2>
 		<ul class="filedList">
-			<li><a href="">手土産ギフト</a></li>
-			<li><a href="">自分へのご褒美</a></li>
+			<li><a href="/temiyage/">手土産ギフト</a></li>
+			<li><a href="/mine/">自分へのご褒美</a></li>
 		</ul>
 	</section>
 
@@ -72,15 +72,19 @@
 	<section>
 		<h2 class="m-subHeading">商品カテゴリ</h2>
 		<ul class="filedList">
-			<li><a href="">スイーツ・洋菓子</a></li>
-			<li><a href="">和菓子・和スイーツ</a></li>
-			<li><a href="">ドリンク・アルコール</a></li>
-			<li><a href="">おかず・お惣菜</a></li>
-			<li><a href="">肉・ハム・ソーセージ</a></li>
-			<li><a href="">魚介類・シーフード</a></li>
-			<li><a href="">フルーツ・果物</a></li>
+<mt:categories blog_ids='2' show_empty='1'>
+<mt:CategoryBasename setVar='basename'>
+<mt:If name='basename' eq='item'>
+<mt:SubCategories sort_by='user_custom'>
+			<li><a href="/item/<mt:CategoryBasename>/"><mt:CategoryLabel></a></li>
+</mt:SubCategories>
+</mt:If>
+</mt:categories>
 		</ul>
 	</section>
+
+</mt:Truncateurl>
+</mt:For><mt:ignore><!-- //改行削除 --></mt:ignore>
 
 	<section>
 		<h2 class="m-subHeading">その他</h2>
