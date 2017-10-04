@@ -1,4 +1,4 @@
-<mt:SetVar name="pageName" value="sitemap"><mt:Include blog_id='1' module='共通設定'>
+<mt:SetVar name="pageName" value="404"><mt:Include blog_id='1' module='共通設定'>
 <!DOCTYPE html>
 <html lang="ja">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
@@ -6,7 +6,7 @@
 <!--#include virtual="/_inc/tagmanager.html"-->
 </head>
 
-<body id="p_sitemap">
+<body id="p_error">
 <!--#include virtual="/_inc/tagmanager-non.html"-->
 <!--#include virtual="/_inc/header.html"-->
 
@@ -24,8 +24,16 @@
 <section class="sec-filed">
 	<!-- .heading -->
 	<div class="heading">
+		<p class="headingTag">404 Not Found</p>
 		<h1 class="headingTtl"><mt:Var name="pageName"></h1>
 	</div><!-- .heading -->
+
+	<section>
+		<h2 class="m-subHeading"><em>『<mt:Var name="sitename">』</em>を<br>閲覧いただきありがとうございます。</h2>
+		<p class="filedTxt">誠に申し訳ございませんが、お探しの情報が見つかりませんでした。</p>
+		<p class="filedTxt">お探しの情報は他のページへ移動したか、掲載期間終了のため閲覧できない可能性がございます。</p>
+		<p class="filedTxt">お手数おかけしますが、『<mt:Var name="sitename">』のトップページへお戻りいただくか、下記コンテンツへアクセスし、情報をお求めください。</p>
+	</section>
 
 	<section>
 		<h2 class="m-subHeading">For ギフト</h2>
@@ -57,6 +65,8 @@
 </mt:If>
 </mt:categories>
 
+</mt:Truncateurl>
+</mt:For><mt:ignore><!-- //改行削除 --></mt:ignore>
 	</section>
 
 	<section>
@@ -65,9 +75,9 @@
 <mt:categories blog_ids='2' show_empty='1'>
 <mt:CategoryBasename setVar='basename'>
 <mt:If name='basename' eq='item'>
-	<mt:SubCategories sort_by='user_custom'>
+<mt:SubCategories sort_by='user_custom'>
 			<li><a href="/item/<mt:CategoryBasename>/"><mt:CategoryLabel></a></li>
-	</mt:SubCategories>
+</mt:SubCategories>
 </mt:If>
 </mt:categories>
 		</ul>
