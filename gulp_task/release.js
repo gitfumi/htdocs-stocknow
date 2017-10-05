@@ -10,7 +10,7 @@ gulp.task('release', function(callback) {
 		'sass',
 		'copy',
 		// 'copyWP',
-		'imagemin',
+		// 'imagemin',
 		'css',
 		'uglify',
 		'gzip',

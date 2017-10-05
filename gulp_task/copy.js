@@ -15,6 +15,7 @@ gulp.task('copy', function() {
 			'!' + conf.src + '/**/js/plugin/*.*',
 			'!' + conf.src + '/**/js/common/**/*.*',
 			'!' + conf.src + '/**/wordpress/**/*.*',
+			'!' + conf.src + '/**/_mt/**/*.*',
 			'!' + conf.src + '/**/temp.html'
 		],
 		{

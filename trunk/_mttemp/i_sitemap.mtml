@@ -1,0 +1,96 @@
+<mt:SetVar name="pageName" value="sitemap"><mt:Include blog_id='1' module='共通設定'>
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<mt:Include blog_id='1' module='headタグ'>
+<!--#include virtual="/_inc/tagmanager.html"-->
+</head>
+
+<body id="p_sitemap">
+<!--#include virtual="/_inc/tagmanager-non.html"-->
+<!--#include virtual="/_inc/header.html"-->
+
+<!-- #contents -->
+<div id="contents">
+
+	<div class="dir">
+		<ul>
+			<li><a href="/">home</a></li>
+			<li><mt:Var name="pageName"></li>
+		</ul>
+	</div>
+
+<!-- .sec-filed -->
+<section class="sec-filed">
+	<!-- .heading -->
+	<div class="heading">
+		<h1 class="headingTtl"><mt:Var name="pageName"></h1>
+	</div><!-- .heading -->
+
+	<section>
+		<h2 class="m-subHeading">For ギフト</h2>
+		<ul class="filedList">
+			<li><a href="/temiyage/">手土産ギフト</a></li>
+			<li><a href="/mine/">自分へのご褒美</a></li>
+		</ul>
+	</section>
+
+	<section>
+		<h2 class="m-subHeading">立ち寄り駅ギフト</h2>
+<mt:For regex_replace='/^\s*\n/gm',''><mt:ignore><!-- 改行削除 --></mt:ignore>
+<mt:Truncateurl>
+
+<mt:categories blog_ids='2' show_empty='1'>
+<mt:CategoryBasename setVar='basename'>
+<mt:If name='basename' eq='station'>
+<mt:SubCategories sort_by='user_custom'>
+	<mt:CategoryBasename setVar='parentBasename'>
+		<section>
+			<h3 class="filedTtl"><mt:CategoryLabel></h3>
+			<ul class="filedList">
+	<mt:SubCategories sort_by='user_custom'>
+				<li><a href="/station/<mt:Var name="parentBasename">/<mt:CategoryBasename>/"><mt:CategoryLabel></a></li>
+	</mt:SubCategories>
+			</ul>
+		</section>
+</mt:SubCategories>
+</mt:If>
+</mt:categories>
+
+	</section>
+
+	<section>
+		<h2 class="m-subHeading">商品カテゴリ</h2>
+		<ul class="filedList">
+<mt:categories blog_ids='2' show_empty='1'>
+<mt:CategoryBasename setVar='basename'>
+<mt:If name='basename' eq='item'>
+	<mt:SubCategories sort_by='user_custom'>
+			<li><a href="/item/<mt:CategoryBasename>/"><mt:CategoryLabel></a></li>
+	</mt:SubCategories>
+</mt:If>
+</mt:categories>
+		</ul>
+	</section>
+
+</mt:Truncateurl>
+</mt:For><mt:ignore><!-- //改行削除 --></mt:ignore>
+
+	<section>
+		<h2 class="m-subHeading">その他</h2>
+		<ul class="filedList">
+			<li><a href="/about/">STOCKNOWについて</a></li>
+			<li><a href="/master/">サイト運営者について</a></li>
+			<li><a href="/sitemap/">サイトマップ</a></li>
+			<li><a href="/contact/">お問い合わせ</a></li>
+		</ul>
+	</section>
+
+
+</section><!-- .sec-filed -->
+
+</div><!-- /#contents -->
+
+<!--#include virtual="/_inc/footer.html"-->
+</body>
+</html>

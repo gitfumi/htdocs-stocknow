@@ -15,7 +15,7 @@
     "gulp-cssmin": "*",
 
     "gulp-gzip": "*",
-    "gulp-imagemin": "*",
+
     "gulp-notify": "*",
     "gulp-plumber": "*",
     "gulp-postcss": "*",
