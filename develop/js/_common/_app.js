@@ -16,4 +16,5 @@ import scrollHeaderEffect from './module/scroll_header_effect.js';
 // import tab               from './module/tab.js';
 import toggole           from './module/toggle.js';
 import toggoleCategory   from './module/toggle_category.js';
+import ogpUrlChange   from './module/ogp_url_change.js';
 import onMediaQuery      from './on_media_query.js';
