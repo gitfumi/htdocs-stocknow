@@ -12,7 +12,9 @@
 				--><div class="stationCont">
 					<ul>
 		<mt:SubCategories sort_by='user_custom'>
+		<mt:If tag="CategoryCount" ne="0">
 					<li><a href="/station/<mt:Var name="parentBasename">/<mt:CategoryBasename>/"><mt:CategoryLabel></a></li>
+		</mt:If>
 		</mt:SubCategories>
 					</ul>
 				</div>
