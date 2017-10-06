@@ -41,13 +41,17 @@ var _toggle_category = require('./module/toggle_category.js');
 
 var _toggle_category2 = _interopRequireDefault(_toggle_category);
 
+var _ogp_url_change = require('./module/ogp_url_change.js');
+
+var _ogp_url_change2 = _interopRequireDefault(_ogp_url_change);
+
 var _on_media_query = require('./on_media_query.js');
 
 var _on_media_query2 = _interopRequireDefault(_on_media_query);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./module/add_tap_class.js":2,"./module/current_link.js":3,"./module/disable_tel_link.js":4,"./module/glovalnav.js":5,"./module/magnific_popup.js":6,"./module/popup.js":8,"./module/scroll_anchor.js":9,"./module/scroll_header_effect.js":10,"./module/toggle.js":11,"./module/toggle_category.js":12,"./on_media_query.js":13}],2:[function(require,module,exports){
+},{"./module/add_tap_class.js":2,"./module/current_link.js":3,"./module/disable_tel_link.js":4,"./module/glovalnav.js":5,"./module/magnific_popup.js":6,"./module/ogp_url_change.js":8,"./module/popup.js":9,"./module/scroll_anchor.js":10,"./module/scroll_header_effect.js":11,"./module/toggle.js":12,"./module/toggle_category.js":13,"./on_media_query.js":14}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -157,7 +161,7 @@ var disableTelLink = function () {
 }(); // モバイル端末以外はtelリンクを無効
 exports.default = disableTelLink;
 
-},{"../ua.js":14}],5:[function(require,module,exports){
+},{"../ua.js":15}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -297,7 +301,23 @@ var menuDrawer = function menuDrawer() {
 }; // ドロワーメニュー
 exports.default = menuDrawer;
 
-},{"../valiable.js":15}],8:[function(require,module,exports){
+},{"../valiable.js":16}],8:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+// コンテンツの表示、非表示
+var ogpUrlChange = function () {
+	var URL = location.href;
+	var facebookURL = 'http://www.facebook.com/share.php?u=' + URL;
+	var googleURL = 'https://plus.google.com/share?url=' + URL;
+	$('#footer').find('.is-facebook a').attr('href', facebookURL);
+	$('#footer').find('.is-google a').attr('href', googleURL);
+}();
+exports.default = ogpUrlChange;
+
+},{}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -336,7 +356,7 @@ var popup = function () {
 }();
 exports.default = popup;
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -409,7 +429,7 @@ var scrollAnchor = function () {
 }();
 exports.default = scrollAnchor;
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -439,7 +459,7 @@ var scrollHeaderEffect = function () {
 }();
 exports.default = scrollHeaderEffect;
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -478,7 +498,7 @@ var toggle = function () {
 }();
 exports.default = toggle;
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -523,7 +543,7 @@ var toggoleCategory = function () {
 }();
 exports.default = toggoleCategory;
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -604,7 +624,7 @@ var onMediaQuery = function () {
 // import scrollEffect  from './module/scroll_effect.js';
 exports.default = onMediaQuery;
 
-},{"./module/menu_drawer.js":7}],14:[function(require,module,exports){
+},{"./module/menu_drawer.js":7}],15:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -631,7 +651,7 @@ var ua = function () {
 }();
 exports.default = ua;
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
