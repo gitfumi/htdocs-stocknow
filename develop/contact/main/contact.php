@@ -191,12 +191,12 @@ class Contact {
 	 * パラメータを加工後に、管理者宛てのメールを送信
 	 */
 	public function sendAdm($tmplFile, $fromName, $param) {
-
 		//パラメータを加工（追加分）
 		// 日時
 		$param->date = date('Y/m/d H:i:s');
+
 		// 氏名
-		$param->name = getName($param->name);
+		// $param->name = getName($param->name);
 
 		//パラメータを加工（変更分）
 		// ご質問
@@ -225,11 +225,13 @@ class Contact {
 		//セッションから必要な情報を取得
 		$this->_param = $this->_inquiry->session2Param($this->_param);
 
+
 		//管理者へ送信
 		$fromName = "" . MAIL_FROM;
 		// $tmplFile = DIR_TMPL.'msgAdm.mail';
 		// utlMail::sendEmailAdm($tmplFile, $fromName, $this->_param);
 		$this->sendAdm(TMPL_MAIL_MSG_ADM, $fromName, $this->_param);
+
 		//お客様宛て
 		// メールアドレスが設定されていれば送信
 		$mail = $this->_param->email;
@@ -237,7 +239,8 @@ class Contact {
 			utlMail::sendEmailUsr(TMPL_MAIL_MSG_USR, $fromName, $this->_param);
 		}
 		// 氏名をサンクス画面表示様に取得
-		$$usrkey = getName($this->_param->name);
+		// $$usrkey = getName($this->_param->name);
+		$$usrkey = $this->_param->name;
 
 		//セッション情報を破棄
 		$this->_inquiry->delSession();
