@@ -62,8 +62,8 @@ class utlMail {
 	private static function getMailMsgUsr($tmplFile, $param, &$msgUsr) {
 		$msgUsr = file_get_contents($tmplFile);
 		//ユーザ名をセット
-		$p['name'] = $param->name;
-		self::setParam2str($p, $msgUsr);
+		// $p['name'] = $param->name;
+		self::setParam2str($param, $msgUsr);
 	}
 
 	/**

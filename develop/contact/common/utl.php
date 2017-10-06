@@ -40,6 +40,7 @@ class Utl {
 	 * 文字列に改行を追加する
 	 */
 	public static function addCRLF($str, $maxLen, $delEmpRow = false) {
+
 		//初期化
 		$rlst = array();
 		//1行毎に分割
