@@ -49,7 +49,9 @@
 			<h3 class="filedTtl"><mt:CategoryLabel></h3>
 			<ul class="filedList">
 	<mt:SubCategories sort_by='user_custom'>
+	<mt:If tag="CategoryCount" ne="0">
 				<li><a href="/station/<mt:Var name="parentBasename">/<mt:CategoryBasename>/"><mt:CategoryLabel></a></li>
+	</mt:If>
 	</mt:SubCategories>
 			</ul>
 		</section>
@@ -66,7 +68,9 @@
 <mt:CategoryBasename setVar='basename'>
 <mt:If name='basename' eq='item'>
 	<mt:SubCategories sort_by='user_custom'>
+	<mt:If tag="CategoryCount" ne="0">
 			<li><a href="/item/<mt:CategoryBasename>/"><mt:CategoryLabel></a></li>
+	</mt:If>
 	</mt:SubCategories>
 </mt:If>
 </mt:categories>
