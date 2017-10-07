@@ -1,84 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+		xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+			http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 <url>
-  <loc>https://stocknow.info/</loc>
-  <changefreq>daily</changefreq>
-  <priority>1.00</priority>
+	<loc>https://stocknow.info/</loc>
+	<changefreq>daily</changefreq>
+	<priority>1.00</priority>
 </url>
 <url>
-  <loc>https://stocknow.info/about/</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority>
+	<loc>https://stocknow.info/about/</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://stocknow.info/master/</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority>
+	<loc>https://stocknow.info/master/</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://stocknow.info/contact/</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority>
+	<loc>https://stocknow.info/contact/</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://stocknow.info/temiyage/</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority>
+	<loc>https://stocknow.info/temiyage/</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://stocknow.info/mine/</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority>
+	<loc>https://stocknow.info/mine/</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://stocknow.info/station/</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority>
+	<loc>https://stocknow.info/station/</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://stocknow.info/item/sweets/</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority>
+	<loc>https://stocknow.info/station/tokyo/shinjuku/</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://stocknow.info/item/sweets/butterfinancier.html</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority>
+	<loc>https://stocknow.info/station/tokyo/tokyo/</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://stocknow.info/item/sweets/bake.html</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority>
+	<loc>https://stocknow.info/station/tokyo/ikebukuro/</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+
+<url>
+	<loc>https://stocknow.info/item/</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://stocknow.info/station/tokyo/tokyo/</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority>
+	<loc>https://stocknow.info/item/sweets/</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
 </url>
+
 <url>
-  <loc>https://stocknow.info/station/tokyo/ikebukuro/</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://stocknow.info/station/tokyo/shinjuku/</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://stocknow.info/sitemap/</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://stocknow.info/item/</loc>
-  <changefreq>daily</changefreq>
-  <priority>0.64</priority>
+	<loc>https://stocknow.info/sitemap/</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
 </url>
 </urlset>
