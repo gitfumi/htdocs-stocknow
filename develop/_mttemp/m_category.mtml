@@ -25,8 +25,8 @@
 		<mt:Elseif eq='代金引換'><mt:SetVarBlock name='payChange'>true</mt:SetVarBlock>
 		<mt:Elseif eq='クレジットカード'><mt:SetVarBlock name='payCard'>true</mt:SetVarBlock>
 		<mt:Elseif eq='コンビニ決済'><mt:SetVarBlock name='payConvenience'>true</mt:SetVarBlock>
-		<mt:Else><mt:SetVar name='payContact' value='true'>
 		</mt:if>
+		<mt:SetVar name='payContact' value='true'>
 	</mt:loop>
 
 	<mt:ignore><!-- オンラインURL --></mt:ignore>
