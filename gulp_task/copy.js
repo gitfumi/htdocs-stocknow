@@ -12,9 +12,11 @@ gulp.task('copy', function() {
 			'!' + conf.src + '/**/_info/**/*.*',
 			'!' + conf.src + '/**/_styleguide/**/*.*',
 			'!' + conf.src + '/**/font/demo/**/*.*',
-			'!' + conf.src + '/**/js/plugin/*.*',
-			'!' + conf.src + '/**/js/common/**/*.*',
+			'!' + conf.src + '/**/js/_plugin/*.*',
+			'!' + conf.src + '/**/js/_MTAppjQuery/*.*',
+			'!' + conf.src + '/**/js/_common/**/*.*',
 			'!' + conf.src + '/**/wordpress/**/*.*',
+			'!' + conf.src + '/**/_mt/**/*.*',
 			'!' + conf.src + '/**/temp.html'
 		],
 		{
