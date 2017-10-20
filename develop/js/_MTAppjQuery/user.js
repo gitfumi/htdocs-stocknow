@@ -86,6 +86,8 @@
 	MT　商品詳細
 ----------------------------------------------------------*/
 	if($('body#edit-entry').length){
+		// カテゴリ覧をタイトル欄の上に移動する
+		$.MTAppCustomize({basename: 'category'}).insertBefore("#title-field");
 		// 説明文、タグ、フェードバックを非表示に
 		$('#text-field, #tags-field, #feedback-field').hide();
 		//並び替え
