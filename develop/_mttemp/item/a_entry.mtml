@@ -82,19 +82,20 @@
 				</div>
 			</section>
 
+			<mt:If tag='EntryVariationImage1'><mt:If tag='EntryVariationText1'>
 			<section class="itemVariation">
 				<div class="variationInner">
 					<h2 class="m-subHeading">容量バリエーション（個数）</h2>
 					<ul class="variationList">
-						<mt:If tag='EntryVariationImage1'><mt:If tag='EntryVariationText1'><mt:EntryVariationImage1Asset>
-						<li><img src="<mt:AssetURL>" alt=""><span><mt:EntryVariationText1></span></li></mt:EntryVariationImage1Asset></mt:If></mt:If>
+						<mt:EntryVariationImage1Asset>
+						<li><img src="<mt:AssetURL>" alt=""><span><mt:EntryVariationText1></span></li></mt:EntryVariationImage1Asset>
 						<mt:If tag='EntryVariationImage2'><mt:If tag='EntryVariationText2'><mt:EntryVariationImage2Asset>
 						<li><img src="<mt:AssetURL>" alt=""><span><mt:EntryVariationText2></span></li></mt:EntryVariationImage2Asset></mt:If></mt:If>
 						<mt:If tag='EntryVariationImage3'><mt:If tag='EntryVariationText3'><mt:EntryVariationImage3Asset>
 						<li><img src="<mt:AssetURL>" alt=""><span><mt:EntryVariationText3></span></li></mt:EntryVariationImage3Asset></mt:If></mt:If>
 					</ul>
 				</div>
-			</section>
+			</section></mt:If></mt:If>
 
 			<mt:If name='brandShopName1'>
 			<section id="anc-shop" class="itemShop">
@@ -102,7 +103,7 @@
 					<h2 class="m-subHeading">実店舗情報</h2>
 					<ul class="shopList">
 						<li>
-							<p id="shop01" class="shopName"><mt:Var name='brandShopName1'><span class="m-btn shopMapActive">MAP ACTIVE</span></p>
+							<p class="shopName"><mt:Var name='brandShopName1'><span class="shopMapActive">MAP ACTIVE</span></p>
 							<mt:If name='brandShopAddress1'><p class="shopAddress"><mt:Var name='brandShopAddress1'><br>
 							<mt:Var name='brandShopOverview1'></p></mt:If>
 						</li>
@@ -315,6 +316,7 @@ $.when(
 
 	$('.shopList li .shopMapActive').on('click',function(){
 		var eq = $(this).parents('li').index();
+		console.log(eq);
 		map.panTo(new google.maps.LatLng(shopCode[eq]));
 	})
 })
