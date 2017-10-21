@@ -131,3 +131,7 @@ body .basename-label {
 #edit-entry .mtapp-vertical.is-pli > .mtapp-verticalBlock + .mtapp-verticalBlock {
   margin-left: 20px;
 }
+
+#edit-entry #category-selector-list {
+  height: auto !important;
+}
