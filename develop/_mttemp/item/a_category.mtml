@@ -27,33 +27,97 @@
 		</ul>
 	</div>
 
-<mt:ignore><!-- 手土産カテゴリの商品リストを取得 --></mt:ignore>
-<mt:Entries>
-<mt:Include blog_id='1' module='カテゴリ'>
-<mt:ignore><!-- ブランドの記事数をカウントしあったら表示する --></mt:ignore>
-<mt:SetVarBlock name='cnt'><mt:EntriesCount></mt:SetVarBlock>
+<mt:If name="categoryTitle" ne="立ち寄り駅ギフト">
+	<mt:ignore><!-- カテゴリの商品リストを取得 --></mt:ignore>
+	<mt:Entries>
+	<mt:Include blog_id='1' module='カテゴリ'>
+	<mt:ignore><!-- 記事数をカウントしあったら表示する --></mt:ignore>
+	<mt:SetVarBlock name='cnt'><mt:EntriesCount></mt:SetVarBlock>
 
-<mt:If name='cnt' ne="0">
+	<mt:If name='cnt' ne="0">
 
-<mt:If name='__first__'>
+	<mt:If name='__first__'>
 
-<!-- .sec-archive -->
-<section class="sec-archive">
-	<!-- .heading -->
-	<div class="heading">
-		<mt:If name="parentTopCBasename" ne=""><p class="headingParent"><mt:Var name='parentTopCName'></p></mt:If>
-		<h1 class="headingTtl"><mt:Var name='categoryTitle'></h1>
-	</div><!-- .heading -->
+	<!-- .sec-archive -->
+	<section class="sec-archive">
+		<!-- .heading -->
+		<div class="heading">
+			<mt:If name="parentTopCBasename" ne=""><p class="headingParent"><mt:Var name='parentTopCName'></p></mt:If>
+			<h1 class="headingTtl"><mt:Var name='categoryTitle'></h1>
+		</div><!-- .heading -->
 
-	<div class="archiveList m-list is-limit">
-</mt:If>
+		<div class="archiveList m-list is-limit">
+	</mt:If>
 			<mt:Include blog_id='1' module='アイテム'>
-<mt:If name='__last__'>
+	<mt:If name='__last__'>
 		</div>
 	</section><!-- .sec-archive -->
+	</mt:If>
+	</mt:If>
+	</mt:Entries>
+<mt:Else>
+	<section class="sec-archive is-station">
+		<!-- .heading -->
+		<div class="heading">
+			<mt:If name="parentTopCBasename" ne=""><p class="headingParent"><mt:Var name='parentTopCName'></p></mt:If>
+			<h1 class="headingTtl"><mt:Var name='categoryTitle'></h1>
+		</div><!-- .heading -->
+
+	<mt:SetVar name="count" value="0">
+	<mt:categories blog_ids='2' show_empty='1'>
+	<mt:CategoryBasename setVar='basename'>
+	<mt:If name='basename' eq='station'>
+		<nav class="stationNav">
+			<ul class="parent js-tab">
+	<mt:SubCategories sort_by='user_custom'>
+			<li class="is-<mt:CategoryBasename><mt:If name='count' eq='0'> is-active</mt:If>"><span><mt:CategoryLabel></span></li>
+			<mt:SetVar name="count" value="1" op="+">
+	</mt:SubCategories>
+	<mt:SetVar name="count" value="0">
+			</ul>
+			<div class="child js-btn">
+	<mt:SubCategories sort_by='user_custom'>
+			<ul class="is-<mt:CategoryBasename><mt:If name='count' eq='0'> is-active</mt:If>">
+	<mt:SubCategories sort_by='user_custom'>
+	<mt:If tag="CategoryCount" ne="0">
+				<li class="is-<mt:CategoryBasename>"><a href="#anc_<mt:CategoryBasename>"><mt:CategoryLabel></a></li>
+				<mt:SetVar name="count" value="1" op="+">
+	</mt:If>
+	</mt:SubCategories>
+			</ul>
+	</mt:SubCategories>
+			</div>
+		</nav>
+	</mt:If>
+	</mt:categories>
+
+		<section class="stationList">
+	<mt:SetVar name="count" value="0">
+	<mt:categories blog_ids='2' show_empty='1'>
+	<mt:CategoryBasename setVar='basename'>
+	<mt:If name='basename' eq='station'>
+	<mt:SubCategories sort_by='user_custom'>
+		<div class="is-<mt:CategoryBasename><mt:If name='count' eq='0'> is-active</mt:If>">
+		<mt:SubCategories sort_by='user_custom'>
+		<mt:If tag="CategoryCount" ne="0">
+			<section id="anc_<mt:CategoryBasename>" class="is-<mt:CategoryBasename>">
+				<h4 class="stationTtl"><em><mt:CategoryLabel>駅</em>のギフト</h4>
+				<div class="archiveList m-list is-limit">
+				<mt:Entries>
+					<mt:Include blog_id='1' module='アイテム'>
+				</mt:Entries>
+				</div>
+			</section>
+			<mt:SetVar name="count" value="1" op="+">
+		</mt:If>
+		</mt:SubCategories>
+		</div>
+	</mt:SubCategories>
+	</mt:If>
+	</mt:categories>
+		</section>
+	</section>
 </mt:If>
-</mt:If>
-</mt:Entries>
 
 	<mt:If name="parentTopCBasename" eq="station">
 	<!-- .sec-station -->
@@ -86,5 +150,6 @@
 </mt:For><mt:ignore><!-- //改行削除 --></mt:ignore>
 
 <!--#include virtual="/_inc/footer.html"-->
+<script src="/js/tab.js"></script>
 </body>
 </html>
