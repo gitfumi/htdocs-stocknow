@@ -1755,6 +1755,10 @@ html {
   font-weight: 700;
 }
 
+.is-station .m-list .m-itemParam {
+  display: none;
+}
+
 .m-list .m-itemPic.is-train {
   z-index: 0;
   position: relative;
