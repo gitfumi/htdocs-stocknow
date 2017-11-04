@@ -9,8 +9,8 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="おしゃれな手土産ギフト、ご褒美ギフトなら STOCKNOW">
 <meta property="og:description" content="ワンランクアップの手土産ギフトや、自分用のお取り寄せ、ご褒美ギフト探しならSTOCKNOW！おしゃれな最新スイーツやグルメ情報をお届けします。">
-<meta property="og:url" content="//stocknow.dev.localhost/">
-<meta property="og:image" content="//stocknow.dev.localhost/img/cmn/pic_ogp.jpg">
+<meta property="og:url" content="http://stocknow.dev.localhost/">
+<meta property="og:image" content="http://stocknow.dev.localhost/img/cmn/pic_ogp.jpg">
 <!--#include virtual='/_inc/ogp.html'-->
 <!--#include virtual='/_inc/link.html'-->
 <!--#include virtual="/_inc/tagmanager.html"-->
@@ -66,6 +66,7 @@
 			</a></section>
 		</div>
 		<p class="m-btn"><a href="/temiyage/">もっとみる</a></p>
+		<script type="text/javascript" src="//rot3.a8.net/jsa/7dc1ffb59886856c58946bc30ae3fdeb/93dd4de5cddba2c733c65f233097f05a.js"></script>
 	</section><!-- .sec-temiyage -->
 	<!-- .sec-category -->
 	<section class="sec-category">
@@ -100,8 +101,7 @@ $(function(){
 		fade:true,
 		arrows : false,
 	});
-	if($('.js-slickResponsive').length > 2){
-		console.log('hoge');
+	if($('.js-slickResponsive > *').length > 2){
 		$('.js-slickResponsive').slick({
 			dots: true,
 			infinite: true,

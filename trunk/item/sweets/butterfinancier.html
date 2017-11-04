@@ -9,7 +9,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="バターフィナンシェ｜スイーツ・洋菓子｜おしゃれな手土産、お取り寄せギフト探し。STOCKNOW">
 <meta property="og:description" content="ブランドButter Butler。バターフィナンシェのページです。ワンランクアップの手土産ギフトや、自分用のお取り寄せ、ご褒美ギフト探しならSTOCKNOW！おしゃれな最新スイーツやグルメ情報をお届けします。">
-<meta property="og:url" content="//stocknow.dev.localhost/item/sweets/butterfinancier.html">
+<meta property="og:url" content="http://stocknow.dev.localhost/item/sweets/butterfinancier.html">
 <meta property="og:image" content="http://stocknow.dev.localhost/cms/item/img/pic_butterbutler_main.png">
 <!--#include virtual='/_inc/ogp.html'-->
 <!--#include virtual='/_inc/link.html'-->
@@ -92,7 +92,7 @@
 					<h2 class="m-subHeading">実店舗情報</h2>
 					<ul class="shopList">
 						<li>
-							<p id="shop01" class="shopName">NEWoMan 新宿<span class="m-btn shopMapActive">MAP ACTIVE</span></p>
+							<p class="shopName">NEWoMan 新宿<span class="shopMapActive">MAP ACTIVE</span></p>
 							<p class="shopAddress">東京都渋谷区千駄ヶ谷5-24-55<br>
 							JR新宿駅構内<br>営業時間：8:00-22:00（月曜〜金曜）<br>　　　　　8:00-21:30（土日祝）<br>TEL：03-6380-1082</p>
 						</li>
@@ -221,6 +221,7 @@ $.when(
 
 	$('.shopList li .shopMapActive').on('click',function(){
 		var eq = $(this).parents('li').index();
+		console.log(eq);
 		map.panTo(new google.maps.LatLng(shopCode[eq]));
 	})
 })
