@@ -794,6 +794,10 @@ html {
   margin-top: 80px;
 }
 
+#contents #a8_rbr {
+  margin-top: 40px;
+}
+
 #contents .dir {
   padding: 10px 0;
 }
@@ -918,6 +922,29 @@ html {
 }
 
 /* ---------------------------------------------------------
+	アフェリツール
+----------------------------------------------------------*/
+#a8_rbr {
+  text-align: center;
+}
+
+#a8_rbr a {
+  display: inline-block;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+#a8_rbr a:hover {
+  opacity: .7;
+}
+
+@media only screen and (max-width: 480px) {
+  #a8_rbr {
+    padding: 0 10px;
+  }
+}
+
+/* ---------------------------------------------------------
 	フッター
 ----------------------------------------------------------*/
 #footer {
@@ -942,6 +969,10 @@ html {
   margin: 0 auto;
   position: relative;
   text-align: center;
+}
+
+#footerInner #a8_rbr {
+  margin-bottom: 20px;
 }
 
 #footerSub > ul {
