@@ -10,6 +10,9 @@
 	>section{
 		margin-top: $sectionMargin;
 	}
+	#a8_rbr{
+		margin-top: 40px;
+	}
 	.dir{
 		// background-color: #f5f5f5;
 		// border-bottom: 2px solid #fff;
@@ -58,4 +61,19 @@
 			a{font-size: 12px;}
 		}
 	}
+}
+/* ---------------------------------------------------------
+	アフェリツール
+----------------------------------------------------------*/
+#a8_rbr{
+	text-align: center;
+	a{
+		display: inline-block;
+
+		transition: all .5s ease;
+		&:hover{opacity: .7;}
+	}
+@include media(phablet) {
+	padding: 0 10px;
+}
 }

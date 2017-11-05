@@ -80,7 +80,7 @@
 			<ul class="is-<mt:CategoryBasename><mt:If name='count' eq='0'> is-active</mt:If>">
 	<mt:SubCategories sort_by='user_custom'>
 	<mt:If tag="CategoryCount" ne="0">
-				<li class="is-<mt:CategoryBasename>"><a href="#anc_<mt:CategoryBasename>"><mt:CategoryLabel></a></li>
+				<li class="is-<mt:CategoryBasename>"><a href="#anc_<mt:CategoryBasename>"><mt:CategoryLabel>駅</a></li>
 				<mt:SetVar name="count" value="1" op="+">
 	</mt:If>
 	</mt:SubCategories>
@@ -104,6 +104,7 @@
 				<h4 class="stationTtl"><em><mt:CategoryLabel>駅</em>のギフト</h4>
 				<div class="archiveList m-list is-limit">
 				<mt:Entries>
+					<mt:Include blog_id='1' module='カテゴリ'>
 					<mt:Include blog_id='1' module='アイテム'>
 				</mt:Entries>
 				</div>
