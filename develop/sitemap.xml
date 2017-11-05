@@ -50,10 +50,10 @@
 		<section>
 			<h3 class="filedTtl">東京都</h3>
 			<ul class="filedList">
-				<li><a href="/station/tokyo/tokyo/">東京</a></li>
-				<li><a href="/station/tokyo/shibuya/">渋谷</a></li>
-				<li><a href="/station/tokyo/ikebukuro/">池袋</a></li>
-				<li><a href="/station/tokyo/shinjuku/">新宿</a></li>
+				<li><a href="/station/tokyo/tokyo/">東京駅</a></li>
+				<li><a href="/station/tokyo/shibuya/">渋谷駅</a></li>
+				<li><a href="/station/tokyo/ikebukuro/">池袋駅</a></li>
+				<li><a href="/station/tokyo/shinjuku/">新宿駅</a></li>
 			</ul>
 		</section>
 		<section>

@@ -25,7 +25,7 @@
 
 <!--#include virtual="/_inc/top-slide.html"-->
 
-	<!-- .sec-temiyage -->
+<!-- .sec-temiyage -->
 	<section class='sec-temiyage'>
 		<!-- .m-heading -->
 		<div class="m-heading">
@@ -132,8 +132,7 @@ $(function(){
 		fade:true,
 		arrows : false,
 	});
-	if($('.js-slickResponsive').length > 2){
-		console.log('hoge');
+	if($('.js-slickResponsive > *').length > 2){
 		$('.js-slickResponsive').slick({
 			dots: true,
 			infinite: true,
