@@ -64,11 +64,13 @@
 }
 }
 .social{
-	position: absolute;
-	top: 50%;
-	right: 20px;
-	transform :translateY(-50%);
+	// position: absolute;
+	// top: 50%;
+	// right: 20px;
+	// transform :translateY(-50%);
+	margin-top: $paramMarginM;
 	display: flex;
+	justify-content: center;
 	li{
 		margin: 0 5px;
 		a{
@@ -106,10 +108,10 @@
 		}
 	}
 @include media(tablet){
-	margin-top: $paramMarginM;
-	position: static;
-	transform :translateY(0);
-	justify-content: center;
+	// margin-top: $paramMarginM;
+	// position: static;
+	// transform :translateY(0);
+	// justify-content: center;
 }
 @include media(phablet){
 	margin-top: 10px;
