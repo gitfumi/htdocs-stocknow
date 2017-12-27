@@ -1049,14 +1049,13 @@ html {
 }
 
 .social {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .social li {
@@ -1274,18 +1273,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-transform: none;
   text-decoration: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .social {
-    margin-top: 20px;
-    position: static;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
 }
 
 @media only screen and (max-width: 480px) {

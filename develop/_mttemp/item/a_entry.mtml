@@ -129,8 +129,10 @@
 						</li>
 						</mt:If>
 					</ul>
-					<mt:If name='brandShopURL'>
-					<p class="m-btn shopBtn is-place"><a target="_blank" href="<mt:Var name='brandShopURL'>"><span>その他の店舗を探す</span></a></p></mt:If>
+					<ul class="btnList">
+						<mt:If name='brandOnlineURL'><li class="m-btn is-blank"><a target="_blank" href="<mt:Var name='brandOnlineURL'>"><span>オンラインショップへ</span></a></li></mt:If>
+						<mt:If name='brandShopURL'><li class="m-btn is-place"><a target="_blank" href="<mt:Var name='brandShopURL'>"><span>その他の店舗を探す</span></a></li></mt:If>
+					</ul>
 				</div>
 			</section>
 			</mt:If>
@@ -211,7 +213,6 @@
 </mt:If>
 <mt:If name='__last__'>
 		</div>
-		<p class="m-btn"><a href="">もっとみる</a></p>
 	</section><!-- .sec-recommend -->
 </mt:If>
 </mt:If>
