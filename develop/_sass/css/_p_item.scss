@@ -266,6 +266,18 @@ $selectorRoot: "#p_item";
 	.shopName{
 		font-weight: bold;
 	}
+	.btnList{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: $paramMarginL;
+		>li{
+			flex-basis: 280px;
+			& + li{
+				margin-left: $paramMarginM;
+			}
+		}
+	}
 	.shopMapActive{
 		margin-left: 20px;
 		display: inline-block;
@@ -303,9 +315,6 @@ $selectorRoot: "#p_item";
 				opacity: 1;
 			}
 		}
-	}
-	.shopBtn{
-		margin-top: $paramMarginL;
 	}
 @include media(tablet) {
 	.variationList{
