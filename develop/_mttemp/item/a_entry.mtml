@@ -66,7 +66,7 @@
 					</ul>
 				</div>
 				</mt:If>
-				<mt:If name='brandOnlineURL' ne=""><p class="itemBtn m-btn is-blank"><a target="_blank" href="<mt:Var name='brandOnlineURL'>"><span>オンラインショップへ</span></a></p></mt:If>
+				<mt:If name='brandOnlineURL' ne=""><p class="itemBtn m-btn is-blank"><a target="_blank" href="<mt:Var name='brandOnlineURL'>" rel="nofollow"><span>オンラインショップへ</span></a></p></mt:If>
 			</section>
 		</div>
 	</div><!-- .mainItem -->
@@ -130,7 +130,7 @@
 						</mt:If>
 					</ul>
 					<ul class="btnList">
-						<mt:If name='brandOnlineURL'><li class="m-btn is-blank"><a target="_blank" href="<mt:Var name='brandOnlineURL'>"><span>オンラインショップへ</span></a></li></mt:If>
+						<mt:If name='brandOnlineURL'><li class="m-btn is-blank"><a target="_blank" href="<mt:Var name='brandOnlineURL'>" rel="nofollow"><span>オンラインショップへ</span></a></li></mt:If>
 						<mt:If name='brandShopURL'><li class="m-btn is-place"><a target="_blank" href="<mt:Var name='brandShopURL'>"><span>その他の店舗を探す</span></a></li></mt:If>
 					</ul>
 				</div>
@@ -179,6 +179,7 @@
 </mt:If>
 <mt:If name='__last__'>
 		</div>
+		<mt:If name='brandOnlineURL' ne=""><p class="itemBtn m-btn is-blank"><a target="_blank" href="<mt:Var name='brandOnlineURL'>" rel="nofollow"><span>オンラインショップへ</span></a></p></mt:If>
 	</section><!-- .sec-other -->
 </mt:If>
 </mt:If>
