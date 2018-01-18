@@ -21,7 +21,7 @@
 		<ul>
 			<li><a href="/">home</a></li>
 			<mt:If name="parentTopCBasename" ne="">
-			<li><a href="<mt:Var name='categoryParentLink'>"><mt:Var name='parentTopCName'></a></li>
+			<li>商品カテゴリ</li>
 			</mt:If>
 			<li><mt:Var name='categoryTitle'></li>
 		</ul>
@@ -104,6 +104,7 @@
 				<h4 class="stationTtl"><em><mt:CategoryLabel>駅</em>のギフト</h4>
 				<div class="archiveList m-list is-limit">
 				<mt:Entries>
+					<mt:Include blog_id='1' module='カテゴリ'>
 					<mt:Include blog_id='1' module='アイテム'>
 				</mt:Entries>
 				</div>

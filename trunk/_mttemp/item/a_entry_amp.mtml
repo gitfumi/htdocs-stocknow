@@ -1,10 +1,37 @@
 <mt:Include blog_id='1' module='カテゴリ'>
 <mt:Include blog_id='1' module='共通設定'>
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" amp>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
-<mt:Include blog_id='1' module='headタグ'>
+<mt:Include blog_id='1' module='headタグ（AMP）'>
+<script async custom-element="amp-analytics" src="//cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 <!--#include virtual="/_inc/tagmanager.html"-->
+<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "BlogPosting",
+		"headline": "<mt:Var name='headTitle'>",
+		"datePublished": "<mt:EntryCreatedDate format_name="iso8601">",
+		"dateModified": "<mt:EntryModifiedDate format_name="iso8601">",
+		"image": {
+			"@type": "ImageObject",
+			"url": "<mt:Var name='headOGPImage'>",
+			"height": 600,
+			"width": 390
+		},
+		"mainEntityOfPage":{
+			"@type":"WebPage",
+			"@id":"<mt:Var name='headOGPUrl'>"
+		},
+		"author": {
+			"@type": "Person",
+			"name": "STOCKNOW"
+		},
+		"description": "<mt:Var name='headDescription'>"
+	}
+</script>
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<script async src="//cdn.ampproject.org/v0.js"></script>
 </head>
 
 <body id="p_item">
@@ -17,7 +44,6 @@
 	<div class="dir">
 		<ul>
 			<li><a href="/">home</a></li>
-			<li>商品カテゴリ</li>
 			<li><a href="/item/<mt:Var name='itemCategoryBasename'>/"><mt:Var name='itemCategoryName'></a></li>
 			<li><mt:EntryTitle encode_html='1'></li>
 		</ul>
@@ -67,7 +93,7 @@
 					</ul>
 				</div>
 				</mt:If>
-				<mt:If name='brandOnlineURL' ne=""><p class="itemBtn m-btn is-blank"><a target="_blank" href="<mt:Var name='brandOnlineURL'>" rel="nofollow"><span>オンラインショップへ</span></a></p></mt:If>
+				<mt:If name='brandOnlineURL' ne=""><p class="itemBtn m-btn is-blank"><a target="_blank" href="<mt:Var name='brandOnlineURL'>"><span>オンラインショップへ</span></a></p></mt:If>
 			</section>
 		</div>
 	</div><!-- .mainItem -->
@@ -130,10 +156,8 @@
 						</li>
 						</mt:If>
 					</ul>
-					<ul class="btnList">
-						<mt:If name='brandOnlineURL'><li class="m-btn is-blank"><a target="_blank" href="<mt:Var name='brandOnlineURL'>" rel="nofollow"><span>オンラインショップへ</span></a></li></mt:If>
-						<mt:If name='brandShopURL'><li class="m-btn is-place"><a target="_blank" href="<mt:Var name='brandShopURL'>"><span>その他の店舗を探す</span></a></li></mt:If>
-					</ul>
+					<mt:If name='brandShopURL'>
+					<p class="m-btn shopBtn is-place"><a target="_blank" href="<mt:Var name='brandShopURL'>"><span>その他の店舗を探す</span></a></p></mt:If>
 				</div>
 			</section>
 			</mt:If>
@@ -180,7 +204,6 @@
 </mt:If>
 <mt:If name='__last__'>
 		</div>
-		<mt:If name='brandOnlineURL' ne=""><p class="itemBtn m-btn is-blank"><a target="_blank" href="<mt:Var name='brandOnlineURL'>" rel="nofollow"><span>オンラインショップへ</span></a></p></mt:If>
 	</section><!-- .sec-other -->
 </mt:If>
 </mt:If>
@@ -215,6 +238,7 @@
 </mt:If>
 <mt:If name='__last__'>
 		</div>
+		<p class="m-btn"><a href="">もっとみる</a></p>
 	</section><!-- .sec-recommend -->
 </mt:If>
 </mt:If>

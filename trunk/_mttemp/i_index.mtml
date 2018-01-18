@@ -19,7 +19,7 @@
 <mt:Truncateurl>
 
 <mt:ignore><!-- 手土産カテゴリの商品リストを取得 --></mt:ignore>
-<mt:Entries blog_ids='2' category='手土産ギフト'>
+<mt:Entries blog_ids='2' category='手土産ギフト' lastn='12'>
 <mt:Include blog_id='1' module='カテゴリ'>
 <mt:ignore><!-- ブランドの記事数をカウントしあったら表示する --></mt:ignore>
 <mt:SetVarBlock name='cnt'><mt:EntriesCount></mt:SetVarBlock>
@@ -59,10 +59,15 @@
 		</div><!-- .m-heading -->
 
 		<!--#include virtual="/_inc/mt_category.html"-->
+
+		<div class="m-adsence"><!-- 728×90 -->
+		<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-4223387530424990" data-ad-slot="8235992567"></ins>
+		<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+		</div>
 	</section><!-- .sec-category -->
 
 <mt:ignore><!-- 自分へのご褒美の商品リストを取得 --></mt:ignore>
-<mt:Entries blog_ids='2' category='自分へのご褒美'>
+<mt:Entries blog_ids='2' category='自分へのご褒美' lastn='12'>
 <mt:Include blog_id='1' module='カテゴリ'>
 <mt:ignore><!-- ブランドの記事数をカウントしあったら表示する --></mt:ignore>
 <mt:SetVarBlock name='cnt'><mt:EntriesCount></mt:SetVarBlock>
@@ -121,11 +126,11 @@ $(function(){
 			dots: true,
 			infinite: true,
 			arrows : false,
-			speed: 1000,
+			speed: 2000,
 			slidesToShow: 4,
-			slidesToScroll: 1,
+			slidesToScroll: 4,
 			autoplay: true,
-			autoplaySpeed: 2000,
+			autoplaySpeed: 8000,
 			// centerMode: true, //要素を中央寄せ
 			// centerPadding:'100px', //両サイドの見えている部分のサイズ
 			responsive: [
