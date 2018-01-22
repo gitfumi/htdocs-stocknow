@@ -1380,8 +1380,14 @@ html {
 	m-adsence
 ----------------------------------------------------------*/
 .m-adsence {
-  margin: 40px auto;
+  margin: 80px auto;
   text-align: center;
+}
+
+@media only screen and (max-width: 480px) {
+  .m-adsence {
+    margin: 60px 20px;
+  }
 }
 
 /* ---------------------------------------------------------
