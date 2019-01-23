@@ -1,34 +1,24 @@
 {
-  "name": "get-started-gulp",
-  "version": "0.0.0",
-  "devDependencies": {
-    "babelify": "*",
-    "babel-preset-es2015": "*",
-    "browserify": "*",
-    "browser-sync": "*",
-    "gulp": "*",
-    "gulp-clean": "*",
-    "gulp-combine-media-queries": "*",
-    "gulp-concat": "*",
-
-    "gulp-csscomb": "*",
-    "gulp-cssmin": "*",
-
-    "gulp-gzip": "*",
-    "gulp-imagemin": "*",
-    "gulp-notify": "*",
-    "gulp-plumber": "*",
-    "gulp-postcss": "*",
-    "gulp-replace": "*",
-    "gulp-sass": "*",
-    "gulp-sass-glob": "*",
-    "gulp-strip-debug": "*",
-    "gulp-uglify": "*",
-    "gulp-watch": "*",
-    "postcss-cssnext": "*",
-
-    "require-dir": "*",
-    "run-sequence": "*",
-    "vinyl-source-stream": "*"
-  }
+	"name": "gulp",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"dependencies": {},
+	"devDependencies": {
+		"@babel/core": "*",
+		"@babel/preset-env": "*",
+		"autoprefixer": "*",
+		"babelify": "*",
+		"browser-sync": "*",
+		"browserify": "*",
+		"gulp": "*",
+		"gulp-clean-css": "*",
+		"gulp-concat": "*",
+		"gulp-gzip": "*",
+		"gulp-notify": "*",
+		"gulp-plumber": "*",
+		"gulp-postcss": "*",
+		"gulp-sass": "*",
+		"gulp-sass-glob": "*"
+	}
 }

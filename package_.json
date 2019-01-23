@@ -1,0 +1,16 @@
+{
+    "name": "get-started-gulp",
+    "version": "0.0.0",
+    "devDependencies": {
+        "gulp-sass": "*",
+        "gulp-sass-glob": "*",
+        "gulp-strip-debug": "*",
+        "gulp-uglify": "*",
+        "gulp-watch": "*",
+        "postcss-cssnext": "*",
+        "require-dir": "*",
+        "run-sequence": "*",
+        "vinyl-source-stream": "*"
+    },
+    "dependencies": {}
+}
