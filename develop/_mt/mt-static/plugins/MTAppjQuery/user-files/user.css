@@ -23,8 +23,8 @@ body input, body textarea, body select {
 }
 
 body input:focus, body textarea:focus, body select:focus {
-  -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, .4) !important;
-          box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, .4) !important;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4) !important;
+          box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4) !important;
 }
 
 body .field-header {
@@ -54,8 +54,8 @@ body .basename-label {
 }
 
 #edit-category .mtapp-shop > .mtapp-shopBlock {
-  -ms-flex-preferred-size: calc(50% - 10px);
-      flex-basis: calc(50% - 10px);
+  -ms-flex-preferred-size: calc((100% - 20px) / 2);
+      flex-basis: calc((100% - 20px) / 2);
   background-color: #fcfcfc;
   padding: 10px;
 }
@@ -109,8 +109,8 @@ body .basename-label {
 }
 
 #edit-entry .mtapp-vertical.is-picture > .mtapp-verticalBlock, #edit-entry .mtapp-vertical.is-variation > .mtapp-verticalBlock {
-  -ms-flex-preferred-size: 33.33333%;
-      flex-basis: 33.33333%;
+  -ms-flex-preferred-size: calc(100% / 3);
+      flex-basis: calc(100% / 3);
   background-color: #fcfcfc;
   padding: 10px;
 }
@@ -124,8 +124,8 @@ body .basename-label {
 }
 
 #edit-entry .mtapp-vertical.is-pli > .mtapp-verticalBlock {
-  -ms-flex-preferred-size: calc(33.33333% - 13.33333px);
-      flex-basis: calc(33.33333% - 13.33333px);
+  -ms-flex-preferred-size: calc((100% -40px) / 3);
+      flex-basis: calc((100% -40px) / 3);
 }
 
 #edit-entry .mtapp-vertical.is-pli > .mtapp-verticalBlock + .mtapp-verticalBlock {

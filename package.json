@@ -3,7 +3,6 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"license": "MIT",
-	"dependencies": {},
 	"devDependencies": {
 		"@babel/core": "*",
 		"@babel/preset-env": "*",
@@ -11,6 +10,9 @@
 		"babelify": "*",
 		"browser-sync": "*",
 		"browserify": "*",
+		"css-declaration-sorter": "*",
+		"css-mqpacker": "*",
+		"del": "*",
 		"gulp": "*",
 		"gulp-clean-css": "*",
 		"gulp-concat": "*",
@@ -19,6 +21,13 @@
 		"gulp-plumber": "*",
 		"gulp-postcss": "*",
 		"gulp-sass": "*",
-		"gulp-sass-glob": "*"
+		"gulp-sass-glob": "*",
+		"gulp-uglify": "*",
+		"gulp-watch": "*",
+		"path": "*",
+		"pump": "*",
+		"require-dir": "*",
+		"sort-css-media-queries": "*",
+		"vinyl-source-stream": "*"
 	}
 }

@@ -1,5 +1,5 @@
 /*
- * Javascriptの結合
+ * CSS、Javascriptをgzip圧縮
  */
 // **********************************************
 // require
@@ -8,13 +8,13 @@ const $ = require('../plugin');
 const config = require('../config');
 
 // **********************************************
-// concat set
+// gzip set
 // **********************************************
 module.exports = {
-	taskConcat: () =>{
-		return $.gulp.src(config.root.src + config.concat.targetFile)
-			// ファイルを結合
-			.pipe($.concat(config.concat.outPutFileName))
-			.pipe($.gulp.dest(config.root.src + config.concat.outPutDir));
+	taskGzip: done =>{
+		return $.gulp
+			.src(config.root.dest + '/**/*.+(css|js)')
+			.pipe($.gzip())
+			.pipe($.gulp.dest(config.root.dest));
 	}
 }

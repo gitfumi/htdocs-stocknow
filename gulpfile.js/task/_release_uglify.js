@@ -1,5 +1,5 @@
 /*
- * Javascriptの結合
+ * Javascriptの圧縮
  */
 // **********************************************
 // require
@@ -8,13 +8,14 @@ const $ = require('../plugin');
 const config = require('../config');
 
 // **********************************************
-// concat set
+// uglify set
 // **********************************************
 module.exports = {
-	taskConcat: () =>{
-		return $.gulp.src(config.root.src + config.concat.targetFile)
-			// ファイルを結合
-			.pipe($.concat(config.concat.outPutFileName))
-			.pipe($.gulp.dest(config.root.src + config.concat.outPutDir));
+	taskUglify: done =>{
+		return $.pump([
+			$.gulp.src(config.root.dest + '/**/*.js'),
+			$.uglify(),
+			$.gulp.dest(config.root.dest)
+		]);
 	}
 }

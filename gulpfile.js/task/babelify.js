@@ -13,7 +13,7 @@ const config = require('../config');
 module.exports = {
 	taskBabelify: () =>{
 		return $.browserify({
-			entries: config.root.src + '/_js/common/_main.js',
+			entries: config.root.src + config.browserify.targetFile,
 			extensions: ['.js']
 		})
 		.transform($.babelify, {presets: ['@babel/preset-env']})
@@ -22,7 +22,7 @@ module.exports = {
 			console.log('Error : ' + err.message);
 			this.emit('end');
 		})
-		.pipe($.source('common.js'))
-		.pipe($.gulp.dest(config.root.src + '/js/'));
+		.pipe($.source(config.babelify.outPutFileName))
+		.pipe($.gulp.dest(config.root.src + config.babelify.outPutDir));
 	}
 }

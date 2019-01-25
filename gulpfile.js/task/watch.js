@@ -1,3 +1,6 @@
+/*
+ * ファイル監視タスク
+ */
 // **********************************************
 // require
 // **********************************************
@@ -34,13 +37,13 @@ module.exports = {
 		   監視タスク
 		-------------*/
 		// SASS
-		const w_sass = $.gulp.watch(config.root.src + '/**/*.+(sass|scss)', new_sass.taskSass);
+		const w_sass = $.gulp.watch(config.root.src + '/**' + config.sass.targetFile, new_sass.taskSass);
 
 		// babelify
-		const w_babelify = $.gulp.watch(config.root.src + '/**/_js/common/**/*.js', new_babelify.taskBabelify);
+		const w_babelify = $.gulp.watch(config.root.src + '/**' + config.babelify.targetFile, new_babelify.taskBabelify);
 
 		// concat
-		const w_concat = $.gulp.watch(config.root.src + '/**/_js/plugin/**/*.js', new_concat.taskConcat);
+		const w_concat = $.gulp.watch(config.root.src + '/**' + config.concat.targetFile, new_concat.taskConcat);
 
 	}
 }
