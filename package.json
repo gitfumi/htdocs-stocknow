@@ -16,6 +16,7 @@
 		"gulp": "*",
 		"gulp-clean-css": "*",
 		"gulp-concat": "*",
+		"gulp-frontnote": "*",
 		"gulp-gzip": "*",
 		"gulp-notify": "*",
 		"gulp-plumber": "*",

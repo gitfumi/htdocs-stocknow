@@ -12,6 +12,7 @@ module.exports = {
 	path: require('path'), // ファイルパス
 	pump: require('pump'), // ファイルパス
 	gzip : require('gulp-gzip'), // CSS/jsのgzip化
+	frontnote : require('gulp-frontnote'), // フォントスタイル
 	/* css */
 	sass:  require('gulp-sass'), // sassの自動コンパイル
 	postCss: require('gulp-postcss'), // ベンダープレフィックスの自動付与
@@ -28,6 +29,4 @@ module.exports = {
 	concat: require('gulp-concat'), // Javascriptの結合
 	uglify : require('gulp-uglify'), // jsのmin化※圧縮
 	uglifyPump: require('pump') // gulp-uglifyでerrorを出力するためのプラグイン
-	/*  */
-
 };

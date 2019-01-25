@@ -6,10 +6,14 @@
 // **********************************************
 const $ = require('../plugin');
 const config = require('../config');
+// **********************************************
+// タスク呼び出し
+// **********************************************
 const reload = $.browserSync.reload;
 const new_sass = require('./sass');
 const new_babelify = require('./babelify');
 const new_concat = require('./js_concat');
+const new_frontnone = require('./frontnone');
 
 // **********************************************
 // watch set
@@ -44,6 +48,14 @@ module.exports = {
 
 		// concat
 		const w_concat = $.gulp.watch(config.root.src + '/**' + config.concat.targetFile, new_concat.taskConcat);
+
+		// frontnote
+		let frontnoteList = [];
+		// 対象ファイルを整列
+		for (var i = 0; i < config.frontnone.targetFile.length; i++) {
+			frontnoteList[i] = config.root.src + config.frontnone.targetFile[i]
+		}
+		const w_frontnote = $.gulp.watch(frontnoteList, new_frontnone.taskFrontnote(frontnoteList));
 
 	}
 }

@@ -16,14 +16,14 @@ const task_browserSync = require('./browserSync');
 // watch
 $.gulp.task('watch', done => {
 	task_watch.taskMove();
-	console.log('watch!!!');
+	// console.log('watch!!!');
 	done();
 });
 
 // browserSync
 $.gulp.task('browserSync', done => {
-	// task_browserSync.taskMove();
-	console.log('browserSync!!!');
+	task_browserSync.taskMove();
+	// console.log('browserSync!!!');
 	done();
 });
 

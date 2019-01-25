@@ -2,7 +2,10 @@
 // 初期変数設定
 // **********************************************
 module.exports = {
-	host: 'gulp.dev.localhost',
+	/*******************
+	 init
+	********************/
+	host: 'stocknow.dev.localhost',
 	root: {
 		src: 'develop',
 		dest: 'trunk'
@@ -12,15 +15,9 @@ module.exports = {
 		reload: 'css|html|php|js',
 		noReload: '_js'
 	},
-	autoprefixer: {
-		format: [
-			'last 2 version',
-			'ie >= 11',
-			'iOS >= 9',
-			'Android >= 4'
-		]
-	},
-	/* watch.js */
+	/*******************
+	 watch.js
+	********************/
 	sass: {
 		targetFile: '/_sass/**/*.+(sass|scss)'
 	},
@@ -29,21 +26,49 @@ module.exports = {
 		outPutDir: '/js/',
 		outPutFileName: 'common.js'
 	},
-	/* js_concat.js */
+	/*******************
+	 js_concat.js
+	********************/
 	concat: {
 		targetFile: '/js/_plugin/**/*.js',
 		outPutDir: '/js/',
 		outPutFileName: 'plugin.js'
 	},
-	/* sass.js */
+	/*******************
+	 sass.js
+	********************/
 	plumber: {
 		errorMessage: 'Error: <%= error.message %>'
 	},
-	/* babelify.js */
+	autoprefixer: {
+		format: [
+			'last 2 version',
+			'ie >= 11',
+			'iOS >= 9',
+			'Android >= 4'
+		]
+	},
+	/*******************
+	 babelify.js
+	********************/
 	browserify: {
 		targetFile: '/js/_common/_app.js'
 	},
-	/* _release_copy.js */
+	/*******************
+	 frontnone.js
+	********************/
+	frontnone: {
+		targetFile: [
+			'/_sass/_object/component/**/*.scss',
+			'/_sass/_object/module/**/*.scss',
+			// '/_sass/_object/utility/**/*.scss
+		],
+		outPutDir: '/_styleguide',
+		includeCss: '../css/base.css'
+	},
+	/*******************
+	 _release_clean.js
+	********************/
 	clean: {
 		targetFile: [
 			'/**/*',
@@ -51,7 +76,9 @@ module.exports = {
 			'/**'
 		]
 	},
-	/* _release_copy.js */
+	/*******************
+	 _release_copy.js
+	********************/
 	copy: {
 		escapeFile: [
 			'/**/*.htaccess',
