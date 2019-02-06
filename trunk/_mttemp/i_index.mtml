@@ -1,0 +1,157 @@
+<mt:SetVar name="pageName" value="index"><mt:Include blog_id='1' module='共通設定'>
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+<mt:Include blog_id='1' module='headタグ'>
+<!--#include virtual="/_inc/tagmanager.html"-->
+</head>
+
+<body id="p_home">
+<!--#include virtual="/_inc/tagmanager-non.html"-->
+<!--#include virtual="/_inc/header.html"-->
+
+<!-- #contents -->
+<div id="contents">
+
+<!--#include virtual="/_inc/top-slide.html"-->
+
+<mt:For regex_replace='/^\s*\n/gm',''><mt:ignore><!-- 改行削除 --></mt:ignore>
+<mt:Truncateurl>
+
+<mt:ignore><!-- 手土産カテゴリの商品リストを取得 --></mt:ignore>
+<mt:Entries blog_ids='2' category='手土産ギフト' lastn='12'>
+<mt:Include blog_id='1' module='カテゴリ'>
+<mt:ignore><!-- ブランドの記事数をカウントしあったら表示する --></mt:ignore>
+<mt:SetVarBlock name='cnt'><mt:EntriesCount></mt:SetVarBlock>
+
+<mt:If name='cnt' ne='0'>
+
+<mt:If name='__first__'>
+
+	<!-- .sec-temiyage -->
+	<section class='sec-temiyage'>
+		<!-- .m-heading -->
+		<div class="m-heading">
+			<h2 class="m-headingTtl"><span>For <em>Y</em>ou</span>手土産ギフト</h2>
+			<p class="m-headingLead">誰もがもらって嬉しい、喜ばれる手土産</p>
+			<p class="m-headingTxt">人と差が付く手土産として人気の高いお菓子をはじめ、おすすめの贈り物ギフトをご紹介します。</p>
+		</div><!-- .m-heading -->
+
+		<div class="temiyageList m-list is-limit js-slickResponsive">
+</mt:If>
+			<mt:Include module='アイテム'>
+<mt:If name='__last__'>
+		</div>
+		<p class="m-btn"><a href="/temiyage/">もっとみる</a></p>
+		<script type="text/javascript" src="//rot3.a8.net/jsa/7dc1ffb59886856c58946bc30ae3fdeb/93dd4de5cddba2c733c65f233097f05a.js"></script>
+	</section><!-- .sec-temiyage -->
+</mt:If>
+</mt:If>
+</mt:Entries>
+
+	<!-- .sec-category -->
+	<section class="sec-category">
+		<!-- .m-heading -->
+		<div class="m-heading">
+			<h2 class="m-headingTtl"><span>Category</span>商品カテゴリ</h2>
+			<p class="m-headingLead">迷ったらまずは定番の洋菓子・和菓子から</p>
+			<p class="m-headingTxt">定番・人気の洋菓子・和菓子、シーン別でも役立つ幅広いラインナップを取り揃えました。</p>
+		</div><!-- .m-heading -->
+
+		<!--#include virtual="/_inc/mt_category.html"-->
+
+		<div class="m-adsence"><!-- 728×90 -->
+		<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-4223387530424990" data-ad-slot="8235992567"></ins>
+		<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+		</div>
+	</section><!-- .sec-category -->
+
+<mt:ignore><!-- 自分へのご褒美の商品リストを取得 --></mt:ignore>
+<mt:Entries blog_ids='2' category='自分へのご褒美' lastn='12'>
+<mt:Include blog_id='1' module='カテゴリ'>
+<mt:ignore><!-- ブランドの記事数をカウントしあったら表示する --></mt:ignore>
+<mt:SetVarBlock name='cnt'><mt:EntriesCount></mt:SetVarBlock>
+
+<mt:If name='cnt' ne='0'>
+
+<mt:If name='__first__'>
+	<!-- .sec-mine -->
+	<section class="sec-mine">
+		<!-- .m-heading -->
+		<div class="m-heading">
+			<h2 class="m-headingTtl"><span>For <em>M</em>e</span>自分へのご褒美</h2>
+			<p class="m-headingLead">頑張った自分にだからこそ、最高のご褒美を</p>
+			<p class="m-headingTxt">明日への活力となる、贅沢スイーツや老舗のグルメ品、これがあれば乗り切れる！いう商品をご紹介します。</p>
+		</div><!-- .m-heading -->
+
+		<div class="mineList m-list is-limit">
+</mt:If>
+			<mt:Include module='アイテム'>
+<mt:If name='__last__'>
+		</div>
+		<p class="m-btn"><a href="/mine/">もっとみる</a></p>
+		<script type="text/javascript" src="//rot3.a8.net/jsa/7dc1ffb59886856c58946bc30ae3fdeb/93dd4de5cddba2c733c65f233097f05a.js"></script>
+	</section><!-- .sec-mine -->
+</mt:If>
+</mt:If>
+</mt:Entries>
+
+	<!-- .sec-station -->
+	<section class="sec-station">
+		<!-- .m-heading -->
+		<div class="m-heading">
+			<h2 class="m-headingTtl"><span>At the <em>S</em>tation</span>立ち寄り駅ギフト</h2>
+			<p class="m-headingLead">ふと立ち寄った駅で出会った、最高のギフト</p>
+			<p class="m-headingTxt">いつも立ち寄る駅、たまたま降りた駅でも出会える、ワンランクアップの手土産ギフトをご紹介します。</p>
+		</div><!-- .m-heading -->
+
+		<!--#include virtual="/_inc/mt_station.html"-->
+	</section><!-- .sec-station -->
+</mt:Truncateurl>
+</mt:For><mt:ignore><!-- //改行削除 --></mt:ignore>
+
+</div><!-- /#contents -->
+
+<!--#include virtual="/_inc/footer.html"-->
+<script>
+$(function(){
+	$(".js-slickFade").slick({
+		dots: true,
+		infinite: true,
+		fade:true,
+		arrows : false,
+	});
+	if($('.js-slickResponsive > *').length > 2){
+		$('.js-slickResponsive').slick({
+			dots: true,
+			infinite: true,
+			arrows : false,
+			speed: 2000,
+			slidesToShow: 4,
+			slidesToScroll: 4,
+			autoplay: true,
+			autoplaySpeed: 8000,
+			// centerMode: true, //要素を中央寄せ
+			// centerPadding:'100px', //両サイドの見えている部分のサイズ
+			responsive: [
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 3
+					}
+				},
+				{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2
+					}
+				}
+			]
+		});
+	}
+})
+</script>
+</body>
+</html>

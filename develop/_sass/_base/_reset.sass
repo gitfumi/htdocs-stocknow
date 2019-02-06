@@ -1,0 +1,132 @@
+@charset "utf-8"
+
+/* ---------------------------------------------------------
+ *	リセット
+ *----------------------------------------------------------
+*,
+*:before,
+*:after
+  box-sizing: border-box
+
+html
+  overflow: auto
+  height: 100%
+  overflow-y: scroll
+  font-size: 62.5%
+
+body
+  height: 100%
+  background-color: $baseBackgroundColor
+  color: $baseTextColor
+  font-size: $fontSizeM
+  font-family: $fontFamilySansSerif
+  line-height: $lineHeightM
+  word-wrap: break-word
+  -webkit-text-size-adjust: 100%
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main
+  display: block
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, figure
+  margin: 0
+  padding: 0
+
+h1, h2, h3, h4, h5, h6
+  font-size: 100%
+  font-weight: normal
+
+em
+  font-style: normal
+
+li
+  list-style: none
+
+table
+  border-collapse: collapse
+  border: none
+  border-spacing: 0
+  font-size: 100%
+
+img
+  max-width: 100%
+  height: auto
+  border: 0
+  vertical-align: top
+
+svg
+  max-width: 100%
+
+a
+  color: $linkColor
+  outline: none
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  text-decoration: none
+
+  &:visited
+    color: $linkColor_visited
+
+  &:hover
+    color: $linkColor_hover
+    text-decoration: none
+
+  &:active
+    color: $linkColor_active
+
+  &.js-telLink
+    color: $baseTextColor
+    text-decoration: none
+    pointer-events: none
+
+a[href^="tel:"]
+  cursor: default
+  text-decoration: none
+
+select,
+input,
+textarea,
+button
+  font-family: inherit
+  font-size: inherit
+
+input[type="text"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea
+  padding: 8px 10px
+  border: 1px solid #ccc
+
+  &:focus
+    background-color: #ffeeee
+
+input[type="radio"],
+input[type="checkbox"]
+  margin-right: 5px
+
+select
+  padding: 8px 5px
+  border: 1px solid #ccc
+
+label
+  cursor: pointer
+
+\::selection
+  color: $selectionTextColor
+  background-color: $selectionBgColor
+
+\::-moz-selection
+  color: $selectionTextColor
+  background-color: $selectionBgColor
+
+/* onmediaquery.js設定用
+ *--------------------------------------------------
+html
+  font-family: pc
+
+@each $key, $value in $breakpointMap
+  +media($key)
+    html
+      font-family: $key

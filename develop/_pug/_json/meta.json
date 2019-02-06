@@ -1,0 +1,20 @@
+{
+  "/": {
+    "siteName":"アンカレッジの樹木葬",
+    "pageName":"アンカレッジの樹木葬トップ",
+    "title":"【公式】アンカレッジの樹木葬｜花と眠る樹木葬・永代供養墓・納骨堂",
+    "description":"NHK「あさイチ」をはじめ多くのメディアで取り上げられているアンカレッジの樹木葬。「お参りしやすい都心の樹木葬で眠りたい」「お墓の承継者がいない」「子供に面倒をかけたくない」「ペットと一緒に眠りたい」等、今のライフスタイルに応える樹木葬・永代供養墓が、全国11か所（東京・千葉・京都・大阪・福岡）からお選びいただけます。",
+    "twitterId":"",
+    "ogImage":"/img/common/og_image_jumokuso.jpg"
+  },
+  "/test/": {
+    "title": "テスト",
+    "description": "テストccccc",
+    "ogImage": ""
+  },
+  "/test/hoge.html": {
+    "title": "testほげ",
+    "description": "testccccc",
+    "ogImage": ""
+  }
+}

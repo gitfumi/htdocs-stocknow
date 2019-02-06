@@ -1,0 +1,18 @@
+block setVar
+	-
+		function createDirArray(pageUrl) {
+			var array = pageUrl.slice(1).replace(/(.*)\/$/, '$1').split('/')
+			var dirArray = []
+			for (var i = 0; i < array.length; i++) {
+				var str = '/'
+				for (var j = 0; j < i + 1; j++) {
+					if (array[j].search('.html') >= 0) {
+						str += array[j];
+					} else {
+						str += array[j] + '/';
+					}
+				}
+				dirArray.push(str)
+			}
+			return dirArray
+		}

@@ -1,0 +1,127 @@
+extends /_pug/_inc/_layout
+
+//-
+	---------------------------------------------------------
+	ページ固有の変数を定義
+	---------------------------------------------------------
+append setVar
+	- layout = 'home'
+	- pageUrl = '/test/'
+	- dirArray = createDirArray(pageUrl)
+	- bodyAttributes.id = 'p-home'
+
+//-
+	---------------------------------------------------------
+	ページ固有のCSSを読み込み
+	---------------------------------------------------------
+append css
+	link(rel="stylesheet" href="/css/p_home.css")
+
+//-
+	---------------------------------------------------------
+	コンテンツ
+	---------------------------------------------------------
+block main
+
+	div.m-pageTitle
+		h1.m-pageTitle_txt 会社概要
+
+	div.item_box
+		div.c-item_list
+			div
+				a(href="/")
+					p.c-item_listPic: img(src="https://placehold.it/600x400" alt="")
+					p.c-item_listDate 2019.00.00
+					p.c-item_listTxt ほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+				ul.c-tag_list
+					li: a(href="/") #[span タグ1]
+					li: a(href="/") #[span タグあああああ]
+					li: a(href="/") #[span タグ3]
+					li: a(href="/") #[span タグｆｆｆ]
+					li: a(href="/") #[span タグ5]
+					li: a(href="/") #[span タグ6]
+					li: a(href="/") #[span タグ3]
+					li: a(href="/") #[span タグｆｆｆ]
+					li: a(href="/") #[span タグ5]
+					li: a(href="/") #[span タグ6]
+			div
+				a(href="/")
+					p.c-item_listPic: img(src="https://placehold.it/600x400" alt="")
+					p.c-item_listDate 2019.00.00
+					p.c-item_listTxt ほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+				ul.c-tag_list
+					li: a(href="/") #[span タグ1]
+					li: a(href="/") #[span タグあああああ]
+			div
+				a(href="/")
+					p.c-item_listPic: img(src="https://placehold.it/600x400" alt="")
+					p.c-item_listDate 2019.00.00
+					p.c-item_listTxt ほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+				ul.c-tag_list
+					li: a(href="/") #[span タグ1]
+					li: a(href="/") #[span タグあああああ]
+			div
+				a(href="/")
+					p.c-item_listPic: img(src="https://placehold.it/600x400" alt="")
+					p.c-item_listDate 2019.00.00
+					p.c-item_listTxt ほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+				ul.c-tag_list
+					li: a(href="/") #[span タグ1]
+					li: a(href="/") #[span タグあああああ]
+			div
+				a(href="/")
+					p.c-item_listPic: img(src="https://placehold.it/600x400" alt="")
+					p.c-item_listDate 2019.00.00
+					p.c-item_listTxt ほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+				ul.c-tag_list
+					li: a(href="/") #[span タグ1]
+					li: a(href="/") #[span タグあああああ]
+		div.c-item_list
+			div
+				a(href="/")
+					p.c-item_listPic: img(src="https://placehold.it/600x400" alt="")
+					p.c-item_listDate 2019.00.00
+					p.c-item_listTxt ほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+				ul.c-tag_list
+					li: a(href="/") #[span タグ1]
+					li: a(href="/") #[span タグあああああ]
+			div
+				a(href="/")
+					p.c-item_listPic: img(src="https://placehold.it/600x400" alt="")
+					p.c-item_listDate 2019.00.00
+					p.c-item_listTxt ほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+				ul.c-tag_list
+					li: a(href="/") #[span タグ1]
+					li: a(href="/") #[span タグあああああ]
+			div
+				a(href="/")
+					p.c-item_listPic: img(src="https://placehold.it/600x400" alt="")
+					p.c-item_listDate 2019.00.00
+					p.c-item_listTxt ほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+				ul.c-tag_list
+					li: a(href="/") #[span タグ1]
+					li: a(href="/") #[span タグあああああ]
+			div
+				a(href="/")
+					p.c-item_listPic: img(src="https://placehold.it/600x400" alt="")
+					p.c-item_listDate 2019.00.00
+					p.c-item_listTxt ほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+				ul.c-tag_list
+					li: a(href="/") #[span タグ1]
+					li: a(href="/") #[span タグあああああ]
+			div
+				a(href="/")
+					p.c-item_listPic: img(src="https://placehold.it/600x400" alt="")
+					p.c-item_listDate 2019.00.00
+					p.c-item_listTxt ほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+				ul.c-tag_list
+					li: a(href="/") #[span タグ1]
+					li: a(href="/") #[span タグあああああ]
+			div
+				a(href="/")
+					p.c-item_listPic: img(src="https://placehold.it/600x400" alt="")
+					p.c-item_listDate 2019.00.00
+					p.c-item_listTxt ほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+				ul.c-tag_list
+					li: a(href="/") #[span タグ1]
+					li: a(href="/") #[span タグあああああ]

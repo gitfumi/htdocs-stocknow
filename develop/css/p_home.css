@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/* ---------------------------------------------------------
+ *	記事一覧
+ *---------------------------------------------------------- */
+#main .item_box .c-item_list:nth-of-type(1) > div:nth-of-type(-n+2) {
+  -ms-flex-preferred-size: 48%;
+      flex-basis: 48%;
+}
+
+#main .item_box .c-item_list:nth-of-type(1) > div:nth-of-type(3) {
+  margin-top: 30px;
+}
+
+#main .item_box .c-item_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#main .item_box .c-item_list > div {
+  -ms-flex-preferred-size: 31%;
+      flex-basis: 31%;
+}
+
+#main .item_box .c-item_list > div:nth-of-type(n+4) {
+  margin-top: 30px;
+}
+
+#main .item_box .c-item_list + .c-item_list {
+  margin-top: 60px;
+}

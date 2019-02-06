@@ -8,12 +8,17 @@ module.exports = {
 	host: 'stocknow.dev.localhost',
 	root: {
 		src: 'develop',
-		dest: 'trunk'
+		dest: 'trunk',
+		temp: '_temp'
 	},
 	browserSync: {
 		viewPage: '',
-		reload: 'css|html|php|js',
+		reload: 'css|html|php|js|pug',
 		noReload: '_js'
+	},
+	activeFile: {
+		path: '',
+		event: ''
 	},
 	/*******************
 	 watch.js
@@ -22,7 +27,7 @@ module.exports = {
 		targetFile: '/_sass/**/*.+(sass|scss)'
 	},
 	babelify: {
-		targetFile: '/js/_common/**/*.js',
+		targetFile: '/_js/_common/**/*.js',
 		outPutDir: '/js/',
 		outPutFileName: 'common.js'
 	},
@@ -30,7 +35,7 @@ module.exports = {
 	 js_concat.js
 	********************/
 	concat: {
-		targetFile: '/js/_plugin/**/*.js',
+		targetFile: '/_js/_plugin/**/*.js',
 		outPutDir: '/js/',
 		outPutFileName: 'plugin.js'
 	},
@@ -52,7 +57,19 @@ module.exports = {
 	 babelify.js
 	********************/
 	browserify: {
-		targetFile: '/js/_common/_app.js'
+		targetFile: '/_js/_common/_app.js'
+	},
+	/*******************
+	 pug.js
+	********************/
+	pug: {
+		targetFile: '/_pug/**/*.pug'
+	},
+	/*******************
+	 imagemin.js
+	********************/
+	imagemin: {
+		targetFile: '/**/*.+(jpg|png|svg)'
 	},
 	/*******************
 	 frontnone.js
@@ -92,5 +109,12 @@ module.exports = {
 			'/**/_mt/**/*.*',
 			'/**/assets_c/**/*.*'
 		]
+	},
+	/*******************
+	 delete.js
+	********************/
+	delete: {
+		targetHtmlFile: /_pug\\html\\(.*).pug$/,
+		targetSassFile: /_sass\\(.*).+(sass|scss)$/
 	}
 };

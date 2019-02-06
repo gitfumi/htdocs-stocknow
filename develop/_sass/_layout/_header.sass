@@ -1,0 +1,79 @@
+@charset "utf-8"
+
+/* ---------------------------------------------------------
+ *	ヘッダー
+ *----------------------------------------------------------
+#header
+  position: absolute
+  top: 0
+  left: 0
+  width: 260px
+  min-height: 100%
+  .header_inner
+    position: fixed
+    width: 260px
+    top: 0
+    left: 0
+    height: 100%
+    background-color: #fff
+    border-right: 1px solid $baseBorderColor
+  .header_logo
+    height: 160px
+    padding: 0 50px
+    display: flex
+    align-items: center
+    vertical-align: middle
+    background-color: $baseBackgroundColor
+  .header_nav
+    border-top: 1px solid $baseBorderColor
+    padding: $sectionMargin/2
+  .header_ttl
+    font-family: $fontFamilyMetropolis, $fontFamilySansSerif
+    font-weight: 700
+    font-size: 1.6rem
+    position: relative
+    padding-left: 3rem
+    &::before
+      content: ''
+      position: absolute
+      top: 10px
+      left: 1rem
+      width: 5px
+      height: 5px
+      border-radius: 5px
+      background-color: $baseIconColor
+    &::after
+      content: ''
+      position: absolute
+      top: 12px
+      left: 0
+      width: 2.5rem
+      height: 1px
+      border-top: 1px dotted $baseBorderColor
+  .header_item
+    border-top: 1px solid $baseBorderColor
+    padding: $sectionMargin/2
+    div.c-item_list >div
+      margin-top: 20px
+  .header_tag
+    border-top: 1px solid $baseBorderColor
+    padding: $sectionMargin/2
+  .header_subNav
+    border-top: 1px solid $baseBorderColor
+    >ul
+      display: flex
+      flex-wrap: wrap
+      >li
+        flex-basis: 50%
+        display: flex
+        border-bottom: 1px solid $baseBorderColor
+        &:nth-of-type(even)
+          border-left: 1px solid $baseBorderColor
+        >a
+          padding: 10px
+          font-size: 1.2rem
+          display: flex
+  +media(tablet)
+
+
+  +media(phablet)

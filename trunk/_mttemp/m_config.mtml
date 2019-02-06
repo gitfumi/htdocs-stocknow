@@ -1,0 +1,60 @@
+<mt:ignore><!-- 共通の変数宣言 --></mt:ignore>
+<mt:SetVar name='sitename' value='おしゃれな手土産、お取り寄せギフト探し。STOCKNOW'>
+<mt:SetVar name='headDescription' value='ワンランクアップの手土産ギフトや、自分用のお取り寄せ、ご褒美ギフト探しならSTOCKNOW！おしゃれな最新スイーツやグルメ情報をお届けします。'>
+<mt:SetVar name='headOGPType' value='article'>
+<mt:SetVarBlock name='headOGPUrl'><mt:CanonicalURL></mt:SetVarBlock>
+<mt:SetVarBlock name='headOGPImage'><mt:WebsiteURL>img/cmn/pic_ogp.jpg</mt:SetVarBlock>
+
+
+<mt:ignore><!-- TOPページ --></mt:ignore>
+<mt:if name='pageName' eq='index'>
+<mt:SetVar name='headOGPType' value='website'>
+<mt:SetVar name='headTitle' value='おしゃれな手土産ギフト、ご褒美ギフトなら STOCKNOW'>
+</mt:if>
+
+<mt:ignore><!-- サイトマップページ --></mt:ignore>
+<mt:if name='pageName' eq='sitemap'>
+<mt:SetVar name="pageName" value="サイトマップ">
+<mt:SetVarBlock name='headTitle'><mt:Var name="pageName">｜<mt:Var name='sitename'></mt:SetVarBlock>
+<mt:SetVarBlock name='headDescription'><mt:Var name="pageName">のページです。<mt:Var name='headDescription'></mt:SetVarBlock>
+</mt:if>
+
+<mt:ignore><!-- 404ページ --></mt:ignore>
+<mt:if name='pageName' eq='404'>
+<mt:SetVar name="pageName" value="お探しのページは見つかりませんでした。">
+<mt:SetVarBlock name='headTitle'><mt:Var name="pageName">｜<mt:Var name='sitename'></mt:SetVarBlock>
+<mt:SetVarBlock name='headDescription'><mt:Var name="pageName">のページです。<mt:Var name='headDescription'></mt:SetVarBlock>
+</mt:if>
+
+<mt:ignore><!-- 503ページ --></mt:ignore>
+<mt:if name='pageName' eq='503'>
+<mt:SetVar name="pageName" value="サーバーより閲覧規制中のため、ページが表示できません。">
+<mt:SetVarBlock name='headTitle'><mt:Var name="pageName">｜<mt:Var name='sitename'></mt:SetVarBlock>
+<mt:SetVarBlock name='headDescription'><mt:Var name="pageName">のページです。<mt:Var name='headDescription'></mt:SetVarBlock>
+</mt:if>
+
+<mt:ignore><!-- 記事詳細ページ --></mt:ignore>
+<mt:if name='entry_template'>
+<mt:SetVarBlock name='headTitle'><mt:EntryTitle encode_html='1'>｜<mt:Var name='itemCategoryName' encode_html='1'>｜<mt:Var name='sitename'></mt:SetVarBlock>
+<mt:SetVarBlock name='headDescription'>ブランド<mt:Var name='brandName' encode_html='1'>。<mt:EntryTitle encode_html='1'>のページです。<mt:Var name='headDescription'></mt:SetVarBlock>
+<mt:SetVarBlock name='headOGPImage'><mt:EntryImageAsset><mt:AssetURL></mt:EntryImageAsset></mt:SetVarBlock>
+</mt:if>
+
+<mt:ignore><!-- カテゴリページ --></mt:ignore>
+<mt:if name='category_archive'>
+<mt:ParentCategory><mt:ParentCategory>
+	<mt:CategoryBasename setvar='parentTopCBasename'><mt:CategoryLabel setvar='parentTopCName'>
+</mt:ParentCategory></mt:ParentCategory>
+
+<mt:If name='parentTopCBasename' eq='station'>
+<mt:SetVarBlock name='categoryTitle'><mt:CategoryLabel encode_html='1'>駅ギフト</mt:SetVarBlock>
+<mt:SetVarBlock name='categoryParentLink'>/<mt:Var name='parentTopCBasename'>/</mt:SetVarBlock>
+
+<mt:Else>
+<mt:ParentCategory><mt:CategoryBasename setvar='parentTopCBasename'><mt:CategoryLabel setvar='parentTopCName'></mt:ParentCategory>
+<mt:SetVarBlock name='categoryTitle'><mt:CategoryLabel></mt:SetVarBlock>
+<mt:SetVarBlock name='categoryParentLink'>/<mt:Var name='parentTopCBasename'>/</mt:SetVarBlock>
+</mt:if>
+<mt:SetVarBlock name='headTitle'><mt:Var name='categoryTitle'>｜<mt:Var name='sitename'></mt:SetVarBlock>
+<mt:SetVarBlock name='headDescription'><mt:Var name='categoryTitle'>の一覧ページです。<mt:Var name='headDescription'></mt:SetVarBlock>
+</mt:if>

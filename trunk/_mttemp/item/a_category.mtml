@@ -1,0 +1,166 @@
+<mt:Entries blog_ids='2'><mt:Include blog_id='1' module='カテゴリ'></mt:Entries>
+<mt:Include blog_id='1' module='共通設定'>
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<mt:Include blog_id='1' module='headタグ'>
+<!--#include virtual="/_inc/tagmanager.html"-->
+</head>
+
+<body id="p_category">
+<!--#include virtual="/_inc/tagmanager-non.html"-->
+<!--#include virtual="/_inc/header.html"-->
+
+<!-- #contents -->
+<div id="contents">
+
+<mt:For regex_replace="/^\s*\n/gm",""><mt:ignore><!-- 改行削除 --></mt:ignore>
+<mt:Truncateurl>
+
+	<div class="dir">
+		<ul>
+			<li><a href="/">home</a></li>
+			<mt:If name="parentTopCBasename" ne="">
+			<li>商品カテゴリ</li>
+			</mt:If>
+			<li><mt:Var name='categoryTitle'></li>
+		</ul>
+	</div>
+
+<mt:If name="categoryTitle" ne="立ち寄り駅ギフト">
+	<mt:ignore><!-- カテゴリの商品リストを取得 --></mt:ignore>
+	<mt:Entries>
+	<mt:Include blog_id='1' module='カテゴリ'>
+	<mt:ignore><!-- 記事数をカウントしあったら表示する --></mt:ignore>
+	<mt:SetVarBlock name='cnt'><mt:EntriesCount></mt:SetVarBlock>
+
+	<mt:If name='cnt' ne="0">
+
+	<mt:If name='__first__'>
+
+	<!-- .sec-archive -->
+	<section class="sec-archive">
+		<!-- .heading -->
+		<div class="heading">
+			<mt:If name="parentTopCBasename" ne=""><p class="headingParent"><mt:Var name='parentTopCName'></p></mt:If>
+			<h1 class="headingTtl"><mt:Var name='categoryTitle'></h1>
+		</div><!-- .heading -->
+
+		<div class="archiveList m-list is-limit">
+	</mt:If>
+	<mt:If name='__counter__' ne='1'>
+	<mt:If name='__counter__' op='%' value='12' eq='1'>
+		</div>
+		<div class="m-adsence"><!-- 728×90 -->
+		<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-4223387530424990" data-ad-slot="8235992567"></ins>
+		<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+		</div>
+		<div class="archiveList m-list is-limit">
+	</mt:If>
+	</mt:If>
+			<mt:Include blog_id='1' module='アイテム'>
+	<mt:If name='__last__'>
+		</div>
+	</section><!-- .sec-archive -->
+	</mt:If>
+	</mt:If>
+	</mt:Entries>
+<mt:Else>
+	<section class="sec-archive is-station">
+		<!-- .heading -->
+		<div class="heading">
+			<mt:If name="parentTopCBasename" ne=""><p class="headingParent"><mt:Var name='parentTopCName'></p></mt:If>
+			<h1 class="headingTtl"><mt:Var name='categoryTitle'></h1>
+		</div><!-- .heading -->
+
+	<mt:SetVar name="count" value="0">
+	<mt:categories blog_ids='2' show_empty='1'>
+	<mt:CategoryBasename setVar='basename'>
+	<mt:If name='basename' eq='station'>
+		<nav class="stationNav">
+			<ul class="parent js-tab">
+	<mt:SubCategories sort_by='user_custom'>
+			<li class="is-<mt:CategoryBasename><mt:If name='count' eq='0'> is-active</mt:If>"><span><mt:CategoryLabel></span></li>
+			<mt:SetVar name="count" value="1" op="+">
+	</mt:SubCategories>
+	<mt:SetVar name="count" value="0">
+			</ul>
+			<div class="child js-btn">
+	<mt:SubCategories sort_by='user_custom'>
+			<ul class="is-<mt:CategoryBasename><mt:If name='count' eq='0'> is-active</mt:If>">
+	<mt:SubCategories sort_by='user_custom'>
+	<mt:If tag="CategoryCount" ne="0">
+				<li class="is-<mt:CategoryBasename>"><a href="#anc_<mt:CategoryBasename>"><mt:CategoryLabel>駅</a></li>
+				<mt:SetVar name="count" value="1" op="+">
+	</mt:If>
+	</mt:SubCategories>
+			</ul>
+	</mt:SubCategories>
+			</div>
+		</nav>
+	</mt:If>
+	</mt:categories>
+
+		<section class="stationList">
+	<mt:SetVar name="count" value="0">
+	<mt:categories blog_ids='2' show_empty='1'>
+	<mt:CategoryBasename setVar='basename'>
+	<mt:If name='basename' eq='station'>
+	<mt:SubCategories sort_by='user_custom'>
+		<div class="is-<mt:CategoryBasename><mt:If name='count' eq='0'> is-active</mt:If>">
+		<mt:SubCategories sort_by='user_custom'>
+		<mt:If tag="CategoryCount" ne="0">
+			<section id="anc_<mt:CategoryBasename>" class="is-<mt:CategoryBasename>">
+				<h4 class="stationTtl"><em><mt:CategoryLabel>駅</em>のギフト</h4>
+				<div class="archiveList m-list is-limit">
+				<mt:Entries>
+					<mt:Include blog_id='1' module='カテゴリ'>
+					<mt:Include blog_id='1' module='アイテム'>
+				</mt:Entries>
+				</div>
+			</section>
+			<mt:SetVar name="count" value="1" op="+">
+		</mt:If>
+		</mt:SubCategories>
+		</div>
+	</mt:SubCategories>
+	</mt:If>
+	</mt:categories>
+		</section>
+	</section>
+</mt:If>
+
+	<mt:If name="parentTopCBasename" eq="station">
+	<!-- .sec-station -->
+	<section class="sec-station">
+		<!-- .m-heading -->
+		<div class="m-heading">
+			<h2 class="m-headingTtl"><span>At the <em>S</em>tation</span>立ち寄り駅ギフト</h2>
+			<p class="m-headingLead">ふと立ち寄った駅で出会った、最高のギフト</p>
+			<p class="m-headingTxt">いつも立ち寄る駅、たまたま降りた駅でも出会える、ワンランクアップの手土産ギフトをご紹介します。</p>
+		</div><!-- .m-heading -->
+
+		<!--#include virtual="/_inc/mt_station.html"-->
+	</section><!-- .sec-station -->
+	<mt:Else>
+	<!-- .sec-category -->
+	<section class="sec-category">
+		<!-- .m-heading -->
+		<div class="m-heading">
+			<h2 class="m-headingTtl"><span>Category</span>商品カテゴリ</h2>
+			<p class="m-headingLead">迷ったらまずは定番の洋菓子・和菓子から</p>
+			<p class="m-headingTxt">定番・人気の洋菓子・和菓子、シーン別でも役立つ幅広いラインナップを取り揃えました。</p>
+		</div><!-- .m-heading -->
+
+		<!--#include virtual="/_inc/mt_category.html"-->
+	</section><!-- .sec-category -->
+	</mt:If>
+</div><!-- /#contents -->
+
+</mt:Truncateurl>
+</mt:For><mt:ignore><!-- //改行削除 --></mt:ignore>
+
+<!--#include virtual="/_inc/footer.html"-->
+<script src="/js/tab.js"></script>
+</body>
+</html>

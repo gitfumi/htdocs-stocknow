@@ -1,0 +1,22 @@
+<mt:For regex_replace='/^\s*\n/gm',''><mt:ignore><!-- 改行削除 --></mt:ignore>
+<mt:Truncateurl>
+
+<mt:if name='category_archive'>
+<mt:If name='parentTopCBasename' eq='station'>
+	<mt:SetVarBlock name="stationName"><mt:CategoryLabel encode_html='1'></mt:SetVarBlock>
+</mt:if>
+</mt:if>
+			<section<mt:If tag='EntryIconNew' eq='1'> class="is-new"</mt:If>><a href="<mt:EntryPermalink encode_html='1'>">
+				<mt:If tag='EntryImage'><mt:EntryImageAsset>
+				<p class="m-itemPic"><img src="<mt:AssetURL>" alt="<mt:EntryTitle encode_html='1'>の商品画像"></p></mt:EntryImageAsset></mt:If>
+				<p class="m-itemBrand"><mt:Var name='brandName'></p>
+				<h3 class="m-itemName"><mt:EntryTitle encode_html='1'></h3>
+				<mt:If tag='EntryPrice'><p class="m-itemPrice m-itemStatus <mt:Var name='classState'>"><em><mt:EntryPrice sprintf="%d" numify="1"></em>円（税込）</p></mt:If>
+				<div class="m-itemParam">
+					<mt:If tag='EntryLimitDate'><p class="m-itemLimit"><span class="ttl">賞味期限</span><span class="txt"><mt:EntryLimitDate> days</span></p></mt:If>
+					<mt:If name='stationName'><p class="m-itemStation"><span class="ttl">販売店</span><span class="txt"><mt:Var name='stationName'>駅</span></p></mt:If>
+				</div>
+			</a></section>
+
+</mt:Truncateurl>
+</mt:For><mt:ignore><!-- //改行削除 --></mt:ignore>

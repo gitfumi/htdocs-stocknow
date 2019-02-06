@@ -1,5 +1,3 @@
-@charset "utf-8";
-
 // ---------------------------------------------------------
 // メディアクエリ用のミックスイン
 // @include media(pc or tablet or phablet or sp or min or max, 横幅（初期値はnull）);
@@ -83,32 +81,4 @@
 @mixin hiddenPageGutter($size) {
 	margin-right: -$size;
 	margin-left: -$size;
-}
-
-// グリッドシステム
-@function gridsystemWidth($columns:$columns) {
-	@return ($columnWidth * $columns) + ($gutterWidth * $columns);
-}
-
-@mixin row($columns:$columns) {
-	display: block;
-	width: $totalWidth*(($gutterWidth + gridsystemWidth($columns))/gridsystemWidth($columns));
-	margin-right: $totalWidth*((($gutterWidth*.5)/gridsystemWidth($columns))*-1);
-	margin-left: $totalWidth*((($gutterWidth*.5)/gridsystemWidth($columns))*-1);
-	@include clearfix();
-}
-
-@mixin column($x,$columns:$columns) {
-	float: left;
-	width: $totalWidth*(((($gutterWidth+$columnWidth)*$x)-$gutterWidth) / gridsystemWidth($columns));
-	margin-right: $totalWidth*(($gutterWidth*.5)/gridsystemWidth($columns));
-	margin-left: $totalWidth*(($gutterWidth*.5)/gridsystemWidth($columns));
-}
-
-@mixin push($offset:1) {
-	margin-left: $totalWidth*((($gutterWidth+$columnWidth)*$offset) / gridsystemWidth($columns)) + $totalWidth*(($gutterWidth*.5)/gridsystemWidth($columns));
-}
-
-@mixin pull($offset:1) {
-	margin-right: $totalWidth*((($gutterWidth+$columnWidth)*$offset) / gridsystemWidth($columns)) + $totalWidth*(($gutterWidth*.5)/gridsystemWidth($columns));
 }

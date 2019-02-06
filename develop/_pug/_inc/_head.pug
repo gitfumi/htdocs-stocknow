@@ -1,0 +1,17 @@
+head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#")
+	//#include virtual="/_inc/gtm_head.html"
+	meta(charset="utf-8")
+	meta(http-equiv="X-UA-Compatible" content="IE=edge")
+	title #{meta[pageUrl].title}
+	//#include virtual="/_inc/head_meta_name.html"
+	meta(name="description" content=meta[pageUrl].description)
+	meta(property="og:title" content=meta[pageUrl].title)
+	meta(property="og:description" content=meta[pageUrl].description)
+	meta(property="og:url" content=site.url + pageUrl)
+	if meta[pageUrl].ogImage
+		meta(property="og:image" content=meta[pageUrl].ogImage)
+	else
+		meta(property="og:image" content=site.url + site.ogImage)
+	//#include virtual="/_inc/head_meta_property.html"
+	//#include virtual="/_inc/head_link.html"
+	block css

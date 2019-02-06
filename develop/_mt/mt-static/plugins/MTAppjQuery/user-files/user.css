@@ -1,21 +1,20 @@
 @charset "UTF-8";
 /* ブログ記事編集画面の[表示オプション]を非表示にする */
 /*
-#display-options {
-	display: none;
-}
-*/
+ *#display-options {
+ *	display: none;
+ *} */
 /* ---------------------------------------------
-	MT　新規・編集ページ
-----------------------------------------------------------*/
+ *	MT　新規・編集ページ
+ *---------------------------------------------------------- */
 /* 管理画面 共通
--------------------------------------------------- */
+ *-------------------------------------------------- */
 body {
-  font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-family: "Noto Sans Japanese", sans-serif;
 }
 
 body input, body textarea, body select {
-  font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-family: "Noto Sans Japanese", sans-serif;
   -webkit-transition: all .5s;
   transition: all .5s;
   height: auto !important;
@@ -36,8 +35,8 @@ body .basename-label {
 }
 
 /*------------------------------------------------
-   カテゴリ
--------------------------------------------------- */
+ *   カテゴリ
+ *-------------------------------------------------- */
 #edit-category .mtapp-shop {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -90,8 +89,8 @@ body .basename-label {
 }
 
 /*------------------------------------------------
-   商品詳細
--------------------------------------------------- */
+ *   商品詳細
+ *-------------------------------------------------- */
 #edit-entry .mtapp-vertical {
   display: -webkit-box;
   display: -ms-flexbox;

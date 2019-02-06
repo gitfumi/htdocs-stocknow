@@ -1,0 +1,26 @@
+@charset "utf-8"
+
+@import "../_base/variable"
+@import "../_tool/mixin/**"
+// @import "../_tool/function"
+
+/* ---------------------------------------------------------
+ *	記事一覧
+ *----------------------------------------------------------
+#main
+  .item_box
+    .c-item_list:nth-of-type(1)  >div
+      &:nth-of-type(-n+2)
+        flex-basis: 48%
+      &:nth-of-type(3)
+        margin-top: $sectionMargin/2
+    .c-item_list
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      >div
+        flex-basis: 31%
+        &:nth-of-type(n+4)
+          margin-top: $sectionMargin/2
+      & + .c-item_list
+        margin-top: $sectionMargin
