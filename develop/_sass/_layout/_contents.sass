@@ -8,8 +8,7 @@
   min-height: 100%
   margin-left: 260px
   +media(minipc)
-
-
+    margin-left: 200px
   +media(tablet)
 
 
@@ -23,4 +22,9 @@
  *----------------------------------------------------------
 #main
   flex-basis: calc(100% - 260px)
-  padding: $sectionMargin $sectionMargin
+  padding: $sectionMargin
+  .main_inner
+    max-width: 1020px
+    margin: 0 auto
+  +media(minipc)
+    padding: $sectionMargin/2

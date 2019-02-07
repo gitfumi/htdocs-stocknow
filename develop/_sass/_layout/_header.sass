@@ -7,16 +7,19 @@
   position: absolute
   top: 0
   left: 0
-  width: 260px
+  max-width: 260px
+  width: 100%
   min-height: 100%
   .header_inner
     position: fixed
-    width: 260px
+    max-width: 260px
+    width: 100%
     top: 0
     left: 0
     height: 100%
     background-color: #fff
     border-right: 1px solid $baseBorderColor
+    // overflow-y: scroll
   .header_logo
     height: 160px
     padding: 0 50px
@@ -73,6 +76,30 @@
           padding: 10px
           font-size: 1.2rem
           display: flex
+  .header_advertise
+    margin-top: $sectionMargin/2
+  +media(minipc)
+    max-width: 200px
+    .header_inner
+      max-width: 200px
+    .header_ttl
+      font-size: 1.4rem
+      &::before
+        top: 8px
+      &::after
+        top: 10px
+    .header_nav,.header_item,.header_tag
+      padding: $sectionMargin/3
+    .header_item
+      div.c-item_list >div
+        margin-top: 10px
+    .header_advertise
+      margin-top: $sectionMargin/3
+    .header_subNav >ul >li
+      flex-basis: 100%
+      &:nth-of-type(even)
+        border-right: none
+
   +media(tablet)
 
 

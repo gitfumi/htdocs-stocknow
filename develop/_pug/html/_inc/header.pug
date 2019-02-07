@@ -1,5 +1,5 @@
 header#header
-	div.header_inner
+	div.header_inner#js-perfectScrollbar
 		// p.header_logo: a(href="/"): img(src="/img/cmn/logo.svg" alt="STOCK NOW")
 		p.header_logo: a(href="/") STOCK NOW
 		nav.header_nav
@@ -7,6 +7,7 @@ header#header
 			ul
 				li: a(href="/") #[span メニュー1]
 				li: a(href="/") #[span メニュー2]
+			div.header_advertise: a(href="/"): img(src="https://placehold.it/300x250" alt="")
 		section.header_item
 			h2.header_ttl RECOMMEND 記事
 			div.c-item_list
@@ -27,6 +28,7 @@ header#header
 				li: a(href="/") #[span タグｆｆｆ]
 				li: a(href="/") #[span タグ5]
 				li: a(href="/") #[span タグ6]
+			div.header_advertise: a(href="/"): img(src="https://placehold.it/300x250" alt="")
 		nav.header_subNav
 			ul
 				li: a(href="/") サイトについて
