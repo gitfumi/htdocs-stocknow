@@ -4,14 +4,21 @@
  *	大枠
  *----------------------------------------------------------
 #contents
-  // display: flex
   min-height: 100%
-  margin-left: 260px
+  margin-left: $navWidth
+  transition: all .5s
+  #p-entry &
+    margin-left: 0
+    margin-right: $navWidth
   +media(minipc)
     margin-left: 200px
   +media(tablet)
-
-
+    margin-left: 0
+    margin-top: $spNavHeight
+    #p-entry &
+      margin-right: 0
+    &.is-show
+      opacity: 0.5
   +media(phablet)
 
 
@@ -21,10 +28,12 @@
  *	メイン枠
  *----------------------------------------------------------
 #main
-  flex-basis: calc(100% - 260px)
+  flex-basis: calc(100% - #{$navWidth})
   padding: $sectionMargin
   .main_inner
     max-width: 1020px
     margin: 0 auto
   +media(minipc)
     padding: $sectionMargin/2
+  +media(phablet)
+    padding: $sectionMargin/6

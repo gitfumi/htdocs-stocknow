@@ -4,7 +4,74 @@
  *	フッター
  *----------------------------------------------------------
 #footer
+  .footer_totop
+    position: fixed
+    right: 20px
+    bottom: 50px
+    a
+      display: block
+      width: 50px
+      height: 50px
+      background-color: #000
+      border-radius: 100%
+      span
+        display: flex
+        height: 100%
+        justify-content: center
+        align-items: center
+        color: #fff
+        font-size: 1.0rem
+        font-family: $fontFamilyMetropolis
+        padding-top: 18px
+        letter-spacing: 1px
+        +icoArrow(before, 14px, 50%, null, 50%, 1.0rem, 2px, #fff, -45deg)
+    #p-entry &
+      right: 280px
+  .footer_inner
+    padding: 10px 20px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    font-size: 1.2rem
+    color: #c0c0c0
+  .footer_copy
+    font-family: $fontFamilyMetropolis
+  .footer_social
+    display: flex
+    flex-basis: 120px
+    justify-content: space-between
+    li
+      a
+        width: 30px
+        height: 30px
+        display: block
+        overflow: hidden
+        span
+          display: block
+          text-indent: -9999px
+      &.is-facebook a
+        +iconFontAbsolute(before, facebook, 50%, 50%, 50%, 50%, 2.4rem, #000)
+      &.is-twitter a
+        +iconFontAbsolute(before, twitter, 50%, 50%, 50%, 50%, 2.4rem, #000)
+      &.is-line a
+        +iconFontAbsolute(before, line, 50%, 50%, 50%, 50%, 2.4rem, #000)
   +media(tablet)
-
-
+    .footer_totop
+      #p-entry &
+        right: 10px
+    .footer_inner
+      background-color: #fff
   +media(phablet)
+    .footer_totop
+      right: 10px
+      bottom: 20px
+    .footer_inner
+      flex-wrap: wrap
+      .footer_social
+        order: 1
+        justify-content: center
+        flex-basis: 100%
+      .footer_copy
+        order: 2
+        flex-basis: 100%
+        text-align: center

@@ -1,5 +1,5 @@
 // メディアクエリでjsを切り替え
-// import menuDrawer    from './module/menu_drawer.js';
+import menuSlide from './module/menu_slide.js';
 
 let onMediaQuery = (function() {
 	let $window = $(window);
@@ -18,11 +18,12 @@ let onMediaQuery = (function() {
 			context: ['tablet', 'phablet', 'sp'],
 			match: function() {
 				// menuDrawer();
+				menuSlide();
 			},
 			unmatch: function() {
 				$(window).off('scroll.scrollEffectSP');
 				$body.removeAttr('style');
-				$('#btnMenu03').remove();
+				$('#btnMenu').remove();
 				$('#drawerMenu').remove();
 				$('#drawerMenuOverlay').remove();
 				$('#btnDrawerMenuClose').remove();

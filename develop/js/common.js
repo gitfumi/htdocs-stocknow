@@ -11,11 +11,13 @@ var _scroll_anchor = _interopRequireDefault(require("./module/scroll_anchor.js")
 
 var _perfect_scroll = _interopRequireDefault(require("./module/perfect_scroll.js"));
 
+var _menu_slide = _interopRequireDefault(require("./module/menu_slide.js"));
+
 var _on_media_query = _interopRequireDefault(require("./on_media_query.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./module/current_link.js":2,"./module/disable_tel_link.js":3,"./module/glovalnav.js":4,"./module/perfect_scroll.js":5,"./module/scroll_anchor.js":6,"./on_media_query.js":7}],2:[function(require,module,exports){
+},{"./module/current_link.js":2,"./module/disable_tel_link.js":3,"./module/glovalnav.js":4,"./module/menu_slide.js":5,"./module/perfect_scroll.js":6,"./module/scroll_anchor.js":7,"./on_media_query.js":8}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -125,7 +127,7 @@ var disableTelLink = function () {
 var _default = disableTelLink;
 exports.default = _default;
 
-},{"../ua.js":8}],4:[function(require,module,exports){
+},{"../ua.js":9}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -166,6 +168,73 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _valiable = _interopRequireDefault(require("../valiable.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// スライドメニュー
+var menuSlide = function menuSlide() {
+  var $body = $('body');
+  var $header = $('.header_logo');
+  var $headerNav = $('.header_inner');
+  var $contents = $('#contents'); // var $globalNav    = $('.footer_menu nav');
+  // var $globalSuvNav = $('.header_subMenu');
+  // var $asideSns     = $('.asideMenu .c-sns');
+
+  var headerHeight = $header.outerHeight(); // var $cloneNav     = $globalNav.clone(true);
+  // var $cloneSuvNav  = $globalSuvNav.clone(true);
+  // var $cloneSns     = $asideSns.clone(true);
+  // $body.append('<div id="slideMenu"></div>');
+  // $cloneSuvNav.appendTo('#slideMenu').find('.this-logo').remove();
+  // $cloneNav.appendTo('#slideMenu');
+  // $('<div class="weather js-weather"></div>').appendTo('#slideMenu');
+  // $cloneSns.appendTo('#slideMenu');
+
+  $header.append('<div id="btnMenu"><p><span class="icoMenu"><span class="icoMenuInner"></span></span></p></div>');
+  var $slideMenu = $('#slideMenu');
+  var slideMenuHeight = $slideMenu.height();
+  var scrollY;
+  $slideMenu.css('top', headerHeight);
+  hideSlideMenu();
+  $('#btnMenu').on('click', function () {
+    $(this).children().toggleClass('is-active');
+
+    if ($headerNav.hasClass('is-show')) {
+      hideSlideMenu();
+    } else {
+      showSlideMenu();
+    }
+  }); // 開く
+
+  function showSlideMenu() {
+    scrollY = $(window).scrollTop();
+    _valiable.default.isMenuShow = true;
+    $headerNav.removeClass('is-hide').addClass('is-show');
+    $contents.removeClass('is-hide').addClass('is-show');
+  } // 閉じる
+
+
+  function hideSlideMenu() {
+    $headerNav.removeClass('is-show').addClass('is-hide');
+    $contents.removeClass('is-show').addClass('is-hide');
+    $body.removeAttr('style');
+    $('html, body').prop({
+      scrollTop: scrollY
+    });
+  }
+};
+
+var _default = menuSlide;
+exports.default = _default;
+
+},{"../valiable.js":10}],6:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
 // グローバルナビゲーションの表示、非表示
 var perfectScrollbar = function () {
   if ($('#js-perfectScrollbar').length) {
@@ -177,7 +246,7 @@ var perfectScrollbar = function () {
 var _default = perfectScrollbar;
 exports.default = _default;
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -194,7 +263,7 @@ var scrollAnchor = function () {
   var SCROLL_SPEED = 800;
   var SCROLL_EASING = 'easeOutQuint';
   var NO_SCROLL_CLASS = 'js-noScroll';
-  var PAGE_TOP_HASH = '#top'; // aタグのクリック
+  var PAGE_TOP_HASH = '#'; // aタグのクリック
 
   $doc.on('click', 'a[href^="#"]', function (e) {
     var $self = $(this);
@@ -261,7 +330,7 @@ var scrollAnchor = function () {
 var _default = scrollAnchor;
 exports.default = _default;
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -269,8 +338,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _menu_slide = _interopRequireDefault(require("./module/menu_slide.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 // メディアクエリでjsを切り替え
-// import menuDrawer    from './module/menu_drawer.js';
 var onMediaQuery = function () {
   var $window = $(window);
   var $body = $('body');
@@ -282,12 +354,14 @@ var onMediaQuery = function () {
     unmatch: function unmatch() {}
   }, {
     context: ['tablet', 'phablet', 'sp'],
-    match: function match() {// menuDrawer();
+    match: function match() {
+      // menuDrawer();
+      (0, _menu_slide.default)();
     },
     unmatch: function unmatch() {
       $(window).off('scroll.scrollEffectSP');
       $body.removeAttr('style');
-      $('#btnMenu03').remove();
+      $('#btnMenu').remove();
       $('#drawerMenu').remove();
       $('#drawerMenuOverlay').remove();
       $('#btnDrawerMenuClose').remove();
@@ -303,7 +377,7 @@ var onMediaQuery = function () {
 var _default = onMediaQuery;
 exports.default = _default;
 
-},{}],8:[function(require,module,exports){
+},{"./module/menu_slide.js":5}],9:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -332,6 +406,24 @@ var ua = function () {
 }();
 
 var _default = ua;
+exports.default = _default;
+
+},{}],10:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+// 共通変数
+var valiable = function () {
+  return {
+    isMenuShow: false
+  };
+}();
+
+var _default = valiable;
 exports.default = _default;
 
 },{}]},{},[1]);

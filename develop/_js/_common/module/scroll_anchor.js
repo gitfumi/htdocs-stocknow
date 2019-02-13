@@ -7,7 +7,7 @@ let scrollAnchor = (function() {
 	const SCROLL_SPEED    = 800;
 	const SCROLL_EASING   = 'easeOutQuint';
 	const NO_SCROLL_CLASS = 'js-noScroll';
-	const PAGE_TOP_HASH   = '#top';
+	const PAGE_TOP_HASH   = '#';
 	// aタグのクリック
 	$doc.on('click', 'a[href^="#"]', function(e) {
 		let $self = $(this);
