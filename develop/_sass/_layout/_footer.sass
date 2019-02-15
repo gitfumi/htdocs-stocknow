@@ -25,8 +25,6 @@
         padding-top: 18px
         letter-spacing: 1px
         +icoArrow(before, 14px, 50%, null, 50%, 1.0rem, 2px, #fff, -45deg)
-    #p-entry &
-      right: 280px
   .footer_inner
     padding: 10px 20px
     display: flex
@@ -38,7 +36,7 @@
     font-family: $fontFamilyMetropolis
   .footer_social
     display: flex
-    flex-basis: 120px
+    flex-basis: 160px
     justify-content: space-between
     li
       a
@@ -55,10 +53,9 @@
         +iconFontAbsolute(before, twitter, 50%, 50%, 50%, 50%, 2.4rem, #000)
       &.is-line a
         +iconFontAbsolute(before, line, 50%, 50%, 50%, 50%, 2.4rem, #000)
+      &.is-hatenabookmark a
+        +iconFontAbsolute(before, hatenabookmark, 50%, 50%, 50%, 50%, 1.8rem, #000)
   +media(tablet)
-    .footer_totop
-      #p-entry &
-        right: 10px
     .footer_inner
       background-color: #fff
   +media(phablet)
@@ -75,3 +72,13 @@
         order: 2
         flex-basis: 100%
         text-align: center
+
+/* ---------------------------------------------------------
+ *	フッター（記事詳細） ※右メニュー
+ *----------------------------------------------------------
+#p-entry #footer
+  .footer_totop
+    right: 280px
+  +media(tablet)
+    .footer_totop
+      right: 10px

@@ -1,0 +1,85 @@
+@charset "utf-8"
+
+/* ---------------------------------------------------------
+ *	title
+ *----------------------------------------------------------
+/*
+ *#styleguide
+ *バリエーション
+ *```
+ *<p class="m-btn"><a href="#"><span>デフォルトボタン</span></a></p>
+ *<p class="m-btn is-blank"><a href="#"><span>ブランクボタン</span></a></p>
+ *<p class="m-btn is-shop"><a href="#"><span>ショップボタン</span></a></p>
+ *<p class="m-btn is-place"><a href="#"><span>プレイスボタン</span></a></p>
+ *<p class="m-btn is-back"><a href="#"><span>バックボタン</span></a></p>
+ *```
+
+/* ドットタイトル SMALL
+.m-titleType01
+  font-family: $fontFamilyMetroNotoSans
+  font-weight: 700
+  font-size: 1.6rem
+  position: relative
+  padding-left: 3rem
+  &::before,&::after
+    content: ''
+    position: absolute
+  &::before
+    top: 10px
+    left: 1rem
+    width: 5px
+    height: 5px
+    border-radius: 5px
+    background-color: $baseIconColor
+  &::after
+    top: 12px
+    left: 0
+    width: 2.5rem
+    height: 1px
+    border-top: 1px dotted $baseBorderColor
+  +media(minipc)
+    font-size: 1.4rem
+    &::before
+      top: 8px
+    &::after
+      top: 10px
+
+/* ドットタイトル BIG
+.m-titleType02
+  font-family: $fontFamilyMetroNotoSans
+  font-weight: 700
+  font-size: 2.8rem
+  position: relative
+  padding-left: 4rem
+  color: #000
+  &::before,&::after
+    content: ''
+    position: absolute
+  &::before
+    top: 18px
+    left: 1rem
+    width: 5px
+    height: 5px
+    border-radius: 5px
+    background-color: $iconColor02
+  &::after
+    top: 20px
+    left: -17rem
+    width: 20rem
+    height: 1px
+    border-top: 1px dotted $iconColor02
+  +media(minipc)
+    font-size: 1.4rem
+    &::before
+      top: 8px
+    &::after
+      top: 10px
+
+/* タイトル センター
+.m-titleType03
+  font-family: $fontFamilyMetroNotoSans
+  font-weight: 700
+  font-size: 2.4rem
+  padding-left: 4rem
+  color: #999
+  text-align: center

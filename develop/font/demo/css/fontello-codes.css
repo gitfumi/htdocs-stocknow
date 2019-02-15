@@ -1,4 +1,5 @@
 
+.icon-hatenabookmark:before { content: '\e813'; } /* '' */
 .icon-line:before { content: '\e838'; } /* '' */
 .icon-twitter:before { content: '\f099'; } /* '' */
 .icon-facebook:before { content: '\f09a'; } /* '' */

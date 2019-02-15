@@ -41,31 +41,7 @@
     z-index: index($zIndex, headerLogo)
     transition: all .5s
   .header_nav
-    // border-top: 1px solid $baseBorderColor
     padding: $sectionMargin/2
-  .header_ttl
-    font-family: $fontFamilyMetropolis, $fontFamilySansSerif
-    font-weight: 700
-    font-size: 1.6rem
-    position: relative
-    padding-left: 3rem
-    &::before
-      content: ''
-      position: absolute
-      top: 10px
-      left: 1rem
-      width: 5px
-      height: 5px
-      border-radius: 5px
-      background-color: $baseIconColor
-    &::after
-      content: ''
-      position: absolute
-      top: 12px
-      left: 0
-      width: 2.5rem
-      height: 1px
-      border-top: 1px dotted $baseBorderColor
   .header_item
     padding: $sectionMargin/2
     div.c-item_list >div
@@ -97,12 +73,6 @@
       padding: 0 20px
     .header_inner
       max-width: 200px
-    .header_ttl
-      font-size: 1.4rem
-      &::before
-        top: 8px
-      &::after
-        top: 10px
     .header_nav,.header_item,.header_tag
       padding: $sectionMargin/3
     .header_item
@@ -133,7 +103,7 @@
   +media(phablet)
 
 /* ---------------------------------------------------------
- *	ヘッダー※右メニュー
+ *	ヘッダー（記事詳細） ※右メニュー
  *----------------------------------------------------------
 #p-entry #header
   left: auto

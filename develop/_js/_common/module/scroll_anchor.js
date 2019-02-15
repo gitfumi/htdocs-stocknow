@@ -7,15 +7,16 @@ let scrollAnchor = (function() {
 	const SCROLL_SPEED    = 800;
 	const SCROLL_EASING   = 'easeOutQuint';
 	const NO_SCROLL_CLASS = 'js-noScroll';
-	const PAGE_TOP_HASH   = '#';
+	const PAGE_TOP_HASH   = '#top';
 	// aタグのクリック
 	$doc.on('click', 'a[href^="#"]', function(e) {
 		let $self = $(this);
 		let target = this.hash;
 		let top;
 		let headerHeight;
+		console.log(target);
 		// リンク先が#topの場合
-		if (target == PAGE_TOP_HASH) {
+		if (target == PAGE_TOP_HASH || !target) {
 			// ページの先頭へスクロール
 			top = 0;
 		}
@@ -23,14 +24,16 @@ let scrollAnchor = (function() {
 		else {
 			// 指定した要素が存在しない場合、a要素にclass（js-noScroll）を指定してた場合は未処理とする
 			if ($(target).length < 1 || $self.hasClass(NO_SCROLL_CLASS)) return false;
-			// スクロール先の座標を調整する
-			headerHeight = $('#header').outerHeight();
-			if($('#header').hasClass('is-short')){
-				headerHeight = headerHeight + 20;
-			}else{
-				headerHeight = headerHeight - 20;
-			}
-			top = $(target).offset().top - headerHeight;
+			// // スクロール先の座標を調整する
+			// headerHeight = $('#header').outerHeight();
+			// if($('#header').hasClass('is-short')){
+			// 	headerHeight = headerHeight + 20;
+			// }else{
+			// 	headerHeight = headerHeight - 20;
+			// }
+			// top = $(target).offset().top - headerHeight;
+			top = $(target).offset().top;
+			console.log(top);
 			top = Math.min(top, $doc.height() - $win.height());
 		}
 		// ウィールイベントをキャンセルしておく

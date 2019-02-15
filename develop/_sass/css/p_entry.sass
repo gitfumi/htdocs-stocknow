@@ -1,0 +1,148 @@
+@charset "utf-8"
+
+@import "../_base/variable"
+@import "../_tool/mixin/**"
+
+/* ---------------------------------------------------------
+ *	記事詳細
+ *----------------------------------------------------------
+ *  header
+ *----------------------------------------------------------
+.entry_header
+  .mainvisual
+    position: relative
+  .mainvisual_ttl
+    position: absolute
+    bottom: 20px
+    left: 80px
+    span
+      font-family: $fontFamilyMetroNotoSans
+      font-size: 3.6rem
+      font-weight: 700
+      background-color: rgba(#fff , 0.5)
+      line-height: 1.4
+  .mainvisual_date
+    position: absolute
+    top: -50px
+    right: 0
+    font-family: $fontFamilyMetropolis
+    font-size: 3.6rem
+    font-weight: 700
+    color: #e7e7e7
+    letter-spacing: 2px
+  .mainvisual_pic
+    text-align: center
+    background-color: #f8f8f8
+    position: relative
+    &::before
+      position: absolute
+      top: -90px
+      left: 0
+      content: "COLUMN"
+      color: #fff
+      font-size: 70px
+      font-family: $fontFamilyMetropolis
+      font-weight: 700
+      transform-origin: bottom left
+      transform: rotate(90deg)
+      opacity: 0.5
+  +media(minipc)
+    .mainvisual_ttl
+      bottom: 10px
+      left: 20px
+      span
+        font-size: 2.8rem
+    .mainvisual_date
+      top: 10px
+      right: 10px
+      font-size: 2.8rem
+    .mainvisual_pic
+      &::before
+        top: -70px
+        font-size: 50px
+  +media(tablet)
+    .mainvisual_ttl,.mainvisual_date
+      position: static
+    .mainvisual_ttl span,.mainvisual_date
+      font-size: 2.2rem
+    .mainvisual_pic
+      &::before
+        top: -50px
+        font-size: 40px
+  +media(phablet)
+    .mainvisual_ttl span,.mainvisual_date
+      font-size: 1.8rem
+    .mainvisual_date
+    .mainvisual_pic
+      &::before
+        top: -20px
+        font-size: 20px
+
+/* ---------------------------------------------------------
+ *  目次
+ *----------------------------------------------------------
+.entry_content
+  .mokuji
+    max-width: 780px
+    margin: 0 auto
+    border: 1px solid $baseBorderColor
+    padding: $sectionMargin/2
+  .mokuji_list
+    >li
+      margin-top: 5px
+      counter-increment: cnt
+      position: relative
+      padding-left: 30px
+      &::before
+        position: absolute
+        top: 0
+        left: 0
+        content: counter(cnt) '. '
+        font-family: $fontFamilyMetropolis
+        font-size: 1.6rem
+        font-weight: 700
+  +media(phablet)
+    .mokuji
+      padding: $sectionMargin/3
+/* ---------------------------------------------------------
+ *  記事ブロック
+ *----------------------------------------------------------
+.entry_content
+  .entry_section
+    margin-top: $sectionMargin*2
+  .entry_pic
+    margin-top: $sectionMargin/2
+
+/* ---------------------------------------------------------
+ *  ソーシャル
+ *----------------------------------------------------------
+.social_list
+  margin-top: $sectionMargin
+  display: flex
+  justify-content: space-between
+  padding-bottom: $sectionMargin
+  border-bottom: 1px solid $baseBorderColor
+  >li
+    flex-basis: 22%
+    a
+      display: block
+      background-color: #000
+      text-align: center
+      color: #fff
+      span
+        display: inline-block
+        padding: 10px 0 10px 2.8rem
+    &.is-facebook a span
+      +iconFontAbsolute(before, facebook, 50%, null, 50%, 0, 2.4rem, #fff)
+    &.is-twitter a span
+      +iconFontAbsolute(before, twitter, 50%, null, 50%, 0, 2.4rem, #fff)
+    &.is-line a span
+      +iconFontAbsolute(before, line, 50%, null, 50%, 0, 2.4rem, #fff)
+    &.is-hatenabookmark a span
+      +iconFontAbsolute(before, hatenabookmark, 50%, null, 50%, 0, 1.8rem, #fff)
+
+/* ---------------------------------------------------------
+ *  関連記事
+ *----------------------------------------------------------
+.entry_relation
+  margin-top: $sectionMargin

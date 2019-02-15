@@ -13,6 +13,19 @@
     color: #c0c0c0
   .c-item_listTxt
     line-height: 1.4
+  &.is-3block
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    >div
+      flex-basis: 31%
+      &:nth-of-type(n+4)
+        margin-top: $sectionMargin/2
   +media(minipc)
     .c-item_listTxt
       font-size: 1.3rem
+    &.is-3block
+      >div
+        flex-basis: 48%
+        &:nth-of-type(n+3)
+          margin-top: $sectionMargin/2

@@ -286,35 +286,6 @@ html {
   padding: 30px;
 }
 
-#header .header_ttl {
-  font-family: "Metropolis", sans-serif, "Noto Sans Japanese", sans-serif;
-  font-weight: 700;
-  font-size: 1.6rem;
-  position: relative;
-  padding-left: 3rem;
-}
-
-#header .header_ttl::before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: 1rem;
-  width: 5px;
-  height: 5px;
-  border-radius: 5px;
-  background-color: #e0e0e0;
-}
-
-#header .header_ttl::after {
-  content: '';
-  position: absolute;
-  top: 12px;
-  left: 0;
-  width: 2.5rem;
-  height: 1px;
-  border-top: 1px dotted #e0e0e0;
-}
-
 #header .header_item {
   padding: 30px;
 }
@@ -376,15 +347,6 @@ html {
   #header .header_inner {
     max-width: 200px;
   }
-  #header .header_ttl {
-    font-size: 1.4rem;
-  }
-  #header .header_ttl::before {
-    top: 8px;
-  }
-  #header .header_ttl::after {
-    top: 10px;
-  }
   #header .header_nav, #header .header_item, #header .header_tag {
     padding: 20px;
   }
@@ -429,7 +391,7 @@ html {
 }
 
 /* ---------------------------------------------------------
- *	ヘッダー※右メニュー
+ *	ヘッダー（記事詳細） ※右メニュー
  *---------------------------------------------------------- */
 #p-entry #header {
   left: auto;
@@ -536,11 +498,6 @@ html {
   transition: all .5s;
 }
 
-#p-entry #contents {
-  margin-left: 0;
-  margin-right: 260px;
-}
-
 @media only screen and (max-width: 1020px) {
   #contents {
     margin-left: 200px;
@@ -552,11 +509,22 @@ html {
     margin-left: 0;
     margin-top: 60px;
   }
-  #p-entry #contents {
-    margin-right: 0;
-  }
   #contents.is-show {
     opacity: 0.5;
+  }
+}
+
+/* ---------------------------------------------------------
+ *	大枠（記事詳細） ※右メニュー
+ *---------------------------------------------------------- */
+#p-entry #contents {
+  margin-left: 0;
+  margin-right: 260px;
+}
+
+@media only screen and (max-width: 768px) {
+  #p-entry #contents {
+    margin-right: 0;
   }
 }
 
@@ -567,6 +535,7 @@ html {
   -ms-flex-preferred-size: calc(100% - 260px);
       flex-basis: calc(100% - 260px);
   padding: 60px;
+  overflow: hidden;
 }
 
 #main .main_inner {
@@ -640,10 +609,6 @@ html {
           transform: rotate(-45deg);
 }
 
-#p-entry #footer .footer_totop {
-  right: 280px;
-}
-
 #footer .footer_inner {
   padding: 10px 20px;
   display: -webkit-box;
@@ -667,8 +632,8 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-preferred-size: 120px;
-      flex-basis: 120px;
+  -ms-flex-preferred-size: 160px;
+      flex-basis: 160px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -770,10 +735,35 @@ html {
   text-decoration: none;
 }
 
+#footer .footer_social li.is-hatenabookmark a {
+  position: relative;
+}
+
+#footer .footer_social li.is-hatenabookmark a:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  font-family: 'icons';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 1.8rem;
+  line-height: 1;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-transform: none;
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 768px) {
-  #p-entry #footer .footer_totop {
-    right: 10px;
-  }
   #footer .footer_inner {
     background-color: #fff;
   }
@@ -809,6 +799,19 @@ html {
 }
 
 /* ---------------------------------------------------------
+ *	フッター（記事詳細） ※右メニュー
+ *---------------------------------------------------------- */
+#p-entry #footer .footer_totop {
+  right: 280px;
+}
+
+@media only screen and (max-width: 768px) {
+  #p-entry #footer .footer_totop {
+    right: 10px;
+  }
+}
+
+/* ---------------------------------------------------------
  *	btn
  *---------------------------------------------------------- */
 /*
@@ -821,6 +824,116 @@ html {
  *<p class="m-btn is-place"><a href="#"><span>プレイスボタン</span></a></p>
  *<p class="m-btn is-back"><a href="#"><span>バックボタン</span></a></p>
  *``` */
+/* ---------------------------------------------------------
+ *	title
+ *---------------------------------------------------------- */
+/*
+ *#styleguide
+ *バリエーション
+ *```
+ *<p class="m-btn"><a href="#"><span>デフォルトボタン</span></a></p>
+ *<p class="m-btn is-blank"><a href="#"><span>ブランクボタン</span></a></p>
+ *<p class="m-btn is-shop"><a href="#"><span>ショップボタン</span></a></p>
+ *<p class="m-btn is-place"><a href="#"><span>プレイスボタン</span></a></p>
+ *<p class="m-btn is-back"><a href="#"><span>バックボタン</span></a></p>
+ *``` */
+/* ドットタイトル SMALL */
+.m-titleType01 {
+  font-family: "Metropolis", "Noto Sans Japanese", sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  position: relative;
+  padding-left: 3rem;
+}
+
+.m-titleType01::before, .m-titleType01::after {
+  content: '';
+  position: absolute;
+}
+
+.m-titleType01::before {
+  top: 10px;
+  left: 1rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+}
+
+.m-titleType01::after {
+  top: 12px;
+  left: 0;
+  width: 2.5rem;
+  height: 1px;
+  border-top: 1px dotted #e0e0e0;
+}
+
+@media only screen and (max-width: 1020px) {
+  .m-titleType01 {
+    font-size: 1.4rem;
+  }
+  .m-titleType01::before {
+    top: 8px;
+  }
+  .m-titleType01::after {
+    top: 10px;
+  }
+}
+
+/* ドットタイトル BIG */
+.m-titleType02 {
+  font-family: "Metropolis", "Noto Sans Japanese", sans-serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  position: relative;
+  padding-left: 4rem;
+  color: #000;
+}
+
+.m-titleType02::before, .m-titleType02::after {
+  content: '';
+  position: absolute;
+}
+
+.m-titleType02::before {
+  top: 18px;
+  left: 1rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #cfcfcf;
+}
+
+.m-titleType02::after {
+  top: 20px;
+  left: -17rem;
+  width: 20rem;
+  height: 1px;
+  border-top: 1px dotted #cfcfcf;
+}
+
+@media only screen and (max-width: 1020px) {
+  .m-titleType02 {
+    font-size: 1.4rem;
+  }
+  .m-titleType02::before {
+    top: 8px;
+  }
+  .m-titleType02::after {
+    top: 10px;
+  }
+}
+
+/* タイトル センター */
+.m-titleType03 {
+  font-family: "Metropolis", "Noto Sans Japanese", sans-serif;
+  font-weight: 700;
+  font-size: 2.4rem;
+  padding-left: 4rem;
+  color: #999;
+  text-align: center;
+}
+
 /* ---------------------------------------------------------
  *	googleAdsenceバナー
  *---------------------------------------------------------- */
@@ -851,9 +964,36 @@ html {
   line-height: 1.4;
 }
 
+.c-item_list.is-3block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.c-item_list.is-3block > div {
+  -ms-flex-preferred-size: 31%;
+      flex-basis: 31%;
+}
+
+.c-item_list.is-3block > div:nth-of-type(n+4) {
+  margin-top: 30px;
+}
+
 @media only screen and (max-width: 1020px) {
   .c-item_list .c-item_listTxt {
     font-size: 1.3rem;
+  }
+  .c-item_list.is-3block > div {
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
+  }
+  .c-item_list.is-3block > div:nth-of-type(n+3) {
+    margin-top: 30px;
   }
 }
 
@@ -882,6 +1022,18 @@ html {
 
 .c-tag_list > li a::before {
   content: '#';
+}
+
+/* ---------------------------------------------------------
+ *	タグ一覧（記事詳細）
+ *---------------------------------------------------------- */
+#p-entry .entry_header .c-tag_list > li {
+  margin: 10px 10px 0 0;
+}
+
+#p-entry .entry_header .c-tag_list > li a {
+  padding: 3px 10px;
+  font-size: 1.2rem;
 }
 
 /* Magnific Popup CSS */

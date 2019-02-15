@@ -7,29 +7,31 @@
   min-height: 100%
   margin-left: $navWidth
   transition: all .5s
-  #p-entry &
-    margin-left: 0
-    margin-right: $navWidth
   +media(minipc)
     margin-left: 200px
   +media(tablet)
     margin-left: 0
     margin-top: $spNavHeight
-    #p-entry &
-      margin-right: 0
     &.is-show
       opacity: 0.5
   +media(phablet)
-
-
   +media(sp)
 
+/* ---------------------------------------------------------
+ *	大枠（記事詳細） ※右メニュー
+ *----------------------------------------------------------
+#p-entry #contents
+  margin-left: 0
+  margin-right: $navWidth
+  +media(tablet)
+    margin-right: 0
 /* ---------------------------------------------------------
  *	メイン枠
  *----------------------------------------------------------
 #main
   flex-basis: calc(100% - #{$navWidth})
   padding: $sectionMargin
+  overflow: hidden
   .main_inner
     max-width: 1020px
     margin: 0 auto
