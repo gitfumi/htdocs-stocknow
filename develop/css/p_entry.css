@@ -82,6 +82,9 @@
   .entry_header .mainvisual_ttl span, .entry_header .mainvisual_date {
     font-size: 2.2rem;
   }
+  .entry_header .mainvisual_date {
+    margin-top: 5px;
+  }
   .entry_header .mainvisual_pic::before {
     top: -50px;
     font-size: 40px;
@@ -503,5 +506,11 @@
   }
   .p-butterbutler .butterbutler_list.m-bySide section + section {
     margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .p-butterbutler .butterbutler_txt span em {
+    font-size: 1.6rem;
   }
 }
