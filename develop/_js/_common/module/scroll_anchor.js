@@ -1,5 +1,7 @@
 // 指定のアンカー要素までスクロール
-let scrollAnchor = (function() {
+import ua from '../ua.js';
+
+let scrollAnchor = function(device) {
 	let $win              = $(window);
 	let $doc              = $(document);
 	let $scrollElement    = getFirstScrollable('html,body');
@@ -8,13 +10,13 @@ let scrollAnchor = (function() {
 	const SCROLL_EASING   = 'easeOutQuint';
 	const NO_SCROLL_CLASS = 'js-noScroll';
 	const PAGE_TOP_HASH   = '#top';
+	let phabletHeight;
 	// aタグのクリック
 	$doc.on('click', 'a[href^="#"]', function(e) {
 		let $self = $(this);
 		let target = this.hash;
 		let top;
 		let headerHeight;
-		console.log(target);
 		// リンク先が#topの場合
 		if (target == PAGE_TOP_HASH || !target) {
 			// ページの先頭へスクロール
@@ -32,8 +34,13 @@ let scrollAnchor = (function() {
 			// 	headerHeight = headerHeight - 20;
 			// }
 			// top = $(target).offset().top - headerHeight;
-			top = $(target).offset().top;
-			console.log(top);
+			console.log(device);
+			if(device == 'phablet'){
+				top = $(target).offset().top - $('.header_logo').height();
+			}else{
+				top = $(target).offset().top;
+			}
+
 			top = Math.min(top, $doc.height() - $win.height());
 		}
 		// ウィールイベントをキャンセルしておく
@@ -63,5 +70,5 @@ let scrollAnchor = (function() {
 		});
 		return $scrollable;
 	}
-}());
+};
 export default scrollAnchor;

@@ -1,5 +1,6 @@
 // メディアクエリでjsを切り替え
 import menuSlide from './module/menu_slide.js';
+import scrollAnchor from './module/scroll_anchor.js';
 
 let onMediaQuery = (function() {
 	let $window = $(window);
@@ -10,6 +11,7 @@ let onMediaQuery = (function() {
 		{
 			context: ['pc', 'minipc'],
 			match: function() {
+				scrollAnchor('pc');
 			},
 			unmatch: function() {
 			}
@@ -17,7 +19,7 @@ let onMediaQuery = (function() {
 		{
 			context: ['tablet', 'phablet', 'sp'],
 			match: function() {
-				// menuDrawer();
+				scrollAnchor('phablet');
 				menuSlide();
 			},
 			unmatch: function() {

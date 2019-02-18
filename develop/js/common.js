@@ -253,8 +253,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _ua = _interopRequireDefault(require("../ua.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 // 指定のアンカー要素までスクロール
-var scrollAnchor = function () {
+var scrollAnchor = function scrollAnchor(device) {
   var $win = $(window);
   var $doc = $(document);
   var $scrollElement = getFirstScrollable('html,body');
@@ -262,14 +266,14 @@ var scrollAnchor = function () {
   var SCROLL_SPEED = 800;
   var SCROLL_EASING = 'easeOutQuint';
   var NO_SCROLL_CLASS = 'js-noScroll';
-  var PAGE_TOP_HASH = '#top'; // aタグのクリック
+  var PAGE_TOP_HASH = '#top';
+  var phabletHeight; // aタグのクリック
 
   $doc.on('click', 'a[href^="#"]', function (e) {
     var $self = $(this);
     var target = this.hash;
     var top;
-    var headerHeight;
-    console.log(target); // リンク先が#topの場合
+    var headerHeight; // リンク先が#topの場合
 
     if (target == PAGE_TOP_HASH || !target) {
       // ページの先頭へスクロール
@@ -286,8 +290,14 @@ var scrollAnchor = function () {
         // }
         // top = $(target).offset().top - headerHeight;
 
-        top = $(target).offset().top;
-        console.log(top);
+        console.log(device);
+
+        if (device == 'phablet') {
+          top = $(target).offset().top - $('.header_logo').height();
+        } else {
+          top = $(target).offset().top;
+        }
+
         top = Math.min(top, $doc.height() - $win.height());
       } // ウィールイベントをキャンセルしておく
 
@@ -325,12 +335,12 @@ var scrollAnchor = function () {
     });
     return $scrollable;
   }
-}();
+};
 
 var _default = scrollAnchor;
 exports.default = _default;
 
-},{}],8:[function(require,module,exports){
+},{"../ua.js":9}],8:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -339,6 +349,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _menu_slide = _interopRequireDefault(require("./module/menu_slide.js"));
+
+var _scroll_anchor = _interopRequireDefault(require("./module/scroll_anchor.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -350,12 +362,14 @@ var onMediaQuery = function () {
   var breadcrumbsScroll;
   var queries = [{
     context: ['pc', 'minipc'],
-    match: function match() {},
+    match: function match() {
+      (0, _scroll_anchor.default)('pc');
+    },
     unmatch: function unmatch() {}
   }, {
     context: ['tablet', 'phablet', 'sp'],
     match: function match() {
-      // menuDrawer();
+      (0, _scroll_anchor.default)('phablet');
       (0, _menu_slide.default)();
     },
     unmatch: function unmatch() {
@@ -377,7 +391,7 @@ var onMediaQuery = function () {
 var _default = onMediaQuery;
 exports.default = _default;
 
-},{"./module/menu_slide.js":5}],9:[function(require,module,exports){
+},{"./module/menu_slide.js":5,"./module/scroll_anchor.js":7}],9:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

@@ -1,0 +1,28 @@
+@charset "utf-8"
+
+/* ---------------------------------------------------------
+ *	bySide
+ *----------------------------------------------------------
+/*
+ *#styleguide
+ *バリエーション
+ *```
+ *<p class="m-btn"><a href="#"><span>デフォルトボタン</span></a></p>
+ *<p class="m-btn is-blank"><a href="#"><span>ブランクボタン</span></a></p>
+ *<p class="m-btn is-shop"><a href="#"><span>ショップボタン</span></a></p>
+ *<p class="m-btn is-place"><a href="#"><span>プレイスボタン</span></a></p>
+ *<p class="m-btn is-back"><a href="#"><span>バックボタン</span></a></p>
+ *```
+.m-bySide
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  &.is-2block >*
+    flex-basis: 48%
+  &.is-3block >*
+    flex-basis: 31%
+  +media(phablet)
+    &.is-3block >*
+      flex-basis: 48%
+      &:nth-child(n+3)
+        margin-top: 10px

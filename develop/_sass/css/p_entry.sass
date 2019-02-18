@@ -19,8 +19,9 @@
       font-family: $fontFamilyMetroNotoSans
       font-size: 3.6rem
       font-weight: 700
-      background-color: rgba(#fff , 0.5)
+      background-color: rgba(#fff , 0.7)
       line-height: 1.4
+      color: #000
   .mainvisual_date
     position: absolute
     top: -50px
@@ -32,7 +33,7 @@
     letter-spacing: 2px
   .mainvisual_pic
     text-align: center
-    background-color: #f8f8f8
+    background-color: #e2e2e2
     position: relative
     &::before
       position: absolute
@@ -45,7 +46,7 @@
       font-weight: 700
       transform-origin: bottom left
       transform: rotate(90deg)
-      opacity: 0.5
+      opacity: 0.7
   +media(minipc)
     .mainvisual_ttl
       bottom: 10px
@@ -89,29 +90,51 @@
     padding: $sectionMargin/2
   .mokuji_list
     >li
-      margin-top: 5px
+      margin-top: 10px
       counter-increment: cnt
       position: relative
       padding-left: 30px
+      font-size: 1.8rem
+      font-weight: 700
       &::before
         position: absolute
-        top: 0
+        top: 3px
         left: 0
         content: counter(cnt) '. '
         font-family: $fontFamilyMetropolis
-        font-size: 1.6rem
-        font-weight: 700
+      a
+        text-decoration: underline
+        &:hover
+          text-decoration: none
   +media(phablet)
     .mokuji
       padding: $sectionMargin/3
+    .mokuji_list
+      >li
+        font-size: 1.6rem
+        &::before
+
 /* ---------------------------------------------------------
  *  記事ブロック
  *----------------------------------------------------------
 .entry_content
   .entry_section
     margin-top: $sectionMargin*2
+  .entry_txt
+    margin-top: $sectionMargin/2
+    line-height: 2.0
   .entry_pic
     margin-top: $sectionMargin/2
+    img,iframe
+      border: 5px solid #e2e2e2
+  +media(phablet)
+    .entry_section
+      margin-top: $sectionMargin
+    .entry_txt
+      margin-top: $sectionMargin/3
+      line-height: 1.8
+    .entry_pic
+      margin-top: $sectionMargin/3
 
 /* ---------------------------------------------------------
  *  ソーシャル
@@ -119,6 +142,7 @@
 .social_list
   margin-top: $sectionMargin
   display: flex
+  flex-wrap: wrap
   justify-content: space-between
   padding-bottom: $sectionMargin
   border-bottom: 1px solid $baseBorderColor
@@ -133,16 +157,30 @@
         display: inline-block
         padding: 10px 0 10px 2.8rem
     &.is-facebook a span
-      +iconFontAbsolute(before, facebook, 50%, null, 50%, 0, 2.4rem, #fff)
+      +iconFontAbsolute(before, facebook, 50%, null, 50%, 10px, 2.4rem, #fff)
     &.is-twitter a span
       +iconFontAbsolute(before, twitter, 50%, null, 50%, 0, 2.4rem, #fff)
     &.is-line a span
       +iconFontAbsolute(before, line, 50%, null, 50%, 0, 2.4rem, #fff)
     &.is-hatenabookmark a span
-      +iconFontAbsolute(before, hatenabookmark, 50%, null, 50%, 0, 1.8rem, #fff)
-
+      +iconFontAbsolute(before, hatenabookmark, 50%, null, 50%, 5px, 1.6rem, #fff)
+  +media(minipc)
+    >li a span
+      font-size: 1.3rem
+  +media(tablet)
+    >li
+      flex-basis: 48%
+      &:nth-child(n+3)
+        margin-top: 10px
 /* ---------------------------------------------------------
  *  関連記事
  *----------------------------------------------------------
 .entry_relation
-  margin-top: $sectionMargin
+  margin-top: $sectionMargin*2
+  .relation_list
+    margin-top: $sectionMargin/2
+
+/* ---------------------------------------------------------
+ *  個別記事 SASS
+ *----------------------------------------------------------
+@import "./entry/butterbutler"
