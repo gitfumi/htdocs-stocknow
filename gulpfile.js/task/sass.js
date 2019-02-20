@@ -22,8 +22,11 @@ module.exports = {
 
 		// /_sass/css/の個別ファイルの場合ビルド対象反映を変更。
 		if (config.activeFile.path.match(/_sass\\css/)){
-			path = config.activeFile.path;
-			option = {base: './develop/_sass'};
+			if (!config.activeFile.path.match(/\\_entry\\/)){
+				path = config.activeFile.path;
+				option = {base: './develop/_sass'};
+				console.log('change!!!!!!!!!!');
+			}
 		}
 
 		return $.gulp

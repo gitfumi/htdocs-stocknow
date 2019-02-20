@@ -6,7 +6,7 @@ extends /_pug/_inc/_layout
 	---------------------------------------------------------
 append setVar
 	- layout = 'home'
-	- pageUrl = '/test/'
+	- pageUrl = '/'
 	- dirArray = createDirArray(pageUrl)
 	- bodyAttributes.id = 'p-home'
 
@@ -48,23 +48,23 @@ block main
 						li: a(href="/") #[span タグ6]
 				div
 					a(href="/entry/bake.html")
-						p.c-item_listPic: img(src="https://placehold.it/600x400" alt="")
+						p.c-item_listPic: img(src="/cms/item/img/pic_bake_01.jpg" alt="")
 						p.c-item_listDate 2019.00.00
-						p.c-item_listTxt 年間1,000万個売り上げる北海道生まれのチーズタルト。
+						p.c-item_listTxt カフェ併設の店舗は全国でたった1店舗！自由が丘のチーズタルト専門店『BAKE CHEESE TART』
 					ul.c-tag_list
 						li: a(href="/") #[span タグ1]
 						li: a(href="/") #[span タグあああああ]
 				div
-					a(href="/entry/")
-						p.c-item_listPic: img(src="https://placehold.it/600x400" alt="")
+					a(href="/entry/zakuzaku.html")
+						p.c-item_listPic: img(src="/cms/item/img/pic_zakuzaku_01.jpg" alt="")
 						p.c-item_listDate 2019.00.00
 						p.c-item_listTxt ほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
 					ul.c-tag_list
 						li: a(href="/") #[span タグ1]
 						li: a(href="/") #[span タグあああああ]
 				div
-					a(href="/entry/")
-						p.c-item_listPic: img(src="https://placehold.it/600x400" alt="")
+					a(href="/entry/ringo.html")
+						p.c-item_listPic: img(src="/cms/item/img/pic_ringo_01.jpg" alt="")
 						p.c-item_listDate 2019.00.00
 						p.c-item_listTxt ほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
 					ul.c-tag_list

@@ -19,8 +19,13 @@
   justify-content: space-between
   &.is-2block >*
     flex-basis: 48%
-  &.is-3block >*
-    flex-basis: 31%
+  &.is-3block
+    &::after
+      content: ""
+      display: block
+      width: 31%
+    >*
+      flex-basis: 31%
   +media(phablet)
     &.is-3block >*
       flex-basis: 48%

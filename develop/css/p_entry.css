@@ -157,12 +157,57 @@
   line-height: 2.0;
 }
 
+.entry_content .entry_txt a {
+  text-decoration: underline;
+  font-weight: 700;
+  color: #41b3e4;
+}
+
 .entry_content .entry_pic {
   margin-top: 30px;
 }
 
-.entry_content .entry_pic img, .entry_content .entry_pic iframe {
+.entry_content .entry_pic img {
   border: 5px solid #e2e2e2;
+}
+
+.entry_content .entry_att {
+  margin-top: 30px;
+  line-height: 2.0;
+  color: #e60012;
+  font-weight: 700;
+}
+
+.entry_content .entry_mapIframe {
+  margin-top: 30px;
+  position: relative;
+  padding-bottom: 46.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.entry_content .entry_mapIframe iframe {
+  border: 5px solid #e2e2e2;
+}
+
+.entry_content .entry_mapIframe iframe, .entry_content .entry_mapIframe object, .entry_content .entry_mapIframe embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.entry_content .entry_facebook {
+  margin: 60px auto 0;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .entry_content .entry_mapIframe {
+    padding-bottom: 56.25%;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -175,6 +220,161 @@
   }
   .entry_content .entry_pic {
     margin-top: 20px;
+  }
+}
+
+/* ---------------------------------------------------------
+ *  販売店リスト
+ *---------------------------------------------------------- */
+.entry_shop .shop_head {
+  margin-top: 30px;
+}
+
+.entry_shop .shop_list {
+  margin-top: 30px;
+}
+
+.entry_shop .shop_list section > p {
+  padding: 5px 0 5px 3.5rem;
+  border-top: 1px dotted #cfcfcf;
+  font-size: 1.3rem;
+}
+
+.entry_shop .shop_list section:nth-child(n+4) {
+  margin-top: 30px;
+}
+
+.entry_shop .shop_name {
+  font-weight: 700;
+  padding: 5px 10px;
+  background-color: #e2e2e2;
+  line-height: 1.4;
+}
+
+.entry_shop .shop_pin {
+  position: relative;
+}
+
+.entry_shop .shop_pin:before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  color: #000;
+  font-family: 'icons';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 1;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.entry_shop .shop_date {
+  position: relative;
+}
+
+.entry_shop .shop_date:before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  color: #000;
+  font-family: 'icons';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 1;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.entry_shop .shop_time {
+  position: relative;
+}
+
+.entry_shop .shop_time:before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  color: #000;
+  font-family: 'icons';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 1;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.entry_shop .shop_item {
+  position: relative;
+}
+
+.entry_shop .shop_item:before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  color: #000;
+  font-family: 'icons';
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 1;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.entry_shop .shop_txt {
+  margin-top: 20px;
+}
+
+.entry_shop .shop_txt span {
+  font-weight: 700;
+}
+
+.entry_shop .shop_txt span em {
+  font-size: 2.0rem;
+  font-family: "Metropolis", sans-serif;
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .entry_shop .shop_pin br {
+    display: none;
+  }
+  .entry_shop .shop_map {
+    padding-bottom: 56.25%;
+  }
+  .entry_shop .shop_list.m-bySide {
+    display: block;
+  }
+  .entry_shop .shop_list.m-bySide section + section {
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .entry_shop .shop_txt span em {
+    font-size: 1.6rem;
   }
 }
 
@@ -343,174 +543,5 @@
  *  個別記事 SASS
  *---------------------------------------------------------- */
 /* ---------------------------------------------------------
- *	バターバトラーasss
+ *	バターバトラー
  *---------------------------------------------------------- */
-.p-butterbutler .butterbutler_ttl {
-  margin-top: 30px;
-}
-
-.p-butterbutler .butterbutler_list {
-  margin-top: 30px;
-}
-
-.p-butterbutler .butterbutler_list section > p {
-  padding: 5px 0 5px 3.5rem;
-  border-top: 1px dotted #cfcfcf;
-}
-
-.p-butterbutler .butterbutler_name {
-  font-weight: 700;
-}
-
-.p-butterbutler .butterbutler_pin {
-  margin-top: 10px;
-  position: relative;
-}
-
-.p-butterbutler .butterbutler_pin:before {
-  content: "";
-  position: absolute;
-  top: 9px;
-  left: 10px;
-  color: #000;
-  font-family: 'icons';
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  font-size: 1.6rem;
-  line-height: 1;
-  speak: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-transform: none;
-  text-decoration: none;
-}
-
-.p-butterbutler .butterbutler_date {
-  position: relative;
-}
-
-.p-butterbutler .butterbutler_date:before {
-  content: "";
-  position: absolute;
-  top: 8px;
-  left: 10px;
-  color: #000;
-  font-family: 'icons';
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  font-size: 1.6rem;
-  line-height: 1;
-  speak: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-transform: none;
-  text-decoration: none;
-}
-
-.p-butterbutler .butterbutler_time {
-  position: relative;
-}
-
-.p-butterbutler .butterbutler_time:before {
-  content: "";
-  position: absolute;
-  top: 8px;
-  left: 10px;
-  color: #000;
-  font-family: 'icons';
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  font-size: 1.6rem;
-  line-height: 1;
-  speak: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-transform: none;
-  text-decoration: none;
-}
-
-.p-butterbutler .butterbutler_item {
-  position: relative;
-}
-
-.p-butterbutler .butterbutler_item:before {
-  content: "";
-  position: absolute;
-  top: 8px;
-  left: 10px;
-  color: #000;
-  font-family: 'icons';
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  font-size: 1.6rem;
-  line-height: 1;
-  speak: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-transform: none;
-  text-decoration: none;
-}
-
-.p-butterbutler .butterbutler_txt {
-  margin-top: 20px;
-}
-
-.p-butterbutler .butterbutler_txt span {
-  font-weight: 700;
-}
-
-.p-butterbutler .butterbutler_txt span em {
-  font-size: 2.0rem;
-  font-family: "Metropolis", sans-serif;
-  margin-right: 10px;
-}
-
-.p-butterbutler .butterbutler_map {
-  position: relative;
-  padding-bottom: 46.25%;
-  padding-top: 30px;
-  height: 0;
-  overflow: hidden;
-}
-
-.p-butterbutler .butterbutler_map iframe, .p-butterbutler .butterbutler_map object, .p-butterbutler .butterbutler_map embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.p-butterbutler .butterbutler_att {
-  color: #f00;
-  font-weight: 700;
-}
-
-.p-butterbutler .butterbutler_facebook {
-  margin: 60px auto 0;
-}
-
-@media only screen and (max-width: 768px) {
-  .p-butterbutler .butterbutler_pin br {
-    display: none;
-  }
-  .p-butterbutler .butterbutler_map {
-    padding-bottom: 56.25%;
-  }
-  .p-butterbutler .butterbutler_list.m-bySide {
-    display: block;
-  }
-  .p-butterbutler .butterbutler_list.m-bySide section + section {
-    margin-top: 30px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .p-butterbutler .butterbutler_txt span em {
-    font-size: 1.6rem;
-  }
-}

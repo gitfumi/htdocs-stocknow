@@ -862,6 +862,12 @@ html {
       flex-basis: 48%;
 }
 
+.m-bySide.is-3block::after {
+  content: "";
+  display: block;
+  width: 31%;
+}
+
 .m-bySide.is-3block > * {
   -ms-flex-preferred-size: 31%;
       flex-basis: 31%;
@@ -1007,6 +1013,18 @@ html {
   font-size: 2.0rem;
 }
 
+.m-titleType04::before {
+  content: '[ ';
+}
+
+.m-titleType04::after {
+  content: ' ]';
+}
+
+.m-titleType04 span {
+  color: #e60012;
+}
+
 /* ---------------------------------------------------------
  *	googleAdsenceバナー
  *---------------------------------------------------------- */
@@ -1053,6 +1071,7 @@ html {
 .c-item_list .c-item_listPic img {
   -webkit-transition: all .5s;
   transition: all .5s;
+  border: 5px solid #e2e2e2;
 }
 
 .c-item_list .c-item_listPic::before {
@@ -1086,6 +1105,7 @@ html {
 
 .c-item_list .c-item_listTxt {
   line-height: 1.4;
+  font-size: 1.3rem;
 }
 
 .c-item_list.is-3block {

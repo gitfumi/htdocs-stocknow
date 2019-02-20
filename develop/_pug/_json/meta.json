@@ -1,20 +1,30 @@
 {
   "/": {
-    "siteName":"アンカレッジの樹木葬",
+    "siteName":"すとっくなぅ（STOCKNOW）",
     "pageName":"アンカレッジの樹木葬トップ",
-    "title":"【公式】アンカレッジの樹木葬｜花と眠る樹木葬・永代供養墓・納骨堂",
-    "description":"NHK「あさイチ」をはじめ多くのメディアで取り上げられているアンカレッジの樹木葬。「お参りしやすい都心の樹木葬で眠りたい」「お墓の承継者がいない」「子供に面倒をかけたくない」「ペットと一緒に眠りたい」等、今のライフスタイルに応える樹木葬・永代供養墓が、全国11か所（東京・千葉・京都・大阪・福岡）からお選びいただけます。",
+    "title":"おしゃれな手土産ギフト、ご褒美ギフトなら STOCKNOW",
+    "description":"ワンランクアップの手土産ギフトや、自分用のお取り寄せ、ご褒美ギフト探しならSTOCKNOW！おしゃれな最新スイーツやグルメ情報をお届けします。",
     "twitterId":"",
-    "ogImage":"/img/common/og_image_jumokuso.jpg"
+    "ogImage":"https://stocknow.info/img/cmn/pic_ogp.jpg"
   },
-  "/test/": {
-    "title": "テスト",
-    "description": "テストccccc",
+  "/entry/butterbutler.html": {
+    "title": "バターが主役の洋菓子！バターバトラーのバターフィナンシェ",
+    "description": "",
     "ogImage": ""
   },
-  "/entry/index.html": {
-    "title": "testほげ",
-    "description": "testccccc",
+  "/entry/bake.html": {
+    "title": "カフェ併設の店舗は全国でたった1店舗！自由が丘のチーズタルト専門店『BAKE CHEESE TART』",
+    "description": "",
+    "ogImage": ""
+  },
+  "/entry/zakuzaku.html": {
+    "title": "日本から海外まで店舗を構える！クロッカンシュー ザクザク",
+    "description": "",
+    "ogImage": ""
+  },
+  "/entry/ringo.html": {
+    "title": "日本から海外まで店舗を構える！クロッカンシュー ザクザク",
+    "description": "",
     "ogImage": ""
   }
 }
