@@ -13,11 +13,13 @@ var _perfect_scroll = _interopRequireDefault(require("./module/perfect_scroll.js
 
 var _menu_slide = _interopRequireDefault(require("./module/menu_slide.js"));
 
+var _ga_event_tracking = _interopRequireDefault(require("./module/ga_event_tracking.js"));
+
 var _on_media_query = _interopRequireDefault(require("./on_media_query.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./module/current_link.js":2,"./module/disable_tel_link.js":3,"./module/glovalnav.js":4,"./module/menu_slide.js":5,"./module/perfect_scroll.js":6,"./module/scroll_anchor.js":7,"./on_media_query.js":8}],2:[function(require,module,exports){
+},{"./module/current_link.js":2,"./module/disable_tel_link.js":3,"./module/ga_event_tracking.js":4,"./module/glovalnav.js":5,"./module/menu_slide.js":6,"./module/perfect_scroll.js":7,"./module/scroll_anchor.js":8,"./on_media_query.js":9}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -127,7 +129,30 @@ var disableTelLink = function () {
 var _default = disableTelLink;
 exports.default = _default;
 
-},{"../ua.js":9}],4:[function(require,module,exports){
+},{"../ua.js":10}],4:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+// googleのイベントトラッキング
+var gaEventTracking = function () {
+  $('.js-gaEventTracking a').on('click', function (event) {
+    event.preventDefault();
+    var data = $(this).parent().data();
+    console.log('gaGroup:' + data.gaGroup);
+    console.log('gaAction:' + data.gaAction);
+    console.log('gaLabel:' + data.gaLabel);
+    console.log('gaCount:' + data.gaCount); // ga('send','event',data.gaGroup,data.gaAction,data.gaLabel, data.gaCount);
+  });
+}();
+
+var _default = gaEventTracking;
+exports.default = _default;
+
+},{}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -160,7 +185,7 @@ var globalNav = function () {
 var _default = globalNav;
 exports.default = _default;
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -227,7 +252,7 @@ var menuSlide = function menuSlide() {
 var _default = menuSlide;
 exports.default = _default;
 
-},{"../valiable.js":10}],6:[function(require,module,exports){
+},{"../valiable.js":11}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -245,7 +270,7 @@ var perfectScrollbar = function () {
 var _default = perfectScrollbar;
 exports.default = _default;
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -340,7 +365,7 @@ var scrollAnchor = function scrollAnchor(device) {
 var _default = scrollAnchor;
 exports.default = _default;
 
-},{"../ua.js":9}],8:[function(require,module,exports){
+},{"../ua.js":10}],9:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -391,7 +416,7 @@ var onMediaQuery = function () {
 var _default = onMediaQuery;
 exports.default = _default;
 
-},{"./module/menu_slide.js":5,"./module/scroll_anchor.js":7}],9:[function(require,module,exports){
+},{"./module/menu_slide.js":6,"./module/scroll_anchor.js":8}],10:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -422,7 +447,7 @@ var ua = function () {
 var _default = ua;
 exports.default = _default;
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

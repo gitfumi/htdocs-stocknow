@@ -146,7 +146,7 @@ block main
 							p.shop_pin 神奈川県川崎市川崎区駅前本町26-1 アトレ川崎3F
 							p.shop_time 10:00 ~ 22:00
 							p.shop_item チーズタルト、ミルクソフト
-
+				p.m-btn.is-pin.js-gaEventTracking(data-ga-group="button" data-ga-action="click" data-ga-label="bake other shop" data-ga-count="1"): a(href="https://cheesetart.com/shop/" target="_blank") #[span その他の店舗はこちらから]
 
 		aside.entry_social
 			ul.social_list
@@ -155,40 +155,4 @@ block main
 				li.is-line: a(href="https://plus.line.com/share?url=https://stocknow.info/" onclick="window.open(this.href, 'Gwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"): span line
 				li.is-hatenabookmark: a(href="https://plus.line.com/share?url=https://stocknow.info/" onclick="window.open(this.href, 'Gwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"): span はてなブログ
 
-		section.entry_relation
-			h2.m-titleType03 関連記事
-			div.c-item_list.is-3block.relation_list
-				div
-					a(href="/entry/butterbutler.html")
-						p.c-item_listPic: img(src="/cms/item/img/pic_butterbutler_01.png" alt="")
-						p.c-item_listDate 2019.00.00
-						p.c-item_listTxt バターが主役の洋菓子！バターバトラーのバターフィナンシェ
-					ul.c-tag_list
-						li: a(href="/") #[span タグ1]
-						li: a(href="/") #[span タグあああああ]
-						li: a(href="/") #[span タグ3]
-						li: a(href="/") #[span タグｆｆｆ]
-						li: a(href="/") #[span タグ5]
-						li: a(href="/") #[span タグ6]
-						li: a(href="/") #[span タグ3]
-						li: a(href="/") #[span タグｆｆｆ]
-						li: a(href="/") #[span タグ5]
-						li: a(href="/") #[span タグ6]
-				div
-					a(href="/entry/bake.html")
-						p.c-item_listPic: img(src="/cms/item/img/pic_bake_01.jpg" alt="")
-						p.c-item_listDate 2019.00.00
-						p.c-item_listTxt カフェ併設の店舗は全国でたった1店舗！自由が丘のチーズタルト専門店『BAKE CHEESE TART』
-					ul.c-tag_list
-						li: a(href="/") #[span タグ1]
-						li: a(href="/") #[span タグあああああ]
-				div
-					a(href="/entry/zakuzaku.html")
-						p.c-item_listPic: img(src="/cms/item/img/pic_zakuzaku_01.jpg" alt="")
-						p.c-item_listDate 2019.00.00
-						p.c-item_listTxt ほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
-					ul.c-tag_list
-						li: a(href="/") #[span タグ1]
-						li: a(href="/") #[span タグあああああ]
-
-		div.c-advertise: a(href="/"): img(src="https://placehold.it/728x90" alt="")
+		//#include virtual="/_inc/relation.html"
