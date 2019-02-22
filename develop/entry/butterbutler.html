@@ -15,7 +15,7 @@
 		<!--#include virtual="/_inc/head_link.html"-->
 		<link rel="stylesheet" href="/css/p_entry.css">
 	</head>
-	<body class="p-butterbutler" id="p-entry">
+	<body class="p-butterbutler.g-gourmet" id="p-entry">
 		<!--#include virtual="/_inc/gtm_body.html"-->
 		<!--#include virtual="/_inc/header.html"-->
 		<div id="contents">
@@ -86,21 +86,21 @@
 								<div class="m-bySide is-3block shop_list js-shop_list">
 									<section>
 										<h4 class="shop_name js-shop_name">JR名古屋タカシマ屋</h4>
-										<p class="shop_pin js-shop_pin">愛知県名古屋市名駅1-1-4 <br>1Fクラブハリエ前</p>
+										<p class="shop_pin"><a target="_blank" href="https://goo.gl/maps/PbN2PSEvkFs">愛知県名古屋市名駅1-1-4 <br>1Fクラブハリエ前</a></p>
 										<p class="shop_date">2019/1/18～2019/2/5</p>
 										<p class="shop_time">10:00～20:00</p>
 										<p class="shop_item">バターフィナンシェ4・8・12・16入<br>バターガレット9・18入<br>バターキャラメルポット</p>
 									</section>
 									<section>
 										<h4 class="shop_name js-shop_name">羽田空港第2ターミナル　スマイルトーキョー</h4>
-										<p class="shop_pin js-shop_pin">東京都大田区羽田空港3-4-2 <br>羽田空港第二ターミナル2F <br>スマイルトーキョー内</p>
+										<p class="shop_pin"><a target="_blank" href="https://goo.gl/maps/7NJENxU9SAr">東京都大田区羽田空港3-4-2 <br>羽田空港第二ターミナル2F <br>スマイルトーキョー内</a></p>
 										<p class="shop_date">2018/9/1～</p>
 										<p class="shop_time">5:45～20:30</p>
 										<p class="shop_item">バターフィナンシェ4・8・12・16入<br>バターガレット9・18入<br>キャラメルポット</p>
 									</section>
 									<section>
 										<h4 class="shop_name js-shop_name">ルミネ立川店</h4>
-										<p class="shop_pin js-shop_pin">東京都立川市曙町2-1-1 <br>ルミネ立川店1F スイーツゾーン</p>
+										<p class="shop_pin"><a target="_blank" href="https://goo.gl/maps/4Jpegsd9ESR2">東京都立川市曙町2-1-1 <br>ルミネ立川店1F スイーツゾーン</a></p>
 										<p class="shop_date">2018/11/1～</p>
 										<p class="shop_time">平日；10:00~21:00<br>土日祝；10:00~20:30</p>
 										<p class="shop_item">バターフィナンシェ4・8・12・16入<br>バターガレット9・18入<br>キャラメルポット<br>バターシュガーケーキ</p>
@@ -146,111 +146,111 @@
 		<!--#include virtual="/_inc/script.html"-->
 		<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyD29DdDt14xcI-AuwSD8ZAHlKt6OKySBzc"></script>
 		<script>
-			let $list = $('.js-shop_list section'),
-			shopList = [];
-			// ショップリストの取得
-			for (let i = 0; i < $list.length; i++) {
-				shopList[i] = [];
-				shopList[i].shopname = $list.eq(i).find('.js-shop_name').text();
-				shopList[i].address = $list.eq(i).find('.js-shop_pin').text();
-			}
-			let shopCode = [];
-			let shopHoge = [];
-			// ショップリストの緯度経度を取得
-			function dfdGeocode(){
-				let addressJP,shopName;
-				let dfd = $.Deferred();
-				// Geocoderのインスタンスを生成
-				let geocoder = new google.maps.Geocoder();
-				// カウンター
-				let cnt = 0;
-				// 店舗数分マップに埋め込み
-				$.each(shopList, function(index, val){
-					addressJP = val.address;
-					shopName  = val.shopname;
-					shopHoge.push({
-						shp : shopName,
-						add : addressJP
-					});
-					geocoder.geocode({
-						'address': addressJP //ショップ
-					}, function(results, status, callback) { // 結果
-						if (status === google.maps.GeocoderStatus.OK) {
-							shopCode.push({
-								lat : results[0].geometry.location.lat(),	//緯度
-								lng : results[0].geometry.location.lng()	//経度
-							});
-							if(cnt == shopList.length -1){
-								dfd.resolve();
-							}
-							cnt++;
-							callback();
-						}else { // 失敗した場合
-							alert(status);
-						}
-					});
-					
-				});
-				return dfd.promise();
-			}
-			// 非同期処理を並列化
-			$.when(
-				dfdGeocode()
-			).done(function(position){
-				//- console.log(shopCode);
-				//- console.log(shopHoge);
-				let map;
-				let googleMap = function(){
-					$.each(shopList, function(index, val){
-						//- console.log(index + ' :   ' + shopList[index].shopname + ' :   ' + shopCode[index].lat);
-						if(index == 0){
-							let myOptions = {
-								zoom: 18, /*拡大比率*/
-								center: shopCode[index], /*表示枠内の中心点*/
-								mapTypeControlOptions: { mapTypeIds: ['sample', google.maps.MapTypeId.ROADMAP] }
-							};
-							map = new google.maps.Map(document.getElementById('js-googleMap_'), myOptions);
-							/*取得スタイルの貼り付け*/
-							let styleOptions = [
-								{
-									'stylers': [
-										{ 'saturation': -100 },
-										{ 'visibility': 'simplified' },
-										{ 'lightness': 22 }
-									]
-								}
-							];
-							let styledMapOptions = { name: 'STOCKNOW仕様' }
-							let sampleType = new google.maps.StyledMapType(styleOptions, styledMapOptions);
-							map.mapTypes.set('sample', sampleType);
-							map.setMapTypeId('sample');
-						}
-						// googleMapを書き込む
-						markup(shopCode[index],val.shopname,map);
-					});
-				}
-				google.maps.event.addDomListener(window, 'load', googleMap);
-			
-				$('.shopList li .shopMapActive').on('click',function(){
-					let eq = $(this).parents('li').index();
-					console.log(eq);
-					map.panTo(new google.maps.LatLng(shopCode[eq]));
-				})
-			})
-			function markup(LATLNG, SHOPNAME, MAP){
-				/*アイコン設定▼*/
-				let icon = {
-					url: '/img/cmn/icon_googlemap.png',
-					scaledSize : new google.maps.Size(51.5,65.5)
-				}
-				let markerOptions = {
-					position: LATLNG,
-					map: MAP,
-					icon: icon,
-					title: SHOPNAME
-				};
-				let marker = new google.maps.Marker(markerOptions);
-			}
+			//- let $list = $('.js-shop_list section'),
+			//- shopList = [];
+			//- // ショップリストの取得
+			//- for (let i = 0; i < $list.length; i++) {
+			//- 	shopList[i] = [];
+			//- 	shopList[i].shopname = $list.eq(i).find('.js-shop_name').text();
+			//- 	shopList[i].address = $list.eq(i).find('.js-shop_pin').text();
+			//- }
+			//- let shopCode = [];
+			//- let shopHoge = [];
+			//- // ショップリストの緯度経度を取得
+			//- function dfdGeocode(){
+			//- 	let addressJP,shopName;
+			//- 	let dfd = $.Deferred();
+			//- 	// Geocoderのインスタンスを生成
+			//- 	let geocoder = new google.maps.Geocoder();
+			//- 	// カウンター
+			//- 	let cnt = 0;
+			//- 	// 店舗数分マップに埋め込み
+			//- 	$.each(shopList, function(index, val){
+			//- 		addressJP = val.address;
+			//- 		shopName  = val.shopname;
+			//- 		shopHoge.push({
+			//- 			shp : shopName,
+			//- 			add : addressJP
+			//- 		});
+			//- 		geocoder.geocode({
+			//- 			'address': addressJP //ショップ
+			//- 		}, function(results, status, callback) { // 結果
+			//- 			if (status === google.maps.GeocoderStatus.OK) {
+			//- 				shopCode.push({
+			//- 					lat : results[0].geometry.location.lat(),	//緯度
+			//- 					lng : results[0].geometry.location.lng()	//経度
+			//- 				});
+			//- 				if(cnt == shopList.length -1){
+			//- 					dfd.resolve();
+			//- 				}
+			//- 				cnt++;
+			//- 				callback();
+			//- 			}else { // 失敗した場合
+			//- 				alert(status);
+			//- 			}
+			//- 		});
+			//- 
+			//- 	});
+			//- 	return dfd.promise();
+			//- }
+			//- // 非同期処理を並列化
+			//- $.when(
+			//- 	dfdGeocode()
+			//- ).done(function(position){
+			//- 	//- console.log(shopCode);
+			//- 	//- console.log(shopHoge);
+			//- 	let map;
+			//- 	let googleMap = function(){
+			//- 		$.each(shopList, function(index, val){
+			//- 			//- console.log(index + ' :   ' + shopList[index].shopname + ' :   ' + shopCode[index].lat);
+			//- 			if(index == 0){
+			//- 				let myOptions = {
+			//- 					zoom: 18, /*拡大比率*/
+			//- 					center: shopCode[index], /*表示枠内の中心点*/
+			//- 					mapTypeControlOptions: { mapTypeIds: ['sample', google.maps.MapTypeId.ROADMAP] }
+			//- 				};
+			//- 				map = new google.maps.Map(document.getElementById('js-googleMap_'), myOptions);
+			//- 				/*取得スタイルの貼り付け*/
+			//- 				let styleOptions = [
+			//- 					{
+			//- 						'stylers': [
+			//- 							{ 'saturation': -100 },
+			//- 							{ 'visibility': 'simplified' },
+			//- 							{ 'lightness': 22 }
+			//- 						]
+			//- 					}
+			//- 				];
+			//- 				let styledMapOptions = { name: 'STOCKNOW仕様' }
+			//- 				let sampleType = new google.maps.StyledMapType(styleOptions, styledMapOptions);
+			//- 				map.mapTypes.set('sample', sampleType);
+			//- 				map.setMapTypeId('sample');
+			//- 			}
+			//- 			// googleMapを書き込む
+			//- 			markup(shopCode[index],val.shopname,map);
+			//- 		});
+			//- 	}
+			//- 	google.maps.event.addDomListener(window, 'load', googleMap);
+			//- 
+			//- 	$('.shopList li .shopMapActive').on('click',function(){
+			//- 		let eq = $(this).parents('li').index();
+			//- 		console.log(eq);
+			//- 		map.panTo(new google.maps.LatLng(shopCode[eq]));
+			//- 	})
+			//- })
+			//- function markup(LATLNG, SHOPNAME, MAP){
+			//- 	/*アイコン設定▼*/
+			//- 	let icon = {
+			//- 		url: '/img/cmn/icon_googlemap.png',
+			//- 		scaledSize : new google.maps.Size(51.5,65.5)
+			//- 	}
+			//- 	let markerOptions = {
+			//- 		position: LATLNG,
+			//- 		map: MAP,
+			//- 		icon: icon,
+			//- 		title: SHOPNAME
+			//- 	};
+			//- 	let marker = new google.maps.Marker(markerOptions);
+			//- }
 		</script>
 	</body>
 </html>

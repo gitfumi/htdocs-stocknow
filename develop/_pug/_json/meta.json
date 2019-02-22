@@ -2,7 +2,7 @@
   "/": {
     "siteName":"すとっくなぅ（STOCKNOW）",
     "pageName":"アンカレッジの樹木葬トップ",
-    "title":"おしゃれな手土産ギフト、ご褒美ギフトなら STOCKNOW",
+    "title":"質のいい手土産 と 質のいいファッション情報サイト！！ STOCKNOW",
     "description":"ワンランクアップの手土産ギフトや、自分用のお取り寄せ、ご褒美ギフト探しならSTOCKNOW！おしゃれな最新スイーツやグルメ情報をお届けします。",
     "twitterId":"",
     "ogImage":"https://stocknow.info/img/cmn/pic_ogp.jpg"
@@ -23,7 +23,12 @@
     "ogImage": ""
   },
   "/entry/ringo.html": {
-    "title": "日本から海外まで店舗を構える！クロッカンシュー ザクザク",
+    "title": "出来立てが味わえる！「カスタードアップルパイ」専門店。RINGO",
+    "description": "",
+    "ogImage": ""
+  },
+  "/entry/pressbuttersand.html": {
+    "title": " あの「BAKE」が手掛けたバターサンド！「PRESS BUTTER SAND（プレスバターサンド）」",
     "description": "",
     "ogImage": ""
   },
