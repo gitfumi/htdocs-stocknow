@@ -19,6 +19,7 @@ html {
 body {
   height: 100%;
   background-color: #FDFDFD;
+  background-image: url(/img/cmn/bg.png);
   color: #333;
   font-size: 1.4rem;
   font-family: "Noto Sans Japanese", sans-serif;
