@@ -1151,20 +1151,20 @@ html {
 /* ---------------------------------------------------------
  *	記事一覧
  *---------------------------------------------------------- */
-.c-item_list > div > a {
+.c-item_list > * > a {
   display: block;
   position: relative;
 }
 
-.c-item_list > div > a::before {
+.c-item_list > * > a::before {
   content: '';
 }
 
-.c-item_list > div > a:hover .c-item_listPic img {
+.c-item_list > * > a:hover .c-item_listPic img {
   opacity: .7;
 }
 
-.c-item_list > div > a:hover .c-item_listPic::before {
+.c-item_list > * > a:hover .c-item_listPic::before {
   right: 50%;
   opacity: 1;
 }
@@ -1228,12 +1228,12 @@ html {
           justify-content: space-between;
 }
 
-.c-item_list.is-3block > div {
+.c-item_list.is-3block > * {
   -ms-flex-preferred-size: 31%;
       flex-basis: 31%;
 }
 
-.c-item_list.is-3block > div:nth-of-type(n+4) {
+.c-item_list.is-3block > *:nth-of-type(n+4) {
   margin-top: 30px;
 }
 
@@ -1241,11 +1241,11 @@ html {
   .c-item_list .c-item_listTxt {
     font-size: 1.3rem;
   }
-  .c-item_list.is-3block > div {
+  .c-item_list.is-3block > * {
     -ms-flex-preferred-size: 48%;
         flex-basis: 48%;
   }
-  .c-item_list.is-3block > div:nth-of-type(n+3) {
+  .c-item_list.is-3block > *:nth-of-type(n+3) {
     margin-top: 30px;
   }
 }

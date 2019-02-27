@@ -4,7 +4,7 @@
  *	記事一覧
  *----------------------------------------------------------
 .c-item_list
-  >div >a
+  >* >a
     display: block
     position: relative
     &::before
@@ -55,7 +55,7 @@
     display: flex
     flex-wrap: wrap
     justify-content: space-between
-    >div
+    >*
       flex-basis: 31%
       &:nth-of-type(n+4)
         margin-top: $sectionMargin/2
@@ -63,7 +63,7 @@
     .c-item_listTxt
       font-size: 1.3rem
     &.is-3block
-      >div
+      >*
         flex-basis: 48%
         &:nth-of-type(n+3)
           margin-top: $sectionMargin/2
