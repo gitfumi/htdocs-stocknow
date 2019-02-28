@@ -59,6 +59,10 @@
       flex-basis: 31%
       &:nth-of-type(n+4)
         margin-top: $sectionMargin/2
+    &::after
+      content: ""
+      display: block
+      width: 30%
   +media(minipc)
     .c-item_listTxt
       font-size: 1.3rem

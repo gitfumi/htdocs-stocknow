@@ -48,11 +48,16 @@
     padding: $sectionMargin/2
   .header_item
     padding: $sectionMargin/2
-    div.c-item_list >div
+    div.c-item_list >*
       margin-top: 20px
+      &:nth-of-type(n+4),.c-tag_list
+        display: none
   .header_tag
     border-top: 1px solid $baseBorderColor
     padding: $sectionMargin/2
+    >ul
+      & + .header_advertise
+        margin-top: $sectionMargin/2
   .header_subNav
     border-top: 1px solid $baseBorderColor
     >ul
@@ -68,8 +73,8 @@
           padding: 10px
           font-size: 1.2rem
           display: flex
-  .header_advertise
-    margin-top: $sectionMargin/2
+      & + .header_advertise
+        margin-top: $sectionMargin/2
   +media(minipc)
     max-width: 200px
     .header_logo
@@ -79,15 +84,20 @@
       max-width: 200px
     .header_nav,.header_item,.header_tag
       padding: $sectionMargin/3
+    .header_tag
+      >ul
+        & + .header_advertise
+          margin-top: $sectionMargin/3
     .header_item
-      div.c-item_list >div
+      div.c-item_list >*
         margin-top: 10px
-    .header_advertise
-      margin-top: $sectionMargin/3
-    .header_subNav >ul >li
-      flex-basis: 100%
-      &:nth-of-type(even)
-        border-right: none
+    .header_subNav >ul
+      >li
+        flex-basis: 100%
+        &:nth-of-type(even)
+          border-right: none
+      & + .header_advertise
+        margin-top: $sectionMargin/3
   +media(tablet)
     max-width: 260px
     z-index: 1

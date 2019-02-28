@@ -3,30 +3,20 @@ header#header
 	div.header_logo: a(href="/") STOCK NOW
 	div.header_inner#js-perfectScrollbar
 		nav.header_nav
-			p.m-titleType01 #[span MENU] メニュー
-			ul
-				li: a(href="/") #[span メニュー1]
-				li: a(href="/") #[span メニュー2]
+			//- p.m-titleType01 #[span MENU] メニュー
+			//- ul
+			//- 	li: a(href="/") #[span メニュー1]
+			//- 	li: a(href="/") #[span メニュー2]
 			div.header_advertise: a(href="/"): img(src="https://placehold.it/300x250" alt="")
 		div.header_flexibleArea
 			section.header_item
 				h2.m-titleType01 #[span RECOMMEND] グルメ
 				div.c-item_list
-					div: a(href="/entry/butterbutler.html")
-						p.c-item_listPic: img(src="/cms/item/img/pic_butterbutler_01.png" alt="")
-						p.c-item_listDate 2019.00.00
-						p.c-item_listTxt バターが主役の洋菓子！バターバトラーのバターフィナンシェ
-					div: a(href="/entry/pressbuttersand.html")
-						p.c-item_listPic: img(src="/cms/item/img/pic_pressbuttersand_01.jpg" alt="")
-						p.c-item_listDate 2019.00.00
-						p.c-item_listTxt  あの「BAKE」が手掛けたバターサンド！「PRESS BUTTER SAND（プレスバターサンド）」
+					//#include virtual="/_inc/list_foods.html"
 			section.header_item
 				h2.m-titleType01 #[span PICKUP] ファッション
 				div.c-item_list
-					div: a(href="/entry/tiamo77.html")
-						p.c-item_listPic: img(src="/cms/item/img/pic_tiamo77_01.jpg" alt="")
-						p.c-item_listDate 2019.00.00
-						p.c-item_listTxt 《#77》2019 春夏スタート！ティアモのゲキ推しアイテムプレビュー
+					//#include virtual="/_inc/list_tiamo.html"
 		section.header_tag
 			h2.m-titleType01 #[span WORD] 人気ワード
 			ul.c-tag_list
