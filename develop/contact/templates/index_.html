@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+		<!--#include virtual="/_inc/gtm_head.html"-->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>サイトマップ</title>
+		<!--#include virtual="/_inc/head_meta_name.html"-->
+		<meta name="description" content="">
+		<meta property="og:title" content="サイトマップ">
+		<meta property="og:description" content="">
+		<meta property="og:url" content="https://www.exa-corp.co.jp/sitemap/index.html">
+		<meta property="og:image" content="https://www.exa-corp.co.jp/img/common/og-image.jpg">
+		<!--#include virtual="/_inc/head_meta_property.html"-->
+		<!--#include virtual="/_inc/head_link.html"-->
+		<link rel="stylesheet" href="/css/p_sitemap.css">
+	</head>
+	<body class="p-sitemap" id="p-sitemap">
+		<!--#include virtual="/_inc/gtm_body.html"-->
+		<!--#include virtual="/_inc/header.html"-->
+		<div id="contents">
+			<main id="main">
+				<section class="main_inner">
+					<h1 class="mainvisual_ttl"><span>《#77》2019 春夏スタート！<br>ティアモのゲキ推しアイテムプレビュー（後編）</span></h1>
+					<section>
+						<p>STOCKNOWに関するお問い合わせはこちらからお願いします。<br>また、個人で運営しているため返信まで少々お時間をいただきますこと、予めご了承くださいませ。</p>
+						<form action="confirm.php" method="post">
+							<div class="formField">
+								<div class="fieldItem js-formItem">
+									<p class="itemHead is-require"><span class="js-formItemLabel">お名前</span></p>
+									<div class="itemCont js-formItemBody">
+										<input class="js-validate js-required" type="text" name="name" autocomplete="name" placeholder="ストック太郎" maxlength="100" value="&lt;?php echo hsc($name);?&gt;">
+									</div>
+								</div>
+								<div class="fieldItem js-formItem">
+									<p class="itemHead is-require"><span class="js-formItemLabel">メールアドレス</span></p>
+									<div class="itemCont js-formItemBody">
+										<div class="itemGroup">
+											<input class="js-validate js-required js-email js-emailCheck js-alphabet" name="email" type="text" autocomplete="email" placeholder="例：stocknow@stocknow.co.jp" maxlength="100" value="&lt;?php echo hsc($email);?&gt;">
+										</div>
+										<p class="itemGroup">※半角英数字でご入力ください</p>
+									</div>
+								</div>
+								<div class="fieldItem js-formItem">
+									<p class="itemHead is-require"><span class="js-formItemLabel">お問い合わせの種類</span></p>
+									<div class="itemCont js-formItemBody">
+										<div class="itemGroup">
+											<div class="selectBox">
+												<select class="js-validate js-required" id="" name="type">
+													<option value="">選択して下さい</option>
+													<option value="サイトに関する質問" selected="<?php if($type=='サイトに関する質問') ? true : false; ?>">サイトに関する質問</option>
+													<option value="記事に関する間違い指摘・クレーム" selected="<?php if($type=='記事に関する間違い指摘・クレーム') ? true : false; ?>">記事に関する間違い指摘・クレーム</option>
+													<option value="広告の掲載依頼" selected="<?php if($type=='広告の掲載依頼') ? true : false; ?>">広告の掲載依頼</option>
+													<option value="その他" selected="<?php if($type=='その他') ? true : false; ?>">その他</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="fieldItem js-formItem">
+									<p class="itemHead is-require"><span class="js-formItemLabel">お問い合わせの内容</span></p>
+									<div class="itemCont js-formItemBody">
+										<div class="itemGroup">
+											<textarea class="js-validate js-required" name="inquiries" id="" cols="30" rows="10" maxlength="1000"><?php echo hsc($inquiries);?></textarea>
+										</div>
+									</div>
+								</div>
+							</div>
+							<ul class="formBtn">
+								<li class="m-btn is-next js-submit"><span><span>入力内容を確認する</span></span></li>
+							</ul>
+							<input type="hidden" name="ticketcontact" value="&lt;?php echo $ticketcontact; ?&gt;">
+						</form>
+					</section>
+				</section>
+			</main>
+			<!--#include virtual="/_inc/footer.html"-->
+		</div>
+		<!--#include virtual="/_inc/script.html"-->
+	</body>
+</html>

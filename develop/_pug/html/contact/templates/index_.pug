@@ -1,0 +1,63 @@
+extends /_pug/_inc/_layout
+
+//-
+	---------------------------------------------------------
+	ページ固有の変数を定義
+	---------------------------------------------------------
+append setVar
+	- layout = 'sitemap'
+	- pageUrl = '/sitemap/index.html'
+	- dirArray = createDirArray(pageUrl)
+	- bodyAttributes.id = 'p-sitemap'
+	- bodyAttributes.class = 'p-sitemap'
+
+//-
+	---------------------------------------------------------
+	ページ固有のCSSを読み込み
+	---------------------------------------------------------
+append css
+	link(rel="stylesheet" href="/css/p_sitemap.css")
+
+//-
+	---------------------------------------------------------
+	コンテンツ
+	---------------------------------------------------------
+block main
+
+	section.main_inner
+
+		h1.mainvisual_ttl: span 《#77》2019 春夏スタート！<br>ティアモのゲキ推しアイテムプレビュー（後編）
+
+		section
+			p STOCKNOWに関するお問い合わせはこちらからお願いします。<br>また、個人で運営しているため返信まで少々お時間をいただきますこと、予めご了承くださいませ。
+			form(action="confirm.php" method="post")
+				div.formField
+					div.fieldItem.js-formItem
+						p.itemHead.is-require #[span.js-formItemLabel お名前]
+						div.itemCont.js-formItemBody: input.js-validate.js-required(type="text" name="name" autocomplete="name" placeholder="ストック太郎" maxlength="100" value="<?php echo hsc($name);?>")
+					
+					div.fieldItem.js-formItem
+						p.itemHead.is-require #[span.js-formItemLabel メールアドレス]
+						div.itemCont.js-formItemBody
+							div.itemGroup: input.js-validate.js-required.js-email.js-emailCheck.js-alphabet(name="email" type="text" autocomplete="email" placeholder="例：stocknow@stocknow.co.jp" maxlength="100" value="<?php echo hsc($email);?>")
+							p.itemGroup ※半角英数字でご入力ください
+
+					div.fieldItem.js-formItem
+						p.itemHead.is-require #[span.js-formItemLabel お問い合わせの種類]
+						div.itemCont.js-formItemBody
+							div.itemGroup: div.selectBox
+								select.js-validate.js-required(id="" name="type")
+									option(value="") 選択して下さい
+									option(value="サイトに関する質問" selected!="<?php if($type=='サイトに関する質問') ? true : false; ?>") サイトに関する質問
+									option(value="記事に関する間違い指摘・クレーム" selected!="<?php if($type=='記事に関する間違い指摘・クレーム') ? true : false; ?>") 記事に関する間違い指摘・クレーム
+									option(value="広告の掲載依頼" selected!="<?php if($type=='広告の掲載依頼') ? true : false; ?>") 広告の掲載依頼
+									option(value="その他" selected!="<?php if($type=='その他') ? true : false; ?>") その他
+			
+					div.fieldItem.js-formItem
+						p.itemHead.is-require #[span.js-formItemLabel お問い合わせの内容]
+						div.itemCont.js-formItemBody
+							div.itemGroup: textarea.js-validate.js-required(name="inquiries" id="" cols="30" rows="10" maxlength="1000") <?php echo hsc($inquiries);?>
+							
+				ul.formBtn
+					li.m-btn.is-next.js-submit: span #[span 入力内容を確認する]
+				input(type="hidden" name="ticketcontact" value="<?php echo $ticketcontact; ?>")

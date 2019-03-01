@@ -368,8 +368,8 @@ html {
   border-bottom: 1px solid #e0e0e0;
 }
 
-#header .header_subNav > ul > li:nth-of-type(even) {
-  border-left: 1px solid #e0e0e0;
+#header .header_subNav > ul > li:nth-of-type(odd) {
+  border-right: 1px solid #e0e0e0;
 }
 
 #header .header_subNav > ul > li > a {
@@ -378,6 +378,14 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #000;
+  color: #fff;
+  font-weight: 700;
 }
 
 #header .header_subNav > ul + .header_advertise {
