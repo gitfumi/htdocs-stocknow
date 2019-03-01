@@ -31,19 +31,38 @@
     height: 160px
     max-width: $navWidth
     width: 100%
-    padding: 0 50px
     display: flex
     align-items: center
-    vertical-align: middle
     background-color: $baseBackgroundColor
     border-right: 1px solid $baseBorderColor
     border-bottom: 1px solid $baseBorderColor
     z-index: index($zIndex, headerLogo)
     transition: all .5s
-    font-family: $fontFamilyMetropolis
-    font-weight: 700
-    font-size: 3.0rem
-    line-height: 1.2
+    a
+      display: flex
+      flex-wrap: wrap
+      align-content: center
+      font-family: $fontFamilyZcool
+      justify-content: center
+      line-height: 1.2
+      em
+        color: $keyColor
+    .logo_main
+      font-size: 3.5rem
+    .logo_sub
+      margin-top: 3px
+      padding-top: 3px
+      font-size: 1.2rem
+      letter-spacing: 1.5px
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        width: 70%
+        left: 50%
+        transform: translateX(-50%)
+        border-top: 1px dashed #ccc
   .header_nav
     padding: $sectionMargin/2
   .header_item
@@ -110,10 +129,30 @@
     .header_logo
       max-width: 100%
       height: $spNavHeight
-      padding: 0 $sectionMargin/2
+      padding: 0 $sectionMargin/3
       background-color: rgba(#fff, .7)
       border-right: none
       border-bottom: 1px solid rgba($baseBorderColor, .3)
+      display: flex
+      align-items: center
+      a
+        display: flex
+        align-items: center
+        justify-content: flex-start
+      .logo_main
+        font-size: 3.2rem
+      .logo_sub
+        padding-left: 10px
+        margin-left: 10px
+        flex-basis: 80px
+        font-size: 1.0rem
+        padding-top: 0
+        &::before
+          width: auto
+          height: 100%
+          left: 0
+          transform: translateX(0)
+          border-left: 1px dashed #ccc
   +media(phablet)
 
 /* ---------------------------------------------------------
