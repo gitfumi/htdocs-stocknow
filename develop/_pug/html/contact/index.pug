@@ -5,33 +5,26 @@ extends /_pug/_inc/_layout
 	ページ固有の変数を定義
 	---------------------------------------------------------
 append setVar
-	- layout = 'home'
+	- layout = 'normal'
 	- pageUrl = '/'
 	- dirArray = createDirArray(pageUrl)
-	- bodyAttributes.id = 'p-home'
+	- bodyAttributes.id = 'p-normal'
 
 //-
 	---------------------------------------------------------
 	ページ固有のCSSを読み込み
 	---------------------------------------------------------
 append css
-	link(rel="stylesheet" href="/css/p_home.css")
+	link(rel="stylesheet" href="/css/p_normal.css")
 
 //-
 	---------------------------------------------------------
 	コンテンツ
 	---------------------------------------------------------
 block main
+	div.c-pageTitle
+		div.c-pageTitle_inner
+			h1.c-pageTitle_txt お問い合わせ
 
 	div.main_inner
-
-		// div.m-pageTitle
-			h1.m-pageTitle_txt 会社概要
-
-		div.item_box
-			div.c-item_list.is-3block
-				//#include virtual="/_inc/list_gourmet.html"
-			div.c-advertise: a(href="/"): img(src="https://placehold.it/728x90" alt="")
-			div.c-item_list.is-3block
-				//#include virtual="/_inc/list_fashion.html"
-			div.c-advertise: a(href="/"): img(src="https://placehold.it/728x90" alt="")
+		p 現在準備中です。完成までもうしばらくお待ちください。

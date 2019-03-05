@@ -91,7 +91,7 @@
 .entry_content
   .mokuji
     max-width: 780px
-    margin: 0 auto
+    margin: $sectionMargin auto 0
     border: 1px solid $baseBorderColor
     padding: $sectionMargin/2
   .mokuji_list
@@ -114,6 +114,7 @@
           text-decoration: none
   +media(phablet)
     .mokuji
+      margin-top: $sectionMargin/2
       padding: $sectionMargin/3
     .mokuji_list
       >li

@@ -13,13 +13,15 @@ var _perfect_scroll = _interopRequireDefault(require("./module/perfect_scroll.js
 
 var _menu_slide = _interopRequireDefault(require("./module/menu_slide.js"));
 
+var _share = _interopRequireDefault(require("./module/share.js"));
+
 var _ga_event_tracking = _interopRequireDefault(require("./module/ga_event_tracking.js"));
 
 var _on_media_query = _interopRequireDefault(require("./on_media_query.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./module/current_link.js":2,"./module/disable_tel_link.js":3,"./module/ga_event_tracking.js":4,"./module/glovalnav.js":5,"./module/menu_slide.js":6,"./module/perfect_scroll.js":7,"./module/scroll_anchor.js":8,"./on_media_query.js":9}],2:[function(require,module,exports){
+},{"./module/current_link.js":2,"./module/disable_tel_link.js":3,"./module/ga_event_tracking.js":4,"./module/glovalnav.js":5,"./module/menu_slide.js":6,"./module/perfect_scroll.js":7,"./module/scroll_anchor.js":8,"./module/share.js":9,"./on_media_query.js":10}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -129,7 +131,7 @@ var disableTelLink = function () {
 var _default = disableTelLink;
 exports.default = _default;
 
-},{"../ua.js":10}],4:[function(require,module,exports){
+},{"../ua.js":11}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -252,7 +254,7 @@ var menuSlide = function menuSlide() {
 var _default = menuSlide;
 exports.default = _default;
 
-},{"../valiable.js":11}],7:[function(require,module,exports){
+},{"../valiable.js":12}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -365,7 +367,30 @@ var scrollAnchor = function scrollAnchor(device) {
 var _default = scrollAnchor;
 exports.default = _default;
 
-},{"../ua.js":10}],9:[function(require,module,exports){
+},{"../ua.js":11}],9:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+// グローバルナビゲーションの表示、非表示
+var share = function () {
+  var pathname = location.pathname; // URLを取得しエンコードする
+
+  var snsUrl = encodeURIComponent('https://stocknow.info' + pathname);
+  $('.js-share li').each(function () {
+    var $a = $(this).find('a');
+    var link = $a.attr('href');
+    $a.attr('href', link + snsUrl);
+  });
+}();
+
+var _default = share;
+exports.default = _default;
+
+},{}],10:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -416,7 +441,7 @@ var onMediaQuery = function () {
 var _default = onMediaQuery;
 exports.default = _default;
 
-},{"./module/menu_slide.js":6,"./module/scroll_anchor.js":8}],10:[function(require,module,exports){
+},{"./module/menu_slide.js":6,"./module/scroll_anchor.js":8}],11:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -447,7 +472,7 @@ var ua = function () {
 var _default = ua;
 exports.default = _default;
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
