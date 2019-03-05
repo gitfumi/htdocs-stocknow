@@ -7,78 +7,73 @@
     "twitterId":"",
     "ogImage":"https://stocknow.info/img/cmn/pic_ogp.jpg"
   },
-  "/entry/butterbutler.html": {
-    "title": "バターが主役の洋菓子！バターバトラーのバターフィナンシェ",
+  "/gourmet/butterbutler.html": {
+    "title": "バターが主役の洋菓子！『バターバトラー』のバターフィナンシェ",
     "description": "",
     "ogImage": ""
   },
-  "/entry/bake.html": {
+  "/gourmet/bake.html": {
     "title": "カフェ併設の店舗は全国でたった1店舗！自由が丘のチーズタルト専門店『BAKE CHEESE TART』",
     "description": "",
     "ogImage": ""
   },
-  "/entry/zakuzaku.html": {
-    "title": "日本から海外まで店舗を構える！クロッカンシュー ザクザク",
+  "/gourmet/zakuzaku.html": {
+    "title": "日本から海外まで店舗を構える！『クロッカンシュー ザクザク』",
     "description": "",
     "ogImage": ""
   },
-  "/entry/ringo.html": {
-    "title": "出来立てが味わえる！「カスタードアップルパイ」専門店。RINGO",
+  "/gourmet/ringo.html": {
+    "title": "出来立てが味わえる！カスタードアップルパイ専門店『RINGO』",
     "description": "",
     "ogImage": ""
   },
-  "/entry/pressbuttersand.html": {
-    "title": " あの「BAKE」が手掛けたバターサンド！「PRESS BUTTER SAND（プレスバターサンド）」",
+  "/gourmet/pressbuttersand.html": {
+    "title": " あの「BAKE」が手掛けたバターサンド！『PRESS BUTTER SAND（プレスバターサンド）』",
     "description": "",
     "ogImage": ""
   },
-  "/entry/dou.html": {
+  "/gourmet/dou.html": {
     "title": "dou",
-    "description": "",
+    "description": "誰も食べたことのない和菓子、生どら焼き専門店『DOU（ドウ）』",
     "ogImage": ""
   },
-  "/entry/pogg.html": {
+  "/gourmet/pogg.html": {
     "title": "pogg",
     "description": "",
     "ogImage": ""
   },
-  "/entry/chocolaphil.html": {
+  "/gourmet/chocolaphil.html": {
     "title": "CHOCOLAPHIL",
     "description": "",
     "ogImage": ""
   },
-  "/entry/tiamo78.html": {
+  "/fashion/tiamo78.html": {
     "title": "《#78》バブるバブればバブる時！春のバブアーも別注で決めろ！",
     "description": "",
     "ogImage": ""
   },
-  "/entry/tiamo77.html": {
+  "/fashion/tiamo77.html": {
     "title": "《#77》2019 春夏スタート！ティアモのゲキ推しアイテムプレビュー（後編）",
     "description": "",
     "ogImage": ""
   },
-  "/entry/tiamo76.html": {
+  "/fashion/tiamo76.html": {
     "title": "《#76》2019 春夏スタート！ティアモのゲキ推しアイテムプレビュー（前編）",
     "description": "",
     "ogImage": ""
   },
-  "/entry/tiamo75.html": {
+  "/fashion/tiamo75.html": {
     "title": "《#75》ティアモチルドレンを探せ！（大宮店編）",
     "description": "",
     "ogImage": ""
   },
-  "/entry/tiamo74.html": {
+  "/fashion/tiamo74.html": {
     "title": "《#74》メンズバイヤーティアモ！フィレンツェから愛を込めて(後編)",
     "description": "",
     "ogImage": ""
   },
-  "/entry/tiamo73.html": {
+  "/fashion/tiamo73.html": {
     "title": "《#73》メンズバイヤーティアモ！フィレンツェから愛を込めて(前編)",
-    "description": "",
-    "ogImage": ""
-  },
-  "/sitemap/index.html": {
-    "title": "サイトマップ",
     "description": "",
     "ogImage": ""
   }

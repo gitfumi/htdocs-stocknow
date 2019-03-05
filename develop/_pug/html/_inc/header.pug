@@ -1,8 +1,12 @@
 header#header
 	div.header_logo.is-zcool: a(href="/")
 		p.logo_main STOCK NOW #[em .]
-		p.logo_sub Stock many quality items<em>.</em>
+		p.logo_sub Stock many quality items.
 	div.header_inner#js-perfectScrollbar
+		article.header_info
+			h2.m-titleType01 #[span NEWS] お知らせ
+			ul
+				li #[span 2019.03.01]<br>サイトをリニューアルしました！今後も質の良い手土産と新たにファッション関する情報もお届けいたします。
 		nav.header_nav
 			//- p.m-titleType01 #[span MENU] メニュー
 			//- ul
@@ -13,20 +17,20 @@ header#header
 			section.header_item
 				h2.m-titleType01 #[span RECOMMEND] グルメ
 				div.c-item_list
-					//#include virtual="/_inc/list_foods.html"
+					//#include virtual="/_inc/list_gourmet.html"
 			section.header_item
 				h2.m-titleType01 #[span PICKUP] ファッション
 				div.c-item_list
-					//#include virtual="/_inc/list_tiamo.html"
+					//#include virtual="/_inc/list_fashion.html"
 		section.header_tag
-			h2.m-titleType01 #[span WORD] 人気ワード
-			ul.c-tag_list
-				li: a(href="/") #[span タグ1]
-				li: a(href="/") #[span タグあああああ]
-				li: a(href="/") #[span タグ3]
-				li: a(href="/") #[span タグｆｆｆ]
-				li: a(href="/") #[span タグ5]
-				li: a(href="/") #[span タグ6]
+			//- h2.m-titleType01 #[span WORD] 人気ワード
+			//- ul.c-tag_list
+			//- 	li: a(href="/") #[span タグ1]
+			//- 	li: a(href="/") #[span タグあああああ]
+			//- 	li: a(href="/") #[span タグ3]
+			//- 	li: a(href="/") #[span タグｆｆｆ]
+			//- 	li: a(href="/") #[span タグ5]
+			//- 	li: a(href="/") #[span タグ6]
 			div.header_advertise: a(href="/"): img(src="https://placehold.it/300x250" alt="")
 		nav.header_subNav
 			ul

@@ -1,4 +1,9 @@
-head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#")
+if pageUrl == '/'
+	- var ogptype = 'website'
+else
+	- var ogptype = 'article'
+
+head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# " + ogptype + ": http://ogp.me/ns/" + ogptype + "#")
 	//#include virtual="/_inc/gtm_head.html"
 	meta(charset="utf-8")
 	meta(http-equiv="X-UA-Compatible" content="IE=edge")
@@ -12,6 +17,7 @@ head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.
 		meta(property="og:image" content=meta[pageUrl].ogImage)
 	else
 		meta(property="og:image" content=site.url + site.ogImage)
+	meta(property="og:type" content=ogptype)
 	//#include virtual="/_inc/head_meta_property.html"
 	//#include virtual="/_inc/head_link.html"
 	block css

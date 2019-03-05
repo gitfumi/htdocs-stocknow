@@ -1,0 +1,114 @@
+extends /_pug/_inc/_layout
+
+//-
+	---------------------------------------------------------
+	ページ固有の変数を定義
+	---------------------------------------------------------
+append setVar
+	- layout = 'entry'
+	- pageUrl = '/gourmet/ringo.html'
+	- dirArray = createDirArray(pageUrl)
+	- bodyAttributes.id = 'p-entry'
+	- bodyAttributes.class = 'p-ringo.g-gourmet'
+
+//-
+	---------------------------------------------------------
+	ページ固有のCSSを読み込み
+	---------------------------------------------------------
+append css
+	link(rel="stylesheet" href="/css/p_entry.css")
+
+//-
+	---------------------------------------------------------
+	コンテンツ
+	---------------------------------------------------------
+block main
+
+	article.main_inner
+
+		header.entry_header
+			div.mainvisual
+				p.mainvisual_pic: img(src="/gourmet/img/pic_ringo_01.jpg" alt="")
+				p.mainvisual_date 2019.03.04
+				h1.mainvisual_ttl: span 出来立てが味わえる！<br>「カスタードアップルパイ」専門店。RINGO
+			ul.c-tag_list
+				li: a(href="/") #[span タグ1]
+				li: a(href="/") #[span タグあああああ]
+
+
+		div.c-advertise: a(href="/"): img(src="https://placehold.it/728x90" alt="")
+
+		div.entry_content
+			div.mokuji
+				p.m-titleType03 目次
+				ul.mokuji_list
+					li: a(href="#anchor01") 「カスタードアップルパイ」RINGOって？
+					li: a(href="#anchor02") 「期間限定商品」焼きたてチョコカスタードアップルパイの新フレーバーが登場
+					li: a(href="#anchor03") 「カスタードアップルパイ」RINGOの店舗一覧
+
+			section.entry_section#anchor01
+				h2.m-titleType02 「カスタードアップルパイ」RINGOって？
+				div.entry_pic.m-bySide.is-2block
+					div: img(src="/gourmet/img/pic_ringo_sub01.jpg" alt="")
+					div: img(src="/gourmet/img/pic_ringo_sub02.jpg" alt="")
+				p.entry_txt お菓子職人が日夜、工房にこもって作り続けた結果できたご褒美スイーツが「焼きたてカスタードアップルパイ」RINGOです。<br>店舗で焼き上げ、いつでも出来たてのアップルパイをご提供しています。<br>たっぷりのカスタードクリームとサクサク食感のパイ生地、そしてゴロゴロとはいったリンゴフィリングが特徴のアップルパイです。
+
+			section.entry_section#anchor02
+				h2.m-titleType02 「期間限定商品」焼きたてチョコカスタードアップルパイの新フレーバーが登場
+				div.entry_pic.m-bySide.is-2block
+					div: img(src="/gourmet/img/pic_ringo_sub03.jpg" alt="")
+					div: img(src="/gourmet/img/pic_ringo_sub04.jpg" alt="")
+				p.entry_txt 「焼きたてチョコカスタードアップルパイ」は、フルーティーなリンゴと、クーベルチュールチョコレートを混ぜ込んだチョコレートカスタードクリームを使用した期間限定フレーバーです。パイ生地にはココアパウダーを練り込み、少し苦みのあるビターな感じに仕上がっています。販売期間は2019年1月23日(水)〜2月14日(木) 。
+
+			section.entry_section#anchor03
+				h2.m-titleType02 「カスタードアップルパイ」RINGOの店舗一覧
+				section.entry_shop
+					div.m-bySide.is-3block.shop_list
+						section
+							h4.shop_name 池袋店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/XB8RkBDXMbN2") 東京都豊島区南池袋1-28-2 JR池袋駅1
+							p.shop_time 10:00 ~ 22:00
+						section
+							h4.shop_name 京王モール新宿店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/jdv2rqA4KmB2") 東京都新宿区西新宿１丁目南口地下街１号京王モール
+							p.shop_time 10:00 ~ 21:00
+						section
+							h4.shop_name 東京ミッドタウン日比谷店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/8Yyd29LrGJv") 東京都千代田区有楽町1- 1-2 東京ミッドタウン日比谷地下1階 B105
+							p.shop_time 11:00 ~ 21:00
+						section
+							h4.shop_name 立川駅店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/sEuZEFAvefD2") 東京都立川市曙町2-1-1 JR立川駅構内
+							p.shop_time 10:00 ~ 22:00<br>土日祝；10:00 ~ 21:00
+						section
+							h4.shop_name 川崎店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/GNGs7tMQrK82") 神奈川県川崎市川崎区砂子1-3-1 ウィング川崎1F
+							p.shop_time 10:00 ~ 21:00
+						section
+							h4.shop_name 大宮駅店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/rhej2Jrqh1x") 埼玉県さいたま市大宮区錦町630　JR中央改札、東口近く
+							p.shop_time 10:00 ~ 22:00
+						section
+							h4.shop_name 東武船橋店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/pkS17CcB4sF2") 千葉県船橋市本町7-1-1 1F
+							p.shop_time 10:00 ~ 20:30<br>土日祝；10:00 ~ 19:30
+						section
+							h4.shop_name ルクア大阪店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/PE6ukYZkYcm") 大阪府大阪市北区梅田 3-1-3 ルクア B1F
+							p.shop_time 10:00 ~ 21:00
+						section
+							h4.shop_name 天神地下街店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/aJQpMRjtC282") 福岡市中央区天神2丁目2号229（西4番街）
+							p.shop_time 9:00 ~ 21:00
+						section
+							h4.shop_name 岡山一番街店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/PpRsG3q4KHq") 岡山県岡山市北区駅元町一番街地下（区画41）
+							p.shop_time 10:00 ~ 20:00
+						section
+							h4.shop_name アミュプラザおおいた店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/rTveRAGq2422") 大分県大分市要町1-40（JR大分駅直結）
+							p.shop_time 9:30 ~ 21:00
+
+
+		//#include virtual="/_inc/entry_sns.html"
+		//#include virtual="/_inc/relation_gourmet.html"

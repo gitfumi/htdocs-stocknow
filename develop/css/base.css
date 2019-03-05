@@ -322,6 +322,23 @@ html {
   border-top: 1px dashed #ccc;
 }
 
+#header .header_info {
+  padding: 30px;
+}
+
+#header .header_info > ul li {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+#header .header_info > ul li span {
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #c0c0c0;
+  font-family: "Metropolis", sans-serif;
+}
+
 #header .header_nav {
   padding: 30px;
 }
@@ -403,7 +420,7 @@ html {
   #header .header_inner {
     max-width: 200px;
   }
-  #header .header_nav, #header .header_item, #header .header_tag {
+  #header .header_nav, #header .header_item, #header .header_tag, #header .header_info {
     padding: 20px;
   }
   #header .header_tag > ul + .header_advertise {
@@ -1351,9 +1368,7 @@ html {
  *	タグ一覧
  *---------------------------------------------------------- */
 .c-tag_list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
