@@ -2,79 +2,84 @@
   "/": {
     "siteName":"すとっくなぅ（STOCKNOW）",
     "pageName":"アンカレッジの樹木葬トップ",
-    "title":"質のいい手土産 と 質のいいファッション情報サイト！！ STOCKNOW",
-    "description":"ワンランクアップの手土産ギフトや、自分用のお取り寄せ、ご褒美ギフト探しならSTOCKNOW！おしゃれな最新スイーツやグルメ情報をお届けします。",
+    "title":"『質のいいおしゃれな手土産ギフト』と『最新のトレンドファッション』の情報サイト！！ STOCKNOW",
+    "description":"周りと差がつく見た目・センスのイイ手土産ギフトと20代〜40代向けの今話題のトレンドファッション情報サイトです。手土産ギフトではお取り寄せも扱って商品もありますので、自分へのご褒美ギフトにもお使いいただけます。",
     "twitterId":"",
     "ogImage":"https://stocknow.info/img/cmn/pic_ogp.jpg"
   },
+  "/_error/404.html": {
+    "title": "お探しのページは見つかりませんでした。",
+    "description": "申し訳ございません、お探しのページは見つかりませんでした。STOCKNOWではセンスのイイおしゃれな手土産ギフトと最新トレンドファッション情報をお届けしています。",
+    "ogImage": ""
+  },
   "/gourmet/butterbutler.html": {
     "title": "バターが主役の洋菓子！『バターバトラー』のバターフィナンシェ",
-    "description": "",
+    "description": "ワンランク上の手土産ギフトに最適！濃厚バターフィナンシェ『バターバトラー』。STOCKNOWでは各お店の店舗や催事場情報も日々更新しておりますのでブックマークサイトとしてもご活用いただけます！",
     "ogImage": ""
   },
   "/gourmet/bake.html": {
     "title": "カフェ併設の店舗は全国でたった1店舗！自由が丘のチーズタルト専門店『BAKE CHEESE TART』",
-    "description": "",
+    "description": "チーズタルト専門店『BAKE CHEESE TART』はおしゃれな手土産ギフトに最適。STOCKNOWではセンスのイイおしゃれな手土産ギフトと最新トレンドファッション情報をお届けしています。",
     "ogImage": ""
   },
   "/gourmet/zakuzaku.html": {
     "title": "日本から海外まで店舗を構える！『クロッカンシュー ザクザク』",
-    "description": "",
+    "description": "ワンランク上の手土産ギフトに最適！濃厚バターフィナンシェ『バターバトラー』。STOCKNOWではセンスのイイおしゃれな手土産ギフトと最新トレンドファッション情報をお届けしています。",
     "ogImage": ""
   },
   "/gourmet/ringo.html": {
     "title": "出来立てが味わえる！カスタードアップルパイ専門店『RINGO』",
-    "description": "",
+    "description": "ワンランク上の手土産ギフトに最適！濃厚バターフィナンシェ『バターバトラー』。STOCKNOWではセンスのイイおしゃれな手土産ギフトと最新トレンドファッション情報をお届けしています。",
     "ogImage": ""
   },
   "/gourmet/pressbuttersand.html": {
     "title": " あの「BAKE」が手掛けたバターサンド！『PRESS BUTTER SAND（プレスバターサンド）』",
-    "description": "",
+    "description": "ワンランク上の手土産ギフトに最適！濃厚バターフィナンシェ『バターバトラー』。STOCKNOWではセンスのイイおしゃれな手土産ギフトと最新トレンドファッション情報をお届けしています。",
     "ogImage": ""
   },
   "/gourmet/dou.html": {
-    "title": "dou",
-    "description": "誰も食べたことのない和菓子、生どら焼き専門店『DOU（ドウ）』",
+    "title": "誰も食べたことのない和菓子、生どら焼き専門店『DOU（ドウ）』",
+    "description": "ワンランク上の手土産ギフトに最適！濃厚バターフィナンシェ『バターバトラー』。STOCKNOWではセンスのイイおしゃれな手土産ギフトと最新トレンドファッション情報をお届けしています。",
     "ogImage": ""
   },
   "/gourmet/pogg.html": {
     "title": "pogg",
-    "description": "",
+    "description": "ワンランク上の手土産ギフトに最適！濃厚バターフィナンシェ『バターバトラー』。STOCKNOWではセンスのイイおしゃれな手土産ギフトと最新トレンドファッション情報をお届けしています。",
     "ogImage": ""
   },
   "/gourmet/chocolaphil.html": {
     "title": "CHOCOLAPHIL",
-    "description": "",
+    "description": "ワンランク上の手土産ギフトに最適！濃厚バターフィナンシェ『バターバトラー』。STOCKNOWではセンスのイイおしゃれな手土産ギフトと最新トレンドファッション情報をお届けしています。",
     "ogImage": ""
   },
   "/fashion/tiamo78.html": {
     "title": "《#78》バブるバブればバブる時！春のバブアーも別注で決めろ！",
-    "description": "",
+    "description": "ワンランク上の手土産ギフトに最適！濃厚バターフィナンシェ『バターバトラー』。STOCKNOWではセンスのイイおしゃれな手土産ギフトと最新トレンドファッション情報をお届けしています。",
     "ogImage": ""
   },
   "/fashion/tiamo77.html": {
     "title": "《#77》2019 春夏スタート！ティアモのゲキ推しアイテムプレビュー（後編）",
-    "description": "",
+    "description": "ワンランク上の手土産ギフトに最適！濃厚バターフィナンシェ『バターバトラー』。STOCKNOWではセンスのイイおしゃれな手土産ギフトと最新トレンドファッション情報をお届けしています。",
     "ogImage": ""
   },
   "/fashion/tiamo76.html": {
     "title": "《#76》2019 春夏スタート！ティアモのゲキ推しアイテムプレビュー（前編）",
-    "description": "",
+    "description": "ワンランク上の手土産ギフトに最適！濃厚バターフィナンシェ『バターバトラー』。STOCKNOWではセンスのイイおしゃれな手土産ギフトと最新トレンドファッション情報をお届けしています。",
     "ogImage": ""
   },
   "/fashion/tiamo75.html": {
     "title": "《#75》ティアモチルドレンを探せ！（大宮店編）",
-    "description": "",
+    "description": "ワンランク上の手土産ギフトに最適！濃厚バターフィナンシェ『バターバトラー』。STOCKNOWではセンスのイイおしゃれな手土産ギフトと最新トレンドファッション情報をお届けしています。",
     "ogImage": ""
   },
   "/fashion/tiamo74.html": {
     "title": "《#74》メンズバイヤーティアモ！フィレンツェから愛を込めて(後編)",
-    "description": "",
+    "description": "ワンランク上の手土産ギフトに最適！濃厚バターフィナンシェ『バターバトラー』。STOCKNOWではセンスのイイおしゃれな手土産ギフトと最新トレンドファッション情報をお届けしています。",
     "ogImage": ""
   },
   "/fashion/tiamo73.html": {
     "title": "《#73》メンズバイヤーティアモ！フィレンツェから愛を込めて(前編)",
-    "description": "",
+    "description": "ワンランク上の手土産ギフトに最適！濃厚バターフィナンシェ『バターバトラー』。STOCKNOWではセンスのイイおしゃれな手土産ギフトと最新トレンドファッション情報をお届けしています。",
     "ogImage": ""
   }
 }

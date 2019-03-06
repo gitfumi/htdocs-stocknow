@@ -1,0 +1,30 @@
+extends /_pug/_inc/_layout
+
+//-
+	---------------------------------------------------------
+	ページ固有の変数を定義
+	---------------------------------------------------------
+append setVar
+	- layout = 'normal'
+	- pageUrl = '/'
+	- dirArray = createDirArray(pageUrl)
+	- bodyAttributes.id = 'p-normal'
+
+//-
+	---------------------------------------------------------
+	ページ固有のCSSを読み込み
+	---------------------------------------------------------
+append css
+	link(rel="stylesheet" href="/css/p_normal.css")
+
+//-
+	---------------------------------------------------------
+	コンテンツ
+	---------------------------------------------------------
+block main
+	div.c-pageTitle
+		div.c-pageTitle_inner
+			h1.c-pageTitle_txt STOCKNOWについて
+
+	div.main_inner
+		p 現在準備中です。完成までもうしばらくお待ちください。

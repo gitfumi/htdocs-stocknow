@@ -13,7 +13,7 @@ const config = require('../config');
 module.exports = {
 	taskCopy: done =>{
 		let escapelist = [
-			config.root.src + '/**/*.*',
+			config.root.src + '/**/*.*'
 		];
 		// 除外ファイルを整列
 		for (var i = 0; i < config.copy.escapeFile.length; i++) {
