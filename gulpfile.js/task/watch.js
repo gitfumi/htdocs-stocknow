@@ -74,6 +74,7 @@ module.exports = {
 		// 	pugList[i] = config.root.src + '/**' + config.pug.targetFile[i]
 		// }
 		const w_pug = $.gulp.watch(config.root.src + '/**' + config.pug.targetFile, new_pug.taskPug);
+		const w_pugJson = $.gulp.watch(config.root.src + '/_pug/_json/*.json', new_pug.taskPugAll);
 
 		// frontnote
 		let frontnoteList = [];

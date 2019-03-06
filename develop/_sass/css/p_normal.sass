@@ -8,5 +8,17 @@
  *----------------------------------------------------------
 #p-normal #main
   .main_inner
-    padding: $sectionMargin 0
+  .normal_block
+    margin-top: $sectionMargin
+  .normal_ttl
+    font-size: 1.8rem
+    font-weight: bold
+    em
+      color: $keyColor
+  .normal_txt
+    margin-top: $sectionMargin/6
   +media(phablet)
+    .normal_block
+      margin-top: $sectionMargin/2
+    .normal_ttl
+      font-size: 1.6rem

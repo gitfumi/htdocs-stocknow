@@ -1,1 +1,1 @@
-@charset "UTF-8";#p-normal #main .main_inner{padding:60px 0}
+@charset "UTF-8";#p-normal #main .normal_block{margin-top:60px}#p-normal #main .normal_ttl{font-size:1.8rem;font-weight:700}#p-normal #main .normal_ttl em{color:#e60012}#p-normal #main .normal_txt{margin-top:10px}@media only screen and (max-width:480px){#p-normal #main .normal_block{margin-top:30px}#p-normal #main .normal_ttl{font-size:1.6rem}}

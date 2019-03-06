@@ -63,7 +63,9 @@ module.exports = {
 	 pug.js
 	********************/
 	pug: {
-		targetFile: '/_pug/**/*.pug'
+		targetFile: [
+			'/_pug/html/**/*.pug'
+		]
 	},
 	/*******************
 	 imagemin.js

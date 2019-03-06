@@ -6,7 +6,7 @@ extends /_pug/_inc/_layout
 	---------------------------------------------------------
 append setVar
 	- layout = 'normal'
-	- pageUrl = '/_error/404.html'
+	- pageUrl = '/about/index.html'
 	- dirArray = createDirArray(pageUrl)
 	- bodyAttributes.id = 'p-normal'
 
@@ -24,15 +24,8 @@ append css
 block main
 	div.c-pageTitle
 		div.c-pageTitle_inner
-			h1.c-pageTitle_txt お探しのページは見つかりませんでした。
+			h1.c-pageTitle_txt STOCKNOW 手土産・ファッション情報サイトについて
 
 	div.main_inner
-		section
-			h2.m-subHeading #[em 『手土産・ファッション情報サイト。STOCKNOW』]を<br>閲覧いただきありがとうございます。</h2>
-			p.filedTxt 誠に申し訳ございませんが、お探しの情報が見つかりませんでした。
-			p.filedTxt お探しの情報は他のページへ移動したか、掲載期間終了のため閲覧できない可能性がございます。
-			p.filedTxt お手数おかけしますが、『おしゃれな手土産、お取り寄せギフト探し。STOCKNOW』のトップページへお戻りいただくか、下記コンテンツへアクセスし、情報をお求めください。
-
-
-
-
+		section.normal_block
+			p 現在ページを準備しております。完成までもうしばらくお待ちください。

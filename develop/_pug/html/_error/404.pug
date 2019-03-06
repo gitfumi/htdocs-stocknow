@@ -6,7 +6,7 @@ extends /_pug/_inc/_layout
 	---------------------------------------------------------
 append setVar
 	- layout = 'normal'
-	- pageUrl = '/'
+	- pageUrl = '/_error/404.html'
 	- dirArray = createDirArray(pageUrl)
 	- bodyAttributes.id = 'p-normal'
 
@@ -24,7 +24,19 @@ append css
 block main
 	div.c-pageTitle
 		div.c-pageTitle_inner
-			h1.c-pageTitle_txt STOCKNOWについて
+			h1.c-pageTitle_txt お探しの情報が見つかりませんでした。
 
 	div.main_inner
-		p 現在準備中です。完成までもうしばらくお待ちください。
+		section.normal_block
+			h2.normal_ttl #[em おしゃれな手土産ギフトとトレンドファッションの情報サイト『STOCKNOW』]を<br>閲覧いただきありがとうございます。
+			p.normal_txt 誠に申し訳ございませんが、お探しの情報が見つかりませんでした。
+			p.normal_txt お探しの情報は他のページへ移動したか、掲載期間終了のため閲覧できない可能性がございます。
+			p.normal_txt お手数をおかけしますがトップページへお戻りいただくか、下記コンテンツより情報をお求めください。
+			
+		div.item_box
+			div.c-item_list.is-3block.is-2nd
+				//#include virtual="/_inc/list_gourmet.html"
+			div.c-advertise: a(href="/"): img(src="https://placehold.it/728x90" alt="")
+			div.c-item_list.is-3block.is-2nd
+				//#include virtual="/_inc/list_fashion.html"
+			div.c-advertise: a(href="/"): img(src="https://placehold.it/728x90" alt="")
