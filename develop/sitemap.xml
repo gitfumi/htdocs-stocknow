@@ -22,32 +22,42 @@
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>http://192.168.1.60:3000/gourmet/butterbutler.html</loc>
+	<loc>https://stocknow.info/gourmet/butterbutler.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>http://192.168.1.60:3000/gourmet/bake.html</loc>
+	<loc>https://stocknow.info/gourmet/bake.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>http://192.168.1.60:3000/gourmet/zakuzaku.html</loc>
+	<loc>https://stocknow.info/gourmet/zakuzaku.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>http://192.168.1.60:3000/gourmet/ringo.html</loc>
+	<loc>https://stocknow.info/gourmet/ringo.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>http://192.168.1.60:3000/gourmet/pressbuttersand.html</loc>
+	<loc>https://stocknow.info/gourmet/pressbuttersand.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>http://192.168.1.60:3000/fashion/tiamo76.html</loc>
+	<loc>https://stocknow.info/gourmet/dou.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
+	<loc>https://stocknow.info/gourmet/pogg.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
+	<loc>https://stocknow.info/fashion/tiamo76.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
