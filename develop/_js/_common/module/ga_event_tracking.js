@@ -8,6 +8,7 @@ let gaEventTracking = (function() {
 		console.log('gaLabel:' + data.gaLabel);
 		console.log('gaCount:' + data.gaCount);
 		// ga('send','event',data.gaGroup,data.gaAction,data.gaLabel, data.gaCount);
+		return
 	});
 }());
 export default gaEventTracking;
