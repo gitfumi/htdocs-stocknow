@@ -57,6 +57,21 @@
 	<priority>0.80</priority>
 </url>
 <url>
+	<loc>https://stocknow.info/gourmet/chocolaphil.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
+	<loc>https://stocknow.info/gourmet/flippers-pancake.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
+	<loc>https://stocknow.info/gourmet/floweryflour.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
 	<loc>https://stocknow.info/fashion/tiamo76.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
