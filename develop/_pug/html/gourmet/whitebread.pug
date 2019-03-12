@@ -1,0 +1,268 @@
+extends /_pug/_inc/_layout
+
+//-
+	---------------------------------------------------------
+	ページ固有の変数を定義
+	---------------------------------------------------------
+append setVar
+	- layout = 'entry'
+	- pageUrl = '/gourmet/whitebread.html'
+	- dirArray = createDirArray(pageUrl)
+	- bodyAttributes.id = 'p-entry'
+	- bodyAttributes.class = 'p-whitebread.g-gourmet'
+
+//-
+	---------------------------------------------------------
+	ページ固有のCSSを読み込み
+	---------------------------------------------------------
+append css
+	link(rel="stylesheet" href="/css/p_entry.css")
+
+//-
+	---------------------------------------------------------
+	コンテンツ
+	---------------------------------------------------------
+block main
+
+	article.main_inner
+
+		header.entry_header
+			div.mainvisual
+				p.mainvisual_pic: img(src="/gourmet/img/pic_whitebread_01.jpg" alt="")
+				p.mainvisual_date 2019.03.12
+				h1.mainvisual_ttl: span 一度味わうとリピーター確実！<br>2019年 おすすめの差し入れ『生食パン」シリーズ
+			ul.c-tag_list
+				li: a(href="/") #[span タグ1]
+				li: a(href="/") #[span タグあああああ]
+				li: a(href="/") #[span タグ3]
+				li: a(href="/") #[span タグｆｆｆ]
+				li: a(href="/") #[span タグ5]
+				li: a(href="/") #[span タグ6]
+				li: a(href="/") #[span タグ3]
+				li: a(href="/") #[span タグｆｆｆ]
+				li: a(href="/") #[span タグ5]
+				li: a(href="/") #[span タグ6]
+
+		//#include virtual="/_inc/advertise780.html"
+
+		div.entry_content
+			div.mokuji
+				p.m-titleType03 目次
+				ul.mokuji_list
+					li: a(href="#anchor01") そのままでも、焼いても旨い！モチモチ感がたまらない『俺のBakery &amp; Cafe』
+					li: a(href="#anchor02") バターバトラーの店舗情報
+					li: a(href="#anchor03") バターバトラーの催事場・期間限定の販売店情報
+					li: a(href="#anchor04") バターガレットとバターシュガーケーキ
+
+			section.entry_section#anchor01
+				h2.m-titleType02 そのままでも、焼いても旨い！モチモチ感がたまらない『俺のBakery &amp; Cafe』
+				div.entry_pic.m-bySide.is-2block
+					div: img(src="/gourmet/img/pic_whitebread_sub01.jpg" alt="")
+					div: img(src="/gourmet/img/pic_whitebread_sub02.jpg" alt="")
+				p.entry_txt 「俺のBakery &amp; Cafe」の「俺の生食パン」は、「2017年度パン・オブ・ザイ・ヤー食パン部門」で金賞を受賞した人気パン！はまりすぎて私も「銀座の食パン～夢～」を毎週いただいております。。<br>「俺のBakery &amp; Cafe」の一番の特徴はパン自体の水分量が通常の食パンと比べてかなり多く、そのままでも焼いてもモッチモチ感が変わらないこと。パンはフワフワ・モチモチ好き！という方はぜひお試しください！<br>店舗によってはWEB予約を受け付けておりますので、心配な方はご予約してからお買い求めください。
+				section.entry_shop
+					h3.m-titleType04.shop_head #[span 俺のBakery &amp; Cafe] の店舗一覧
+					div.m-bySide.is-3block.shop_list.js-shop_list
+						section
+							h4.shop_name.js-shop_name 俺のGrill&amp;Bakery 大手町店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/5fC81ydQvFK2") 東京都千代田区大手町1-7-2　東京サンケイビル B2F
+							p.shop_time 10:00～21:00
+							p.shop_item 銀座の食パン～香～<br>銀座の食パン～夢～<br>山型の食パン<br>チョコレートとオレンジピール<br>3種のレーズン<br>世界三大有機ナッツの食パン
+						section
+							h4.shop_name.js-shop_name 俺のBakery&amp;Cafe 恵比寿店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/pa3JgZFBxTC2") 東京都渋谷区恵比寿4-20-6　恵比寿ガーデンプレイス　時計広場
+							p.shop_time 10:00～21:00
+							p.shop_item 銀座の食パン～香～<br>銀座の食パン～夢～<br>山型の食パン<br>マスカルポーネとはちみつ<br>チョコレートとアーモンド<br>クワトロフォルマッジ
+						section
+							h4.shop_name.js-shop_name 俺のBakery&amp;Cafe 松屋銀座 裏店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/qn729PRQp4L2") 東京都中央区銀座3-7-16　銀座NSビル1F・2F
+							p.shop_time 10:00～21:00
+							p.shop_item 銀座の食パン～香～<br>銀座の食パン～夢～<br>山型の食パン<br>トリュフ・トリュフ・トリュフ<br>マスカルポーネとはちみつ<br>チョコレートとラズベリー<br>イベリコチョリソーとチーズ<br>大納言<br>ミルクチョコとアーモンド
+						section
+							h4.shop_name.js-shop_name 俺のBakery&amp;Cafe 新宿京王モール店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/FUGpLDtJWjN2") 東京都新宿区西新宿1丁目 南口地下街1号 京王モールB1F
+							p.shop_time 平日；10:00~21:00<br>土日祝；10:00~20:30
+							p.shop_item バターフィナンシェ4・8・12・16入<br>バターガレット9・18入<br>キャラメルポット<br>バターシュガーケーキ
+						section
+							h4.shop_name.js-shop_name 俺のBakery&amp;Cafe 京橋中央通店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/wUKYWTYsFGB2") 大阪府泉南郡田尻町泉州空港中１番地 <br>Ｔ１　３Ｆ国際線制限エリア内 
+							p.shop_time 7:00～24:00
+							p.shop_item バターフィナンシェ8・12入<br>バターガレット9入<br>バターシュガーケーキ
+						section
+							h4.shop_name.js-shop_name 俺のBakery&amp;Cafe グランツリー武蔵小杉店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/7NJENxU9SAr") 東京都大田区羽田空港3-4-2 <br>羽田空港第二ターミナル2F <br>スマイルトーキョー内
+							p.shop_time 5:45～20:30
+							p.shop_item バターフィナンシェ4・8・12・16入<br>バターガレット9・18入<br>キャラメルポット
+						section
+							h4.shop_name.js-shop_name 俺のBakery&amp;Cafe 東銀座歌舞伎座前店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/4Jpegsd9ESR2") 東京都立川市曙町2-1-1 <br>ルミネ立川店1F スイーツゾーン
+							p.shop_time 平日；10:00~21:00<br>土日祝；10:00~20:30
+							p.shop_item バターフィナンシェ4・8・12・16入<br>バターガレット9・18入<br>キャラメルポット<br>バターシュガーケーキ
+						section
+							h4.shop_name.js-shop_name 俺のGrill&amp;Bakery 心斎橋店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/2reJoWwTS8M2") 大阪府大阪市中央区東心斎橋1-19-11 鰻谷スクエア1階
+							p.shop_time 11:00～21:00
+							p.shop_item 銀座の食パン～香～<br>銀座の食パン～夢～<br>山型の食パン<br>マスカルポーネとはちみつ<br>大納言<br>クワトロフォルマッジ<br>トリュフ・トリュフ・トリュフ※WEB予約限定
+
+			section.entry_section#anchor02
+				h2.m-titleType02 バターバトラーの店舗情報
+				p.entry_txt 今のところ店舗は新宿駅だけになります。場所はニューマン2階の駅中のスイーツエリア内にあるので、電車で乗り換えする際に購入することができます。<br>一番近い改札は甲州街道改札、新南改札、ミライナタワー改札。待ち時間はなく並んでいても3-5分程度で購入できると思います。
+				div.entry_mapIframe: iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.532522244609!2d139.69885701525894!3d35.68851108019259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cdaa2f26eed%3A0x210ebb2601e0efbe!2z44OQ44K_44O844OQ44OI44Op44O8!5e0!3m2!1sja!2sjp!4v1542194563786" width="1020" height="500" allowfullscreen)
+				div.entry_shop
+					div.m-bySide.is-2block.shop_list
+						section
+							h4.shop_name JR新宿駅構内 NEWoMan SHINJUKU 2F エキナカ
+							p.shop_pin 〒151-0051 東京都渋谷区千駄ヶ谷5-24-55　JR新宿駅構内 NEWoMan SHINJUKU 2F エキナカ
+							p.shop_time 8:00 ~ 22:00　※土日祝日 8:00 ~ 21:30
+						div
+							p 新南改札 ミライナタワー改札 付近<br>※駅構外からお越しの方は #[span.whitebread_att JRの入場券] が必要です
+				p.entry_txt 新宿駅以外の取り扱い店舗は海老名SAになり、東名高速道路「海老名SA」下りショッピングコーナーで購入できます。
+
+			section.entry_section#anchor03
+				h2.m-titleType02 バターバトラーの催事場・期間限定の販売店情報
+				section.entry_shop
+					h3.m-titleType04.shop_head #[span 3月] の期間限定 出店情報
+					div.m-bySide.is-3block.shop_list.js-shop_list
+						section
+							h4.shop_name.js-shop_name 関西国際空港　萬-YOROZU-
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/wUKYWTYsFGB2") 大阪府泉南郡田尻町泉州空港中１番地 <br>Ｔ１　３Ｆ国際線制限エリア内 
+							p.shop_date 22019/3/1～2019/5/31
+							p.shop_time 7:00～24:00
+							p.shop_item バターフィナンシェ8・12入<br>バターガレット9入<br>バターシュガーケーキ
+						section
+							h4.shop_name.js-shop_name 羽田空港第2ターミナル　スマイルトーキョー
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/7NJENxU9SAr") 東京都大田区羽田空港3-4-2 <br>羽田空港第二ターミナル2F <br>スマイルトーキョー内
+							p.shop_date 2018/9/1～
+							p.shop_time 5:45～20:30
+							p.shop_item バターフィナンシェ4・8・12・16入<br>バターガレット9・18入<br>キャラメルポット
+						section
+							h4.shop_name.js-shop_name ルミネ立川店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/4Jpegsd9ESR2") 東京都立川市曙町2-1-1 <br>ルミネ立川店1F スイーツゾーン
+							p.shop_date 2018/11/1～
+							p.shop_time 平日；10:00~21:00<br>土日祝；10:00~20:30
+							p.shop_item バターフィナンシェ4・8・12・16入<br>バターガレット9・18入<br>キャラメルポット<br>バターシュガーケーキ
+				//- div#js-googleMap(style="width:600px; height:300px")
+				p.entry_att 上記の催事場以外でも東京駅、品川駅などでも開催している場合もあるので、SNSなどでチェックしてみてください！
+
+
+			section.entry_section#anchor04
+				h2.m-titleType02 バターガレットとバターシュガーケーキ
+				div.m-bySide.is-2block
+					section
+						p.entry_pic: img(src="/gourmet/img/pic_whitebread_sub03.jpg" alt="")
+						h3.whitebread_txt #[span #[em THE BUTTER GALETTE] [バターガレット]]<br>フランス産発酵バター、ゲランド塩を使ったガレット。サクッ ホロッと口の中でほどける食感が特徴のフランス伝統菓子です。
+					section
+						p.entry_pic: img(src="/gourmet/img/pic_whitebread_sub04.jpg" alt="")
+						h3.whitebread_txt #[span #[em THE BUTTER SUGER CAKE] [バターシュガーケーキ]]<br>北海道産バターを贅沢に使った、バターの風味たっぷりのバターケーキ。表面のザラメのシャリシャリとした食感のおかげで、最後まで飽きずに食べ進められます。
+
+		//#include virtual="/_inc/entry_sns.html"
+		//#include virtual="/_inc/relation_gourmet.html"
+
+append script
+	script(src="//maps.googleapis.com/maps/api/js?key=AIzaSyD29DdDt14xcI-AuwSD8ZAHlKt6OKySBzc")
+	script.
+		//- let $list = $('.js-shop_list section'),
+		//- shopList = [];
+		//- // ショップリストの取得
+		//- for (let i = 0; i < $list.length; i++) {
+		//- 	shopList[i] = [];
+		//- 	shopList[i].shopname = $list.eq(i).find('.js-shop_name').text();
+		//- 	shopList[i].address = $list.eq(i).find('.js-shop_pin').text();
+		//- }
+		//- let shopCode = [];
+		//- let shopHoge = [];
+		//- // ショップリストの緯度経度を取得
+		//- function dfdGeocode(){
+		//- 	let addressJP,shopName;
+		//- 	let dfd = $.Deferred();
+		//- 	// Geocoderのインスタンスを生成
+		//- 	let geocoder = new google.maps.Geocoder();
+		//- 	// カウンター
+		//- 	let cnt = 0;
+		//- 	// 店舗数分マップに埋め込み
+		//- 	$.each(shopList, function(index, val){
+		//- 		addressJP = val.address;
+		//- 		shopName  = val.shopname;
+		//- 		shopHoge.push({
+		//- 			shp : shopName,
+		//- 			add : addressJP
+		//- 		});
+		//- 		geocoder.geocode({
+		//- 			'address': addressJP //ショップ
+		//- 		}, function(results, status, callback) { // 結果
+		//- 			if (status === google.maps.GeocoderStatus.OK) {
+		//- 				shopCode.push({
+		//- 					lat : results[0].geometry.location.lat(),	//緯度
+		//- 					lng : results[0].geometry.location.lng()	//経度
+		//- 				});
+		//- 				if(cnt == shopList.length -1){
+		//- 					dfd.resolve();
+		//- 				}
+		//- 				cnt++;
+		//- 				callback();
+		//- 			}else { // 失敗した場合
+		//- 				alert(status);
+		//- 			}
+		//- 		});
+		//- 
+		//- 	});
+		//- 	return dfd.promise();
+		//- }
+		//- // 非同期処理を並列化
+		//- $.when(
+		//- 	dfdGeocode()
+		//- ).done(function(position){
+		//- 	//- console.log(shopCode);
+		//- 	//- console.log(shopHoge);
+		//- 	let map;
+		//- 	let googleMap = function(){
+		//- 		$.each(shopList, function(index, val){
+		//- 			//- console.log(index + ' :   ' + shopList[index].shopname + ' :   ' + shopCode[index].lat);
+		//- 			if(index == 0){
+		//- 				let myOptions = {
+		//- 					zoom: 18, /*拡大比率*/
+		//- 					center: shopCode[index], /*表示枠内の中心点*/
+		//- 					mapTypeControlOptions: { mapTypeIds: ['sample', google.maps.MapTypeId.ROADMAP] }
+		//- 				};
+		//- 				map = new google.maps.Map(document.getElementById('js-googleMap_'), myOptions);
+		//- 				/*取得スタイルの貼り付け*/
+		//- 				let styleOptions = [
+		//- 					{
+		//- 						'stylers': [
+		//- 							{ 'saturation': -100 },
+		//- 							{ 'visibility': 'simplified' },
+		//- 							{ 'lightness': 22 }
+		//- 						]
+		//- 					}
+		//- 				];
+		//- 				let styledMapOptions = { name: 'STOCKNOW仕様' }
+		//- 				let sampleType = new google.maps.StyledMapType(styleOptions, styledMapOptions);
+		//- 				map.mapTypes.set('sample', sampleType);
+		//- 				map.setMapTypeId('sample');
+		//- 			}
+		//- 			// googleMapを書き込む
+		//- 			markup(shopCode[index],val.shopname,map);
+		//- 		});
+		//- 	}
+		//- 	google.maps.event.addDomListener(window, 'load', googleMap);
+		//- 
+		//- 	$('.shopList li .shopMapActive').on('click',function(){
+		//- 		let eq = $(this).parents('li').index();
+		//- 		console.log(eq);
+		//- 		map.panTo(new google.maps.LatLng(shopCode[eq]));
+		//- 	})
+		//- })
+		//- function markup(LATLNG, SHOPNAME, MAP){
+		//- 	/*アイコン設定▼*/
+		//- 	let icon = {
+		//- 		url: '/img/cmn/icon_googlemap.png',
+		//- 		scaledSize : new google.maps.Size(51.5,65.5)
+		//- 	}
+		//- 	let markerOptions = {
+		//- 		position: LATLNG,
+		//- 		map: MAP,
+		//- 		icon: icon,
+		//- 		title: SHOPNAME
+		//- 	};
+		//- 	let marker = new google.maps.Marker(markerOptions);
+		//- }
