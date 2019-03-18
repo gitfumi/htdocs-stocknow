@@ -77,6 +77,11 @@
 	<priority>0.80</priority>
 </url>
 <url>
+	<loc>https://stocknow.info/gourmet/daifuku.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
 	<loc>https://stocknow.info/fashion/tiamo76.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
@@ -88,6 +93,11 @@
 </url>
 <url>
 	<loc>https://stocknow.info/fashion/tiamo78.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
+	<loc>https://stocknow.info/fashion/tiamo79.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
