@@ -1471,6 +1471,32 @@ html {
   }
 }
 
+.c-item_list.is-fashion a::before, .c-item_list.is-fashion .c-item_listPic::after {
+  content: '';
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: 1;
+}
+
+.c-item_list.is-fashion a::before {
+  top: 10px;
+  right: 10px;
+  width: 45px;
+  height: 25px;
+  background-image: url(/fashion/img/logo_tiamo.png);
+}
+
+.c-item_list.is-fashion .c-item_listPic::after {
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 61px;
+  background-image: url(/fashion/img/logo_nano.png);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 /* ---------------------------------------------------------
  *	ページタイトル
  *---------------------------------------------------------- */

@@ -40,6 +40,37 @@
   position: relative;
 }
 
+.entry_header .mainvisual_pic span {
+  display: inline-block;
+  position: relative;
+}
+
+.entry_header .mainvisual_pic span::before, .entry_header .mainvisual_pic span::after {
+  content: '';
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: 1;
+}
+
+.entry_header .mainvisual_pic span::before {
+  top: 10px;
+  right: 10px;
+  width: 110px;
+  height: 61px;
+  background-image: url(/fashion/img/logo_tiamo.png);
+}
+
+.entry_header .mainvisual_pic span::after {
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 122px;
+  background-image: url(/fashion/img/logo_nano.png);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 .entry_header .mainvisual_pic::before {
   position: absolute;
   top: -90px;
@@ -54,6 +85,7 @@
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   opacity: 0.7;
+  z-index: 1;
 }
 
 .entry_header .mainvisual_episode {
@@ -96,6 +128,14 @@
   .entry_header .mainvisual_pic::before {
     top: -50px;
     font-size: 40px;
+  }
+  .entry_header .mainvisual_pic span::before {
+    width: 55px;
+    height: 30.5px;
+  }
+  .entry_header .mainvisual_pic span::after {
+    width: 88px;
+    height: 77px;
   }
 }
 

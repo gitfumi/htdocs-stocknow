@@ -73,3 +73,23 @@
         flex-basis: 48%
         &:nth-of-type(n+3)
           margin-top: $sectionMargin/2
+  &.is-fashion
+    a::before,.c-item_listPic::after
+      content: ''
+      position: absolute
+      background-repeat: no-repeat
+      background-size: 100%
+      z-index: 1
+    a::before
+      top: 10px
+      right: 10px
+      width: 45px
+      height: 25px
+      background-image: url(/fashion/img/logo_tiamo.png)
+    .c-item_listPic::after
+      top: 50%
+      left: 50%
+      width: 70px
+      height: 61px
+      background-image: url(/fashion/img/logo_nano.png)
+      transform: translate(-50%, -50%)
