@@ -76,7 +76,8 @@ module.exports = {
 		// pugのコンパイル
 		.pipe($.pug({
 			basedir: config.root.src,
-			pretty: '\t'
+			pretty: '\t',
+			doctype: 'html'
 		}))
 		.pipe($.gulp.dest(config.root.src));
 	}
