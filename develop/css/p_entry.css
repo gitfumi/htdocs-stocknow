@@ -616,6 +616,10 @@
   margin-top: 30px;
 }
 
+.entry_relation .relation_list > section:nth-of-type(n+7) {
+  display: none;
+}
+
 @media only screen and (max-width: 480px) {
   .entry_relation {
     margin-top: 60px;
