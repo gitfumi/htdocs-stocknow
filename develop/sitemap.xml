@@ -102,6 +102,11 @@
 	<priority>0.80</priority>
 </url>
 <url>
+	<loc>https://stocknow.info/gourmet/amysbakeshop.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
 	<loc>https://stocknow.info/fashion/tiamo76.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
