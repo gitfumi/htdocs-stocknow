@@ -822,3 +822,15 @@
   font-size: 1.6rem;
   font-weight: 700;
 }
+
+/* ---------------------------------------------------------
+ *	amysbakeshop
+ *---------------------------------------------------------- */
+.amysbakeshop_txt {
+  margin-top: 10px;
+}
+
+.amysbakeshop_txt span {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
