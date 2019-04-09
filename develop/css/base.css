@@ -463,8 +463,8 @@ html {
 }
 
 #header .header_subNav > ul > li > a {
-  padding: 10px;
-  font-size: 1.2rem;
+  padding: 10px 5px;
+  font-size: 1.1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -508,6 +508,9 @@ html {
   }
   #header .header_subNav > ul > li:nth-of-type(even) {
     border-right: none;
+  }
+  #header .header_subNav > ul > li > a {
+    font-size: 1.2rem;
   }
   #header .header_subNav > ul + .header_advertise {
     margin-top: 20px;

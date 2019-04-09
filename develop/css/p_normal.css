@@ -2,6 +2,15 @@
 /* ---------------------------------------------------------
  *	このサイトについて
  *---------------------------------------------------------- */
+#p-normal #main .c-pageTitle_txt em, #p-normal #main .m-titleType02 em {
+  font-family: "ZCOOL QingKe HuangYou", cursive;
+  letter-spacing: 2px;
+  font-size: 3.0rem;
+  margin-right: 10px;
+  font-weight: normal;
+  line-height: 1.0;
+}
+
 #p-normal #main .normal_block {
   margin-top: 60px;
 }
@@ -23,6 +32,20 @@
 #p-normal #main .normal_txt em {
   color: #fb246c;
   font-weight: bold;
+}
+
+#p-normal #main .normal_txt span {
+  font-family: "ZCOOL QingKe HuangYou", cursive;
+  letter-spacing: 2px;
+}
+
+#p-normal #main .normal_txt a {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+#p-normal #main .normal_txt a:hover {
+  text-decoration: none;
 }
 
 #p-normal #main .normal_list li {
@@ -55,6 +78,9 @@
 }
 
 @media only screen and (max-width: 480px) {
+  #p-normal #main .c-pageTitle_txt em, #p-normal #main .m-titleType02 em {
+    font-size: 2.4rem;
+  }
   #p-normal #main .normal_block {
     margin-top: 30px;
   }

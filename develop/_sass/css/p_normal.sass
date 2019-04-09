@@ -7,7 +7,13 @@
  *	このサイトについて
  *----------------------------------------------------------
 #p-normal #main
-	.main_inner
+	.c-pageTitle_txt em,.m-titleType02 em
+		font-family: $fontFamilyZcool
+		letter-spacing: 2px
+		font-size: 3.0rem
+		margin-right: 10px
+		font-weight: normal
+		line-height: 1.0
 	.normal_block
 		margin-top: $sectionMargin
 	.normal_ttl
@@ -21,6 +27,14 @@
 		em
 			color: #fb246c
 			font-weight: bold
+		span
+			font-family: $fontFamilyZcool
+			letter-spacing: 2px
+		a
+			text-decoration: underline
+			font-weight: 700
+			&:hover
+				text-decoration: none
 	.normal_list li
 		margin-top: 10px
 		position: relative
@@ -44,6 +58,8 @@
 			border-right: 1px solid #000
 			transform: rotate(45deg)
 	+media(phablet)
+		.c-pageTitle_txt em,.m-titleType02 em
+			font-size: 2.4rem
 		.normal_block
 			margin-top: $sectionMargin/2
 		.normal_ttl

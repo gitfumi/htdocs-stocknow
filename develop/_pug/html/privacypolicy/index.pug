@@ -1,0 +1,39 @@
+extends /_pug/_inc/_layout
+
+//-
+	---------------------------------------------------------
+	ページ固有の変数を定義
+	---------------------------------------------------------
+append setVar
+	- layout = 'normal'
+	- pageUrl = '/privacypolicy/index.html'
+	- dirArray = createDirArray(pageUrl)
+	- bodyAttributes.id = 'p-normal'
+
+//-
+	---------------------------------------------------------
+	ページ固有のCSSを読み込み
+	---------------------------------------------------------
+append css
+	link(rel="stylesheet" href="/css/p_normal.css")
+
+//-
+	---------------------------------------------------------
+	コンテンツ
+	---------------------------------------------------------
+block main
+	div.c-pageTitle
+		div.c-pageTitle_inner
+			h1.c-pageTitle_txt プライバシーポリシーについて
+
+	div.main_inner
+		section.normal_block
+			h2.m-titleType02 個人情報の管理について
+			p.normal_txt 「#[span STOCK NOW] 手土産・ファッション情報サイト」(以下、総称して「当サイト」)は、取得した個人情報を、お問い合わせいただいた内容についての確認・相談、情報提供のためのメール送信（返信）の目的以外には使用しません。また知り得た個人情報を第三者に開示することは、警察裁判所など公的機関からの書面をもった請求以外に一切利用いたしません。
+		section.normal_block
+			h2.m-titleType02 当サイトに掲載されている広告について
+			p.normal_txt 当サイトでは、以下の第三者配信の広告サービスを利用しています。<br>#[em GoogleAdsence、楽天アフィリエイト、A8.net、アクセストレード]
+			p.normal_txt これらの広告配信事業者は、ユーザーの興味に応じた広告を表示するために、当サイトや他サイトへのアクセスに関する「Cookie」（住所、氏名、電話番号、メールアドレスは含みません）を使用することがあります。<br>またGoogleAdsenceに関して、このプロセスの詳細やこのような情報が広告配信事業者に使用されないようにする方法については、#[a(href="https://support.google.com/ads/answer/2662922?hl=ja" target="_blank") こちら]をクリックしてご確認ください。
+		section.normal_block
+			h2.m-titleType02 当サイトが使用しているアクセス解析ツールについて
+			p.normal_txt 当サイトでは、Googleによるアクセス解析ツールの「GoogleAnalytics」を使用しています。GoogleAnalyticsはトラフィックデータ（※統計データ）の収集のためにCookieを使用してます。トラフィックデータは匿名で収集されており、個人を特定するものではありません。<br>この機能はCookieを無効にすることで収集を拒否することができますので、お使いのブラウザの設定をご確認ください。<br>この規約に関して、詳しくは#[a(href="https://www.google.com/analytics/terms/jp.html" target="_blank") こちら]をご確認ください。
