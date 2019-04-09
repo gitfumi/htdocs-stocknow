@@ -7,18 +7,44 @@
  *	このサイトについて
  *----------------------------------------------------------
 #p-normal #main
-  .main_inner
-  .normal_block
-    margin-top: $sectionMargin
-  .normal_ttl
-    font-size: 1.8rem
-    font-weight: bold
-    em
-      color: $keyColor
-  .normal_txt
-    margin-top: $sectionMargin/6
-  +media(phablet)
-    .normal_block
-      margin-top: $sectionMargin/2
-    .normal_ttl
-      font-size: 1.6rem
+	.main_inner
+	.normal_block
+		margin-top: $sectionMargin
+	.normal_ttl
+		font-size: 1.8rem
+		font-weight: bold
+		em
+			color: $keyColor
+	.normal_txt
+		margin-top: $sectionMargin/6
+		line-height: 2.0
+		em
+			color: #fb246c
+			font-weight: bold
+	.normal_list li
+		margin-top: 10px
+		position: relative
+		counter-increment: cnt
+		padding-left: 40px
+		&:before
+			content: counter(cnt) '.'
+			position: absolute
+			top: 0
+			left: 0
+			font-size: 20px
+			font-family: $fontFamilySaira
+			font-weight: bold
+		&:after
+			content: ''
+			position: absolute
+			top: 10px
+			left: 0px
+			width: 20px
+			height: 20px
+			border-right: 1px solid #000
+			transform: rotate(45deg)
+	+media(phablet)
+		.normal_block
+			margin-top: $sectionMargin/2
+		.normal_ttl
+			font-size: 1.6rem
