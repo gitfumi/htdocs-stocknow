@@ -29,7 +29,7 @@ block main
 		header.entry_header
 			div.mainvisual
 				p.mainvisual_pic: img(src="/gourmet/img/pic_otoemon_01.jpg" alt="Amy's Bakeshop")
-				p.mainvisual_date 2019.04.10
+				p.mainvisual_date 2019.04.11
 				h1.mainvisual_ttl: span 400gの栗がぎっしり詰まったパウンドケーキ！<br>足立音衛門の「栗のテリーヌ」
 			ul.c-tag_list
 				li: a(href="/") #[span タグ1]
@@ -43,8 +43,8 @@ block main
 				p.m-titleType03 目次
 				ul.mokuji_list
 					li: a(href="#anchor01") 栗好きにはたまらない足立音衛門の焼菓子
-					li: a(href="#anchor02") おすすめの焼き菓子6選！！
-					li: a(href="#anchor03") お菓子の「書籍」と「お菓子作りスクール」
+					li: a(href="#anchor02") おすすめのパウンドケーキ4選！！
+					li: a(href="#anchor03") 足立音衛門の店舗情報
 
 			section.entry_section#anchor01
 				h2.m-titleType02 栗好きにはたまらない足立音衛門の焼菓子
@@ -52,48 +52,77 @@ block main
 					div: img(src="/gourmet/img/pic_otoemon_sub01.jpg" alt="足立音衛門の「栗のテリーヌ」")
 					div: img(src="/gourmet/img/pic_otoemon_sub02.jpg" alt="足立音衛門の「栗のテリーヌ」")
 				p.entry_txt 田舎に帰ってきたような 懐かしさを感じる足立音衛門の焼菓子。丹波栗からイタリア栗まで栗にとことんこだわった栗菓子は一度食べると忘れられません！最高級品が1本1万円とお菓子ではあまり見ない価格帯ですが、絶対喜ばれる手土産間違いなしです。
-				div.entry_mapIframe: iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.7841411726795!2d139.59941541525953!3d35.706929180188304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018ee0e7f16f167%3A0x3c732507705f819d!2z44Ko44Kk44Of44O844K6IOODmeOCpOOCr-OCt-ODp-ODg-ODlw!5e0!3m2!1sja!2sjp!4v1554281103888!5m2!1sja!2sjp" width="1020" height="500" allowfullscreen)
-				div.entry_shop
-					div.m-bySide.is-2block.shop_list
-						section
-							h4.shop_name Amy's Bakeshop
-							p.shop_pin 〒167-0042 東京都杉並区西荻北２丁目２６−８ 1F
-							p.shop_time 11:00 ~ 19:00<br>※定休日：月曜/火曜（祝日の場合は営業）
-							p.shop_item キャロットケーキ、ブラウニー、ラムフルーツケーキ、ニューヨークチーズケーキ、マフィン、クッキー etc...
+				p.m-btn.js-gaEventTracking(data-ga-group="button" data-ga-action="click" data-ga-label="otoemon onlineshop" data-ga-count="1"): a(href="https://af.moshimo.com/af/c/click?a_id=1130206&p_id=54&pc_id=54&pl_id=27059&r_v=g00po0w3.9tq3e66f.g00po0w3.9tq3ff3f&s_v=&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fotoemon%2Fkuri14%2F" target="_blank") #[span オンラインショップはこちら]
 
 			section.entry_section#anchor02
-				h2.m-titleType02 おすすめの焼き菓子6選！！
+				h2.m-titleType02 おすすめのパウンドケーキ4選！！
 				div.m-bySide.is-2block
 					section
-						p.entry_pic: img(src="/gourmet/img/pic_amysbakeshop_sub03.jpg" alt="マフィン")
-						h3.amysbakeshop_txt #[span #[em Muffins] [マフィン]]<br>ベリー＆ベリー、レモン＆カスタード、バナナ＆チョコチップ、ブルーチーズ＆フィグ＆ソルト、オレンジ＆アーモンド、バター＆ソルトなど。
+						p.entry_pic: img(src="/gourmet/img/pic_otoemon_sub03.jpg" alt="栗のテリーヌ「天」")
+						h3.amysbakeshop_txt #[span [栗のテリーヌ「天」]]<br>主役は丹波栗。音衛門のある丹波でとれた丹波栗。A品の中でもさらに粒のきれいなものを選別し、おしみなく使っています。
+						p.m-btn.js-gaEventTracking(data-ga-group="button" data-ga-action="click" data-ga-label="otoemon onlineshop" data-ga-count="1"): a(href="https://af.moshimo.com/af/c/click?a_id=1130206&p_id=54&pc_id=54&pl_id=27059&r_v=g00po0w3.9tq3e66f.g00po0w3.9tq3ff3f&s_v=&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fotoemon%2Ften%2F" target="_blank") #[span オンラインショップで購入する]
 					section
-						p.entry_pic: img(src="/gourmet/img/pic_amysbakeshop_sub04.jpg" alt="ニューヨークチーズケーキ")
-						h3.amysbakeshop_txt #[span #[em New York Cheesecake] [ニューヨークチーズケーキ]]<br>濃厚でなめらかな食感が持ち味のチーズケーキ。
+						p.entry_pic: img(src="/gourmet/img/pic_otoemon_sub04.jpg" alt="栗のテリーヌ")
+						h3.amysbakeshop_txt #[span [栗のテリーヌ]]<br>3種の栗が味わいに奥行きを。発酵バターを使用した生地に、国産の栗とヨーロッパ種の栗、アンデス栗（チリ産）の３種類の栗がぎっしり。
+						p.m-btn.js-gaEventTracking(data-ga-group="button" data-ga-action="click" data-ga-label="otoemon onlineshop" data-ga-count="1"): a(href="https://af.moshimo.com/af/c/click?a_id=1130206&p_id=54&pc_id=54&pl_id=27059&r_v=g00po0w3.9tq3e66f.g00po0w3.9tq3ff3f&s_v=&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fotoemon%2Fkuri4%2F" target="_blank") #[span オンラインショップで購入する]
 					section
-						p.entry_pic: img(src="/gourmet/img/pic_amysbakeshop_sub05.jpg" alt="ブラウニー")
-						h3.amysbakeshop_txt #[span #[em Brownies] [ブラウニー]]<br>ファッジタイプのブラウニー生地に、カカオニブとチョコレートチャンクの食感がアクセント。
+						p.entry_pic: img(src="/gourmet/img/pic_otoemon_sub05.jpg" alt="和栗のケーキ")
+						h3.amysbakeshop_txt #[span [和栗のケーキ]]<br>国内収穫、国内加工の栗がどこを切っても顔を出すよう焼き上げました。ほっこり和栗と、和三盆糖の上品さをお楽しみください。
+						p.m-btn.js-gaEventTracking(data-ga-group="button" data-ga-action="click" data-ga-label="otoemon onlineshop" data-ga-count="1"): a(href="https://af.moshimo.com/af/c/click?a_id=1130206&p_id=54&pc_id=54&pl_id=27059&r_v=g00po0w3.9tq3e66f.g00po0w3.9tq3ff3f&s_v=&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fotoemon%2Ffytj-k0079%2F" target="_blank") #[span オンラインショップで購入する]
 					section
-						p.entry_pic: img(src="/gourmet/img/pic_amysbakeshop_sub06.jpg" alt="バナナチョコレートブレッド")
-						h3.amysbakeshop_txt #[span #[em Banana Chocolate Bread] [バナナチョコレートブレッド]]<br>王道のバナナ＆チョコレートをより繊細に。
-					section
-						p.entry_pic: img(src="/gourmet/img/pic_amysbakeshop_sub07.jpg" alt="スコーン")
-						h3.amysbakeshop_txt #[span #[em Scones] [スコーン]]<br>100％全粒粉で作っています。粉の自然な甘みとクリスピーな食感を楽しんでください。プレーンとオートミールレーズン（土日祝のみ）。
-					section
-						p.entry_pic: img(src="/gourmet/img/pic_amysbakeshop_sub08.jpg" alt="マロンケーキ")
-						h3.amysbakeshop_txt #[span #[em Marron Cake] [マロンケーキ]]<br>栗の風味とコクが口に広がります。秋冬の季節にはとくに、ぜひ召し上がってください。
+						p.entry_pic: img(src="/gourmet/img/pic_otoemon_sub06.jpg" alt="音衛門のパウンドケーキ")
+						h3.amysbakeshop_txt #[span [音衛門のパウンドケーキ]]<br>音衛門の原点　シンプルなケーキに良質な素材の味わいで風味豊かな低水分の発酵バターや讃岐三谷家の手づくり和三盆糖など厳選素材を使用。
+						p.m-btn.js-gaEventTracking(data-ga-group="button" data-ga-action="click" data-ga-label="otoemon onlineshop" data-ga-count="1"): a(href="https://af.moshimo.com/af/c/click?a_id=1130206&p_id=54&pc_id=54&pl_id=27059&r_v=g00po0w3.9tq3e66f.g00po0w3.9tq3ff3f&s_v=&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fotoemon%2Ffytj-x0034%2F" target="_blank") #[span オンラインショップで購入する]
 
+			
 			section.entry_section#anchor03
-				h2.m-titleType02 お菓子の「書籍」と「お菓子作りスクール」
-				div.m-bySide.is-2block
-					section
-						p.entry_pic: img(src="/gourmet/img/pic_amysbakeshop_sub09.jpg" alt="書籍")
-						h3.amysbakeshop_txt #[span #[em BOOK] [書籍]]<br>家庭でも本格的な味を手軽に再現できるレシピを紹介されています。マフィンもケーキも、バターを使ったレシピとオイルを使ったレシピがあるので、風味や味の違いなど、幅広く楽しめます書籍になっています。
-					section
-						p.entry_pic: img(src="/gourmet/img/pic_amysbakeshop_sub10.jpg" alt="スクール")
-						h3.amysbakeshop_txt #[span #[em SCHOOL] [スクール]]<br>「Amy's Bakeshop」のお菓子の味をお伝えするビギナー向けの菓子教室です。数あるオリジナルレシピの中からひと月に1レシピのペースで、基本的で丁寧な手仕事をオーナー自らお教えてもらえます。
-				p.m-btn: a( target="_blank" href="https://www.amazon.co.jp/%E3%82%A8%E3%82%A4%E3%83%9F%E3%83%BC%E3%82%BA%E3%83%BB%E3%83%99%E3%82%A4%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97%E3%81%AE%E7%84%BC%E3%81%8D%E8%8F%93%E5%AD%90-%E5%90%89%E9%87%8E-%E9%99%BD%E7%BE%8E/dp/4058005599/ref=sxbs_sxwds-stvp?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&keywords=Amy%27s+Bakeshop&pd_rd_i=4058005599&pd_rd_r=e184d027-e67c-43ee-b972-77396f6197aa&pd_rd_w=71XTb&pd_rd_wg=KqGj3&pf_rd_p=59d97007-5b6e-4c2d-ab54-c66dfd5dfcb2&pf_rd_r=N1XZ4KXMFCZXFQGX81D8&qid=1554284161&s=books") #[span 本の購入はこちら「エイミーズ・ベイクショップの焼き菓子」]
-				p.m-btn: a( target="_blank" href="https://www.amazon.co.jp/Amys-Bakeshop%E3%83%8B%E3%83%A5%E3%83%BC%E3%83%A8%E3%83%BC%E3%82%AF%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%9E%E3%83%95%E3%82%A3%E3%83%B3%E3%81%A8%E3%82%B1%E3%83%BC%E3%82%AD-%E3%83%90%E3%82%BF%E3%83%BC%E3%81%A7%E4%BD%9C%E3%82%8B%E3%80%81%E3%82%AA%E3%82%A4%E3%83%AB%E3%81%A7%E4%BD%9C%E3%82%8B%E3%80%81%EF%BC%94%EF%BC%94%E3%83%AC%E3%82%B7%E3%83%94-%E5%90%89%E9%87%8E-%E9%99%BD%E7%BE%8E-ebook/dp/B01NCX24H1/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=1554284126&sr=1-1") #[span 本の購入はこちら「ニューヨークスタイルのマフィンとケーキ」]
+				h2.m-titleType02 足立音衛門の店舗情報
+				section.entry_shop
+					div.m-bySide.is-3block.shop_list.js-shop_list
+						section
+							h4.shop_name.js-shop_name 京都本店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/dYprzyfCZDF2") 京都府福知山市内記44-18
+							p.shop_time 9:00～18:30 
+						section
+							h4.shop_name.js-shop_name 大丸京都店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/BLfPRW6i6vr") 京都府京都市下京区四条通 高倉西入立売西町79 大丸京都店Ｂ１Ｆ
+							p.shop_time 9:00～18:30
+						section
+							h4.shop_name.js-shop_name 丹波鶴屋
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/7HYymAS8ukE2") 京都府福知山市字中ノ21番地
+							p.shop_time 11:00～16:00※定休日；月曜・木曜
+						section
+							h4.shop_name.js-shop_name 松屋銀座店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/HDWJJ8D3BpD2") 東京都中央区銀座3-6-1 松屋銀座B1F
+							p.shop_time 10:00～20:00 
+						section
+							h4.shop_name.js-shop_name 日本橋三越店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/4uzidE5jndv") 東京都中央区日本橋室町1-4-1 日本橋三越本店B1F
+							p.shop_time 9:00～18:30 
+						section
+							h4.shop_name.js-shop_name 西武池袋店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/CjtCnyxKAZ82") 東京都豊島区南池袋1-28-1 西武池袋本店B1F
+							p.shop_time 9:00～18:30 
+						section
+							h4.shop_name.js-shop_name そごう横浜店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/wpAZ3DUVtSB2") 神奈川県横浜市西区高島2-18-1 そごう横浜店B2F
+							p.shop_time 9:00～18:30 
+						section
+							h4.shop_name.js-shop_name 阪急うめだ店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/E4MwR8TQCyJ2") 大阪府大阪市北区角田町8-7 阪急百貨店うめだ本店Ｂ1F 大丸京都店Ｂ１Ｆ
+							p.shop_time 10:00～20:00<br>※金曜・土曜；10:00～21:00
+						section
+							h4.shop_name.js-shop_name 大丸札幌店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/j4SS6ogsd1z") 札幌市中央区北5条西4丁目7番地 大丸札幌店B1F
+							p.shop_time 10:00～20:00
+						section
+							h4.shop_name.js-shop_name 松坂屋名古屋店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/2VuoAvPCjj12") 名古屋市中区栄三丁目16-1 松坂屋名古屋店B1F
+							p.shop_time 9:00～18:30
+						section
+							h4.shop_name.js-shop_name ＪＲ名古屋高島屋店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/bS5L4Dscjx32") 名古屋市中村区名駅一丁目1-4 JR名古屋高島屋B1F
+							p.shop_time 9:00～18:30
 
 
 		//#include virtual="/_inc/entry_sns.html"
