@@ -834,3 +834,19 @@
   font-size: 1.6rem;
   font-weight: 700;
 }
+
+/* ---------------------------------------------------------
+ *	otoemon
+ *---------------------------------------------------------- */
+.otoemon_txt {
+  margin-top: 10px;
+}
+
+.otoemon_txt span {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.otoemon_btn {
+  margin-top: 20px;
+}
