@@ -201,6 +201,15 @@
   margin-top: 120px;
 }
 
+.entry_content .entry_ttl {
+  margin-top: 10px;
+}
+
+.entry_content .entry_ttl span {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
 .entry_content .entry_txt {
   margin-top: 30px;
   line-height: 2.0;
