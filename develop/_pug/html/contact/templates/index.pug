@@ -1,0 +1,68 @@
+extends /_pug/_inc/_layout_contact
+
+//-
+	---------------------------------------------------------
+	ページ固有の変数を定義
+	---------------------------------------------------------
+append setVar
+	- layout = 'normal'
+	- pageUrl = '/contact/templates/index.html'
+	- dirArray = createDirArray(pageUrl)
+	- bodyAttributes.id = 'p-normal'
+	- bodyAttributes.class = 'p-contact is-index'
+
+//-
+	---------------------------------------------------------
+	ページ固有のCSSを読み込み
+	---------------------------------------------------------
+append css
+	link(rel="stylesheet" href="/css/p_normal.css")
+
+//-
+	---------------------------------------------------------
+	コンテンツ
+	---------------------------------------------------------
+block main
+	div.c-pageTitle
+		div.c-pageTitle_inner
+			h1.c-pageTitle_txt お問い合わせ
+
+	div.main_inner
+		section.normal_block
+			p.contact_txt STOCKNOWに関するお問い合わせはこちらからお願いします。<br>また、お問い合わせの返信まで少々お時間をいただきますこと、予めご了承くださいませ。
+			div.formBody
+				form(action="confirm.php" method="post")
+					div.formField
+						div.fieldItem.js-formItem
+							p.itemHead.is-require #[span.js-formItemLabel お名前]
+							div.itemCont.js-formItemBody
+								p.itemGroup
+									|<input class="js-validate js-required js-symbol is-error" name="name" type="text" autocomplete="name" placeholder="例：ストック太郎" maxlength="100" value="<?php echo hsc($name);?>">
+						div.fieldItem.js-formItem
+							p.itemHead.is-require #[span.js-formItemLabel メールアドレス]
+							div.itemCont.js-formItemBody
+								p.itemGroup
+									|<input class="js-validate js-required js-email js-emailCheck js-alphabet" name="email" type="text" autocomplete="email" placeholder="例：stocknow@stocknow.co.jp" maxlength="100" value="<?php echo hsc($email);?>">
+								p.itemGroup ※半角英数字でご入力ください
+						div.fieldItem.js-formItem
+							p.itemHead.is-require #[span.js-formItemLabel お問い合わせの種類]
+							div.itemCont.js-formItemBody
+								div.itemGroup
+									div.selectBox
+										select.js-validate.js-required(name="type")
+											|<option value="">選択して下さい</option>
+											|<option value="サイトに関する質問" selected="<?php if($type=='サイトに関する質問'){echo 'selected';}?>">サイトに関する質問</option>
+											|<option value="記事に関する間違い指摘・クレーム" selected="<?php if($type=='記事に関する間違い指摘・クレーム'){echo 'selected';}?>">記事に関する間違い指摘・クレーム</option>
+											|<option value="広告の掲載依頼" selected="<?php if($type=='広告の掲載依頼'){echo 'selected';}?>">広告の掲載依頼</option>
+											|<option value="その他" selected="<?php if($type=='その他'){echo 'selected';}?>">その他</option>
+						div.fieldItem.js-formItem
+							p.itemHead.is-require #[span.js-formItemLabel お問い合わせの内容]
+							div.itemCont.js-formItemBody
+								div.itemGroup
+									textarea.js-validatejs-required(name="inquiries" cols="30" rows="10" maxlength="1000") <?php echo hscBr($inquiries);?>
+					ul.formBtn
+						li.m-btn.is-next.js-submit: span: span 入力内容を確認する
+					|<input type="hidden" name="ticketcontact" value="<?php echo $ticketcontact; ?>">
+						
+append script
+	script(src="/js/form_validation.js")

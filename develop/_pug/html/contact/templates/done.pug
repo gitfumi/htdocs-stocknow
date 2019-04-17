@@ -1,4 +1,4 @@
-extends /_pug/_inc/_layout
+extends /_pug/_inc/_layout_contact
 
 //-
 	---------------------------------------------------------
@@ -6,9 +6,10 @@ extends /_pug/_inc/_layout
 	---------------------------------------------------------
 append setVar
 	- layout = 'normal'
-	- pageUrl = '/'
+	- pageUrl = '/contact/templates/done.html'
 	- dirArray = createDirArray(pageUrl)
 	- bodyAttributes.id = 'p-normal'
+	- bodyAttributes.class = 'p-contact is-done'
 
 //-
 	---------------------------------------------------------
@@ -28,4 +29,11 @@ block main
 
 	div.main_inner
 		section.normal_block
-			p 現在ページを準備しております。完成までもうしばらくお待ちください。
+			//- p.contact_txt STOCKNOWに関するお問い合わせはこちらからお願いします。<br>また、お問い合わせの返信まで少々お時間をいただきますこと、予めご了承くださいませ。
+			div.formBody
+				p.formMessage #[em <?php if(strlen($usrcontact)>0){echo hsc($usrcontact) . ' さま';}?>]
+				p.formMessage この度は、お問い合わせいただきまして誠にありがとうございます。<br>内容を確認次第、改めてご連絡をさせていただきます。
+				p.m-btn: a(href="/"): span TOPへ戻る
+						
+append script
+	script(src="/js/form_validation.js")

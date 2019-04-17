@@ -4,7 +4,7 @@
 @import "../_tool/mixin/**"
 
 /* ---------------------------------------------------------
- *	このサイトについて
+ *	このサイトについて/プライバシーポリシーについて
  *----------------------------------------------------------
 #p-normal #main
 	.c-pageTitle_txt em,.m-titleType02 em
@@ -64,3 +64,127 @@
 			margin-top: $sectionMargin/2
 		.normal_ttl
 			font-size: 1.6rem
+
+/* ---------------------------------------------------------
+ *	お問い合わせ
+ *----------------------------------------------------------
+@-webkit-keyframes moveUp
+	0%
+		top: 10px
+		opacity: 0
+	100%
+		top: 0
+		opacity: 1
+@keyframes moveUp
+	0%
+		top: 10px
+		opacity: 0
+	100%
+		top: 0
+		opacity: 1
+#p-normal.p-contact #main
+	.normal_block
+		max-width: 800px
+		margin-left: auto
+		margin-right: auto
+	.fieldItem
+		margin-top: $sectionMargin/2
+		display: flex
+		// align-items: center
+		>*
+			flex-basis: 50%
+			padding: 0 10px
+	.itemHead
+		text-align: right
+		span
+			font-weight: 700
+			&::after
+				content: '：'
+	.formItemError
+		margin-top: 5px
+		color: $keyColor
+		padding-left: 30px
+		position: relative
+		animation: moveUp .3s both
+		&::before
+			content: '!'
+			position: absolute
+			top: 50%
+			left: 0
+			text-align: center
+			transform: translateY(-50%)
+			width: 20px
+			height: 20px
+			border-radius: 20px
+			background-color: $keyColor
+			color: #fff
+			// font-family: $fontFamilyZcool
+			font-weight: 700
+			font-size: 1.2rem
+	.formBtn
+		display: flex
+		justify-content: space-around
+		>*
+			flex-basis: 300px
+			margin: 0 10px
+		.m-btn
+			margin-top: 30px
+			a,span
+				max-width: 100%
+	+media(phablet)
+		.fieldItem
+			display: block
+			// margin-top: $sectionMargin/3
+			>*
+				padding: 0
+		.itemHead
+			text-align: left
+		.itemCont
+			margin-top: 10px
+
+/* ---------------------------------------------------------
+ *	お問い合わせ※入力
+ *----------------------------------------------------------
+#p-normal.p-contact.is-index #main
+	.itemHead
+		flex-basis: 200px
+		padding-top: 10px
+		&.is-require
+			padding-right: 50px
+			position: relative
+			&::before
+				content: '必須'
+				position: absolute
+				top: 10px
+				right: 0
+				background-color: $keyColor
+				color: #fff
+				font-size: 1.2rem
+				padding: 2px 10px
+				border-radius: 10px
+				// width: 60px
+	.itemCont
+		flex-basis: calc(100% - 200px)
+		input,select,textarea
+			width: 100%
+	+media(phablet)
+		.itemHead
+			padding-top: 0
+			&.is-require
+				padding-right: 0
+				padding-left: 50px
+				&::before
+					right: auto
+					top: 0
+					left: 0
+
+/* ---------------------------------------------------------
+ *	お問い合わせ※確認
+ *----------------------------------------------------------
+#p-normal.p-contact.is-done #main
+	.formMessage
+		em
+			font-size: 1.6rem
+			font-weight: 700
+		& + .formMessage
+			margin-top: $sectionMargin/2

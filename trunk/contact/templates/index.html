@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+		
+		<?php include(DIR_INC . 'gtm_head.html'); ?>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>お問い合わせ｜おしゃれな手土産ギフトと20代〜40代向けのファッション情報サイト</title>
+		<?php include(DIR_INC . 'head_meta_name.html'); ?>
+		<meta name="description" content="お問い合わせページです。STOCKNOWは周りと差がつく見た目・センスのイイ手土産ギフトと20代〜40代向けの今話題のトレンドファッション情報サイトです。手土産ギフトではお取り寄せも扱って商品もありますので、自分へのご褒美ギフトとしてもご利用いただけます。ファッションではコーディネートや小物の使い方などおしゃれになる情報が盛りだくさんです。">
+		<meta property="og:title" content="お問い合わせ｜おしゃれな手土産ギフトと20代〜40代向けのファッション情報サイト">
+		<meta property="og:description" content="お問い合わせページです。STOCKNOWは周りと差がつく見た目・センスのイイ手土産ギフトと20代〜40代向けの今話題のトレンドファッション情報サイトです。手土産ギフトではお取り寄せも扱って商品もありますので、自分へのご褒美ギフトとしてもご利用いただけます。ファッションではコーディネートや小物の使い方などおしゃれになる情報が盛りだくさんです。">
+		<meta property="og:url" content="https://stocknow.info/contact/templates/index.html">
+		<meta property="og:image" content="https://stocknow.info/img/common/og-image.jpg">
+		<meta property="og:type" content="article">
+		<?php include(DIR_INC . 'head_meta_property.html'); ?>
+		<?php include(DIR_INC . 'head_link.html'); ?>
+		<link rel="stylesheet" href="/css/p_normal.css">
+	</head>
+	<body class="p-contact is-index" id="p-normal">
+		<?php include(DIR_INC . 'gtm_body.html'); ?>
+		<?php include(DIR_INC . 'header_contact.html'); ?>
+		<div id="contents">
+			<main id="main">
+				<div class="c-pageTitle">
+					<div class="c-pageTitle_inner">
+						<h1 class="c-pageTitle_txt">お問い合わせ</h1>
+					</div>
+				</div>
+				<div class="main_inner">
+					<section class="normal_block">
+						<p class="contact_txt">STOCKNOWに関するお問い合わせはこちらからお願いします。<br>また、お問い合わせの返信まで少々お時間をいただきますこと、予めご了承くださいませ。</p>
+						<div class="formBody">
+							<form action="confirm.php" method="post">
+								<div class="formField">
+									<div class="fieldItem js-formItem">
+										<p class="itemHead is-require"><span class="js-formItemLabel">お名前</span></p>
+										<div class="itemCont js-formItemBody">
+											<p class="itemGroup"><input class="js-validate js-required js-symbol is-error" name="name" type="text" autocomplete="name" placeholder="例：ストック太郎" maxlength="100" value="<?php echo hsc($name);?>"></p>
+										</div>
+									</div>
+									<div class="fieldItem js-formItem">
+										<p class="itemHead is-require"><span class="js-formItemLabel">メールアドレス</span></p>
+										<div class="itemCont js-formItemBody">
+											<p class="itemGroup"><input class="js-validate js-required js-email js-emailCheck js-alphabet" name="email" type="text" autocomplete="email" placeholder="例：stocknow@stocknow.co.jp" maxlength="100" value="<?php echo hsc($email);?>"></p>
+											<p class="itemGroup">※半角英数字でご入力ください</p>
+										</div>
+									</div>
+									<div class="fieldItem js-formItem">
+										<p class="itemHead is-require"><span class="js-formItemLabel">お問い合わせの種類</span></p>
+										<div class="itemCont js-formItemBody">
+											<div class="itemGroup">
+												<div class="selectBox">
+													<select class="js-validate js-required" name="type">
+														<option value="">選択して下さい</option>
+														<option value="サイトに関する質問" selected="<?php if($type=='サイトに関する質問'){echo 'selected';}?>">サイトに関する質問</option>
+														<option value="記事に関する間違い指摘・クレーム" selected="<?php if($type=='記事に関する間違い指摘・クレーム'){echo 'selected';}?>">記事に関する間違い指摘・クレーム</option>
+														<option value="広告の掲載依頼" selected="<?php if($type=='広告の掲載依頼'){echo 'selected';}?>">広告の掲載依頼</option>
+														<option value="その他" selected="<?php if($type=='その他'){echo 'selected';}?>">その他</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="fieldItem js-formItem">
+										<p class="itemHead is-require"><span class="js-formItemLabel">お問い合わせの内容</span></p>
+										<div class="itemCont js-formItemBody">
+											<div class="itemGroup">
+												<textarea class="js-validatejs-required" name="inquiries" cols="30" rows="10" maxlength="1000"><?php echo hscBr($inquiries);?></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+								<ul class="formBtn">
+									<li class="m-btn is-next js-submit"><span><span>入力内容を確認する</span></span></li>
+								</ul><input type="hidden" name="ticketcontact" value="<?php echo $ticketcontact; ?>">
+							</form>
+						</div>
+					</section>
+				</div>
+			</main>
+			<?php include(DIR_INC . 'footer.html'); ?>
+		</div>
+		<?php include(DIR_INC . 'script.html'); ?>
+		
+		<script src="/js/form_validation.js"></script>
+	</body>
+</html>

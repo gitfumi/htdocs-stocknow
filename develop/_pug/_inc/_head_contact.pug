@@ -1,0 +1,26 @@
+if pageUrl == '/'
+	- var ogptype = 'website'
+else
+	- var ogptype = 'article'
+
+head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# " + ogptype + ": http://ogp.me/ns/" + ogptype + "#")
+	|
+	|<?php include(DIR_INC . 'gtm_head.html'); ?>
+	meta(charset="utf-8")
+	meta(http-equiv="X-UA-Compatible" content="IE=edge")
+	title #{meta[pageUrl].title}
+	|
+	|<?php include(DIR_INC . 'head_meta_name.html'); ?>
+	meta(name="description" content=meta[pageUrl].description)
+	meta(property="og:title" content=meta[pageUrl].title)
+	meta(property="og:description" content=meta[pageUrl].description)
+	meta(property="og:url" content=site.url + pageUrl)
+	if meta[pageUrl].ogImage
+		meta(property="og:image" content=meta[pageUrl].ogImage)
+	else
+		meta(property="og:image" content=site.url + site.ogImage)
+	meta(property="og:type" content=ogptype)
+	|
+	|<?php include(DIR_INC . 'head_meta_property.html'); ?>
+	|<?php include(DIR_INC . 'head_link.html'); ?>
+	block css

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+		
+		<?php include(DIR_INC . 'gtm_head.html'); ?>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>お問い合わせ｜おしゃれな手土産ギフトと20代〜40代向けのファッション情報サイト</title>
+		<?php include(DIR_INC . 'head_meta_name.html'); ?>
+		<meta name="description" content="お問い合わせページです。STOCKNOWは周りと差がつく見た目・センスのイイ手土産ギフトと20代〜40代向けの今話題のトレンドファッション情報サイトです。手土産ギフトではお取り寄せも扱って商品もありますので、自分へのご褒美ギフトとしてもご利用いただけます。ファッションではコーディネートや小物の使い方などおしゃれになる情報が盛りだくさんです。">
+		<meta property="og:title" content="お問い合わせ｜おしゃれな手土産ギフトと20代〜40代向けのファッション情報サイト">
+		<meta property="og:description" content="お問い合わせページです。STOCKNOWは周りと差がつく見た目・センスのイイ手土産ギフトと20代〜40代向けの今話題のトレンドファッション情報サイトです。手土産ギフトではお取り寄せも扱って商品もありますので、自分へのご褒美ギフトとしてもご利用いただけます。ファッションではコーディネートや小物の使い方などおしゃれになる情報が盛りだくさんです。">
+		<meta property="og:url" content="https://stocknow.info/contact/templates/done.html">
+		<meta property="og:image" content="https://stocknow.info/img/common/og-image.jpg">
+		<meta property="og:type" content="article">
+		<?php include(DIR_INC . 'head_meta_property.html'); ?>
+		<?php include(DIR_INC . 'head_link.html'); ?>
+		<link rel="stylesheet" href="/css/p_normal.css">
+	</head>
+	<body class="p-contact is-done" id="p-normal">
+		<?php include(DIR_INC . 'gtm_body.html'); ?>
+		<?php include(DIR_INC . 'header_contact.html'); ?>
+		<div id="contents">
+			<main id="main">
+				<div class="c-pageTitle">
+					<div class="c-pageTitle_inner">
+						<h1 class="c-pageTitle_txt">お問い合わせ</h1>
+					</div>
+				</div>
+				<div class="main_inner">
+					<section class="normal_block">
+						<div class="formBody">
+							<p class="formMessage"><em><?php if(strlen($usrcontact)>0){echo hsc($usrcontact) . ' さま';}?></em></p>
+							<p class="formMessage">この度は、お問い合わせいただきまして誠にありがとうございます。<br>内容を確認次第、改めてご連絡をさせていただきます。</p>
+							<p class="m-btn"><a href="/"><span>TOPへ戻る</span></a></p>
+						</div>
+					</section>
+				</div>
+			</main>
+			<?php include(DIR_INC . 'footer.html'); ?>
+		</div>
+		<?php include(DIR_INC . 'script.html'); ?>
+		
+		<script src="/js/form_validation.js"></script>
+	</body>
+</html>

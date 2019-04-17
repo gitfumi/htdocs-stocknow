@@ -1,0 +1,54 @@
+extends /_pug/_inc/_layout_contact
+
+//-
+	---------------------------------------------------------
+	ページ固有の変数を定義
+	---------------------------------------------------------
+append setVar
+	- layout = 'normal'
+	- pageUrl = '/contact/templates/confirm.html'
+	- dirArray = createDirArray(pageUrl)
+	- bodyAttributes.id = 'p-normal'
+	- bodyAttributes.class = 'p-contact is-confirm'
+
+//-
+	---------------------------------------------------------
+	ページ固有のCSSを読み込み
+	---------------------------------------------------------
+append css
+	link(rel="stylesheet" href="/css/p_normal.css")
+
+//-
+	---------------------------------------------------------
+	コンテンツ
+	---------------------------------------------------------
+block main
+	div.c-pageTitle
+		div.c-pageTitle_inner
+			h1.c-pageTitle_txt お問い合わせ
+
+	div.main_inner
+		section.normal_block
+			//- p.contact_txt STOCKNOWに関するお問い合わせはこちらからお願いします。<br>また、お問い合わせの返信まで少々お時間をいただきますこと、予めご了承くださいませ。
+			div.formBody
+				form(action="done.php" method="post")
+					div.formField
+						div.fieldItem
+							p.itemHead #[span お名前]
+							p.itemCont <?php echo hsc($name);?>
+						div.fieldItem
+							p.itemHead #[span メールアドレス]
+							p.itemCont <?php echo hsc($email);?>
+						div.fieldItem
+							p.itemHead #[span お問い合わせの種類]
+							p.itemCont <?php echo hsc($type);?>
+						div.fieldItem
+							p.itemHead #[span お問い合わせの内容]
+							p.itemCont <?php echo hscBr($inquiries);?>
+					ul.formBtn
+						li.m-btn.is-back.js_submit: a(href="./"): span 入力画面へ戻る
+						li.m-btn.js-submit: span: span 送信する
+					|<input type="hidden" name="ticketcontact" value="<?php echo $ticketcontact; ?>">
+						
+append script
+	script(src="/js/form_validation.js")

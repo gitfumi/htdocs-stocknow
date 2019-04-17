@@ -506,7 +506,7 @@ html {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
   }
-  #header .header_subNav > ul > li:nth-of-type(even) {
+  #header .header_subNav > ul > li:nth-of-type(odd) {
     border-right: none;
   }
   #header .header_subNav > ul > li > a {
@@ -1089,6 +1089,7 @@ html {
   -webkit-transition: all .5s;
   transition: all .5s;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .m-btn > a::before, .m-btn > span::before {
