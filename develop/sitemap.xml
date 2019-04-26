@@ -171,4 +171,19 @@
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
+<url>
+	<loc>https://stocknow.info/fashion/scene01.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
+	<loc>https://stocknow.info/fashion/scene02.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
+	<loc>https://stocknow.info/fashion/scene03.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
 </urlset>
