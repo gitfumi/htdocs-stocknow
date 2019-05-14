@@ -29,7 +29,7 @@ block main
 		header.entry_header
 			div.mainvisual
 				p.mainvisual_pic: img(src="/gourmet/img/pic_crisp_01.jpg" alt="")
-				p.mainvisual_date 2019.05.08
+				p.mainvisual_date 2019.05.14
 				h1.mainvisual_ttl: span 一つひとつ手づくりで提供するカスタムサラダ専門。CRISP SALAD WORKS(クリスプ・サラダワークス)
 			ul.c-tag_list
 				li: a(href="/") #[span タグ1]
@@ -42,63 +42,78 @@ block main
 			div.mokuji
 				p.m-titleType03 目次
 				ul.mokuji_list
-					li: a(href="#anchor01") YONA YONA BEER WORKS
-					li: a(href="#anchor02") ふわトロ食感「バスクチーズケーキ」。BELTZ【ベルツ】チーズケーキ専門店
-					li: a(href="#anchor03") 直接レシピを伝授された日本人パティシエールが焼くバスクチーズケーキ。GAZTA【ガスタ】
+					li: a(href="#anchor01") [動画] CRISP SALAD WORKS(クリスプ・サラダワークス)
+					li: a(href="#anchor02") CRISP SALAD WORKS(クリスプ・サラダワークス)でオリジナルサラダを作ろう！
+					li: a(href="#anchor03") CRISP SALAD WORKS(クリスプ・サラダワークス)の店舗情報
+					li: a(href="#anchor04") 豊富なトッピングとドレッシング
+					li: a(href="#anchor05") カスタムサラダのオーダー方法
 
 			section.entry_section#anchor01
-				h2.m-titleType02 YONA YONA BEER WORKS
+				h2.m-titleType02 [動画] CRISP SALAD WORKS(クリスプ・サラダワークス)
+				div.entry_youtube
+					iframe(width="560" height="315" src="https://www.youtube.com/embed/Z_FLG4hZkoE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+
+			section.entry_section#anchor02
+				h2.m-titleType02 CRISP SALAD WORKS(クリスプ・サラダワークス)でオリジナルサラダを作ろう！
 				div.entry_pic.m-bySide.is-2block
-					div: img(src="/gourmet/img/pic_basquecheesecake_sub01.jpg" alt="")
-					div: img(src="/gourmet/img/pic_basquecheesecake_sub02.jpg" alt="")
-				p.entry_txt 「YONA YONA BEER WORKS」はヤッホーブルーイングの直営店。ヤッホーブルーイングはクラフトビール「よなよなエール」をはじめ「インドの青鬼」「水曜日のネコ」「僕ビール、君ビール。」「軽井沢高原ビール」などを製造・販売しているビール製造メーカーです。<br>ここで味わえるのは、長野県佐久市の醸造所から直送された新鮮なビール。最高級ホップの鮮やかな香りと軽い甘さが特徴の「よなよなエール」、驚愕の苦みで飲む人を虜にする「インドの青鬼」など、熟練のビール職人が精魂込めて造り上げたクラフトビールを楽しめます。<br>7種類のなかから好きなビールを3種類選べる「飲み比べセット」は1280円。窯で焼き上げるローストチキンやオリジナルソーセージなど料理も本格的。5400円で4種類のビール飲み放題のプランもあり。
+					div: img(src="/gourmet/img/pic_crisp_sub01.jpg" alt="")
+					div: img(src="/gourmet/img/pic_crisp_sub02.jpg" alt="")
+				p.entry_txt 約30種類あるトッピングから、自分好みにサラダが作れる「クリスプサラダワークス」。クリスプサラダワークスでは、おいしいサラダを心を込めて手作りし、気軽に味わってもらうことを目的にしています。<br>合成保存料、着色料は一切不使用なのはもちろんのこと、できるだけ作り置きをせずに、ほぼ全ての食材を店舗で毎日調理されているそうです。<br>野菜はお店に到着して新鮮なうちにカット、ドレッシングやハムは毎日店内で作ります。すでにでき上がったものを加熱調理して提供するものはひとつもありません。 
+
+			section.entry_section#anchor03
+				h2.m-titleType02 CRISP SALAD WORKS(クリスプ・サラダワークス)の店舗情報
 				section.entry_shop
-					h3.m-titleType04.shop_head #[span YONA YONA BEER WORKS] 店舗情報
 					div.m-bySide.is-3block.shop_list.js-shop_list
 						section
-							h4.shop_name.js-shop_name 赤坂店
-							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/V5CERm3DDhiD5rNk9") 東京都千代田区永田町2-14-3 東急プラザ赤坂2F
-							p.shop_time 11:30～15:00、16:00～23:00<br>※土日祝　11:30～23:00<br>※L.O.は30分前
+							h4.shop_name.js-shop_name 麻生十番店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/V5CERm3DDhiD5rNk9") 東京都港区三田1-10-10 三田グリーンハイツ1F
+							p.shop_time 11:00～22:00
+						section
+							h4.shop_name.js-shop_name 恵比寿店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/dCsCCTGs43j1aUZF8") 東京都渋谷区恵比寿3-29-16 ABCアネックスビル1F
+							p.shop_time 11:00～22:00
+						section
+							h4.shop_name.js-shop_name 六本木ヒルズ店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/K41DxUg773fJxrwU9") 東京都港区六本木6-10-1 六本木ヒルズ ヒルサイドB2F
+							p.shop_time 11:00～22:00
+						section
+							h4.shop_name.js-shop_name 代官山店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/sCPVe9GU9JWw3AnHA") 東京都渋谷区猿楽町24-7 代官山プラザ2F
+							p.shop_time 11:00～22:00
+						section
+							h4.shop_name.js-shop_name 広尾店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/DdMn94akjDW6FrSg6") 東京都港区南麻布5-16-6 1F
+							p.shop_time 11:00～22:00
+						section
+							h4.shop_name.js-shop_name アークヒルズ店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/fSSuMCKh4exi935g6") 東京都港区赤坂1-12-32 アーク森ビル3F
+							p.shop_time 11:00～22:00<br>※土日祝　11:00～21:00(不定休) 
 						section
 							h4.shop_name.js-shop_name 青山店
-							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/ib9khhqU4W4moq8R7") 東京都港区南青山3-18-20 松本ビル B1F
-							p.shop_time 16:00〜23:30<br>※土日祝　11:30〜23:00<br>※L.O.は60分前
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/JXGA7PvVDD7sfBS57") 東京都港区南青山 2-27-18 パサージュ青山1F
+							p.shop_time 11:00～22:00
 						section
-							h4.shop_name.js-shop_name 神田店
-							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/DguC9d3LLoXnCuBt5") 東京都千代田区神田須田町1-24-6 ACN神田須田町ビル1F
-							p.shop_time 16:00～23:30<br>※土日祝　11:30～23:00<br>※L.O.は60分前
-						
+							h4.shop_name.js-shop_name 丸の内店
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/xyEnS9Kj4U7bCVpJ7") 東京都千代田区丸の内 2-1-1 丸の内マイプラザB2F
+							p.shop_time 11:00～22:00<br>※土日祝　11:00～21:00(不定休)
 
-			section.entry_section#anchor02
-				h2.m-titleType02 ふわトロ食感「バスクチーズケーキ」。BELTZ【ベルツ】チーズケーキ専門店
+			section.entry_section#anchor04
+				h2.m-titleType02 豊富なトッピングとドレッシング
 				div.entry_pic.m-bySide.is-2block
-					div: img(src="/gourmet/img/pic_basquecheesecake_sub03.jpg" alt="")
-					div: img(src="/gourmet/img/pic_basquecheesecake_sub04.jpg" alt="")
-				p.entry_txt BELTZ【ベルツ】のチーズケーキは外側のしっかり感と、内部のしっとり感の対比が秀逸。チーズの味わいも濃厚でとろける美味しさです。スフレとは違うフワフワ感が特徴です！
-				div.entry_mapIframe: iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.0378339962513!2d139.7108502152579!3d35.65143948020121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bb18edd88a7%3A0x36636b9dd6738bdf!2zQkVMVFrjgJDjg5njg6vjg4TjgJHjg4Hjg7zjgrrjgrHjg7zjgq3lsILploDlupc!5e0!3m2!1sja!2sjp!4v1553762775532" width="1020" height="500" allowfullscreen)
-				section.entry_shop
-					div.m-bySide.is-2block.shop_list.js-shop_list
-						section
-							h4.shop_name.js-shop_name BELTZ【ベルツ】
-							p.shop_pin 東京都渋谷区広尾2-2-18
-							p.shop_time 11:00～19:00<br>※定休日：水曜日
-							p.shop_item Smallサイズ（7cm）、Mediumサイズ（12cm）
+					div: img(src="/gourmet/img/pic_crisp_sub03.jpg" alt="")
+					div: img(src="/gourmet/img/pic_crisp_sub04.jpg" alt="")
+				p.entry_txt スタッフと相談しながら数十種類のトッピングから、自分好みのサラダに仕上げていきます。メインの具材を決めたら、相性のよい素材を選び決まったら、両手でカットする独特な形の包丁で素材をちょうどよい具合に刻み、最後にドレッシングと合わせます。<br>ザクザクと野菜や素材をカットすることで、フォークひと刺し分におすすめの材料が混ざって味わえます。これまでの感覚とは違った、完成したひとつの料理としてサラダを楽しめるのが特徴。イートインはもちろん、持ち帰りもできますよ。
 		
-			section.entry_section#anchor02
-				h2.m-titleType02 直接レシピを伝授された日本人パティシエールが焼くバスクチーズケーキ。GAZTA【ガスタ】
-				div.entry_pic.m-bySide.is-2block
-					div: img(src="/gourmet/img/pic_basquecheesecake_sub05.jpg" alt="")
-					div: img(src="/gourmet/img/pic_basquecheesecake_sub06.jpg" alt="")
-				p.entry_txt バスクチーズケーキの元祖の「ラ・ヴィーニャ」から直接レシピを伝授された日本人パティシエールが焼くバスクチーズケーキ。本場の味が日本でも食べられる数少ないバスクチーズケーキ専門店！
-				div.entry_mapIframe: iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12968.151390628358!2d139.70428414386657!3d35.651439143621445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b2e7c7c5bfb%3A0x414e32024b7ecb6d!2zR0FaVEEo44Ks44K544K_KQ!5e0!3m2!1sja!2sjp!4v1553763367409" width="1020" height="500" allowfullscreen)
-				section.entry_shop
-					div.m-bySide.is-2block.shop_list.js-shop_list
-						section
-							h4.shop_name.js-shop_name GAZTA【ガスタ】
-							p.shop_pin 東京都港区白金1-14-10-1F
-							p.shop_time 9:00～19:00<br>※定休日：月曜日※月曜日が祝日の場合は、翌日火曜日に振替します。
-							p.shop_item バスクチーズケーキ（8cm）、バスクチーズケーキ（15cm）
-
+			section.entry_section#anchor05
+				h2.m-titleType02 カスタムサラダのオーダー方法
+				p.entry_txt カスタムサラダ（970円）は、3種のベースから好きなものを選んで、18種の食材からトッピングを4種選び注文します。別料金でプレミアムのトッピングも出来るので、ぜひ試してみてください！ 
+				div.m-bySide.is-2block
+					section
+						p.entry_pic: img(src="/gourmet/img/pic_crisp_sub05.jpg" alt="トッピングの種類")
+						h3.entry_ttl #[span トッピングの種類]<br>約18種類のトッピングから4つ選べます。<br>シラントロ、春キャベツ、スナップエンドウ、セロリ、キャロット、レッドオニオン、トマト、アップル、グリルドコーン、スパイシーブロッコリ、ロースト豆腐、ブラックビーンズ、ボイルドエッグ、自家製クルトン、レーズン、サンフラワーシード、アーモンド、ウォルナッツなど
+					section
+						p.entry_pic: img(src="/gourmet/img/pic_crisp_sub06.jpg" alt="プレミアムトッピング（別料金）")
+						h3.entry_ttl #[span プレミアムトッピング（別料金）]<br>もっとガッツリサラダを堪能したい！そんな方は、別料金でプレミアムトッピングがおすすめ。<br>アボカド(＋210円)、グリルドチキン(＋210円)、自家製ハム(＋290円)、ホワイトチェダー(+220円)、フェタ(+290円)、パルメザン(+290円)から好きなだけ追加でトッピングできるので、ぜひ自分だけのオリジナルサラダを作ってみてくださいね！ 
 
 		//#include virtual="/_inc/entry_sns.html"
 		//#include virtual="/_inc/relation_gourmet.html"
