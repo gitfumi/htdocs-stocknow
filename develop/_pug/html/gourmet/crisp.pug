@@ -24,13 +24,18 @@ append css
 	---------------------------------------------------------
 block main
 
+	nav.m-breadcrumbs
+		ol.m-breadcrumbs_list
+			li: a(href="/") HOME
+			li 一つひとつ手づくりで提供するカスタムサラダ専門。CRISP SALAD WORKS(クリスプ・サラダワークス)
+
 	article.main_inner
 
 		header.entry_header
 			div.mainvisual
 				p.mainvisual_pic: img(src="/gourmet/img/pic_crisp_01.jpg" alt="")
 				p.mainvisual_date 2019.05.14
-				h1.mainvisual_ttl: span 一つひとつ手づくりで提供するカスタムサラダ専門。CRISP SALAD WORKS(クリスプ・サラダワークス)
+				h1.mainvisual_ttl: span 一つひとつ手づくりで提供するカスタムサラダ専門。<br>CRISP SALAD WORKS(クリスプ・サラダワークス)
 			ul.c-tag_list
 				li: a(href="/") #[span タグ1]
 				li: a(href="/") #[span タグあああああ]

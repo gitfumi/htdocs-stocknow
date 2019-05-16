@@ -1059,6 +1059,90 @@ html {
 }
 
 /* ---------------------------------------------------------
+ *	breadcrumbs
+ *---------------------------------------------------------- */
+/* パンクズ */
+.m-breadcrumbs {
+  margin-left: -60px;
+  margin-right: -60px;
+  border-bottom: 5px solid #fff;
+  padding: 0 60px;
+}
+
+.m-breadcrumbs_list {
+  max-width: 1020px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.m-breadcrumbs_list > li {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: #aaa;
+}
+
+.m-breadcrumbs_list > li a {
+  color: #aaa;
+  text-decoration: underline;
+}
+
+.m-breadcrumbs_list > li a:hover {
+  text-decoration: none;
+}
+
+.m-breadcrumbs_list > li:not(:last-of-type) {
+  padding-right: 2rem;
+  position: relative;
+}
+
+.m-breadcrumbs_list > li:not(:last-of-type):before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 0.8rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  background-color: transparent;
+  border-top: solid 2px #aaa;
+  border-right: solid 2px #aaa;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#p-entry .m-breadcrumbs_list {
+  padding-right: 250px;
+}
+
+@media only screen and (max-width: 1020px) {
+  #p-entry .m-breadcrumbs_list {
+    padding-right: 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .m-breadcrumbs {
+    margin-left: -30px;
+    margin-right: -30px;
+    padding: 0 30px;
+  }
+  .m-breadcrumbs_list {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    min-height: 30px;
+  }
+  .m-breadcrumbs_list > li {
+    white-space: nowrap;
+  }
+}
+
+/* ---------------------------------------------------------
  *	btn
  *---------------------------------------------------------- */
 /*

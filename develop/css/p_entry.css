@@ -43,6 +43,7 @@
 .entry_header .mainvisual_pic span {
   display: inline-block;
   position: relative;
+  z-index: 0;
 }
 
 .entry_header .mainvisual_pic span::before, .entry_header .mainvisual_pic span::after {
