@@ -85,7 +85,8 @@
 /* ---------------------------------------------
 	MT　商品詳細
 ----------------------------------------------------------*/
-	if($('body#edit-entry').length){
+	if($('body#edit-entry').length && mtappVars.blog_id == 2){
+		console.log(mtappVars.blog_id);
 		// カテゴリ覧をタイトル欄の上に移動する
 		$.MTAppCustomize({basename: 'category'}).insertBefore("#title-field");
 		// 説明文、タグ、フェードバックを非表示に
