@@ -5,7 +5,7 @@ extends /_pug/_inc/_layout
 	ページ固有の変数を定義
 	---------------------------------------------------------
 append setVar
-	- layout = 'entry'
+	- layout = 'gourmet'
 	- pageUrl = '/gourmet/butterbutler.html'
 	- dirArray = createDirArray(pageUrl)
 	- bodyAttributes.id = 'p-entry'
@@ -83,20 +83,26 @@ block main
 			section.entry_section#anchor03
 				h2.m-titleType02 バターバトラーの催事場・期間限定の販売店情報
 				section.entry_shop
-					h3.m-titleType04.shop_head #[span 5月] の期間限定 出店情報
+					h3.m-titleType04.shop_head #[span 6月] の期間限定 出店情報
 					div.m-bySide.is-3block.shop_list.js-shop_list
 						section
-							h4.shop_name.js-shop_name エキュート東京
-							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/k1xDcx9vq482") 東京都千代田区丸の内1-9-1<br>1F新幹線南乗換口前［改札内］
-							p.shop_date 2019/4/8～2019/5/12
-							p.shop_time 8:00～22:00 (21:30)<br>※（）内の時間は、日・祝の閉店時間です<br>※日・祝日が休日前となる場合は、月～土と同じ営業時間になります。繁忙期時間変更有り(未定)
-							p.shop_item バターフィナンシェ4・8・12・16入<br>バターガレット9・18入
+							h4.shop_name.js-shop_name 阪急うめだ本店　ツリーテラス
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/SxiGEo35swmyJhU67") 大阪府大阪市北区角田町8番7号<br>B1F　ツリーテラス
+							p.shop_date 2019/6/5～2019/6/11
+							p.shop_time 日～木/10:00～20:00<br>金・土/10:00～21：00
+							p.shop_item バターフィナンシェ4・8・12・16入<br>バターガレット9・18入<br>キャラメルポット
 						section
-							h4.shop_name.js-shop_name 東京駅　銘品館南口
-							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/whrfe5XZGhcjwPJc6") 東京都千代田区丸の内1-9-1<br>銘品館南口店外催事
-							p.shop_date 2019/5/13～2019/5/31
-							p.shop_time 6:30～21:30
+							h4.shop_name.js-shop_name 大宮そごう
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/7BFvHwHuHtfeEwop6") 埼玉県 さいたま市大宮区桜木町１丁目６−２<br>そごう大宮店<br>大宮駅側入り口2階特設会場
+							p.shop_date 2019/6/5～2019/6/18
+							p.shop_time 10：00～20：00
 							p.shop_item バターフィナンシェ4・8・12・16入<br>バターガレット9・18入<br>バターキャラメルポット
+						section
+							h4.shop_name.js-shop_name 東京駅　C区画3
+							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/4WMXPcMxc3bd3cos9") 東京都千代田区丸の内1-9-1<br>1F新幹線北乗換口前［改札内］
+							p.shop_date 2019/6/10～2019/7/7
+							p.shop_time ７:00～21:30（月～土）<br>７:00～21:00（日、祝日）<br>最終日　7:00～20:00<br>鉄道会館様HP参照
+							p.shop_item バターフィナンシェ4・8・12・16入<br>バターガレット9・18入
 						section
 							h4.shop_name.js-shop_name 羽田空港第2ターミナル スマイルトーキョー
 							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/hfyzNPtQB8z") 東京都大田区羽田空港3-4-2<br>羽田空港第二ターミナル2F<br>スマイルトーキョー内
@@ -109,30 +115,7 @@ block main
 							p.shop_date 2018/11/1～
 							p.shop_time 平日；10:00~21:00<br>土日祝；10:00~20:30
 							p.shop_item バターフィナンシェ4・8・12・16入<br>バターガレット9・18入<br>キャラメルポット<br>バターシュガーケーキ
-						section
-							h4.shop_name.js-shop_name 関西国際空港　萬-YOROZU
-							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/Stiuz37vatN2") 大阪府泉南郡田尻町泉州空港中１番地<br>Ｔ１　３Ｆ国際線制限エリア内
-							p.shop_date 2019/3/1～2019/5/31
-							p.shop_time 7:00～24:00
-							p.shop_item バターフィナンシェ8入<br>バターフィナンシェ12入<br>バターガレット9入<br>バターシュガーケーキ
-						section
-							h4.shop_name.js-shop_name JR名古屋高島屋
-							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/waRBPqdKRcyZByhQA") 名古屋市中村区名駅一丁目1番4号
-							p.shop_date 2019/5/15～2019/5/28
-							p.shop_time 10:00～20:00
-							p.shop_item バターフィナンシェ4・8・12・16入<br>バターガレット9・18入<br>バターキャラメルポット
-						section
-							h4.shop_name.js-shop_name 仙台三越店
-							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/agEUM2RLibiJ12au9") 宮城県仙台市青葉区一番町４丁目８−１５<br>B１F　イベントスペース
-							p.shop_date 2019/5/15～2019/5/28
-							p.shop_time 10:00～19:30
-							p.shop_item バターフィナンシェ4・8・12・16入<br>バターガレット9・18入<br>バターキャラメルポット
-						section
-							h4.shop_name.js-shop_name いよてつ高島屋
-							p.shop_pin: a(target="_blank" href="https://goo.gl/maps/CJSM1CtMJUgGpC8Z7") 愛媛県松山市湊町5丁目1番地1<br>７F　催会場
-							p.shop_date 2019/5/15～2019/5/28
-							p.shop_time 10:00～19:30<br>5月28日最終日は17時閉場
-							p.shop_item バターフィナンシェ4・8・12・16入<br>バターガレット9・18入<br>バターキャラメルポット
+
 				p.entry_att 上記の催事場以外でも東京駅、品川駅などでも開催している場合もあるので、SNSなどでチェックしてみてください！
 
 

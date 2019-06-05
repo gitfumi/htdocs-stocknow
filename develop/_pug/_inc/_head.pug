@@ -21,3 +21,35 @@ head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# " + ogptype + ": htt
 	//#include virtual="/_inc/head_meta_property.html"
 	//#include virtual="/_inc/head_link.html"
 	block css
+
+	script(type="application/ld+json")
+		|{
+		|	"@context": "http://schema.org",
+		|	"@type": "BreadcrumbList",
+		|	"itemListElement": [
+		|		{
+		|			"@type": "ListItem",
+		|			"position": 1,
+		|			"item": {
+		|				"@id": "#{site.url}",
+		|				"name": "HOME"
+		|			}
+		|		}
+		|	]
+		if layout != 'home' && layout != 'error'
+			|},
+			|{
+			|	"@context": "http://schema.org",
+			|	"@type": "BreadcrumbList",
+			|	"itemListElement": [
+			|		{
+			|			"@type": "ListItem",
+			|			"position": 2,
+			|			"item": {
+			|				"@id": "#{site.url + pageUrl}",
+			|				"name": "#{meta[pageUrl].title}"
+			|			}
+			|		}
+			|	]
+		|}
+	
