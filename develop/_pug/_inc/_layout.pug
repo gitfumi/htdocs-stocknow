@@ -30,6 +30,8 @@ html(lang="ja")
 				コンテンツ
 				---------------------------------------------------------
 			main#main
+				if layout !== 'home'
+					include /_pug/_inc/_breadcrumbs
 				block main
 
 			//-
