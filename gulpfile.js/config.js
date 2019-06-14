@@ -31,6 +31,10 @@ module.exports = {
 		outPutDir: '/js/',
 		outPutFileName: 'common.js'
 	},
+	mtappjqury: {
+		targetFile: '/_js/_MTAppjQuery/**/*.js',
+		outPutDir: '/_mt/mt-static/plugins/MTAppjQuery/user-files/'
+	},
 	/*******************
 	 js_concat.js
 	********************/

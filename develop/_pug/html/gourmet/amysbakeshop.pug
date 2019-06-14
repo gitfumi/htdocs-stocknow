@@ -6,10 +6,11 @@ extends /_pug/_inc/_layout
 	---------------------------------------------------------
 append setVar
 	- layout = 'gourmet'
-	- pageUrl = '/gourmet/aymsbakeshop.html'
+	- name = 'aymsbakeshop'
+	- pageUrl = '/' + layout + '/' + name + '.html'
 	- dirArray = createDirArray(pageUrl)
 	- bodyAttributes.id = 'p-entry'
-	- bodyAttributes.class = 'p-aymsbakeshop.g-gourmet'
+	- bodyAttributes.class = 'p-' + name + '.g-gourmet'
 
 //-
 	---------------------------------------------------------
@@ -23,11 +24,6 @@ append css
 	コンテンツ
 	---------------------------------------------------------
 block main
-
-	nav.m-breadcrumbs
-		ol.m-breadcrumbs_list
-			li: a(href="/") HOME
-			li こだわりの詰まったお菓子！家庭的なアメリカの焼き菓子店「Amy's Bakeshop」
 
 	article.main_inner
 

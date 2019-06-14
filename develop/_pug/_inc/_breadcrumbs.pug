@@ -1,0 +1,12 @@
+nav.m-breadcrumbs
+	ol.m-breadcrumbs_list
+		li
+			a(href="/") #{meta['/'].pageName}
+		//- 第2階層以下
+		each val, index in dirArray
+			if typeof meta[val] !== 'undefined'
+				li
+					if (index === dirArray.length - 1)
+						span= meta[val].pageName
+					else
+						a(href= val)= meta[val].pageName

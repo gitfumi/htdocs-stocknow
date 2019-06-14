@@ -17,6 +17,7 @@ const new_pug = require('./pug');
 const new_imagemin = require('./imagemin');
 const new_delete = require('./delete');
 const new_frontnone = require('./frontnone');
+const new_mtappjquery = require('./_mtappjquery');
 
 // **********************************************
 // watch set
@@ -45,12 +46,12 @@ module.exports = {
 			}
 
 			/* 連続イベントの間引き処理 200ミリ秒以内で再度発生した場合は無視する */
-			/* 280ミリ秒は適当なので、必要に応じて調整 */
+			/* 320ミリ秒は適当なので、必要に応じて調整 */
 			clearTimeout(timer);
 			timer = setTimeout(function () {
 				console.log('[ Reload finished !! ]');
 				reload();
-			}, 280);
+			}, 320);
 		})
 		/* ------------
 		   監視タスク
@@ -63,6 +64,7 @@ module.exports = {
 
 		// concat
 		const w_concat = $.gulp.watch(config.root.src + '/**' + config.concat.targetFile, new_concat.taskConcat);
+		const w_mtappjquery = $.gulp.watch(config.root.src + '/**' + config.mtappjqury.targetFile, new_mtappjquery.taskMtAppjQuery);
 
 		// imagemin
 		// const w_imagemin = $.gulp.watch(config.root.src + '/**' + config.imagemin.targetFile, new_imagemin.taskImagemin);
@@ -75,6 +77,9 @@ module.exports = {
 		// }
 		const w_pug = $.gulp.watch(config.root.src + '/**' + config.pug.targetFile, new_pug.taskPug);
 		const w_pugJson = $.gulp.watch(config.root.src + '/_pug/_json/*.json', new_pug.taskPugAll);
+		// const w_pugJson = $.gulp.watch(config.root.src + '/_pug/_json/*.json', $.gulp.series(new_pug.taskPugAll, new_pug.taskXml, done => {
+		// 	done();
+		// }));
 
 		// frontnote
 		let frontnoteList = [];

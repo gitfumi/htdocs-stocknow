@@ -86,7 +86,7 @@
 	MT　商品詳細
 ----------------------------------------------------------*/
 	if($('body#edit-entry').length && mtappVars.blog_id == 2){
-		console.log(mtappVars.blog_id);
+		// console.log(mtappVars.blog_id);
 		// カテゴリ覧をタイトル欄の上に移動する
 		$.MTAppCustomize({basename: 'category'}).insertBefore("#title-field");
 		// 説明文、タグ、フェードバックを非表示に
@@ -128,5 +128,43 @@
 		$('#customfield_entryvariationtext2-field, #customfield_entryvariationimage2-field').wrapAll("<section class='mtapp-verticalBlock'></section>");
 		$('#customfield_entryvariationtext3-field, #customfield_entryvariationimage3-field').wrapAll("<section class='mtapp-verticalBlock'></section>");
 
+	}
+	/* ---------------------------------------------
+		MT　商品詳細
+	----------------------------------------------------------*/
+	if($('body#edit-entry').length && mtappVars.blog_id == 3){
+
+		var $areacode = $('#customfield_entryareacode'); // 販売区画
+
+		// テキストフィールド・タグフィールドを非表示
+		$('#text-field, #feedback-field').hide();
+
+		//項目の並び替え
+		$.MTAppFieldSort({
+			sort: 'title,permalink,c:entrymetadescription,category,c:entryareacode,tags'
+		});
+
+		// エリアの緯度経度
+		$areacode.MTAppJSONTable({
+			inputType: 'textarea',
+			// caption: 'bit part menbers',
+			header: {
+				name: '店舗名',
+				latitude: '緯度（latitude）',
+				longitude: '経度（longitude）'
+			},
+			headerPosition: 'top',
+			headerOrder: [
+				'name',
+				'latitude',
+				'longitude'
+			],
+			sortable: true,
+			footer: true,
+			edit: true,
+			add: true,
+			clear: true
+			// debug: true
+		});
 	}
 })(jQuery);

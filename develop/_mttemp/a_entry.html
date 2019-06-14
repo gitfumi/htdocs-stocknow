@@ -1,0 +1,92 @@
+<mt:For regex_replace='/^\s*\n/gm',''><mt:ignore><!-- 改行削除 --></mt:ignore>
+<mt:Truncateurl>
+<mt:Include blog_id='3' module='init設定'>
+<!DOCTYPE html>
+<html lang="ja">
+	<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+		<!--#include virtual="/_inc/gtm_head.html"-->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title><mt:Var name='noBrTitle' encode_html='1'><mt:Var name='cmnTitle' encode_html='1'></title>
+		<!--#include virtual="/_inc/head_meta_name.html"-->
+		<meta name="description" content="<mt:Var name='headDescription' encode_html='1'>。<mt:Var name='cmnDescription' encode_html='1'>">
+		<meta property="og:title" content="<mt:Var name='noBrTitle' encode_html='1'><mt:Var name='cmnTitle' encode_html='1'>">
+		<meta property="og:description" content="<mt:Var name='headDescription' encode_html='1'>。<mt:Var name='cmnDescription' encode_html='1'>">
+		<meta property="og:url" content="<mt:Var name='headOGPUrl' encode_html='1'>">
+		<meta property="og:image" content="<mt:WebsiteURL encode_html='1'>img/common/og-image.jpg">
+		<meta property="og:type" content="article">
+		<!--#include virtual="/_inc/head_meta_property.html"-->
+		<!--#include virtual="/_inc/head_link.html"-->
+		<link rel="stylesheet" href="/css/p_entry.css">
+		<script type="application/ld+json">
+			{
+				"@context": "http://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"item": {
+							"@id": "<mt:WebsiteURL encode_html='1'>",
+							"name": "HOME"
+						}
+					}
+				]
+			},
+			{
+				"@context": "http://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 2,
+						"item": {
+							"@id": "<mt:Var name='headOGPUrl' encode_html='1'>",
+							"name": "<mt:Var name='noBrTitle' encode_html='1'>"
+						}
+					}
+				]
+			}
+		</script>
+	</head>
+	<body class="p-<mt:EntryBasename encode_html='1'>.g-<mt:Var name='primaryCategoryBasename' encode_html='1'>" id="p-entry">
+		<!--#include virtual="/_inc/gtm_body.html"-->
+		<!--#include virtual="/_inc/header.html"-->
+		<div id="contents">
+			<main id="main">
+				<nav class="m-breadcrumbs">
+					<ol class="m-breadcrumbs_list">
+						<li><a href="/">HOME</a></li>
+						<li><span><mt:Var name='noBrTitle' encode_html='1'></span>
+						</li>
+					</ol>
+				</nav>
+				<article class="main_inner">
+					<header class="entry_header">
+						<div class="mainvisual">
+							<p class="mainvisual_pic"><img src="/gourmet/img/pic_butterbutler_01.png" alt=""></p>
+							<p class="mainvisual_date"><mt:EntryDate format='%Y.%m.%d'></p>
+							<h1 class="mainvisual_ttl"><span><mt:EntryTitle></span></h1>
+						</div>
+						<ul class="c-tag_list">
+						<mt:EntryTags>
+							<li><a href="<mt:TagSearchLink regex_replace='/_mt\/mt-search\.cgi/g','search/' encode_js='1'>"><mt:TagName></a></li>
+						</mt:EntryTags>
+						</ul>
+					</header>
+					<!--#include virtual="/_inc/advertise780.html"-->
+					<div class="entry_content">
+
+					</div>
+					<!--#include virtual="/_inc/entry_sns.html"-->
+					<!--#include virtual="/_inc/relation_gourmet.html"-->
+				</article>
+			</main>
+			<!--#include virtual="/_inc/footer.html"-->
+		</div>
+		<!--#include virtual="/_inc/script.html"-->
+	</body>
+</html>
+
+</mt:Truncateurl>
+</mt:For><mt:ignore><!-- //改行削除 --></mt:ignore>
