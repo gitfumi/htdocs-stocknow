@@ -4,19 +4,36 @@
  *	タグ一覧
  *----------------------------------------------------------
 .c-tag_list
-  // display: flex
-  display: none
+  display: flex
+  // display: none
   flex-wrap: wrap
+  align-items: center
+  &::before
+    padding-top: 10px
+    content: 'KEYWORD：'
+    margin-right: 5px
+    font-family: $fontFamilyMetroNotoSans
+    // font-weight: bold
+    color: #666
+    font-size: 1.2rem
   >li
     margin: 5px 5px 0 0
     a
       display: block
-      background-color: #666
+      background: linear-gradient(to bottom, rgba(238,136,170,1) 0%,rgba(0,170,255,1) 100%)
+      // background-color: #fcfcfc
+      // border: 1px solid #000
+      border-radius: 5px
       color: #fff
-      padding: 3px 5px
+      padding: 3px 8px
       font-size: 1.1rem
+      transition: all .5s ease
       &::before
         content: '#'
+        margin-right: 3px
+      &.is-hover
+        background-color: #000
+        color: #fff
 /* ---------------------------------------------------------
  *	タグ一覧（記事詳細）
  *----------------------------------------------------------

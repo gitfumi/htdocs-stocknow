@@ -1,16 +1,17 @@
 <mt:For regex_replace='/^\s*\n/gm',''><mt:ignore><!-- 改行削除 --></mt:ignore>
 <mt:Truncateurl>
+<mt:Include blog_id='3' module='init設定'>
 <!DOCTYPE html>
 <html lang="ja">
 	<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 		<mt:Include file="../_inc/gtm_head.html">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title><mt:Var name='noBrTitle' encode_html='1'><mt:Var name='cmnTitle' encode_html='1'></title>
+		<title>キーワードタグ：<mt:SearchString><mt:Var name='cmnTitle' encode_html='1'></title>
 		<mt:Include file="../_inc/head_meta_name.html">
-		<meta name="description" content="<mt:Var name='headDescription' encode_html='1'>。<mt:Var name='cmnDescription' encode_html='1'>">
-		<meta property="og:title" content="<mt:Var name='noBrTitle' encode_html='1'><mt:Var name='cmnTitle' encode_html='1'>">
-		<meta property="og:description" content="<mt:Var name='headDescription' encode_html='1'>。<mt:Var name='cmnDescription' encode_html='1'>">
+		<meta name="description" content="<mt:Var name='headDescription' encode_html='1'>">
+		<meta property="og:title" content="キーワードタグ：<mt:SearchString><mt:Var name='cmnTitle' encode_html='1'>">
+		<meta property="og:description" content="<mt:Var name='headDescription' encode_html='1'>">
 		<meta property="og:url" content="<mt:Var name='headOGPUrl' encode_html='1'>">
 		<meta property="og:image" content="<mt:WebsiteURL encode_html='1'>img/common/og-image.jpg">
 		<meta property="og:type" content="article">
@@ -60,15 +61,19 @@
 						</li>
 					</ol>
 				</nav>
+				<div class="c-pageTitle">
+					<div class="c-pageTitle_inner">
+						<h1 class="c-pageTitle_txt">キーワードタグ：<mt:SearchString></h1>
+					</div>
+				</div>
 				<article class="main_inner">
 					<mt:Include file="../_inc/advertise780.html">
-          <div class="item_box">
+					<div class="item_box">
 						<div class="c-item_list is-3block">
 							<mt:Include file="../_inc/list_gourmet.html">
 						</div>
 					</div>
 					<mt:Include file="../_inc/entry_sns.html">
-					<mt:Include file="../_inc/relation_gourmet.html">
 				</article>
 			</main>
 			<mt:Include file="../_inc/footer.html">
