@@ -8,6 +8,9 @@
 <mt:SetVar name='headOGPType' value='article'>
 <mt:SetVarBlock name='headOGPUrl'><mt:CanonicalURL></mt:SetVarBlock>
 
+<mt:If name='entryLoopFlg' eq=''>
+<mt:SetVar name='entryLoopFlg' value='false'>
+</mt:If>
 
 <mt:ignore>
 ***********************************
@@ -30,10 +33,20 @@
 
 <mt:ignore>
 ***********************************
-    記事詳細ページ
+    記事詳細ページのループ設定
 ***********************************
 </mt:ignore>
+<mt:ignore><!-- 記事詳細ページ --></mt:ignore>
 <mt:if name='page' like='entry_template'>
+<mt:SetVar name='entryLoopFlg' value='true'>
+</mt:if>
+
+<mt:ignore>
+***********************************
+    記事ループ/記事詳細の場合
+***********************************
+</mt:ignore>
+<mt:if name='entryLoopFlg' eq='true'>
   <mt:SetVarBlock name='noBrTitle'><mt:EntryTitle regex_replace='/<br>/g',''></mt:SetVarBlock>
 
   <mt:ignore><!-- プライマリーカテゴリの取得 --></mt:ignore>
@@ -57,6 +70,15 @@
   <mt:Else>
   <mt:SetVarBlock name='headDescription'><mt:EntryTitle regex_replace='/<br>/g',''>。<mt:Var name='cmnDescription'></mt:SetVarBlock>
   </mt:if>
+
+  <mt:ignore><!-- 画像パス設定 --></mt:ignore>
+  <mt:if tag='EntryBasename' like='butterbutler'>
+  <mt:SetVarBlock name='thumnailPath'>/<mt:Var name='primaryCategoryBasename'>/img/pic_<mt:EntryBasename>_01.png</mt:SetVarBlock>
+  <mt:Else>
+  <mt:SetVarBlock name='thumnailPath'>/<mt:Var name='primaryCategoryBasename'>/img/pic_<mt:EntryBasename>_01.jpg</mt:SetVarBlock>
+  </mt:if>
+</mt:if>
+  
 
 <mt:ignore>
 ***********************************

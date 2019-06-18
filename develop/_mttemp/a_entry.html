@@ -64,7 +64,7 @@
 				<article class="main_inner">
 					<header class="entry_header">
 						<div class="mainvisual">
-							<p class="mainvisual_pic"><img src="/gourmet/img/pic_butterbutler_01.png" alt=""></p>
+							<p class="mainvisual_pic"><img src="<mt:Var name='thumnailPath' encode_html='1'>" alt="<mt:Var name='noBrTitle' encode_html='1'>"></p>
 							<p class="mainvisual_date"><mt:EntryDate format='%Y.%m.%d'></p>
 							<h1 class="mainvisual_ttl"><span><mt:EntryTitle></span></h1>
 						</div>
@@ -75,11 +75,9 @@
 						</ul>
 					</header>
 					<!--#include virtual="/_inc/advertise780.html"-->
-					<div class="entry_content">
-
-					</div>
+					<!--#include virtual="/_inc/<mt:Var name='primaryCategoryBasename'>/<mt:EntryBasename encode_html='1'>.html"-->
 					<!--#include virtual="/_inc/entry_sns.html"-->
-					<!--#include virtual="/_inc/relation_gourmet.html"-->
+					<!--#include virtual="/_inc/relation_<mt:Var name='primaryCategoryBasename'>.html"-->
 				</article>
 			</main>
 			<!--#include virtual="/_inc/footer.html"-->
