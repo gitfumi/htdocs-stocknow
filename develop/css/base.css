@@ -144,6 +144,11 @@ label {
   cursor: pointer;
 }
 
+::-moz-selection {
+  color: #fff;
+  background-color: #ff6f6f;
+}
+
 ::selection {
   color: #fff;
   background-color: #ff6f6f;
