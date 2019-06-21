@@ -1,0 +1,99 @@
+<mt:For regex_replace='/^\s*\n/gm',''><mt:ignore><!-- 改行削除 --></mt:ignore>
+<mt:Truncateurl>
+<mt:Include blog_id='3' module='init設定'>
+<!DOCTYPE html>
+<html lang="ja">
+	<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+		<mt:Include file="../_inc/gtm_head.html">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>キーワードタグ：<mt:SearchString><mt:Var name='cmnTitle' encode_html='1'></title>
+		<mt:Include file="../_inc/head_meta_name.html">
+		<meta name="description" content="<mt:Var name='headDescription' encode_html='1'>">
+		<meta property="og:title" content="キーワードタグ：<mt:SearchString><mt:Var name='cmnTitle' encode_html='1'>">
+		<meta property="og:description" content="<mt:Var name='headDescription' encode_html='1'>">
+		<meta property="og:url" content="<mt:Var name='headOGPUrl' encode_html='1'>">
+		<meta property="og:image" content="<mt:WebsiteURL encode_html='1'>img/common/og-image.jpg">
+		<meta property="og:type" content="article">
+		<mt:Include file="../_inc/head_meta_property.html">
+		<mt:Include file="../_inc/head_link.html">
+		<link rel="stylesheet" href="/css/p_entry.css">
+		<script type="application/ld+json">
+			{
+				"@context": "http://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"item": {
+							"@id": "<mt:WebsiteURL encode_html='1'>",
+							"name": "HOME"
+						}
+					}
+				]
+			},
+			{
+				"@context": "http://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 2,
+						"item": {
+							"@id": "<mt:Var name='headOGPUrl' encode_html='1'>",
+							"name": "キーワードタグ：<mt:SearchString>"
+						}
+					}
+				]
+			}
+		</script>
+	</head>
+	<body class="p-normal">
+		<mt:Include file="../_inc/gtm_body.html">
+		<mt:Include file="../_inc/header_mt.html">
+		<div id="contents">
+			<main id="main">
+				<nav class="m-breadcrumbs">
+					<ol class="m-breadcrumbs_list">
+						<li><a href="/">HOME</a></li>
+						<li><span>キーワードタグ：<mt:SearchString></span>
+						</li>
+					</ol>
+				</nav>
+				<div class="c-pageTitle">
+					<div class="c-pageTitle_inner">
+						<h1 class="c-pageTitle_txt">キーワードタグ：<mt:SearchString></h1>
+					</div>
+				</div>
+				<article class="main_inner">
+					<mt:Include file="../_inc/advertise780.html">
+					<div class="item_box">
+						<div class="c-item_list is-3block">
+							<mt:SearchResults>
+							<mt:SetVar name='entryLoopFlg' value='true'>
+							<mt:Include blog_id='3' module='init設定'>
+							<section><a href="<mt:EntryPermalink encode_html='1'>">
+									<p class="c-item_listPic"><img src="<mt:Var name='thumnailPath' encode_html='1'>" alt="<mt:Var name='noBrTitle' encode_html='1'>"></p>
+									<p class="c-item_listDate"><mt:EntryDate format='%Y.%m.%d'></p>
+									<h2 class="c-item_listTxt"><mt:Var name='noBrTitle' encode_html='1'></h2></a>
+								<ul class="c-tag_list">
+									<mt:EntryTags>
+									<li><a href="<mt:TagSearchLink regex_replace='/_mt\/mt-search\.cgi/g','search/' encode_js='1'>"><mt:TagName></a></li>
+									</mt:EntryTags>
+								</ul>
+							</section>
+							</mt:SearchResults>
+						</div>
+					</div>
+					<mt:Include file="../_inc/entry_sns_mt.html">
+				</article>
+			</main>
+			<mt:Include file="../_inc/footer.html">
+		</div>
+		<mt:Include file="../_inc/script.html">
+	</body>
+</html>
+
+</mt:Truncateurl>
+</mt:For><mt:ignore><!-- //改行削除 --></mt:ignore>

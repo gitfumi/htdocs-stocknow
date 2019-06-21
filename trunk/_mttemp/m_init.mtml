@@ -1,0 +1,91 @@
+<mt:ignore>
+***********************************
+    共通の変数設定
+***********************************
+</mt:ignore>
+<mt:SetVar name='cmnTitle' value='｜STOCKNOWのおしゃれな'>
+<mt:SetVar name='cmnDescription' value='STOCKNOWは周りと差がつく見た目・センスのイイ手土産ギフトと20代〜40代向けの今話題のトレンドファッション情報サイトです。手土産ギフトではお取り寄せも扱って商品もありますので、自分へのご褒美ギフトとしてもご利用いただけます。ファッションではコーディネートや小物の使い方などおしゃれになる情報が盛りだくさんです。'>
+<mt:SetVar name='headOGPType' value='article'>
+<mt:SetVarBlock name='headOGPUrl'><mt:CanonicalURL></mt:SetVarBlock>
+
+<mt:If name='entryLoopFlg' eq=''>
+<mt:SetVar name='entryLoopFlg' value='false'>
+</mt:If>
+
+<mt:ignore>
+***********************************
+    ページ判定
+***********************************
+</mt:ignore>
+<mt:SetVar name='CustomIndexTemplate' value='1'>
+<mt:SetVar name='page' value=''>
+<mt:If name='main_index'><mt:ignore><!-- メインページ --></mt:ignore>
+  <mt:SetVar name='page' value='main_index'>
+<mt:ElseIf name='entry_template'><mt:ignore><!-- 詳細テンプレート --></mt:ignore>
+  <mt:SetVar name='page' value='entry_template'>
+<mt:ElseIf name='category_archive'><mt:ignore><!-- カテゴリテンプレート --></mt:ignore>
+  <mt:SetVar name='page' value='category_archive'>
+<mt:ElseIf name="search_results"><mt:ignore><!-- 検索結果 --></mt:ignore>
+  <mt:SetVar name='page' value='Search'>
+<mt:ElseIf name='CustomIndexTemplate'><mt:ignore><!-- カスタムインデックステンプレート --></mt:ignore>
+  <mt:SetVar name='page' value='CustomIndexTemplate'>
+</mt:If>
+
+<mt:ignore>
+***********************************
+    記事詳細ページのループ設定
+***********************************
+</mt:ignore>
+<mt:ignore><!-- 記事詳細ページ --></mt:ignore>
+<mt:if name='page' like='entry_template'>
+<mt:SetVar name='entryLoopFlg' value='true'>
+</mt:if>
+
+<mt:ignore>
+***********************************
+    記事ループ/記事詳細の場合
+***********************************
+</mt:ignore>
+<mt:if name='entryLoopFlg' eq='true'>
+  <mt:SetVarBlock name='noBrTitle'><mt:EntryTitle regex_replace='/<br>/g',''></mt:SetVarBlock>
+
+  <mt:ignore><!-- プライマリーカテゴリの取得 --></mt:ignore>
+  <mt:EntryPrimaryCategory>
+  <mt:CategoryBasename encode_html='1' setvar='primaryCategoryBasename'>
+  <mt:CategoryLabel encode_html='1' setvar='primaryCategoryName'>
+  <mt:SetVarBlock name='primaryCategoryUrl'>/<mt:Var name='primaryCategoryBasename'>/</mt:SetVarBlock>
+  </mt:EntryPrimaryCategory>
+
+  <mt:ignore><!-- 記事詳細ページのmeta設定 --></mt:ignore>
+  <mt:SetVarBlock name='cmnTitle'><mt:Var name='cmnTitle'><mt:Var name='primaryCategoryName'>部門</mt:SetVarBlock>
+  <mt:if name='primaryCategoryBasename' like='gourmet'><mt:ignore><!-- グルメの場合 --></mt:ignore>
+  <mt:SetVar name='cmnDescription' value='STOCKNOWでは各店舗や期間限定の催事場情報も日々更新しております。その他にも見た目もイイ、センスもイイ手土産ギフト情報もたくさん取り揃えておりますので、ぜひご活用ください！'>
+  <mt:ElseIf like="fashion"><mt:ignore><!-- ファッションの場合 --></mt:ignore>
+  <mt:SetVar name='cmnDescription' value='STOCKNOWでは20代、30代、40代のそれぞれ年代にハマるトレンドファッション情報をお届けしています。シンプルだけどおしゃれポイントを抑えたコーディネートなど、参考になる情報を集めました！'>
+  </mt:if>
+
+  <mt:ignore><!-- 各ページのdescription設定 --></mt:ignore>
+  <mt:if tag='EntryMetaDescription'>
+  <mt:SetVarBlock name='headDescription'><mt:EntryMetaDescription>。<mt:Var name='cmnDescription'></mt:SetVarBlock>
+  <mt:Else>
+  <mt:SetVarBlock name='headDescription'><mt:EntryTitle regex_replace='/<br>/g',''>。<mt:Var name='cmnDescription'></mt:SetVarBlock>
+  </mt:if>
+
+  <mt:ignore><!-- 画像パス設定 --></mt:ignore>
+  <mt:if tag='EntryBasename' like='butterbutler'>
+  <mt:SetVarBlock name='thumnailPath'>/<mt:Var name='primaryCategoryBasename'>/img/pic_<mt:EntryBasename>_01.png</mt:SetVarBlock>
+  <mt:Else>
+  <mt:SetVarBlock name='thumnailPath'>/<mt:Var name='primaryCategoryBasename'>/img/pic_<mt:EntryBasename>_01.jpg</mt:SetVarBlock>
+  </mt:if>
+</mt:if>
+  
+
+<mt:ignore>
+***********************************
+    検索結果
+***********************************
+</mt:ignore>
+<mt:ElseIf name='page' eq='Search'>
+  <mt:SetVarBlock name='headDescription'>キーワードタグ：<mt:SearchString>。<mt:Var name='cmnDescription'></mt:SetVarBlock>
+  <mt:SetVarBlock name='headOGPUrl'><mt:BlogURL>search/?tag=<mt:SearchString encode_url='1'>&IncludeBlogs=<mt:Var name='webBlogNewsID'>&limit=20</mt:SetVarBlock>
+</mt:If>
