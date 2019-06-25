@@ -64,7 +64,11 @@
 				<article class="main_inner">
 					<header class="entry_header">
 						<div class="mainvisual">
-							<p class="mainvisual_pic"><img src="<mt:Var name='thumnailPath' encode_html='1'>" alt="<mt:Var name='noBrTitle' encode_html='1'>"></p>
+							<p class="mainvisual_pic"><mt:if name='primaryCategoryBasename' like='fashion'>
+							<span><img src="<mt:Var name='thumnailPath' encode_html='1'>" alt="<mt:Var name='noBrTitle' encode_html='1'>"></span>
+							<mt:Else>
+							<img src="<mt:Var name='thumnailPath' encode_html='1'>" alt="<mt:Var name='noBrTitle' encode_html='1'>">
+							</mt:If></p>
 							<p class="mainvisual_date"><mt:EntryDate format='%Y.%m.%d'></p>
 							<h1 class="mainvisual_ttl"><span><mt:EntryTitle></span></h1>
 						</div>

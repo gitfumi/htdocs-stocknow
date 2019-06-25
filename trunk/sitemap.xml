@@ -26,185 +26,191 @@
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
-  meta['/gourmet/dou.html']
+
 <url>
-	<loc>https://stocknow.info/gourmet/butterbutler.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/latelierdelien.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/bake.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/salmon.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/zakuzaku.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/butterbutler.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/ringo.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/crisp.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/pressbuttersand.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/beillevaire.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/dou.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/craftbeer.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/pogg.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/maisonkayser.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/chocolaphil.html</loc>
+	<loc>http://stocknow.dev.localhost/fashion/scene01.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/flippers-pancake.html</loc>
+	<loc>http://stocknow.dev.localhost/fashion/scene03.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/floweryflour.html</loc>
+	<loc>http://stocknow.dev.localhost/fashion/scene02.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/whitebread.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/sparklingwine.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/daifuku.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/bake.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/milkcheese.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/otoemon.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/reserve.html</loc>
+	<loc>http://stocknow.dev.localhost/fashion/tiamo84.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/basquecheesecake.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/amysbakeshop.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/inarizushi.html</loc>
+	<loc>http://stocknow.dev.localhost/fashion/tiamo82.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/amysbakeshop.html</loc>
+	<loc>http://stocknow.dev.localhost/fashion/tiamo83.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/otoemon.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/inarizushi.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/sparklingwine.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/basquecheesecake.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/maisonkayser.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/reserve.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/craftbeer.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/milkcheese.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/crisp.html</loc>
+	<loc>http://stocknow.dev.localhost/fashion/tiamo81.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/beillevaire.html</loc>
+	<loc>http://stocknow.dev.localhost/fashion/tiamo80.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/gourmet/salmon.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/daifuku.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/fashion/tiamo76.html</loc>
+	<loc>http://stocknow.dev.localhost/fashion/tiamo79.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/fashion/tiamo77.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/whitebread.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/fashion/tiamo78.html</loc>
+	<loc>http://stocknow.dev.localhost/fashion/tiamo78.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/fashion/tiamo79.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/flippers-pancake.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/fashion/tiamo80.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/chocolaphil.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/fashion/tiamo81.html</loc>
+	<loc>http://stocknow.dev.localhost/fashion/tiamo77.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/fashion/tiamo82.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/pogg.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/fashion/tiamo83.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/dou.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/fashion/tiamo84.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/zakuzaku.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/fashion/scene01.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/ringo.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/fashion/scene02.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/pressbuttersand.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>https://stocknow.info/fashion/scene03.html</loc>
+	<loc>http://stocknow.dev.localhost/gourmet/floweryflour.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
+<url>
+	<loc>http://stocknow.dev.localhost/fashion/tiamo76.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+
 </urlset>

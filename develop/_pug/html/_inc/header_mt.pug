@@ -16,23 +16,26 @@ header#header
 			ins.adsbygoogle(style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4223387530424990" data-ad-slot="1141931755")
 			script.
 				(adsbygoogle = window.adsbygoogle || []).push({});
-		section.header_tag
-			h2.m-titleType01 #[span WORD] 人気ワード
-			//#include virtual="/_inc/tag_list.html"
-		nav.header_nav
+		//- nav.header_nav
 			h2.m-titleType01 #[span CATEGORY] カテゴリ
 			ul
 				li: a(href="/") #[span グルメ]
 				li: a(href="/") #[span ファッション]
+		section.header_tag
+			h2.m-titleType01 #[span WORD] 人気ワード
+			|
+			|<mt:Include file="../_inc/tag_list.html">
 		div.header_flexibleArea
 			section.header_item
 				h2.m-titleType01 #[span RECOMMEND] グルメ
 				div.c-item_list
-					//#include virtual="/_inc/list_gourmet.html"
+					|
+					|<mt:Include file="../_inc/list_gourmet.html">
 			section.header_item
 				h2.m-titleType01 #[span PICKUP] ファッション
 				div.c-item_list.is-fashion
-					//#include virtual="/_inc/list_fashion.html"
+					|
+					|<mt:Include file="/_inc/list_fashion.html">
 		div.header_advertise
 			script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
 			ins.adsbygoogle(style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4223387530424990" data-ad-slot="1141931755")

@@ -74,13 +74,13 @@
         &:nth-of-type(n+3)
           margin-top: $sectionMargin/2
   &.is-fashion
-    a::before,.c-item_listPic::after
+    section >a::before,.c-item_listPic::after
       content: ''
       position: absolute
       background-repeat: no-repeat
       background-size: 100%
       z-index: 1
-    a::before
+    section >a::before
       top: 10px
       right: 10px
       width: 45px
@@ -93,3 +93,7 @@
       height: 61px
       background-image: url(/fashion/img/logo_nano.png)
       transform: translate(-50%, -50%)
+  +media(phablet)
+    .c-tag_list
+      >*:nth-child(n+6)
+        display: none

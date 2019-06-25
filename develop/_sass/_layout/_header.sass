@@ -127,6 +127,7 @@
     padding: $sectionMargin/2
   .header_item
     padding: $sectionMargin/2
+    border-top: 1px solid $baseBorderColor
     div.c-item_list >*
       margin-top: 20px
       &:nth-of-type(n+4),.c-tag_list
@@ -137,6 +138,8 @@
     >ul
       & + .header_advertise
         margin-top: $sectionMargin/2
+    .c-tag_list::before
+      display: none
   .header_subNav
     border-top: 1px solid $baseBorderColor
     >ul

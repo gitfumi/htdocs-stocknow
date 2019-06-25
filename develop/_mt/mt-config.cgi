@@ -1,13 +1,13 @@
 ## Movable Type Configuration File
 ##
 ## This file defines system-wide
-## settings for Movable Type. In 
-## total, there are over a hundred 
-## options, but only those 
-## critical for everyone are listed 
+## settings for Movable Type. In
+## total, there are over a hundred
+## options, but only those
+## critical for everyone are listed
 ## below.
 ##
-## Information on all others can be 
+## Information on all others can be
 ## found at:
 ##  http://www.movabletype.jp/documentation/config
 
@@ -29,7 +29,8 @@ DBHost d-mysql
 EmailAddressMain deep.blue.f23@gmail.com
 MailTransfer sendmail
 SendMailPath /
-    
+
 DefaultLanguage ja
 
 ImageDriver ImageMagick
+AllowFileInclude 1

@@ -1,0 +1,19 @@
+<mt:ignore>
+***********************************
+    一覧用テンプレート
+***********************************
+</mt:ignore>
+<mt:SetVarBlock name="templateline_list">
+<section><a href="<mt:EntryPermalink encode_html='1'>">
+	<p class="c-item_listPic"><img src="<mt:Var name='thumnailPath' encode_html='1'>" alt="<mt:Var name='noBrTitle' encode_html='1'>"></p>
+	<p class="c-item_listDate"><mt:EntryDate format='%Y.%m.%d'></p>
+	<h2 class="c-item_listTxt"><mt:Var name='noBrTitle' encode_html='1'></h2></a>
+  <mt:If tag='EntryTags'>
+	<ul class="c-tag_list">
+		<mt:EntryTags>
+		<li><a href="<mt:TagSearchLink regex_replace='/_mt\/mt-search\.cgi/g','search/' encode_js='1'>"><mt:TagName></a></li>
+		</mt:EntryTags>
+	</ul>
+  </mt:if>
+</section>
+</mt:SetVarBlock>

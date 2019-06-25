@@ -1,0 +1,21 @@
+<mt:For regex_replace="/^\s*\n/gm",""><mt:ignore><!-- 改行削除 --></mt:ignore>
+<mt:Truncateurl>
+<mt:Entries lastn='0' category='グルメ'>
+<mt:SetVar name='entryLoopFlg' value='true'>
+<mt:Include blog_id='3' module='init設定'>
+<mt:Include blog_id='3' module='一覧用テンプレート'>
+<mt:if tag='EntryBasename' like='butterbutler|reserve'>
+<mt:Var name='templateline_list'>
+</mt:If>
+</mt:Entries>
+
+<mt:Entries lastn='0' category='グルメ'>
+<mt:SetVar name='entryLoopFlg' value='true'>
+<mt:Include blog_id='3' module='init設定'>
+<mt:Include blog_id='3' module='一覧用テンプレート'>
+<mt:if tag='EntryBasename' ne='butterbutler'><mt:if tag='EntryBasename' ne='reserve'>
+<mt:Var name='templateline_list'>
+</mt:If></mt:If>
+</mt:Entries>
+</mt:Truncateurl>
+</mt:For><mt:ignore><!-- //改行削除 --></mt:ignore>

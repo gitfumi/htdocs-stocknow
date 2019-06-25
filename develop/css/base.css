@@ -423,6 +423,7 @@ html {
 
 #header .header_item {
   padding: 30px;
+  border-top: 1px solid #e0e0e0;
 }
 
 #header .header_item div.c-item_list > * {
@@ -440,6 +441,10 @@ html {
 
 #header .header_tag > ul + .header_advertise {
   margin-top: 30px;
+}
+
+#header .header_tag .c-tag_list::before {
+  display: none;
 }
 
 #header .header_subNav {
@@ -1564,7 +1569,7 @@ html {
   }
 }
 
-.c-item_list.is-fashion a::before, .c-item_list.is-fashion .c-item_listPic::after {
+.c-item_list.is-fashion section > a::before, .c-item_list.is-fashion .c-item_listPic::after {
   content: '';
   position: absolute;
   background-repeat: no-repeat;
@@ -1572,7 +1577,7 @@ html {
   z-index: 1;
 }
 
-.c-item_list.is-fashion a::before {
+.c-item_list.is-fashion section > a::before {
   top: 10px;
   right: 10px;
   width: 45px;
@@ -1588,6 +1593,12 @@ html {
   background-image: url(/fashion/img/logo_nano.png);
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 480px) {
+  .c-item_list .c-tag_list > *:nth-child(n+6) {
+    display: none;
+  }
 }
 
 /* ---------------------------------------------------------

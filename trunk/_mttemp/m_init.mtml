@@ -78,14 +78,14 @@
   <mt:SetVarBlock name='thumnailPath'>/<mt:Var name='primaryCategoryBasename'>/img/pic_<mt:EntryBasename>_01.jpg</mt:SetVarBlock>
   </mt:if>
 </mt:if>
-  
+
 
 <mt:ignore>
 ***********************************
     検索結果
 ***********************************
 </mt:ignore>
-<mt:ElseIf name='page' eq='Search'>
+<mt:If name='page' eq='Search'>
   <mt:SetVarBlock name='headDescription'>キーワードタグ：<mt:SearchString>。<mt:Var name='cmnDescription'></mt:SetVarBlock>
   <mt:SetVarBlock name='headOGPUrl'><mt:BlogURL>search/?tag=<mt:SearchString encode_url='1'>&IncludeBlogs=<mt:Var name='webBlogNewsID'>&limit=20</mt:SetVarBlock>
 </mt:If>
