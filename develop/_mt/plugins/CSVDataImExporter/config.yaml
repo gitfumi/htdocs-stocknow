@@ -1,0 +1,104 @@
+# CSVDataImExporter
+#
+# Release 1.00 (Mar 01, 2011)
+# Release 1.01 (Mar 29, 2011) add overwrite condition.
+# Release 1.02 (Nov 10, 2011) fix bug.
+# Release 1.03 (Dec 11, 2011) fix encoding bug.
+# Release 1.04 (Jan 07, 2012) fix bug.
+# Release 1.05 (Jun 16, 2012) fix datetime bug.
+# Release 1.06 (Jul 25, 2012) fix category bug.
+# Release 1.07 (Dec 12, 2012) security update.
+# Release 1.08 (Jan 15, 2013) for 5.2 and localized.
+# Release 1.09 (Dec 16, 2013) fix bug for '.jpg'.
+# Release 2.00 (Dec 16, 2013) for CF Asset.
+# Release 2.01 (Feb 08, 2014) for system customfield.
+# Release 2.02 (Apr 18, 2014) fix bug.
+# Release 2.03 (Aug 27, 2014) fix bug.
+# Release 3.00 (Mar 13, 2016) the improvement of performance.
+# Release 3.01 (Mar 14, 2016) fix bug.
+# Release 3.02 (Mar 27, 2016) fix bug.
+# Release 4.00 (Jan 23, 2017) for Character encoding and author changing.
+# Release 4.01 (Mar 10, 2017) fix bug.
+# Release 4.02 (Mar 17, 2017) add character encoding for system and category sort and supported BOM.
+# Release 4.03 (Oct 05, 2017) fix bug for subcategory.
+#
+# Copyright (c) 2004-2017 Yujiro Araki
+
+id: CSVDataImExporter
+name: CSVDataImExporter
+version: 4.03
+description: '<__trans phrase="Import and export MT CSV into MT.">'
+author_name: Yujiro Araki
+author_link: http://www.koikikukan.com/
+l10n_lexicon:
+    ja: l10n_ja.yaml
+system_config_template: system_config.tmpl
+blog_config_template: blog_config.tmpl
+settings:
+    imexport_character_system:
+        scope: system
+        default: 'cp932'
+    imexport_character:
+        scope: blog
+        default: 'system'
+    is_cloud:
+        scope: system
+        default: 0
+applications:
+    cms:
+        menus:
+            tools:start_export_with_excel:
+                label: Export CSV
+                order: 10010
+                mode: start_export_with_excel
+                view:
+                    - blog
+                    - website
+                    - system
+                permission: administer
+                condition: |
+                    sub {
+                        return 1 if MT->version_number >= 5.1;
+                        return 0;
+                    }
+        list_actions:
+            entry:
+                export_entries_with_csv:
+                    label: Export Entries with CSV
+                    order: 100
+                    handler: $CSVDataImExporter::CSVDataImExporter::Export::export_entries_with_csv
+                    permission: administer
+                    condition: >
+                        sub {
+                            my $app = MT->app;
+                            return 0 if !$app->blog;
+                            return 1;
+                        }
+            page:
+                export_pages_with_csv:
+                    label: Export Pages with CSV
+                    order: 100
+                    handler: $CSVDataImExporter::CSVDataImExporter::Export::export_entries_with_csv
+                    permission: administer
+                    condition: >
+                        sub {
+                            my $app = MT->app;
+                            return 0 if !$app->blog;
+                            return 1;
+                        }
+import_formats:
+    import_csv:
+        handler: CSVDataImExporter::ImportExport::import_contents
+        label: "CSV"
+        options:
+            - same_id_process
+            - no_id_process
+            - null_id_process
+        options_param: CSVDataImExporter::ImportExport::get_param
+        options_template: options.tmpl
+        type: CSVDataImExporter::ImportExport
+methods:
+    start_export_with_excel: $CSVDataImExporter::CSVDataImExporter::Export::start_export_with_excel
+    do_excel_export: $CSVDataImExporter::CSVDataImExporter::Export::do_excel_export
+callbacks:
+    MT::App::CMS::template_source.import: $CSVDataImExporter::CSVDataImExporter::CMS::add_script

@@ -1,0 +1,14 @@
+<mtapp:setting
+    id="is_cloud"
+    label="<__trans phrase="Is Cloud">">
+<p><input type="radio" id="is_cloud_0" name="is_cloud" value="0" <mt:if name="is_cloud" eq="0">checked</mt:if> /> <label for="is_cloud"><__trans phrase="no cloud"></label><br />
+   <input type="radio" id="is_cloud_1" name="is_cloud" value="1" <mt:if name="is_cloud" eq="1">checked</mt:if> /> <label for="is_cloud"><__trans phrase="cloud"></label><br />
+</mtapp:setting>
+
+<mtapp:setting
+    id="imexport_character_system"
+    label="<__trans phrase="Imexport character">">
+<p><input type="radio" id="imexport_character_0" name="imexport_character_system" value="cp932" <mt:if name="imexport_character_system" eq="cp932">checked</mt:if> /> <label for="imexport_character_0"><__trans phrase="shiftjis"></label><br />
+   <input type="radio" id="imexport_character_1" name="imexport_character_system" value="utf-8" <mt:if name="imexport_character_system" eq="utf-8">checked</mt:if> /> <label for="imexport_character_1"><__trans phrase="utf8"></label><br />
+   <input type="radio" id="imexport_character_2" name="imexport_character_system" value="euc" <mt:if name="imexport_character_system" eq="euc">checked</mt:if> /> <label for="imexport_character_2"><__trans phrase="euc"></label></p>
+</mtapp:setting>
