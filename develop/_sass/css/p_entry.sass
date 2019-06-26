@@ -306,6 +306,24 @@
       background-color: #000
       text-align: center
       color: #fff
+      transform: perspective(1px) translateZ(0)
+      transition: all .3s
+      &:before
+        content: ""
+        position: absolute
+        z-index: -1
+        right: 0
+        bottom: 0
+        left: 100%
+        background: rgb(238,136,170); /* Old browsers */
+        background: linear-gradient(to right,  rgba(238,136,170,1) 0%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee88aa', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 */
+        height: 4px
+        transition: left .3s ease-out
+      &.is-hover
+        background-color: #333
+        &:before
+          left: 0
       span
         display: inline-block
         padding: 10px 0 10px 2.8rem

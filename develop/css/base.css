@@ -486,6 +486,38 @@ html {
   background-color: #000;
   color: #fff;
   font-weight: 700;
+  -webkit-transform: perspective(1px) translateZ(0);
+          transform: perspective(1px) translateZ(0);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+#header .header_subNav > ul > li > a:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  left: 100%;
+  background: #ee88aa;
+  /* Old browsers */
+  background: -webkit-gradient(linear, left top, right top, from(#ee88aa), to(#7db9e8));
+  background: -webkit-linear-gradient(left, #ee88aa 0%, #7db9e8 100%);
+  background: linear-gradient(to right, #ee88aa 0%, #7db9e8 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee88aa', endColorstr='#7db9e8',GradientType=1 );
+  /* IE6-9 */
+  height: 4px;
+  -webkit-transition: left .3s ease-out;
+  transition: left .3s ease-out;
+}
+
+#header .header_subNav > ul > li > a.is-hover {
+  background-color: #333;
+}
+
+#header .header_subNav > ul > li > a.is-hover:before {
+  left: 0;
 }
 
 #header .header_subNav > ul + .header_advertise {
@@ -1669,8 +1701,8 @@ html {
   color: #fff;
   padding: 3px 8px;
   font-size: 1.1rem;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .c-tag_list > li a::before {
@@ -1679,8 +1711,8 @@ html {
 }
 
 .c-tag_list > li a.is-hover {
-  background-color: #000;
-  color: #fff;
+  -webkit-box-shadow: 0 0 5px 0 #000;
+          box-shadow: 0 0 5px 0 #000;
 }
 
 /* ---------------------------------------------------------

@@ -3,6 +3,8 @@
 
 var _current_link = _interopRequireDefault(require("./module/current_link.js"));
 
+var _add_tap_class = _interopRequireDefault(require("./module/add_tap_class.js"));
+
 var _disable_tel_link = _interopRequireDefault(require("./module/disable_tel_link.js"));
 
 var _glovalnav = _interopRequireDefault(require("./module/glovalnav.js"));
@@ -21,7 +23,30 @@ var _on_media_query = _interopRequireDefault(require("./on_media_query.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./module/current_link.js":2,"./module/disable_tel_link.js":3,"./module/ga_event_tracking.js":4,"./module/glovalnav.js":5,"./module/menu_slide.js":6,"./module/perfect_scroll.js":7,"./module/scroll_anchor.js":8,"./module/share.js":9,"./on_media_query.js":10}],2:[function(require,module,exports){
+},{"./module/add_tap_class.js":2,"./module/current_link.js":3,"./module/disable_tel_link.js":4,"./module/ga_event_tracking.js":5,"./module/glovalnav.js":6,"./module/menu_slide.js":7,"./module/perfect_scroll.js":8,"./module/scroll_anchor.js":9,"./module/share.js":10,"./on_media_query.js":11}],2:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+// タッチデバイスで:hoverを再現
+var addTapClass = function () {
+  $(document).on(window.ontouchstart === null ? 'touchstart' : 'mouseenter', 'a, button, .js-hover', function () {
+    $(this).addClass('is-hover');
+  }).on(window.ontouchend === null ? 'touchend' : 'mouseleave', 'a, button, .js-hover', function () {
+    var self = this;
+    setTimeout(function () {
+      $(self).removeClass('is-hover');
+    }, 100);
+  });
+}();
+
+var _default = addTapClass;
+exports.default = _default;
+
+},{}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -107,7 +132,7 @@ var _default = currentLink;
 exports.default = _default;
 currentLink.selflink();
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -131,7 +156,7 @@ var disableTelLink = function () {
 var _default = disableTelLink;
 exports.default = _default;
 
-},{"../ua.js":11}],4:[function(require,module,exports){
+},{"../ua.js":12}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -154,7 +179,7 @@ var gaEventTracking = function () {
 var _default = gaEventTracking;
 exports.default = _default;
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -187,7 +212,7 @@ var globalNav = function () {
 var _default = globalNav;
 exports.default = _default;
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -254,7 +279,7 @@ var menuSlide = function menuSlide() {
 var _default = menuSlide;
 exports.default = _default;
 
-},{"../valiable.js":12}],7:[function(require,module,exports){
+},{"../valiable.js":13}],8:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -272,7 +297,7 @@ var perfectScrollbar = function () {
 var _default = perfectScrollbar;
 exports.default = _default;
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -367,7 +392,7 @@ var scrollAnchor = function scrollAnchor(device) {
 var _default = scrollAnchor;
 exports.default = _default;
 
-},{"../ua.js":11}],9:[function(require,module,exports){
+},{"../ua.js":12}],10:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -390,7 +415,7 @@ var share = function () {
 var _default = share;
 exports.default = _default;
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -441,7 +466,7 @@ var onMediaQuery = function () {
 var _default = onMediaQuery;
 exports.default = _default;
 
-},{"./module/menu_slide.js":6,"./module/scroll_anchor.js":8}],11:[function(require,module,exports){
+},{"./module/menu_slide.js":7,"./module/scroll_anchor.js":9}],12:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -472,7 +497,7 @@ var ua = function () {
 var _default = ua;
 exports.default = _default;
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

@@ -497,6 +497,38 @@
   background-color: #000;
   text-align: center;
   color: #fff;
+  -webkit-transform: perspective(1px) translateZ(0);
+          transform: perspective(1px) translateZ(0);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.social_list > li a:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  left: 100%;
+  background: #ee88aa;
+  /* Old browsers */
+  background: -webkit-gradient(linear, left top, right top, from(#ee88aa), to(#7db9e8));
+  background: -webkit-linear-gradient(left, #ee88aa 0%, #7db9e8 100%);
+  background: linear-gradient(to right, #ee88aa 0%, #7db9e8 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee88aa', endColorstr='#7db9e8',GradientType=1 );
+  /* IE6-9 */
+  height: 4px;
+  -webkit-transition: left .3s ease-out;
+  transition: left .3s ease-out;
+}
+
+.social_list > li a.is-hover {
+  background-color: #333;
+}
+
+.social_list > li a.is-hover:before {
+  left: 0;
 }
 
 .social_list > li a span {
