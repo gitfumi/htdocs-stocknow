@@ -33,6 +33,11 @@
 	<priority>0.80</priority>
 </url>
 <url>
+	<loc>http://stocknow.dev.localhost/gourmet/bispocke.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
 	<loc>http://stocknow.dev.localhost/gourmet/latelierdelien.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
