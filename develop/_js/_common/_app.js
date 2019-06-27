@@ -8,3 +8,4 @@ import menuSlide from './module/menu_slide.js';
 import share from './module/share.js';
 import gaEventTracking from './module/ga_event_tracking.js';
 import onMediaQuery      from './on_media_query.js';
+import googleMap      from './googlemap_customize.js';

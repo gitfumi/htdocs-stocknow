@@ -21,9 +21,168 @@ var _ga_event_tracking = _interopRequireDefault(require("./module/ga_event_track
 
 var _on_media_query = _interopRequireDefault(require("./on_media_query.js"));
 
+var _googlemap_customize = _interopRequireDefault(require("./googlemap_customize.js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-},{"./module/add_tap_class.js":2,"./module/current_link.js":3,"./module/disable_tel_link.js":4,"./module/ga_event_tracking.js":5,"./module/glovalnav.js":6,"./module/menu_slide.js":7,"./module/perfect_scroll.js":8,"./module/scroll_anchor.js":9,"./module/share.js":10,"./on_media_query.js":11}],2:[function(require,module,exports){
+},{"./googlemap_customize.js":2,"./module/add_tap_class.js":3,"./module/current_link.js":4,"./module/disable_tel_link.js":5,"./module/ga_event_tracking.js":6,"./module/glovalnav.js":7,"./module/menu_slide.js":8,"./module/perfect_scroll.js":9,"./module/scroll_anchor.js":10,"./module/share.js":11,"./on_media_query.js":12}],2:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+/*	GoogleMap のカスタマイズ
+	マーカーイベントを追加する際は、「infobox.js」を読み込んでください。
+	【$markerData配列形式】
+	let markerData = [
+		{
+			mapId:mapID,
+			name:name,
+			pin :pin,
+			zoom: zoom,
+			link:link,
+			lat :lat,
+			lng :lng
+		},
+		{
+			mapId:mapID,
+			name:name,
+			pin :pin,
+			zoom: zoom,
+			link:link,
+			lat :lat,
+			lng :lng
+		}
+	]
+*/
+var googleMap = function googleMap($markerData, $centerPinLat, $centerPinLan, $zoom, $markerEventFlg, $pinWith, $pinHeight) {
+  /* 初期設定 */
+  if ($centerPinLat == undefined) $centerPinLat = 0; // MAPの中心位置※緯度
+
+  if ($centerPinLan == undefined) $centerPinLan = 0; // MAPの中心位置※緯度
+
+  if ($zoom == undefined) $zoom = 16; // MAPの倍率
+
+  if ($markerEventFlg == undefined) $markerEventFlg = false; // インフォーメションウィンドウの判定※true:出す、false:出さない
+
+  if ($pinWith == undefined) $pinWith = 33; // ピンの横幅
+
+  if ($pinHeight == undefined) $pinHeight = 50; // ピンの高さ
+
+  var markers = new Array();
+  var markersInfo = new Array();
+  var targetLatlng, mapElemtn, map; // 初期設定
+
+  function init() {
+    // ベースマップの設定
+    var mapOptions = {
+      zoom: $zoom,
+      // 拡大比率
+      "center": {
+        // 地図の中心座標
+        "lat": $centerPinLat,
+        "lng": $centerPinLan
+      },
+      mapTypeId: google.maps.MapTypeId.ROADMAP // 表示タイプの指定
+
+    }; // ベースマップIDの設定
+
+    mapElement = document.getElementById($markerData[0]['mapId']);
+    map = new google.maps.Map(mapElement, mapOptions); // 大きな地図で見る
+
+    var href = 'https://maps.google.com/maps?ll=' + $markerData[0]['lat'] + ',' + $markerData[0]['lng'] + '&amp;z=' + $markerData[0]['zoom'] + '&amp;t=m&amp;hl=ja&amp;gl=US&amp;mapclient=embed&amp;q=' + $markerData[0]['name'];
+    var glink = '<p class="c-glink"><a target="_blank" href="' + href + '">大きな地図を見る</a></p>';
+    $('#' + $markerData[0]['mapId']).after(glink);
+
+    for (var i = 0; i < $markerData.length; i++) {
+      // 複数のマップの存在する場合、出力先を変更
+      if ($markerData[0]['mapId'] != $markerData[i]['mapId'] && i != 0) {
+        mapOptions = {
+          zoom: $markerData[i]['zoom'],
+          // 拡大比率
+          "center": {
+            // 地図の中心座標
+            "lat": $markerData[i]['lat'],
+            "lng": $markerData[i]['lng']
+          }
+        };
+        mapElement = document.getElementById($markerData[i]['mapId']);
+        map = new google.maps.Map(mapElement, mapOptions); // 大きな地図で見る
+
+        href = 'https://maps.google.com/maps?ll=' + $markerData[i]['lat'] + ',' + $markerData[i]['lng'] + '&amp;z=' + $markerData[i]['zoom'] + '&amp;t=m&amp;hl=ja&amp;gl=US&amp;mapclient=embed&amp;q=' + $markerData[i]['name'];
+        glink = '<p class="c-glink"><a target="_blank" href="' + href + '">大きな地図を見る</a></p>';
+        $('#' + $markerData[i]['mapId']).after(glink);
+      } // オリジナルアイコンの取得
+
+
+      if ($markerData[i]['pin']) {
+        var _icon = {
+          url: $markerData[i]['pin'],
+          // アイコンの場所
+          scaledSize: new google.maps.Size($pinWith, $pinHeight) // アイコンサイズ
+
+        };
+      }
+
+      targetLatlng = new google.maps.LatLng($markerData[i]['lat'], $markerData[i]['lng']); // マーカーの追加
+
+      markers[i] = new google.maps.Marker({
+        position: targetLatlng,
+        map: map,
+        icon: icon
+      });
+
+      if ($markerEventFlg) {
+        markerEvent(i, targetLatlng);
+      }
+    }
+
+    google.maps.event.addDomListener(window, "resize", function () {
+      var center = map.getCenter();
+      google.maps.event.trigger(map, "resize");
+      map.setCenter(center);
+    });
+  }
+
+  ;
+  google.maps.event.addDomListener(window, 'load', init); // マーカーイベント設定
+
+  function markerEvent(i) {
+    markers[i].addListener('click', function () {
+      // infobox 用の div エレメントを生成
+      var infoboxContent = document.createElement('div'); // infobox に表示するHTML
+
+      infoboxContent.innerHTML = '<div class="infobox is-' + $markerData[i]['category'] + '"><div class="inner"><h3 class="ttl">' + $markerData[i]['name'] + '</h3><p class="txt">' + $markerData[i]['location'] + '</p><p class="link"><a href="' + $markerData[i]['link'] + '">詳細へ</a></p></div></div>'; // infobox のオプション
+
+      var infoboxOptions = {
+        content: infoboxContent,
+        // 生成したDOMを割り当てる
+        pixelOffset: new google.maps.Size(-150, -55),
+        // オフセット値
+        alignBottom: true,
+        // 位置の基準
+        position: targetLatlng,
+        // 位置の座標
+        boxClass: "infobox",
+        // 生成したDOMをラップするdivのclass名
+        closeBoxMargin: "7px 5px 0 0",
+        // 閉じるボタンの位置調整
+        closeBoxURL: '/img/cmn/pic_mapwindow_close.png' // 閉じるボタンの画像パス
+
+      }; // infobox を生成して表示
+
+      var infobox = new InfoBox(infoboxOptions);
+      infobox.open(map, this);
+    });
+  }
+};
+
+var _default = googleMap;
+exports.default = _default;
+
+},{}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -46,7 +205,7 @@ var addTapClass = function () {
 var _default = addTapClass;
 exports.default = _default;
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -132,7 +291,7 @@ var _default = currentLink;
 exports.default = _default;
 currentLink.selflink();
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -156,7 +315,7 @@ var disableTelLink = function () {
 var _default = disableTelLink;
 exports.default = _default;
 
-},{"../ua.js":12}],5:[function(require,module,exports){
+},{"../ua.js":13}],6:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -179,7 +338,7 @@ var gaEventTracking = function () {
 var _default = gaEventTracking;
 exports.default = _default;
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -212,7 +371,7 @@ var globalNav = function () {
 var _default = globalNav;
 exports.default = _default;
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -279,7 +438,7 @@ var menuSlide = function menuSlide() {
 var _default = menuSlide;
 exports.default = _default;
 
-},{"../valiable.js":13}],8:[function(require,module,exports){
+},{"../valiable.js":14}],9:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -297,7 +456,7 @@ var perfectScrollbar = function () {
 var _default = perfectScrollbar;
 exports.default = _default;
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -392,7 +551,7 @@ var scrollAnchor = function scrollAnchor(device) {
 var _default = scrollAnchor;
 exports.default = _default;
 
-},{"../ua.js":12}],10:[function(require,module,exports){
+},{"../ua.js":13}],11:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -415,7 +574,7 @@ var share = function () {
 var _default = share;
 exports.default = _default;
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -466,7 +625,7 @@ var onMediaQuery = function () {
 var _default = onMediaQuery;
 exports.default = _default;
 
-},{"./module/menu_slide.js":7,"./module/scroll_anchor.js":9}],12:[function(require,module,exports){
+},{"./module/menu_slide.js":8,"./module/scroll_anchor.js":10}],13:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -497,7 +656,7 @@ var ua = function () {
 var _default = ua;
 exports.default = _default;
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
