@@ -28,6 +28,11 @@
 </url>
 
 <url>
+	<loc>http://stocknow.dev.localhost/gourmet/butterbutler.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
 	<loc>http://stocknow.dev.localhost/gourmet/thegoodvibes.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
@@ -44,11 +49,6 @@
 </url>
 <url>
 	<loc>http://stocknow.dev.localhost/gourmet/salmon.html</loc>
-	<changefreq>daily</changefreq>
-	<priority>0.80</priority>
-</url>
-<url>
-	<loc>http://stocknow.dev.localhost/gourmet/butterbutler.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
