@@ -80,9 +80,10 @@
 				var zoom = 9;
 				var markerEventFlg = true;
 			
+				var hoge = new _googlemap_customize();
 				// googleMapCustomize関数
-				googleMapCustomize(markerData,centerPinLat,centerPinLan,zoom,markerEventFlg);
-				googleMapCustomize(markerDataEitai,centerPinLat,centerPinLan,zoom,markerEventFlg);
+				hoge(markerData,centerPinLat,centerPinLan,zoom,markerEventFlg);
+				hoge(markerDataEitai,centerPinLat,centerPinLan,zoom,markerEventFlg);
 			});
 		</script>
 	</body>
