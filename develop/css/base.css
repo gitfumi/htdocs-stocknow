@@ -857,8 +857,10 @@ html {
   display: block;
   width: 50px;
   height: 50px;
-  background-color: #000;
   border-radius: 100%;
+  overflow: hidden;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 #footer .footer_totop a span {
@@ -896,6 +898,37 @@ html {
   border-right: solid 2px #fff;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+#footer .footer_totop a::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  background: black;
+  /* Old browsers */
+  background: -webkit-gradient(linear, left top, right top, from(black), to(black));
+  background: -webkit-linear-gradient(left, black 0%, black 100%);
+  background: linear-gradient(to right, black 0%, black 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=1 );
+  /* IE6-9 */
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+  border-radius: 100%;
+}
+
+#footer .footer_totop a.is-hover:before {
+  background: #ee88aa;
+  /* Old browsers */
+  background: -webkit-gradient(linear, left top, right top, from(#ee88aa), to(#7db9e8));
+  background: -webkit-linear-gradient(left, #ee88aa 0%, #7db9e8 100%);
+  background: linear-gradient(to right, #ee88aa 0%, #7db9e8 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee88aa', endColorstr='#7db9e8',GradientType=1 );
+  /* IE6-9 */
 }
 
 #footer .footer_inner {
@@ -1725,6 +1758,53 @@ html {
 #p-entry .entry_header .c-tag_list > li a {
   padding: 3px 10px;
   font-size: 1.2rem;
+}
+
+.infobox {
+  display: block;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 0;
+  font-family: "Noto Sans Japanese", sans-serif;
+}
+
+.infobox .inner {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+.infobox .ttl {
+  padding: 5px 30px 5px 5px;
+  font-size: 1.4rem;
+  color: #fff;
+  background: #ee88aa;
+  /* Old browsers */
+  background: -webkit-gradient(linear, left top, right top, from(#ee88aa), to(#7db9e8));
+  background: -webkit-linear-gradient(left, #ee88aa 0%, #7db9e8 100%);
+  background: linear-gradient(to right, #ee88aa 0%, #7db9e8 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee88aa', endColorstr='#7db9e8',GradientType=1 );
+  /* IE6-9 */
+}
+
+.infobox .ttl::after {
+  content: 'Read More..';
+  font-size: 1.2rem;
+  margin-left: 20px;
+  letter-spacing: 2px;
+  font-family: "ZCOOL QingKe HuangYou", cursive;
+}
+
+.infobox a:hover {
+  text-decoration: underline;
+}
+
+.infobox img {
+  z-index: 1;
+}
+
+.infobox img:hover {
+  opacity: .7;
 }
 
 /* Magnific Popup CSS */

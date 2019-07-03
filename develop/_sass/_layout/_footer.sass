@@ -12,8 +12,10 @@
       display: block
       width: 50px
       height: 50px
-      background-color: #000
+      // background: #000
       border-radius: 100%
+      overflow: hidden
+      transition: all .3s
       span
         display: flex
         height: 100%
@@ -25,6 +27,22 @@
         padding-top: 18px
         letter-spacing: 1px
         +icoArrow(before, 17px, 50%, null, 50%, 1.0rem, 2px, #fff, -45deg)
+      &::before
+        content: ""
+        position: absolute
+        z-index: 0
+        left: 0
+        background: rgb(0,0,0); /* Old browsers */
+        background: linear-gradient(to right,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
+        width: 100%
+        height: 100%
+        transition: all .5s ease-out
+        border-radius: 100%
+      &.is-hover:before
+        background: rgb(238,136,170); /* Old browsers */
+        background: linear-gradient(to right,  rgba(238,136,170,1) 0%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee88aa', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 */
   .footer_inner
     padding: 10px 20px
     display: flex

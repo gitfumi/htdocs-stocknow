@@ -1,4 +1,4 @@
-(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.exportFunc = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";
 
 var _current_link = _interopRequireDefault(require("./module/current_link.js"));
@@ -24,6 +24,8 @@ var _on_media_query = _interopRequireDefault(require("./on_media_query.js"));
 var _googlemap_customize = _interopRequireDefault(require("./googlemap_customize.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports.gm = _googlemap_customize.default;
 
 },{"./googlemap_customize.js":2,"./module/add_tap_class.js":3,"./module/current_link.js":4,"./module/disable_tel_link.js":5,"./module/ga_event_tracking.js":6,"./module/glovalnav.js":7,"./module/menu_slide.js":8,"./module/perfect_scroll.js":9,"./module/scroll_anchor.js":10,"./module/share.js":11,"./on_media_query.js":12}],2:[function(require,module,exports){
 "use strict";
@@ -67,13 +69,14 @@ var googleMap = function googleMap($markerData, $centerPinLat, $centerPinLan, $z
 
   if ($markerEventFlg == undefined) $markerEventFlg = false; // インフォーメションウィンドウの判定※true:出す、false:出さない
 
-  if ($pinWith == undefined) $pinWith = 33; // ピンの横幅
+  if ($pinWith == undefined) $pinWith = 40; // ピンの横幅
 
   if ($pinHeight == undefined) $pinHeight = 50; // ピンの高さ
 
   var markers = new Array();
   var markersInfo = new Array();
-  var targetLatlng, mapElemtn, map; // 初期設定
+  var targetLatlng, mapElement, map;
+  var bounds = new google.maps.LatLngBounds(); // 初期設定
 
   function init() {
     // ベースマップの設定
@@ -90,11 +93,7 @@ var googleMap = function googleMap($markerData, $centerPinLat, $centerPinLan, $z
     }; // ベースマップIDの設定
 
     mapElement = document.getElementById($markerData[0]['mapId']);
-    map = new google.maps.Map(mapElement, mapOptions); // 大きな地図で見る
-
-    var href = 'https://maps.google.com/maps?ll=' + $markerData[0]['lat'] + ',' + $markerData[0]['lng'] + '&amp;z=' + $markerData[0]['zoom'] + '&amp;t=m&amp;hl=ja&amp;gl=US&amp;mapclient=embed&amp;q=' + $markerData[0]['name'];
-    var glink = '<p class="c-glink"><a target="_blank" href="' + href + '">大きな地図を見る</a></p>';
-    $('#' + $markerData[0]['mapId']).after(glink);
+    map = new google.maps.Map(mapElement, mapOptions);
 
     for (var i = 0; i < $markerData.length; i++) {
       // 複数のマップの存在する場合、出力先を変更
@@ -109,36 +108,32 @@ var googleMap = function googleMap($markerData, $centerPinLat, $centerPinLan, $z
           }
         };
         mapElement = document.getElementById($markerData[i]['mapId']);
-        map = new google.maps.Map(mapElement, mapOptions); // 大きな地図で見る
-
-        href = 'https://maps.google.com/maps?ll=' + $markerData[i]['lat'] + ',' + $markerData[i]['lng'] + '&amp;z=' + $markerData[i]['zoom'] + '&amp;t=m&amp;hl=ja&amp;gl=US&amp;mapclient=embed&amp;q=' + $markerData[i]['name'];
-        glink = '<p class="c-glink"><a target="_blank" href="' + href + '">大きな地図を見る</a></p>';
-        $('#' + $markerData[i]['mapId']).after(glink);
+        map = new google.maps.Map(mapElement, mapOptions);
       } // オリジナルアイコンの取得
 
 
-      if ($markerData[i]['pin']) {
-        var _icon = {
-          url: $markerData[i]['pin'],
-          // アイコンの場所
-          scaledSize: new google.maps.Size($pinWith, $pinHeight) // アイコンサイズ
+      var pinicon = {
+        url: '/img/cmn/icon_googlemap.png',
+        // アイコンの場所
+        scaledSize: new google.maps.Size($pinWith, $pinHeight) // アイコンサイズ
 
-        };
-      }
-
+      };
       targetLatlng = new google.maps.LatLng($markerData[i]['lat'], $markerData[i]['lng']); // マーカーの追加
 
       markers[i] = new google.maps.Marker({
         position: targetLatlng,
         map: map,
-        icon: icon
+        icon: pinicon
       });
 
       if ($markerEventFlg) {
         markerEvent(i, targetLatlng);
       }
+
+      bounds.extend(targetLatlng);
     }
 
+    map.fitBounds(bounds);
     google.maps.event.addDomListener(window, "resize", function () {
       var center = map.getCenter();
       google.maps.event.trigger(map, "resize");
@@ -154,7 +149,7 @@ var googleMap = function googleMap($markerData, $centerPinLat, $centerPinLan, $z
       // infobox 用の div エレメントを生成
       var infoboxContent = document.createElement('div'); // infobox に表示するHTML
 
-      infoboxContent.innerHTML = '<div class="infobox is-' + $markerData[i]['category'] + '"><div class="inner"><h3 class="ttl">' + $markerData[i]['name'] + '</h3><p class="txt">' + $markerData[i]['location'] + '</p><p class="link"><a href="' + $markerData[i]['link'] + '">詳細へ</a></p></div></div>'; // infobox のオプション
+      infoboxContent.innerHTML = '<div class="infobox"><a href="' + $markerData[i]['link'] + '"><div class="inner"><h3 class="ttl">' + $markerData[i]['name'] + '</h3></div></a></div>'; // infobox のオプション
 
       var infoboxOptions = {
         content: infoboxContent,
@@ -674,4 +669,5 @@ var valiable = function () {
 var _default = valiable;
 exports.default = _default;
 
-},{}]},{},[1]);
+},{}]},{},[1])(1)
+});

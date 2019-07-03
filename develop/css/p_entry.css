@@ -840,3 +840,20 @@
 .otoemon_btn {
   margin-top: 20px;
 }
+
+/* ---------------------------------------------------------
+ *  タグ検索 記事一覧
+ *---------------------------------------------------------- */
+#googlemap.is-show {
+  width: 100%;
+  height: 500px;
+}
+
+@media only screen and (max-width: 480px) {
+  #googlemap.is-show {
+    margin-left: -10px;
+    margin-right: -10px;
+    width: auto;
+    height: 250px;
+  }
+}

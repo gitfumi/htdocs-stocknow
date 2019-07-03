@@ -49,7 +49,7 @@
 			}
 		</script>
 	</head>
-	<body class="p-normal">
+	<body class="p-search">
 		<mt:Include file="../_inc/gtm_body.html">
 		<mt:Include file="../_inc/header_mt.html">
 		<div id="contents">
@@ -67,12 +67,15 @@
 					</div>
 				</div>
 				<article class="main_inner">
+					<div id="googlemap"></div>
 					<div class="c-advertise">
 						<script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- メインビジュアル下 --><ins class="adsbygoogle" style="display:inline-block;width:780px;height:180px" data-ad-client="ca-pub-4223387530424990" data-ad-slot="6730212425"></ins>
 						<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 					</div>
 					<div class="item_box">
 						<div class="c-item_list is-3block">
+							<mt:Setvar name="j" value="0">
+							<mt:SearchString setvar='searchStr'>
 							<mt:SearchResults>
 							<mt:SetVar name='entryLoopFlg' value='true'>
 							<mt:Include blog_id='3' module='init設定'>
@@ -85,8 +88,29 @@
 									<li><a href="<mt:TagSearchLink regex_replace='/_mt\/mt-search\.cgi/g','search/' encode_js='1'>"><mt:TagName></a></li>
 									</mt:EntryTags>
 								</ul>
+								<mt:ignore><!-- areacodeの抽出 --></mt:ignore>
+								<mt:EntryAreaCode convert_breaks='0' no_generate='1' json_decode='1' setvar='json'>
+								<mt:Var name='json' key='items' setvar='items'>
+								<mt:Var name='items' function='count' op='--' setvar='areaCodeLen'>
+								<mt:For var='i' from='0' to='$areaCodeLen'>
+									<mt:Var name='items' index='$i' setvar='item'>
+									<mt:Var name='item' key='name' encode_html='1' setvar='station'>
+									<mt:Var name='item' key='latitude' encode_html='1' setvar='latStr'>
+									<mt:Var name='item' key='longitude' encode_html='1' setvar='lonStr'>
+									<mt:EntryPermalink encode_html='1' setvar='link'>
+									<mt:If name='searchStr' eq='$station'>
+									<mt:SetVar name='box' key='title' value='$noBrTitle'>
+									<mt:SetVar name='box' key='link' value='$link'>
+									<mt:SetVar name='box' key='latStr' value='$latStr'>
+									<mt:SetVar name='box' key='lonStr' value='$lonStr'>
+									<mt:SetVar name="stationList{$j}" value="$box">
+									<mt:Setvar name="j" value="1" op="+">
+									</mt:If>
+								</mt:For>
+
 							</section>
 							</mt:SearchResults>
+
 						</div>
 					</div>
 					<div class="c-advertise">
@@ -98,7 +122,37 @@
 			</main>
 			<mt:Include file="../_inc/footer.html">
 		</div>
+		<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyB1AZym205O26sSso4yjJE4ZGjFXOYwAUY"></script>
 		<mt:Include file="../_inc/script.html">
+
+		<script>
+			$(function(){
+				var markerData = [
+				<mt:loop name='stationList' sort_by='key'>
+					{
+						"mapId":"googlemap",
+						"name":"<mt:Var name='__value__{title}'  encode_html='1'>",
+						"link":"<mt:Var name='__value__{link}'>",
+						"lat":<mt:Var name='__value__{latStr}'>,"lng":<mt:Var name='__value__{lonStr}'>
+					<mt:If name="__last__">
+					}
+					<mt:else>
+					},
+					</mt:If>
+				</mt:loop>
+				]
+				var centerPinLan = 139.5804093;
+				var centerPinLat = 35.52;
+				var zoom = 16;
+				var markerEventFlg = true;
+
+				// googleMapCustomize関数
+				if(markerData[0]){
+					exportFunc.gm(markerData,centerPinLat,centerPinLan,zoom,markerEventFlg);
+					$('#googlemap').fadeIn().addClass('is-show');
+				}
+			});
+		</script>
 	</body>
 </html>
 

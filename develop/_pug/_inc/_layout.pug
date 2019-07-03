@@ -22,7 +22,8 @@ html(lang="ja")
 			---------------------------------------------------------
 			ヘッダー
 			---------------------------------------------------------
-		//#include virtual="/_inc/header.html"
+		if layout !== 'map'
+			//#include virtual="/_inc/header.html"
 
 		div#contents
 			//-
@@ -44,5 +45,6 @@ html(lang="ja")
 			---------------------------------------------------------
 			Javascript
 			---------------------------------------------------------
+		block scriptBefore
 		//#include virtual="/_inc/script.html"
 		block script

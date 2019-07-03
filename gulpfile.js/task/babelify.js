@@ -14,6 +14,7 @@ module.exports = {
 	taskBabelify: () =>{
 		return $.browserify({
 			entries: config.root.src + config.browserify.targetFile,
+			standalone: 'exportFunc',
 			extensions: ['.js']
 		})
 		.transform($.babelify, {presets: ['@babel/preset-env']})

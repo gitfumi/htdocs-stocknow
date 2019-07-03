@@ -1,0 +1,31 @@
+
+.infobox
+	display: block
+	width: 300px
+	background: rgba(#fff, .5)
+	z-index: 0
+	font-family: $fontFamilySansSerif
+	.inner
+		border: 2px solid rgba(#fff, .5)
+		position: relative
+	.ttl
+		padding: 5px 30px 5px 5px
+		font-size: 1.4rem
+		// font-weight: 700
+		color: #fff
+		background: rgb(238,136,170); /* Old browsers */
+		background: linear-gradient(to right,  rgba(238,136,170,1) 0%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee88aa', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 */
+		&::after
+			content: 'Read More..'
+			font-size: 1.2rem
+			margin-left: 20px
+			letter-spacing: 2px
+			font-family: $fontFamilyZcool
+	a:hover
+		text-decoration: underline
+
+	img
+		z-index: 1
+		&:hover
+			opacity: .7

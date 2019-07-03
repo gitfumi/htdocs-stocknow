@@ -28,12 +28,13 @@ let googleMap = function($markerData,$centerPinLat,$centerPinLan,$zoom,$markerEv
 	if ($centerPinLan   == undefined) $centerPinLan   = 0;		// MAPの中心位置※緯度
 	if ($zoom           == undefined) $zoom           = 16;		// MAPの倍率
 	if ($markerEventFlg == undefined) $markerEventFlg = false;	// インフォーメションウィンドウの判定※true:出す、false:出さない
-	if ($pinWith        == undefined) $pinWith        = 33;		// ピンの横幅
+	if ($pinWith        == undefined) $pinWith        = 40;		// ピンの横幅
 	if ($pinHeight      == undefined) $pinHeight      = 50;		// ピンの高さ
 
 	let markers = new Array();
 	let markersInfo = new Array();
-	let targetLatlng,mapElemtn,map;
+	let targetLatlng,mapElement,map;
+	let bounds = new google.maps.LatLngBounds();
 
 	// 初期設定
 	function init() {
@@ -51,11 +52,6 @@ let googleMap = function($markerData,$centerPinLat,$centerPinLan,$zoom,$markerEv
 		mapElement = document.getElementById($markerData[0]['mapId']);
 		map = new google.maps.Map(mapElement, mapOptions);
 
-		// 大きな地図で見る
-		let href = 'https://maps.google.com/maps?ll=' + $markerData[0]['lat'] + ',' + $markerData[0]['lng'] + '&amp;z=' + $markerData[0]['zoom'] + '&amp;t=m&amp;hl=ja&amp;gl=US&amp;mapclient=embed&amp;q=' + $markerData[0]['name'];
-		let glink = '<p class="c-glink"><a target="_blank" href="' + href + '">大きな地図を見る</a></p>';
-		$('#' + $markerData[0]['mapId']).after(glink);
-
 		for (let i = 0; i < $markerData.length; i++){
 
 			// 複数のマップの存在する場合、出力先を変更
@@ -70,31 +66,27 @@ let googleMap = function($markerData,$centerPinLat,$centerPinLan,$zoom,$markerEv
 				mapElement = document.getElementById($markerData[i]['mapId']);
 				map = new google.maps.Map(mapElement, mapOptions);
 
-				// 大きな地図で見る
-				href = 'https://maps.google.com/maps?ll=' + $markerData[i]['lat'] + ',' + $markerData[i]['lng'] + '&amp;z=' + $markerData[i]['zoom'] + '&amp;t=m&amp;hl=ja&amp;gl=US&amp;mapclient=embed&amp;q=' + $markerData[i]['name'];
-				glink = '<p class="c-glink"><a target="_blank" href="' + href + '">大きな地図を見る</a></p>';
-				$('#' + $markerData[i]['mapId']).after(glink);
 			}
 
 			// オリジナルアイコンの取得
-			if($markerData[i]['pin']){
-				let icon = {
-					url			: $markerData[i]['pin'], // アイコンの場所
-					scaledSize 	: new google.maps.Size($pinWith,$pinHeight) // アイコンサイズ
-				}
+			let pinicon = {
+				url			: '/img/cmn/icon_googlemap.png', // アイコンの場所
+				scaledSize 	: new google.maps.Size($pinWith,$pinHeight) // アイコンサイズ
 			}
 			targetLatlng = new google.maps.LatLng($markerData[i]['lat'], $markerData[i]['lng']);
 			// マーカーの追加
 			markers[i] = new google.maps.Marker({
 				position: targetLatlng,
 				map: map,
-				icon: icon
+				icon: pinicon
 			});
 			if($markerEventFlg){
 				markerEvent(i,targetLatlng);
 			}
+			bounds.extend(targetLatlng);
 		}
 
+		map.fitBounds(bounds);
 		google.maps.event.addDomListener(window, "resize", function() { let center = map.getCenter(); google.maps.event.trigger(map, "resize"); map.setCenter(center); });
 	};
 	google.maps.event.addDomListener(window, 'load', init);
@@ -107,7 +99,7 @@ let googleMap = function($markerData,$centerPinLat,$centerPinLan,$zoom,$markerEv
 			let infoboxContent = document.createElement('div');
 
 			// infobox に表示するHTML
-			infoboxContent.innerHTML = '<div class="infobox is-'+$markerData[i]['category']+'"><div class="inner"><h3 class="ttl">'+$markerData[i]['name']+'</h3><p class="txt">'+$markerData[i]['location']+'</p><p class="link"><a href="'+$markerData[i]['link']+'">詳細へ</a></p></div></div>';
+			infoboxContent.innerHTML = '<div class="infobox"><a href="'+$markerData[i]['link']+'"><div class="inner"><h3 class="ttl">'+$markerData[i]['name']+'</h3></div></a></div>';
 
 			// infobox のオプション
 			let infoboxOptions = {
