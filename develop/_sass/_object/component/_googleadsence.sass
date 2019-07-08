@@ -9,3 +9,13 @@
   margin: $sectionMargin 0
   +media(phablet)
     margin: $sectionMargin/2 0
+
+.c-advertise-square
+  margin: $sectionMargin 0
+  display: flex
+  >div
+    margin: 0 15px
+  +media(phablet)
+    margin: $sectionMargin/2 0
+    >div:nth-child(2)
+      display: none

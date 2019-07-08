@@ -1522,6 +1522,26 @@ html {
   }
 }
 
+.c-advertise-square {
+  margin: 60px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c-advertise-square > div {
+  margin: 0 15px;
+}
+
+@media only screen and (max-width: 480px) {
+  .c-advertise-square {
+    margin: 30px 0;
+  }
+  .c-advertise-square > div:nth-child(2) {
+    display: none;
+  }
+}
+
 /* ---------------------------------------------------------
  *	記事一覧
  *---------------------------------------------------------- */
