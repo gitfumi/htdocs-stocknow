@@ -714,13 +714,17 @@
       align-content: flex-start;
 }
 
-.entry_saleitems > * > a:hover .saleitems_pic img {
+.entry_saleitems > * > a:not(.is-soldout):hover .saleitems_pic img {
   opacity: .7;
 }
 
-.entry_saleitems > * > a:hover .saleitems_pic::before {
+.entry_saleitems > * > a:not(.is-soldout):hover .saleitems_pic::before {
   right: 50%;
   opacity: 1;
+}
+
+.entry_saleitems > * > a.is-soldout {
+  pointer-events: none;
 }
 
 .entry_saleitems > * > a > * {

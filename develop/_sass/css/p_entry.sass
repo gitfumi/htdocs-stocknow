@@ -375,13 +375,15 @@
       display: flex
       flex-wrap: wrap
       align-content: flex-start
-      &:hover
+      &:not(.is-soldout):hover
         .saleitems_pic
           img
             opacity: .7
           &::before
             right: 50%
             opacity: 1
+      &.is-soldout
+        pointer-events: none
       >*
         flex-basis: 100%
   .saleitems_pic
