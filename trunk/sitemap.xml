@@ -28,6 +28,11 @@
 </url>
 
 <url>
+	<loc>http://stocknow.dev.localhost/gourmet/hakone-cheese-terrace.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
 	<loc>http://stocknow.dev.localhost/gourmet/hugovictor.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
