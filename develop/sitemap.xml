@@ -28,6 +28,11 @@
 </url>
 
 <url>
+	<loc>http://stocknow.dev.localhost/gourmet/zeniyacafe.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
 	<loc>http://stocknow.dev.localhost/gourmet/asomilk.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
