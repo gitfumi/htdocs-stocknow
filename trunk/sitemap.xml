@@ -28,6 +28,41 @@
 </url>
 
 <url>
+	<loc>http://stocknow.dev.localhost/gourmet/johan.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
+	<loc>http://stocknow.dev.localhost/gourmet/dosand.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
+	<loc>http://stocknow.dev.localhost/gourmet/creampuff.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
+	<loc>http://stocknow.dev.localhost/gourmet/zakuzaku.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
+	<loc>http://stocknow.dev.localhost/gourmet/kakunoshin.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
+	<loc>http://stocknow.dev.localhost/gourmet/ringo.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
+	<loc>http://stocknow.dev.localhost/gourmet/bake.html</loc>
+	<changefreq>daily</changefreq>
+	<priority>0.80</priority>
+</url>
+<url>
 	<loc>http://stocknow.dev.localhost/gourmet/zeniyacafe.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
@@ -128,11 +163,6 @@
 	<priority>0.80</priority>
 </url>
 <url>
-	<loc>http://stocknow.dev.localhost/gourmet/bake.html</loc>
-	<changefreq>daily</changefreq>
-	<priority>0.80</priority>
-</url>
-<url>
 	<loc>http://stocknow.dev.localhost/gourmet/otoemon.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
@@ -229,16 +259,6 @@
 </url>
 <url>
 	<loc>http://stocknow.dev.localhost/gourmet/dou.html</loc>
-	<changefreq>daily</changefreq>
-	<priority>0.80</priority>
-</url>
-<url>
-	<loc>http://stocknow.dev.localhost/gourmet/zakuzaku.html</loc>
-	<changefreq>daily</changefreq>
-	<priority>0.80</priority>
-</url>
-<url>
-	<loc>http://stocknow.dev.localhost/gourmet/ringo.html</loc>
 	<changefreq>daily</changefreq>
 	<priority>0.80</priority>
 </url>
