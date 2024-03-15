@@ -144,11 +144,6 @@ label {
   cursor: pointer;
 }
 
-::-moz-selection {
-  color: #fff;
-  background-color: #ff6f6f;
-}
-
 ::selection {
   color: #fff;
   background-color: #ff6f6f;
@@ -1083,6 +1078,12 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-transform: none;
   text-decoration: none;
+}
+
+#footer .footer_comment {
+  font-size: 12px;
+  padding: 10px 20px;
+  color: #c0c0c0;
 }
 
 @media only screen and (max-width: 768px) {
