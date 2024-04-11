@@ -30,31 +30,40 @@ div.entry_content
 		div.entry_shop
 			div.m-bySide.is-2block.shop_list
 				section
-					h4.shop_name JR新宿駅構内 NEWoMan SHINJUKU 2F エキナカ
-					p.shop_pin 〒151-0051 東京都渋谷区千駄ヶ谷5-24-55　JR新宿駅構内 NEWoMan SHINJUKU 2F エキナカ
-					p.shop_time 月～土　9:00～21:00(時短営業)<br>日祝日　9:00～20:00(時短営業)
+					h4.shop_name ルミネ新宿店
+					p.shop_pin 〒160-0023 東京都新宿区西新宿１丁目１−５ ルミネ新宿 LUMINE1 B2
+					p.shop_time 10:00-21:00<br>※営業時間につきましては、館の営業時間に準じます
+				section
+					h4.shop_name ニュウマン新宿店
+					p.shop_pin 〒160-0022 東京都新宿区新宿４丁目１−６<br>新南改札 ミライナタワー改札 付近<br>※駅構外からお越しの方はJRの入場券が必要です
+					p.shop_time 月～土　9:00～21:00<br>日祝日　9:00～20:30<br>※営業時間につきましては、館の営業時間に準じます
 				section
 					h4.shop_name エキュート エディション 渋谷店
-					p.shop_pin 〒150-6101 東京都渋谷区渋谷２丁目２４−１２ 渋谷スクランブルスクエア1F
-					p.shop_time 10:00～20:00
+					p.shop_pin 〒150-0002 東京都渋谷区渋谷２丁目２４−１２ スクランブルスクエア 1F
+					p.shop_time 10:00〜21:00<br>※営業時間につきましては、館の営業時間に準じます
+				section
+					h4.shop_name 東京ギフトパレット店
+					p.shop_pin 〒100-0005 東京都千代田区丸の内１丁目９−１ JR東京駅内八重洲北口ギフトパレット内 1F
+					p.shop_time 月〜金9:30〜20:30<br>土日祝9:00〜20:30<br>※営業時間につきましては、館の営業時間に準じます
 				div
 					p 新南改札 ミライナタワー改札 付近<br>※駅構外からお越しの方は #[span.butterbutler_att JRの入場券] が必要です
-		p.entry_txt 新宿駅、渋谷駅以外の取り扱い店舗は下記催事場を参照ください。
+		p.entry_txt 新宿駅、渋谷駅、東京駅以外の取り扱い店舗は下記催事場を参照ください。
 
 	//#include virtual="/_inc/advertiseSquare.html"
 
 	section.entry_section#anchor03
 		h2.m-titleType02 バターバトラーの催事場・期間限定の販売店情報
 		section.entry_shop
-			h3.m-titleType04.shop_head #[span 10月] の期間限定 出店情報
+			h3.m-titleType04.shop_head #[span 4月] の期間限定 出店情報
 			div.m-bySide.is-3block.shop_list.js-shop_list
 				each val, index in butterbutler
-					section
-						h4.shop_name.js-shop_name !{val.shop_name}
-						p.shop_pin: a(target="_blank" href=val.shop_pin) !{val.shop_address}
-						p.shop_date !{val.shop_date}
-						p.shop_time !{val.shop_time}<br>※営業時間が異なる場合があるので店舗サイトにてご確認ください。
-						p.shop_item !{val.shop_item}
+					if val.shop_flg
+						section
+							h4.shop_name.js-shop_name !{val.shop_name}
+							p.shop_pin: a(target="_blank" href=val.shop_pin) !{val.shop_address}
+							p.shop_date !{val.shop_date}
+							p.shop_time !{val.shop_time}<br>※営業時間が異なる場合があるので店舗サイトにてご確認ください。
+							p.shop_item ・バターフィナンシェ（4個入・8個入・12個入・16個入）<br>・バターガレット9個入<br>・バトラーセレクション14個入<br>・バターキャラメルポット<br>・バターパイダマンド<br>・バターと紅茶のフィナンシェ<br>・バターカステラ<br>※店舗により取り扱っている商品が異なる場合があります
 
 		p.entry_att 上記の催事場以外でも東京駅、品川駅などでも開催している場合もあるので、SNSなどでチェックしてみてください！<br>※催事情報の開催期日や営業時間は予告なく変更となる場合がございますので、予めお電話にて各お店へご確認をお願いいたします。
 

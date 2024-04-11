@@ -4,15 +4,15 @@
 // **********************************************
 // require
 // **********************************************
-const $ = require('../plugin');
-const config = require('../config');
+const config = require('../config'),
+	browserSync = require('browser-sync');
 
 // **********************************************
 // BrowserSync set
 // **********************************************
 module.exports = {
-	taskMove: () =>{
-		return $.browserSync.init({
+	taskBrowserSync: (done) =>{
+		return browserSync.init({
 			proxy: {
 				target: config.host,
 				middleware: function(req, res, next) {
@@ -29,5 +29,6 @@ module.exports = {
 			},
 			open: 'external'
 		});
+		done();
 	}
 }

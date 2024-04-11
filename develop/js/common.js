@@ -2,29 +2,17 @@
 "use strict";
 
 var _current_link = _interopRequireDefault(require("./module/current_link.js"));
-
 var _add_tap_class = _interopRequireDefault(require("./module/add_tap_class.js"));
-
 var _disable_tel_link = _interopRequireDefault(require("./module/disable_tel_link.js"));
-
 var _glovalnav = _interopRequireDefault(require("./module/glovalnav.js"));
-
 var _scroll_anchor = _interopRequireDefault(require("./module/scroll_anchor.js"));
-
 var _perfect_scroll = _interopRequireDefault(require("./module/perfect_scroll.js"));
-
 var _menu_slide = _interopRequireDefault(require("./module/menu_slide.js"));
-
 var _share = _interopRequireDefault(require("./module/share.js"));
-
 var _ga_event_tracking = _interopRequireDefault(require("./module/ga_event_tracking.js"));
-
 var _on_media_query = _interopRequireDefault(require("./on_media_query.js"));
-
 var _googlemap_customize = _interopRequireDefault(require("./googlemap_customize.js"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 module.exports.gm = _googlemap_customize.default;
 
 },{"./googlemap_customize.js":2,"./module/add_tap_class.js":3,"./module/current_link.js":4,"./module/disable_tel_link.js":5,"./module/ga_event_tracking.js":6,"./module/glovalnav.js":7,"./module/menu_slide.js":8,"./module/perfect_scroll.js":9,"./module/scroll_anchor.js":10,"./module/share.js":11,"./on_media_query.js":12}],2:[function(require,module,exports){
@@ -34,7 +22,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-
 /*	GoogleMap のカスタマイズ
 	マーカーイベントを追加する際は、「infobox.js」を読み込んでください。
 	【$markerData配列形式】
@@ -62,22 +49,18 @@ exports.default = void 0;
 var googleMap = function googleMap($markerData, $centerPinLat, $centerPinLan, $zoom, $markerEventFlg, $pinWith, $pinHeight) {
   /* 初期設定 */
   if ($centerPinLat == undefined) $centerPinLat = 0; // MAPの中心位置※緯度
-
   if ($centerPinLan == undefined) $centerPinLan = 0; // MAPの中心位置※緯度
-
   if ($zoom == undefined) $zoom = 16; // MAPの倍率
-
   if ($markerEventFlg == undefined) $markerEventFlg = false; // インフォーメションウィンドウの判定※true:出す、false:出さない
-
   if ($pinWith == undefined) $pinWith = 40; // ピンの横幅
-
   if ($pinHeight == undefined) $pinHeight = 50; // ピンの高さ
 
   var markers = new Array();
   var markersInfo = new Array();
   var targetLatlng, mapElement, map;
-  var bounds = new google.maps.LatLngBounds(); // 初期設定
+  var bounds = new google.maps.LatLngBounds();
 
+  // 初期設定
   function init() {
     // ベースマップの設定
     var mapOptions = {
@@ -89,12 +72,11 @@ var googleMap = function googleMap($markerData, $centerPinLat, $centerPinLan, $z
         "lng": $centerPinLan
       },
       mapTypeId: google.maps.MapTypeId.ROADMAP // 表示タイプの指定
+    };
 
-    }; // ベースマップIDの設定
-
+    // ベースマップIDの設定
     mapElement = document.getElementById($markerData[0]['mapId']);
     map = new google.maps.Map(mapElement, mapOptions);
-
     for (var i = 0; i < $markerData.length; i++) {
       // 複数のマップの存在する場合、出力先を変更
       if ($markerData[0]['mapId'] != $markerData[i]['mapId'] && i != 0) {
@@ -109,30 +91,26 @@ var googleMap = function googleMap($markerData, $centerPinLat, $centerPinLan, $z
         };
         mapElement = document.getElementById($markerData[i]['mapId']);
         map = new google.maps.Map(mapElement, mapOptions);
-      } // オリジナルアイコンの取得
+      }
 
-
+      // オリジナルアイコンの取得
       var pinicon = {
         url: '/img/cmn/icon_googlemap.png',
         // アイコンの場所
         scaledSize: new google.maps.Size($pinWith, $pinHeight) // アイコンサイズ
-
       };
-      targetLatlng = new google.maps.LatLng($markerData[i]['lat'], $markerData[i]['lng']); // マーカーの追加
-
+      targetLatlng = new google.maps.LatLng($markerData[i]['lat'], $markerData[i]['lng']);
+      // マーカーの追加
       markers[i] = new google.maps.Marker({
         position: targetLatlng,
         map: map,
         icon: pinicon
       });
-
       if ($markerEventFlg) {
         markerEvent(i, targetLatlng);
       }
-
       bounds.extend(targetLatlng);
     }
-
     map.fitBounds(bounds);
     google.maps.event.addDomListener(window, "resize", function () {
       var center = map.getCenter();
@@ -140,17 +118,19 @@ var googleMap = function googleMap($markerData, $centerPinLat, $centerPinLan, $z
       map.setCenter(center);
     });
   }
-
   ;
-  google.maps.event.addDomListener(window, 'load', init); // マーカーイベント設定
+  google.maps.event.addDomListener(window, 'load', init);
 
+  // マーカーイベント設定
   function markerEvent(i) {
     markers[i].addListener('click', function () {
       // infobox 用の div エレメントを生成
-      var infoboxContent = document.createElement('div'); // infobox に表示するHTML
+      var infoboxContent = document.createElement('div');
 
-      infoboxContent.innerHTML = '<div class="infobox"><a href="' + $markerData[i]['link'] + '"><div class="inner"><h3 class="ttl">' + $markerData[i]['name'] + '</h3></div></a></div>'; // infobox のオプション
+      // infobox に表示するHTML
+      infoboxContent.innerHTML = '<div class="infobox"><a href="' + $markerData[i]['link'] + '"><div class="inner"><h3 class="ttl">' + $markerData[i]['name'] + '</h3></div></a></div>';
 
+      // infobox のオプション
       var infoboxOptions = {
         content: infoboxContent,
         // 生成したDOMを割り当てる
@@ -165,17 +145,14 @@ var googleMap = function googleMap($markerData, $centerPinLat, $centerPinLan, $z
         closeBoxMargin: "7px 5px 0 0",
         // 閉じるボタンの位置調整
         closeBoxURL: '/img/cmn/pic_mapwindow_close.png' // 閉じるボタンの画像パス
-
-      }; // infobox を生成して表示
-
+      };
+      // infobox を生成して表示
       var infobox = new InfoBox(infoboxOptions);
       infobox.open(map, this);
     });
   }
 };
-
-var _default = googleMap;
-exports.default = _default;
+var _default = exports.default = googleMap;
 
 },{}],3:[function(require,module,exports){
 "use strict";
@@ -184,7 +161,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-
 // タッチデバイスで:hoverを再現
 var addTapClass = function () {
   $(document).on(window.ontouchstart === null ? 'touchstart' : 'mouseenter', 'a, button, .js-hover', function () {
@@ -196,9 +172,7 @@ var addTapClass = function () {
     }, 100);
   });
 }();
-
-var _default = addTapClass;
-exports.default = _default;
+var _default = exports.default = addTapClass;
 
 },{}],4:[function(require,module,exports){
 "use strict";
@@ -207,21 +181,19 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-
 // コンテンツの表示、非表示
 var currentLink = function () {
   return {
     Uri: function Uri(path) {
       var self = this;
-      this.originalPath = path; //絶対パスを取得
-
+      this.originalPath = path;
+      //絶対パスを取得
       this.absolutePath = function () {
         var e = document.createElement('span');
         e.innerHTML = '<a href="' + path + '" />';
         return e.firstChild.href;
-      }(); //絶対パスを分解
-
-
+      }();
+      //絶対パスを分解
       var fields = {
         'schema': 2,
         'username': 5,
@@ -232,13 +204,10 @@ var currentLink = function () {
         'fragment': 11
       };
       var r = /^((\w+):)?(\/\/)?((\w+):?(\w+)?@)?([^\/\?:]+):?(\d+)?(\/?[^\?#]+)?\??([^#]+)?#?(\w*)/.exec(this.absolutePath);
-
       for (var field in fields) {
         this[field] = r[fields[field]];
       }
-
       this.querys = {};
-
       if (this.query) {
         $.each(self.query.split('&'), function () {
           var a = this.split('=');
@@ -258,7 +227,6 @@ var currentLink = function () {
       $(c.selfLinkAreaSelector + (c.selfLinkAreaSelector ? ' ' : '') + 'a[href]').each(function () {
         var href = new currentLink.Uri(this.getAttribute('href'));
         var setImgFlg = false;
-
         if (href.absolutePath == location.href && !href.fragment) {
           //同じ文書にリンク
           $(this).addClass(c.selfLinkClass);
@@ -268,7 +236,6 @@ var currentLink = function () {
           $(this).addClass(c.parentsLinkClass);
           setImgFlg = c.changeImgParents;
         }
-
         if (setImgFlg) {
           //img要素が含まれていたら現在用画像（_cr）に設定
           $(this).find('img').each(function () {
@@ -281,9 +248,7 @@ var currentLink = function () {
     }
   };
 }();
-
-var _default = currentLink;
-exports.default = _default;
+var _default = exports.default = currentLink;
 currentLink.selflink();
 
 },{}],5:[function(require,module,exports){
@@ -293,12 +258,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-
 var _ua = _interopRequireDefault(require("../ua.js"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 // モバイル端末以外はtelリンクを無効
+
 var disableTelLink = function () {
   if (!_ua.default.Mobile) {
     $('a[href^="tel:"]').on('click', function (e) {
@@ -306,9 +269,7 @@ var disableTelLink = function () {
     });
   }
 }();
-
-var _default = disableTelLink;
-exports.default = _default;
+var _default = exports.default = disableTelLink;
 
 },{"../ua.js":13}],6:[function(require,module,exports){
 "use strict";
@@ -317,7 +278,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-
 // googleのイベントトラッキング
 var gaEventTracking = function () {
   $('.js-gaEventTracking a').on('click', function () {
@@ -326,12 +286,11 @@ var gaEventTracking = function () {
     console.log('gaGroup:' + data.gaGroup);
     console.log('gaAction:' + data.gaAction);
     console.log('gaLabel:' + data.gaLabel);
-    console.log('gaCount:' + data.gaCount); // ga('send','event',data.gaGroup,data.gaAction,data.gaLabel, data.gaCount);
+    console.log('gaCount:' + data.gaCount);
+    // ga('send','event',data.gaGroup,data.gaAction,data.gaLabel, data.gaCount);
   });
 }();
-
-var _default = gaEventTracking;
-exports.default = _default;
+var _default = exports.default = gaEventTracking;
 
 },{}],7:[function(require,module,exports){
 "use strict";
@@ -340,7 +299,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-
 // グローバルナビゲーションの表示、非表示
 var globalNav = function () {
   if ($('#globalNav').length) {
@@ -351,7 +309,6 @@ var globalNav = function () {
     $cat.on('click', function () {
       var $self = $(this);
       var $target = $self.parent().children('ul');
-
       if ($target.is(':visible')) {
         $target.slideUp();
         $self.parent().removeClass('is-show');
@@ -362,9 +319,7 @@ var globalNav = function () {
     });
   }
 }();
-
-var _default = globalNav;
-exports.default = _default;
+var _default = exports.default = globalNav;
 
 },{}],8:[function(require,module,exports){
 "use strict";
@@ -373,21 +328,20 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-
 var _valiable = _interopRequireDefault(require("../valiable.js"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 // スライドメニュー
+
 var menuSlide = function menuSlide() {
   var $body = $('body');
   var $header = $('.header_logo');
   var $headerNav = $('.header_inner');
-  var $contents = $('#contents'); // var $globalNav    = $('.footer_menu nav');
+  var $contents = $('#contents');
+  // var $globalNav    = $('.footer_menu nav');
   // var $globalSuvNav = $('.header_subMenu');
   // var $asideSns     = $('.asideMenu .c-sns');
-
-  var headerHeight = $header.outerHeight(); // var $cloneNav     = $globalNav.clone(true);
+  var headerHeight = $header.outerHeight();
+  // var $cloneNav     = $globalNav.clone(true);
   // var $cloneSuvNav  = $globalSuvNav.clone(true);
   // var $cloneSns     = $asideSns.clone(true);
   // $body.append('<div id="slideMenu"></div>');
@@ -395,7 +349,6 @@ var menuSlide = function menuSlide() {
   // $cloneNav.appendTo('#slideMenu');
   // $('<div class="weather js-weather"></div>').appendTo('#slideMenu');
   // $cloneSns.appendTo('#slideMenu');
-
   $header.append('<div id="btnMenu"><p><span class="icoMenu"><span class="icoMenuInner"></span></span></p></div>');
   var $slideMenu = $('#slideMenu');
   var slideMenuHeight = $slideMenu.height();
@@ -404,22 +357,22 @@ var menuSlide = function menuSlide() {
   hideSlideMenu();
   $('#btnMenu').on('click', function () {
     $(this).children().toggleClass('is-active');
-
     if ($headerNav.hasClass('is-show')) {
       hideSlideMenu();
     } else {
       showSlideMenu();
     }
-  }); // 開く
+  });
 
+  // 開く
   function showSlideMenu() {
     scrollY = $(window).scrollTop();
     _valiable.default.isMenuShow = true;
     $headerNav.removeClass('is-hide').addClass('is-show');
     $contents.removeClass('is-hide').addClass('is-show');
-  } // 閉じる
+  }
 
-
+  // 閉じる
   function hideSlideMenu() {
     $headerNav.removeClass('is-show').addClass('is-hide');
     $contents.removeClass('is-show').addClass('is-hide');
@@ -429,9 +382,7 @@ var menuSlide = function menuSlide() {
     });
   }
 };
-
-var _default = menuSlide;
-exports.default = _default;
+var _default = exports.default = menuSlide;
 
 },{"../valiable.js":14}],9:[function(require,module,exports){
 "use strict";
@@ -440,16 +391,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-
 // グローバルナビゲーションの表示、非表示
 var perfectScrollbar = function () {
   if ($('#js-perfectScrollbar').length) {
     var ps = new PerfectScrollbar('#js-perfectScrollbar');
   }
 }();
-
-var _default = perfectScrollbar;
-exports.default = _default;
+var _default = exports.default = perfectScrollbar;
 
 },{}],10:[function(require,module,exports){
 "use strict";
@@ -458,12 +406,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-
 var _ua = _interopRequireDefault(require("../ua.js"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 // 指定のアンカー要素までスクロール
+
 var scrollAnchor = function scrollAnchor(device) {
   var $win = $(window);
   var $doc = $(document);
@@ -473,78 +419,71 @@ var scrollAnchor = function scrollAnchor(device) {
   var SCROLL_EASING = 'easeOutQuint';
   var NO_SCROLL_CLASS = 'js-noScroll';
   var PAGE_TOP_HASH = '#top';
-  var phabletHeight; // aタグのクリック
-
+  var phabletHeight;
+  // aタグのクリック
   $doc.on('click', 'a[href^="#"]', function (e) {
     var $self = $(this);
     var target = this.hash;
     var top;
-    var headerHeight; // リンク先が#topの場合
-
+    var headerHeight;
+    // リンク先が#topの場合
     if (target == PAGE_TOP_HASH || !target) {
       // ページの先頭へスクロール
       top = 0;
-    } // リンク先が#topではない場合
+    }
+    // リンク先が#topではない場合
     else {
-        // 指定した要素が存在しない場合、a要素にclass（js-noScroll）を指定してた場合は未処理とする
-        if ($(target).length < 1 || $self.hasClass(NO_SCROLL_CLASS)) return false; // // スクロール先の座標を調整する
-        // headerHeight = $('#header').outerHeight();
-        // if($('#header').hasClass('is-short')){
-        // 	headerHeight = headerHeight + 20;
-        // }else{
-        // 	headerHeight = headerHeight - 20;
-        // }
-        // top = $(target).offset().top - headerHeight;
-
-        console.log(device);
-
-        if (device == 'phablet') {
-          top = $(target).offset().top - $('.header_logo').height();
-        } else {
-          top = $(target).offset().top;
-        }
-
-        top = Math.min(top, $doc.height() - $win.height());
-      } // ウィールイベントをキャンセルしておく
-
-
+      // 指定した要素が存在しない場合、a要素にclass（js-noScroll）を指定してた場合は未処理とする
+      if ($(target).length < 1 || $self.hasClass(NO_SCROLL_CLASS)) return false;
+      // // スクロール先の座標を調整する
+      // headerHeight = $('#header').outerHeight();
+      // if($('#header').hasClass('is-short')){
+      // 	headerHeight = headerHeight + 20;
+      // }else{
+      // 	headerHeight = headerHeight - 20;
+      // }
+      // top = $(target).offset().top - headerHeight;
+      console.log(device);
+      if (device == 'phablet') {
+        top = $(target).offset().top - $('.header_logo').height();
+      } else {
+        top = $(target).offset().top;
+      }
+      top = Math.min(top, $doc.height() - $win.height());
+    }
+    // ウィールイベントをキャンセルしておく
     $doc.on(mousewheel, function (e) {
       e.preventDefault();
-    }); // アニメーションの実行
-
+    });
+    // アニメーションの実行
     $scrollElement.stop().animate({
       scrollTop: top
     }, SCROLL_SPEED, SCROLL_EASING, function () {
       $doc.off(mousewheel);
     });
     return false;
-  }); // htmlとbody、どちらかスクロール可能な要素を取得
-
+  });
+  // htmlとbody、どちらかスクロール可能な要素を取得
   function getFirstScrollable(selector) {
     var $scrollable;
     $(selector).each(function () {
       var $self = $(this);
-
       if ($self.scrollTop() > 0) {
         $scrollable = $self;
         return false;
       } else {
         $self.scrollTop(1);
-
         if ($self.scrollTop() > 0) {
           $scrollable = $self;
           return false;
         }
-
         $self.scrollTop(0);
       }
     });
     return $scrollable;
   }
 };
-
-var _default = scrollAnchor;
-exports.default = _default;
+var _default = exports.default = scrollAnchor;
 
 },{"../ua.js":13}],11:[function(require,module,exports){
 "use strict";
@@ -553,11 +492,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-
 // グローバルナビゲーションの表示、非表示
 var share = function () {
   var pathname = location.pathname; // URLを取得しエンコードする
-
   var snsUrl = encodeURIComponent('https://stocknow.info' + pathname);
   $('.js-share li').each(function () {
     var $a = $(this).find('a');
@@ -565,9 +502,7 @@ var share = function () {
     $a.attr('href', link + snsUrl);
   });
 }();
-
-var _default = share;
-exports.default = _default;
+var _default = exports.default = share;
 
 },{}],12:[function(require,module,exports){
 "use strict";
@@ -576,14 +511,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-
 var _menu_slide = _interopRequireDefault(require("./module/menu_slide.js"));
-
 var _scroll_anchor = _interopRequireDefault(require("./module/scroll_anchor.js"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 // メディアクエリでjsを切り替え
+
 var onMediaQuery = function () {
   var $window = $(window);
   var $body = $('body');
@@ -616,9 +548,7 @@ var onMediaQuery = function () {
   }];
   MQ.init(queries);
 }();
-
-var _default = onMediaQuery;
-exports.default = _default;
+var _default = exports.default = onMediaQuery;
 
 },{"./module/menu_slide.js":8,"./module/scroll_anchor.js":10}],13:[function(require,module,exports){
 "use strict";
@@ -627,7 +557,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-
 // ユーザーエージェントを取得
 var ua = function () {
   return {
@@ -647,9 +576,7 @@ var ua = function () {
     androidPhone: navigator.userAgent.indexOf('Android') > 0 && navigator.userAgent.indexOf('Mobile') > 0
   };
 }();
-
-var _default = ua;
-exports.default = _default;
+var _default = exports.default = ua;
 
 },{}],14:[function(require,module,exports){
 "use strict";
@@ -658,16 +585,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-
 // 共通変数
 var valiable = function () {
   return {
     isMenuShow: false
   };
 }();
-
-var _default = valiable;
-exports.default = _default;
+var _default = exports.default = valiable;
 
 },{}]},{},[1])(1)
 });

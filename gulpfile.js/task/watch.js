@@ -4,20 +4,18 @@
 // **********************************************
 // require
 // **********************************************
-const $ = require('../plugin');
-const config = require('../config');
-// **********************************************
-// タスク呼び出し
-// **********************************************
-const reload = $.browserSync.reload;
-const new_sass = require('./sass');
-const new_babelify = require('./babelify');
-const new_concat = require('./js_concat');
-const new_pug = require('./pug');
-const new_imagemin = require('./imagemin');
-const new_delete = require('./delete');
-const new_frontnone = require('./frontnone');
-const new_mtappjquery = require('./_mtappjquery');
+const config = require('../config'),
+	config = require('./config'),
+	{ taskBrowserSync } = require("./task/browserSync"),
+	{ taskSass } = require("./task/sass"),
+	{ taskPug } = require("./task/pug"),
+	{ taskConcat } = require("./task/js_concat"),
+	{ taskImagemin } = require("./task/imagemin"),
+	{ taskFrontnote } = require("./task/frontnote"),
+	{ taskBabelify } = require("./task/babelify");
+	// new_delete = require('./delete'),
+	// new_frontnone = require('./frontnote'),
+	// new_mtappjquery = require('./_mtappjquery'),
 
 // **********************************************
 // watch set
@@ -25,7 +23,7 @@ const new_mtappjquery = require('./_mtappjquery');
 module.exports = {
 	taskMove: () =>{
 		// リロード
-		const w_getInfo = $.gulp.watch(config.root.src + '/**/*.*');
+		const w_getInfo = gulp.watch(config.root.src + '/**/*.*');
 		let timer = '';
 		w_getInfo.on('all', (event, path) => {
 
@@ -57,17 +55,17 @@ module.exports = {
 		   監視タスク
 		-------------*/
 		// SASS
-		const w_sass = $.gulp.watch(config.root.src + '/**' + config.sass.targetFile, new_sass.taskSass);
+		const w_sass = gulp.watch(config.root.src + '/**' + config.sass.targetFile, new_sass.taskSass);
 
 		// babelify
-		const w_babelify = $.gulp.watch(config.root.src + '/**' + config.babelify.targetFile, new_babelify.taskBabelify);
+		const w_babelify = gulp.watch(config.root.src + '/**' + config.babelify.targetFile, new_babelify.taskBabelify);
 
 		// concat
-		const w_concat = $.gulp.watch(config.root.src + '/**' + config.concat.targetFile, new_concat.taskConcat);
-		const w_mtappjquery = $.gulp.watch(config.root.src + '/**' + config.mtappjqury.targetFile, new_mtappjquery.taskMtAppjQuery);
+		const w_concat = gulp.watch(config.root.src + '/**' + config.concat.targetFile, new_concat.taskConcat);
+		const w_mtappjquery = gulp.watch(config.root.src + '/**' + config.mtappjqury.targetFile, new_mtappjquery.taskMtAppjQuery);
 
 		// imagemin
-		// const w_imagemin = $.gulp.watch(config.root.src + '/**' + config.imagemin.targetFile, new_imagemin.taskImagemin);
+		// const w_imagemin = gulp.watch(config.root.src + '/**' + config.imagemin.targetFile, new_imagemin.taskImagemin);
 
 		// Pug
 		// let pugList = [];
@@ -75,9 +73,9 @@ module.exports = {
 		// for (var i = 0; i < config.pug.targetFile.length; i++) {
 		// 	pugList[i] = config.root.src + '/**' + config.pug.targetFile[i]
 		// }
-		const w_pug = $.gulp.watch(config.root.src + '/**' + config.pug.targetFile, new_pug.taskPug);
-		const w_pugJson = $.gulp.watch(config.root.src + '/_pug/_json/*.json', new_pug.taskPugAll);
-		// const w_pugJson = $.gulp.watch(config.root.src + '/_pug/_json/*.json', $.gulp.series(new_pug.taskPugAll, new_pug.taskXml, done => {
+		const w_pug = gulp.watch(config.root.src + '/**' + config.pug.targetFile, new_pug.taskPug);
+		const w_pugJson = gulp.watch(config.root.src + '/_pug/_json/*.json', new_pug.taskPugAll);
+		// const w_pugJson = gulp.watch(config.root.src + '/_pug/_json/*.json', gulp.series(new_pug.taskPugAll, new_pug.taskXml, done => {
 		// 	done();
 		// }));
 
@@ -87,6 +85,6 @@ module.exports = {
 		for (var i = 0; i < config.frontnone.targetFile.length; i++) {
 			frontnoteList[i] = config.root.src + config.frontnone.targetFile[i]
 		}
-		// const w_frontnote = $.gulp.watch(frontnoteList, new_frontnone.taskFrontnote(frontnoteList));
+		// const w_frontnote = gulp.watch(frontnoteList, new_frontnone.taskFrontnote(frontnoteList));
 	}
 }

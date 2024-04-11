@@ -1,51 +1,154 @@
 [
 	{
+		"shop_flg": true,
 		"shop_name": "[東京都]羽田空港第2ターミナル スマイルトーキョー",
 		"shop_pin": "https://goo.gl/maps/omFprLqjCUvYXThE9",
 		"shop_address": "〒144-0041 東京都大田区羽田空港3-4-2<br>羽田空港第二ターミナル2F<br>スマイルトーキョー内",
 		"shop_date": "ご好評につき延長中",
-		"shop_time": "5:45-20:30※コロナによる時間変更の可能性あり",
-		"shop_item": "・バターフィナンシェ４個入・８個入・１２個入・１６個入<br>・バターガレット９個入・１８個入<br>・バトラーセレクション２０個入<br>・バターキャラメルポット"
+		"shop_time": "8:00-20:00"
 	},
 	{
-		"shop_name": "[東京都]グランスタ東京　吹き抜けエリア 新幹線北乗り換え口前",
-		"shop_pin": "https://goo.gl/maps/QFZQE6P28hiww2fs5",
-		"shop_address": "〒100-0005 東京都千代田区丸の内１丁目９−１ JR東日本 東京駅構内 B1～1F",
-		"shop_date": "2023/9/19〜2023/10/9",
-		"shop_time": "8:00-20:00※コロナによる時間変更の可能性あり",
-		"shop_item": "・バターフィナンシェ４個入・８個入・１２個入・１６個入<br>・バターガレット９個入・１８個入<br>・バトラーセレクション２０個入<br>・バターキャラメルポット"
+		"shop_flg": false,
+		"shop_name": "[東京都]エキュート品川",
+		"shop_pin": "https://maps.app.goo.gl/63rxyFhiCFj7amnG6",
+		"shop_address": "〒108-0074 東京都港区高輪３丁目２６−２７",
+		"shop_date": "2024/3/18〜2024/4/7",
+		"shop_time": "10:00-20:00"
 	},
 	{
+		"shop_flg": false,
+		"shop_name": "[東京都]東京駅改札内新幹線北乗り換え口前",
+		"shop_pin": "https://maps.app.goo.gl/5MY3BGtEdDAZ3DRC7",
+		"shop_address": "〒100-0005 東京都千代田区丸の内１丁目",
+		"shop_date": "2024/1/9〜2024/2/18",
+		"shop_time": "8:00-20:00"
+	},
+	{
+		"shop_flg": true,
+		"shop_name": "[東京都]東京駅エキュート東京",
+		"shop_pin": "https://maps.app.goo.gl/d2CuBonGiagJrRXR9",
+		"shop_address": "〒100-0005 東京都千代田区丸の内１丁目９−１",
+		"shop_date": "2024/4/8〜2024/5/12",
+		"shop_time": "8:00-20:00"
+	},
+	{
+		"shop_flg": true,
+		"shop_name": "[東京都]東京駅スクエアゼロ",
+		"shop_pin": "https://maps.app.goo.gl/NYAVoGEqSAxKEBH19",
+		"shop_address": "〒100-0005 東京都千代田区丸の内１丁目９ JR 東京駅",
+		"shop_date": "2024/4/22〜2024/5/16",
+		"shop_time": "8:00-20:00"
+	},
+	{
+		"shop_flg": false,
+		"shop_name": "[東京都]東武百貨店池袋店",
+		"shop_pin": "https://maps.app.goo.gl/mx6NSNaCT2egkBBr7",
+		"shop_address": "〒171-8512 東京都豊島区西池袋１丁目１−２５",
+		"shop_date": "2023/12/26〜2024/1/10",
+		"shop_time": "10:00-20:00"
+	},
+	{
+		"shop_flg": true,
 		"shop_name": "[千葉県]成田空港 東京食賓館成田第3ターミナル店",
 		"shop_pin": "https://goo.gl/maps/WLdaifHbo9A8ogE77",
 		"shop_address": "〒286-0106 千葉県成田市取香 字上人塚１４８−１ 成田空港第３ターミナル",
 		"shop_date": "ご好評につき延長中",
-		"shop_time": "6:30-22:00※コロナによる時間変更の可能性あり",
-		"shop_item": "・バターフィナンシェ４個入・８個入・１２個入・１６個入<br>・バターガレット９個入・１８個入<br>・バトラーセレクション２０個入<br>・バターキャラメルポット"
+		"shop_time": "6:30-22:00"
 	},
 	{
-		"shop_name": "[愛知県]NEOPASA岡崎",
-		"shop_pin": "https://maps.app.goo.gl/ASU9K7JxSuxJCAMo7",
-		"shop_address": "〒444-2109 愛知県岡崎市宮石町六ツ田１０−４",
-		"shop_date": "2023/10/13〜2023/11/12",
-		"shop_time": "店舗に直接お問い合わせください",
-		"shop_item": "・バターフィナンシェ４個入・８個入・１２個入・１６個入<br>・バターガレット９個入・１８個入<br>・バトラーセレクション２０個入<br>・バターキャラメルポット"
+		"shop_flg": false,
+		"shop_name": "[千葉県]柏高島屋",
+		"shop_pin": "https://maps.app.goo.gl/Ube2vjkzKpNEZKtQA",
+		"shop_address": "〒277-8666 千葉県柏市末広町３−１６",
+		"shop_date": "2023/12/25〜2024/1/16",
+		"shop_time": "10:30-19:30"
 	},
 	{
-		"shop_name": "[佐賀県]鳥栖プレミアム・アウトレット",
-		"shop_pin": "https://maps.app.goo.gl/dbC8bNEGWk3QKHZs9",
-		"shop_address": "〒841-0005 佐賀県鳥栖市弥生が丘８丁目１",
-		"shop_date": "2023/9/15〜2023/10/1",
-		"shop_time": "10:00-20:00※コロナによる時間変更の可能性あり",
-		"shop_item": "・バターフィナンシェ４個入・８個入・１２個入・１６個入<br>・バターガレット９個入・１８個入<br>・バトラーセレクション２０個入<br>・バターキャラメルポット"
+		"shop_flg": false,
+		"shop_name": "[神奈川県]そごう横浜",
+		"shop_pin": "https://maps.app.goo.gl/ZvCpr7Lrt7UYnQ569",
+		"shop_address": "〒220-8510 神奈川県横浜市西区高島２丁目１８−１",
+		"shop_date": "2023/12/26〜2024/1/8",
+		"shop_time": "10:00-20:00"
 	},
 	{
-		"shop_name": "[兵庫県]神戸大丸",
-		"shop_pin": "https://maps.app.goo.gl/3kKYS2LqxUDYMc6k8",
-		"shop_address": "〒650-0037 兵庫県神戸市中央区明石町４０",
-		"shop_date": "2023/10/4〜2023/10/10",
-		"shop_time": "10:00-19:00※コロナによる時間変更の可能性あり",
-		"shop_item": "・バターフィナンシェ４個入・８個入・１２個入・１６個入<br>・バターガレット９個入・１８個入<br>・バトラーセレクション２０個入<br>・バターキャラメルポット"
+		"shop_flg": true,
+		"shop_name": "[神奈川県]EXPASA海老名（下り）",
+		"shop_pin": "https://maps.app.goo.gl/7yCktnfeqAQKcXjNA",
+		"shop_address": "〒243-0418 神奈川県海老名市大谷南５丁目２−１",
+		"shop_date": "ご好評につき延長中",
+		"shop_time": "10:00-20:00"
+	},
+	{
+		"shop_flg": true,
+		"shop_name": "[埼玉県]エキュート大宮",
+		"shop_pin": "https://maps.app.goo.gl/ndcoE395h29GDKit7",
+		"shop_address": "〒330-0853 埼玉県さいたま市大宮区錦町６３０",
+		"shop_date": "2024/4/22〜2024/5/9",
+		"shop_time": "10:00-20:00"
+	},
+	{
+		"shop_flg": false,
+		"shop_name": "[大阪府]あべのハルカス近鉄本店",
+		"shop_pin": "https://maps.app.goo.gl/SKomKe3hARuxcWjr6",
+		"shop_address": "〒545-8545 大阪府大阪市阿倍野区阿倍野筋１丁目１−４３",
+		"shop_date": "2024/1/18〜2024/2/14",
+		"shop_time": "10:00-20:00"
+	},
+	{
+		"shop_flg": false,
+		"shop_name": "[愛知県]名古屋タカシマヤ",
+		"shop_pin": "https://maps.app.goo.gl/cXisVhWy5JA1N5Fz8",
+		"shop_address": "〒450-6001 愛知県名古屋市中村区名駅１丁目１−４",
+		"shop_date": "2024/1/17〜2024/2/14",
+		"shop_time": "10:00-20:00"
+	},
+	{
+		"shop_flg": true,
+		"shop_name": "[静岡県]NEOPASA浜松下り",
+		"shop_pin": "https://maps.app.goo.gl/53S3BDqaVCKcZ6JB8",
+		"shop_address": "〒431-2102 静岡県浜松市北区都田町",
+		"shop_date": "2024/3/15〜2024/5/12",
+		"shop_time": "店舗に直接お問い合わせください"
+	},
+	{
+		"shop_flg": true,
+		"shop_name": "[奈良県]近鉄百貨店 奈良店",
+		"shop_pin": "https://maps.app.goo.gl/KySUVkqLeTsxqeZN9",
+		"shop_address": "〒631-0821 奈良県奈良市西大寺東町２丁目４−１",
+		"shop_date": "2024/4/24〜2024/5/7",
+		"shop_time": "10:00-19:00"
+	},
+	{
+		"shop_flg": true,
+		"shop_name": "[愛知県]タカシマヤフードメゾン岡崎",
+		"shop_pin": "https://maps.app.goo.gl/Axh9mtpBoq1Cfeq86",
+		"shop_address": "〒444-0840 愛知県岡崎市戸崎町外山３８−５ イオンモール岡崎 東棟 1F",
+		"shop_date": "2024/4/21〜2024/5/7",
+		"shop_time": "10:00-20:00"
+	},
+	{
+		"shop_flg": false,
+		"shop_name": "[三重県]御在所SA下り",
+		"shop_pin": "https://maps.app.goo.gl/hFdV52UrqFtDMn2C6",
+		"shop_address": "〒512-0906 三重県四日市市山之一色町 乱取口１４９１-２",
+		"shop_date": "2023/12/8〜2024/2/15",
+		"shop_time": "店舗に直接お問い合わせください"
+	},
+	{
+		"shop_flg": false,
+		"shop_name": "[岩手県]川徳百貨店",
+		"shop_pin": "https://maps.app.goo.gl/GpS7MxuMi7BNWn797",
+		"shop_address": "〒020-8655 岩手県盛岡市菜園１丁目１０−１",
+		"shop_date": "2024/2/21〜2024/2/28",
+		"shop_time": "店舗に直接お問い合わせください"
+	},
+	{
+		"shop_flg": false,
+		"shop_name": "[北海道]札幌大丸",
+		"shop_pin": "https://maps.app.goo.gl/HZVAfaXNfDLVFbBt7",
+		"shop_address": "〒060-0005 北海道札幌市中央区北５条西４丁目７",
+		"shop_date": "2024/3/20〜2024/3/26",
+		"shop_time": "店舗に直接お問い合わせください"
 	}
-
 ]

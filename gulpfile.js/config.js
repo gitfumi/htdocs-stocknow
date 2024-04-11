@@ -75,7 +75,8 @@ module.exports = {
 	 imagemin.js
 	********************/
 	imagemin: {
-		targetFile: '/**/*.+(jpg|png|svg)'
+		// targetFile: '/**/*.+(jpg|jpeg|png|gif|svg|ico)'
+		targetFile: '/**/*.{jpg,jpeg,png,gif,svg,ico}'
 	},
 	/*******************
 	 frontnone.js

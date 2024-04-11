@@ -1,2 +1,7 @@
-/node_modules
+node_modules
+node_modules_
+_bk
 develop.zip
+_temp
+develop/_styleguide
+_sass_
