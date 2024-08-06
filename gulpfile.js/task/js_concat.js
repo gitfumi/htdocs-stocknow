@@ -6,7 +6,8 @@
 // **********************************************
 const config = require('../config'),
 	gulp = require('gulp'),
-	concat = require('gulp-concat'); // Javascriptの結合
+	concat = require('gulp-concat'),  // Javascriptの結合
+	browserSync = require('browser-sync');
 
 // **********************************************
 // concat set
@@ -16,6 +17,8 @@ module.exports = {
 		return gulp.src(config.root.src + config.concat.targetFile)
 			// ファイルを結合
 			.pipe(concat(config.concat.outPutFileName))
-			.pipe(gulp.dest(config.root.src + config.concat.outPutDir));
+			.pipe(gulp.dest(config.root.src + config.concat.outPutDir))
+			// ブラウザの更新
+			.pipe(browserSync.stream());
 	}
 }

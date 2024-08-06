@@ -27,6 +27,8 @@ module.exports = {
 			this.emit('end');
 		})
 		.pipe(source(config.babelify.outPutFileName))
-		.pipe(gulp.dest(config.root.src + config.babelify.outPutDir));
+		.pipe(gulp.dest(config.root.src + config.babelify.outPutDir))
+		// ブラウザの更新
+		.pipe(browserSync.stream());
 	}
 }

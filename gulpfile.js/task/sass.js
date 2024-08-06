@@ -68,61 +68,11 @@ module.exports = {
 				// プロパティの整列
 				cssDeclarationSorter({
 					order: 'smacss'
-				}),
+				})
 			]))
 			.pipe(gulp.dest(config.root.src))
 			// ブラウザの更新
-			.pipe(browserSync.reload({stream: true}));
-		done();
-	},
-
-	/* --------------------
-		 Release時のSASSタスク
-	----------------------*/
-	taskSassAll: () => {
-		return gulp
-			.src(config.root.src + config.sass.targetFile)
-			// エラーが起こっても停止させない
-			.pipe(plumber({
-				errorHandler: notify.onError(config.plumber.errorMessage)
-			}))
-			// ディレクトリ単位でのsassのimportを可能にする
-			.pipe(sassGlob())
-			// sassのコンパイル
-			.pipe(sass({
-				outputStyle: 'expanded'
-			}))
-			// ベンダープレフィックスの付与
-			.pipe(postCss([
-				// ベンダープレフィックスの自動付与と各ブラウザ固有の書き方の追記
-				autoprefixer({
-					// css gridに対応
-					grid: true,
-					// 不要な整形をしない
-					cascade: false
-				})
-			]))
-			.pipe(gulp.dest(config.root.src));
-	},
-
-	/* --------------------
-		CSS並び替え＆圧縮タスク　※見ずらいので使用してない
-	----------------------*/
-	taskCssmini: () => {
-		const plugin = [
-			// プロパティの整列
-			cssDeclarationSorter({
-				order: 'smacss'
-			}),
-			// メディアクエリの整理
-			mqpacker({
-				sort: mqpackerSort
-			})
-		];
-		return gulp
-			.src(config.root.src + '/**/*.css')  // 全てのCSS（納品ファイル
-			.pipe(postCss(plugin))
-			// .pipe(cssMinify()) // CSSの圧縮
-			.pipe(gulp.dest(config.root.src)); // 書き出し先（納品ファイル）
+			.pipe(browserSync.stream());
+		
 	}
 }

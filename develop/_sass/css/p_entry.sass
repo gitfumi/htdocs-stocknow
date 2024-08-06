@@ -143,6 +143,8 @@
         text-decoration: underline
         &:hover
           text-decoration: none
+      &.is-bangai a
+        color: rgba(238,136,170,1)
   +media(phablet)
     .mokuji
       margin-top: $sectionMargin/2
@@ -177,6 +179,14 @@
     margin-top: $sectionMargin/2
     img
       border: 5px solid #e2e2e2
+  .entry_ranking
+    margin-top: $sectionMargin/2
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    >li
+      flex-basis: 22%
+      max-width: 22%
   .entry_att
     margin-top: $sectionMargin/2
     line-height: 2.0
@@ -215,6 +225,10 @@
   +media(tablet)
     .entry_mapIframe
       padding-bottom: 56.25%
+    .entry_ranking
+      >li
+        flex-basis: 46%
+        max-width: 46%
   +media(phablet)
     .entry_section
       margin-top: $sectionMargin

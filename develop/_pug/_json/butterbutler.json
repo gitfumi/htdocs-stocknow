@@ -16,23 +16,39 @@
 		"shop_time": "10:00-20:00"
 	},
 	{
-		"shop_flg": false,
-		"shop_name": "[東京都]東京駅改札内新幹線北乗り換え口前",
+		"shop_flg": true,
+		"shop_name": "[東京都]東京駅改札内1F新幹線北乗り換え口前",
 		"shop_pin": "https://maps.app.goo.gl/5MY3BGtEdDAZ3DRC7",
 		"shop_address": "〒100-0005 東京都千代田区丸の内１丁目",
-		"shop_date": "2024/1/9〜2024/2/18",
+		"shop_date": "2024/6/3-2024/7/15",
 		"shop_time": "8:00-20:00"
+	},
+	{
+		"shop_flg": true,
+		"shop_name": "[東京都]東京ソラマチ",
+		"shop_pin": "https://maps.app.goo.gl/qrkmEQ33tZ6fQ6vB8",
+		"shop_address": "〒131-0045 東京都墨田区押上１丁目１−２",
+		"shop_date": "2024/7/1-2024/7/31",
+		"shop_time": "10:00-20:00"
 	},
 	{
 		"shop_flg": true,
 		"shop_name": "[東京都]東京駅エキュート東京",
 		"shop_pin": "https://maps.app.goo.gl/d2CuBonGiagJrRXR9",
 		"shop_address": "〒100-0005 東京都千代田区丸の内１丁目９−１",
-		"shop_date": "2024/4/8〜2024/5/12",
+		"shop_date": "2024/7/16-2024/8/4",
 		"shop_time": "8:00-20:00"
 	},
 	{
 		"shop_flg": true,
+		"shop_name": "[東京都]エキュート上野",
+		"shop_pin": "https://maps.app.goo.gl/fwBrFxQPz31kmVRj8",
+		"shop_address": "〒110-0005 東京都台東区上野７丁目１−１ JR 上野駅 ３Ｆ",
+		"shop_date": "2024/7/29-2024/8/18",
+		"shop_time": "8:00-20:00"
+	},
+	{
+		"shop_flg": false,
 		"shop_name": "[東京都]東京駅スクエアゼロ",
 		"shop_pin": "https://maps.app.goo.gl/NYAVoGEqSAxKEBH19",
 		"shop_address": "〒100-0005 東京都千代田区丸の内１丁目９ JR 東京駅",
@@ -49,19 +65,11 @@
 	},
 	{
 		"shop_flg": true,
-		"shop_name": "[千葉県]成田空港 東京食賓館成田第3ターミナル店",
-		"shop_pin": "https://goo.gl/maps/WLdaifHbo9A8ogE77",
-		"shop_address": "〒286-0106 千葉県成田市取香 字上人塚１４８−１ 成田空港第３ターミナル",
-		"shop_date": "ご好評につき延長中",
-		"shop_time": "6:30-22:00"
-	},
-	{
-		"shop_flg": false,
-		"shop_name": "[千葉県]柏高島屋",
-		"shop_pin": "https://maps.app.goo.gl/Ube2vjkzKpNEZKtQA",
-		"shop_address": "〒277-8666 千葉県柏市末広町３−１６",
-		"shop_date": "2023/12/25〜2024/1/16",
-		"shop_time": "10:30-19:30"
+		"shop_name": "[東京都]アトレ吉祥寺",
+		"shop_pin": "https://maps.app.goo.gl/wpwbGvd5g8ZA1f8R7",
+		"shop_address": "〒180-0003 東京都武蔵野市吉祥寺南町１丁目１−２４",
+		"shop_date": "2024/7/1-2024/9/30",
+		"shop_time": "10:00-20:00"
 	},
 	{
 		"shop_flg": false,
@@ -81,11 +89,59 @@
 	},
 	{
 		"shop_flg": true,
+		"shop_name": "[神奈川県]POP UP SHOP by シュクレイ 東急百貨店たまプラーザ店地下1階",
+		"shop_pin": "https://maps.app.goo.gl/spGdGgRmhwiNptVw5",
+		"shop_address": "〒225-0002 神奈川県横浜市青葉区美しが丘１丁目７",
+		"shop_date": "2024/6/1-2024/8/31",
+		"shop_time": "10:00-20:00"
+	},
+	{
+		"shop_flg": true,
+		"shop_name": "[千葉県]成田空港 東京食賓館成田第3ターミナル店",
+		"shop_pin": "https://goo.gl/maps/WLdaifHbo9A8ogE77",
+		"shop_address": "〒286-0106 千葉県成田市取香 字上人塚１４８−１ 成田空港第３ターミナル",
+		"shop_date": "ご好評につき延長中",
+		"shop_time": "6:30-22:00"
+	},
+	{
+		"shop_flg": true,
+		"shop_name": "[千葉県]柏高島屋",
+		"shop_pin": "https://maps.app.goo.gl/Ube2vjkzKpNEZKtQA",
+		"shop_address": "〒277-8666 千葉県柏市末広町３−１６",
+		"shop_date": "2024/7/20-2024/8/20",
+		"shop_time": "10:30-19:30"
+	},
+	{
+		"shop_flg": false,
 		"shop_name": "[埼玉県]エキュート大宮",
 		"shop_pin": "https://maps.app.goo.gl/ndcoE395h29GDKit7",
 		"shop_address": "〒330-0853 埼玉県さいたま市大宮区錦町６３０",
 		"shop_date": "2024/4/22〜2024/5/9",
 		"shop_time": "10:00-20:00"
+	},
+	{
+		"shop_flg": true,
+		"shop_name": "[茨城県]エクセル水戸",
+		"shop_pin": "https://maps.app.goo.gl/v11cGYTaEJ4hc9Fa7",
+		"shop_address": "〒310-0015 茨城県水戸市宮町１丁目１−１",
+		"shop_date": "2024/6/29-2024/7/15",
+		"shop_time": "10:00-20:00"
+	},
+	{
+		"shop_flg": false,
+		"shop_name": "[静岡県]NEOPASA浜松下り",
+		"shop_pin": "https://maps.app.goo.gl/53S3BDqaVCKcZ6JB8",
+		"shop_address": "〒431-2102 静岡県浜松市北区都田町",
+		"shop_date": "2024/3/15〜2024/5/12",
+		"shop_time": "店舗に直接お問い合わせください"
+	},
+	{
+		"shop_flg": true,
+		"shop_name": "[静岡県]遠鉄百貨店",
+		"shop_pin": "https://maps.app.goo.gl/8gSgJdUqC1HtFpk68",
+		"shop_address": "〒430-8588 静岡県浜松市中央区砂山町３２０−２",
+		"shop_date": "2024/7/31-2024/8/6",
+		"shop_time": "10:00-19:00"
 	},
 	{
 		"shop_flg": false,
@@ -97,34 +153,18 @@
 	},
 	{
 		"shop_flg": false,
-		"shop_name": "[愛知県]名古屋タカシマヤ",
-		"shop_pin": "https://maps.app.goo.gl/cXisVhWy5JA1N5Fz8",
-		"shop_address": "〒450-6001 愛知県名古屋市中村区名駅１丁目１−４",
-		"shop_date": "2024/1/17〜2024/2/14",
+		"shop_name": "[大阪府]阪急うめだ本店",
+		"shop_pin": "https://maps.app.goo.gl/CbYkLUfTXXi47kNK7",
+		"shop_address": "〒530-8350 大阪府大阪市北区角田町８−７",
+		"shop_date": "2024/6/17〜2024/6/25",
 		"shop_time": "10:00-20:00"
 	},
 	{
-		"shop_flg": true,
-		"shop_name": "[静岡県]NEOPASA浜松下り",
-		"shop_pin": "https://maps.app.goo.gl/53S3BDqaVCKcZ6JB8",
-		"shop_address": "〒431-2102 静岡県浜松市北区都田町",
-		"shop_date": "2024/3/15〜2024/5/12",
-		"shop_time": "店舗に直接お問い合わせください"
-	},
-	{
-		"shop_flg": true,
-		"shop_name": "[奈良県]近鉄百貨店 奈良店",
-		"shop_pin": "https://maps.app.goo.gl/KySUVkqLeTsxqeZN9",
-		"shop_address": "〒631-0821 奈良県奈良市西大寺東町２丁目４−１",
-		"shop_date": "2024/4/24〜2024/5/7",
-		"shop_time": "10:00-19:00"
-	},
-	{
-		"shop_flg": true,
-		"shop_name": "[愛知県]タカシマヤフードメゾン岡崎",
-		"shop_pin": "https://maps.app.goo.gl/Axh9mtpBoq1Cfeq86",
-		"shop_address": "〒444-0840 愛知県岡崎市戸崎町外山３８−５ イオンモール岡崎 東棟 1F",
-		"shop_date": "2024/4/21〜2024/5/7",
+		"shop_flg": false,
+		"shop_name": "[兵庫県]神戸三田プレミアムアウトレット",
+		"shop_pin": "https://maps.app.goo.gl/zXJ33gzTRGb4dYtR8",
+		"shop_address": "〒651-1515 兵庫県神戸市北区上津台７−３",
+		"shop_date": "2024/6/7-2024/6/16",
 		"shop_time": "10:00-20:00"
 	},
 	{
@@ -134,6 +174,62 @@
 		"shop_address": "〒512-0906 三重県四日市市山之一色町 乱取口１４９１-２",
 		"shop_date": "2023/12/8〜2024/2/15",
 		"shop_time": "店舗に直接お問い合わせください"
+	},
+	{
+		"shop_flg": true,
+		"shop_name": "[滋賀県]多賀SA下り",
+		"shop_pin": "https://maps.app.goo.gl/oRe3KvKWiCsVgZwq8",
+		"shop_address": "〒522-0342 滋賀県犬上郡多賀町敏満寺",
+		"shop_date": "2024/6/20-2024/9/17",
+		"shop_time": "店舗に直接お問い合わせください"
+	},
+	{
+		"shop_flg": false,
+		"shop_name": "[愛知県]名古屋タカシマヤ",
+		"shop_pin": "https://maps.app.goo.gl/cXisVhWy5JA1N5Fz8",
+		"shop_address": "〒450-6001 愛知県名古屋市中村区名駅１丁目１−４",
+		"shop_date": "2024/1/17〜2024/2/14",
+		"shop_time": "10:00-20:00"
+	},
+	{
+		"shop_flg": false,
+		"shop_name": "[愛知県]タカシマヤフードメゾン岡崎",
+		"shop_pin": "https://maps.app.goo.gl/Axh9mtpBoq1Cfeq86",
+		"shop_address": "〒444-0840 愛知県岡崎市戸崎町外山３８−５ イオンモール岡崎 東棟 1F",
+		"shop_date": "2024/4/21〜2024/5/7",
+		"shop_time": "10:00-20:00"
+	},
+	{
+		"shop_flg": true,
+		"shop_name": "[愛知県]ららぽーと愛知東郷",
+		"shop_pin": "https://maps.app.goo.gl/7aSnYXmbLMMVtpjLA",
+		"shop_address": "〒470-0186 愛知県愛知郡東郷町 東郷中央土地区画整理事業６２街区１・３",
+		"shop_date": "2024/6/26-2024/7/9",
+		"shop_time": "10:00-20:00"
+	},
+	{
+		"shop_flg": false,
+		"shop_name": "[奈良県]近鉄百貨店 奈良店",
+		"shop_pin": "https://maps.app.goo.gl/KySUVkqLeTsxqeZN9",
+		"shop_address": "〒631-0821 奈良県奈良市西大寺東町２丁目４−１",
+		"shop_date": "2024/4/24〜2024/5/7",
+		"shop_time": "10:00-19:00"
+	},
+	{
+		"shop_flg": false,
+		"shop_name": "[広島県]そごう広島",
+		"shop_pin": "https://maps.app.goo.gl/D1TjadKpeSYxaiKg8",
+		"shop_address": "〒730-8501 広島県広島市中区基町６−２７",
+		"shop_date": "2024/5/21〜2024/5/27",
+		"shop_time": "10:00-20:00"
+	},
+	{
+		"shop_flg": false,
+		"shop_name": "[熊本県]鶴屋百貨店",
+		"shop_pin": "https://maps.app.goo.gl/wp8DBCipVuvydVW58",
+		"shop_address": "〒860-0808 熊本県熊本市中央区手取本町６−１",
+		"shop_date": "2024/6/19-2024/6/25",
+		"shop_time": "10:00-19:00"
 	},
 	{
 		"shop_flg": false,

@@ -185,6 +185,10 @@
   text-decoration: none;
 }
 
+.entry_content .mokuji_list > li.is-bangai a {
+  color: #ee88aa;
+}
+
 @media only screen and (max-width: 480px) {
   .entry_content .mokuji {
     margin-top: 30px;
@@ -233,6 +237,18 @@
 
 .entry_content .entry_pic img {
   border: 5px solid #e2e2e2;
+}
+
+.entry_content .entry_ranking {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.entry_content .entry_ranking > li {
+  flex-basis: 22%;
+  max-width: 22%;
 }
 
 .entry_content .entry_att {
@@ -287,6 +303,10 @@
 @media only screen and (max-width: 768px) {
   .entry_content .entry_mapIframe {
     padding-bottom: 56.25%;
+  }
+  .entry_content .entry_ranking > li {
+    flex-basis: 46%;
+    max-width: 46%;
   }
 }
 

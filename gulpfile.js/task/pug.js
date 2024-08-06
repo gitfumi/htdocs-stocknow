@@ -11,7 +11,8 @@ const config = require('../config'),
 	pug = require('gulp-pug'), // HTMLを書くためのテンプレートエンジン
 	data = require('gulp-data'), // jsonデータの取得とテンプレートにデータを送信
 	notify = require('gulp-notify'), // デスクトップ通知が行えるモジュール
-	fs = require('fs'); // ディレクトリの存在の有無
+	fs = require('fs'), // ディレクトリの存在の有無
+	browserSync = require('browser-sync');
 
 // **********************************************
 // Pug set
@@ -51,7 +52,9 @@ module.exports = {
 				pretty: '\t',
 				doctype: 'html'
 			}))
-			.pipe(gulp.dest(config.root.src));
+			.pipe(gulp.dest(config.root.src))
+			// ブラウザの更新
+			.pipe(browserSync.stream());
 	},
 
 	/* --------------------

@@ -100,7 +100,8 @@ const taskWatch = done => {
 
 // 個別のタスクを呼び出せるように定義（gulp html など）
 exports.browserSync = taskBrowserSync
-exports.sass = series(taskSass,taskGzip)
+exports.sass = taskSass
+// exports.sass = series(taskSass,taskGzip)
 // exports.cssmini = taskCssmini
 exports.pug = taskPug
 exports.concat = taskConcat // Javascriptの結合
@@ -112,7 +113,7 @@ exports.babelify = taskBabelify  // ES6をES5に変換
 exports.build = parallel(taskSass,taskPug,taskConcat,taskImagemin,taskFrontnote,taskBabelify)
 
 // gulp 実行時に発火させるデフォルトタスク
-exports.default = series(parallel(taskSass,taskPug,taskConcat,taskImagemin,taskFrontnote,taskBabelify), parallel(taskWatch, taskBrowserSync))
+exports.default = series(/* parallel(taskSass,taskPug,taskConcat,taskImagemin, taskFrontnote ,taskBabelify ), */parallel(taskWatch, taskBrowserSync))
 
 
 // gulp 実行時に発火させるデフォルトタスク

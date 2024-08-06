@@ -14,16 +14,14 @@ body {
 }
 
 body input, body textarea, body select {
-  font-family: "Noto Sans Japanese", sans-serif;
-  -webkit-transition: all .5s;
-  transition: all .5s;
   height: auto !important;
   padding: 5px !important;
+  font-family: "Noto Sans Japanese", sans-serif;
+  transition: all .5s;
 }
 
 body input:focus, body textarea:focus, body select:focus {
-  -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4) !important;
-          box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4) !important;
 }
 
 body .field-header {
@@ -38,25 +36,20 @@ body .basename-label {
  *   カテゴリ
  *-------------------------------------------------- */
 #edit-category .mtapp-shop {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  padding-left: 40px;
+  flex-wrap: wrap;
   margin-bottom: 20px;
+  padding-left: 40px;
 }
 
 #edit-category .mtapp-shop * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #edit-category .mtapp-shop > .mtapp-shopBlock {
-  -ms-flex-preferred-size: calc((100% - 20px) / 2);
-      flex-basis: calc((100% - 20px) / 2);
-  background-color: #fcfcfc;
+  flex-basis: calc((100% - 20px) / 2);
   padding: 10px;
+  background-color: #fcfcfc;
 }
 
 #edit-category .mtapp-shop > .mtapp-shopBlock:nth-of-type(even) {
@@ -76,8 +69,8 @@ body .basename-label {
 }
 
 #edit-category .mtapp-shop .field-content {
-  margin-left: 130px;
   width: calc(100% - 130px);
+  margin-left: 130px;
 }
 
 #edit-category .mtapp-shop .field-content input, #edit-category .mtapp-shop .field-content textarea {
@@ -92,15 +85,12 @@ body .basename-label {
  *   商品詳細
  *-------------------------------------------------- */
 #edit-entry .mtapp-vertical {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-bottom: 20px;
 }
 
 #edit-entry .mtapp-vertical * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #edit-entry .mtapp-vertical > .mtapp-verticalBlock .field {
@@ -108,10 +98,9 @@ body .basename-label {
 }
 
 #edit-entry .mtapp-vertical.is-picture > .mtapp-verticalBlock, #edit-entry .mtapp-vertical.is-variation > .mtapp-verticalBlock {
-  -ms-flex-preferred-size: calc(100% / 3);
-      flex-basis: calc(100% / 3);
-  background-color: #fcfcfc;
+  flex-basis: calc(100% / 3);
   padding: 10px;
+  background-color: #fcfcfc;
 }
 
 #edit-entry .mtapp-vertical.is-picture > .mtapp-verticalBlock .field:first-of-type, #edit-entry .mtapp-vertical.is-variation > .mtapp-verticalBlock .field:first-of-type {
@@ -123,8 +112,7 @@ body .basename-label {
 }
 
 #edit-entry .mtapp-vertical.is-pli > .mtapp-verticalBlock {
-  -ms-flex-preferred-size: calc((100% -40px) / 3);
-      flex-basis: calc((100% -40px) / 3);
+  flex-basis: calc((100% -40px) / 3);
 }
 
 #edit-entry .mtapp-vertical.is-pli > .mtapp-verticalBlock + .mtapp-verticalBlock {
