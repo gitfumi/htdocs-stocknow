@@ -8,11 +8,19 @@
 		"shop_time": "8:00-20:00"
 	},
 	{
-		"shop_flg": false,
+		"shop_flg": true,
+		"shop_name": "[東京都]羽田空港第2ターミナル2Fマーケットプレイス 中央",
+		"shop_pin": "https://goo.gl/maps/omFprLqjCUvYXThE9",
+		"shop_address": "〒144-0041 東京都大田区羽田空港3-4-2<br>羽田空港第二ターミナル2F<br>スマイルトーキョー内",
+		"shop_date": "2024/8/5-2024/9/4",
+		"shop_time": "8:00-20:00"
+	},
+	{
+		"shop_flg": true,
 		"shop_name": "[東京都]エキュート品川",
 		"shop_pin": "https://maps.app.goo.gl/63rxyFhiCFj7amnG6",
 		"shop_address": "〒108-0074 東京都港区高輪３丁目２６−２７",
-		"shop_date": "2024/3/18〜2024/4/7",
+		"shop_date": "2024/8/8-2024/8/19",
 		"shop_time": "10:00-20:00"
 	},
 	{
@@ -20,11 +28,11 @@
 		"shop_name": "[東京都]東京駅改札内1F新幹線北乗り換え口前",
 		"shop_pin": "https://maps.app.goo.gl/5MY3BGtEdDAZ3DRC7",
 		"shop_address": "〒100-0005 東京都千代田区丸の内１丁目",
-		"shop_date": "2024/6/3-2024/7/15",
+		"shop_date": "2024/8/5-2024/9/23",
 		"shop_time": "8:00-20:00"
 	},
 	{
-		"shop_flg": true,
+		"shop_flg": false,
 		"shop_name": "[東京都]東京ソラマチ",
 		"shop_pin": "https://maps.app.goo.gl/qrkmEQ33tZ6fQ6vB8",
 		"shop_address": "〒131-0045 東京都墨田区押上１丁目１−２",
@@ -32,7 +40,7 @@
 		"shop_time": "10:00-20:00"
 	},
 	{
-		"shop_flg": true,
+		"shop_flg": false,
 		"shop_name": "[東京都]東京駅エキュート東京",
 		"shop_pin": "https://maps.app.goo.gl/d2CuBonGiagJrRXR9",
 		"shop_address": "〒100-0005 東京都千代田区丸の内１丁目９−１",
@@ -71,6 +79,9 @@
 		"shop_date": "2024/7/1-2024/9/30",
 		"shop_time": "10:00-20:00"
 	},
+
+
+
 	{
 		"shop_flg": false,
 		"shop_name": "[神奈川県]そごう横浜",
@@ -95,6 +106,9 @@
 		"shop_date": "2024/6/1-2024/8/31",
 		"shop_time": "10:00-20:00"
 	},
+
+
+
 	{
 		"shop_flg": true,
 		"shop_name": "[千葉県]成田空港 東京食賓館成田第3ターミナル店",
@@ -111,6 +125,9 @@
 		"shop_date": "2024/7/20-2024/8/20",
 		"shop_time": "10:30-19:30"
 	},
+
+
+
 	{
 		"shop_flg": false,
 		"shop_name": "[埼玉県]エキュート大宮",
@@ -119,14 +136,21 @@
 		"shop_date": "2024/4/22〜2024/5/9",
 		"shop_time": "10:00-20:00"
 	},
+
+
+
 	{
-		"shop_flg": true,
+		"shop_flg": false,
 		"shop_name": "[茨城県]エクセル水戸",
 		"shop_pin": "https://maps.app.goo.gl/v11cGYTaEJ4hc9Fa7",
 		"shop_address": "〒310-0015 茨城県水戸市宮町１丁目１−１",
 		"shop_date": "2024/6/29-2024/7/15",
 		"shop_time": "10:00-20:00"
 	},
+
+
+
+
 	{
 		"shop_flg": false,
 		"shop_name": "[静岡県]NEOPASA浜松下り",
@@ -136,19 +160,22 @@
 		"shop_time": "店舗に直接お問い合わせください"
 	},
 	{
-		"shop_flg": true,
+		"shop_flg": false,
 		"shop_name": "[静岡県]遠鉄百貨店",
 		"shop_pin": "https://maps.app.goo.gl/8gSgJdUqC1HtFpk68",
 		"shop_address": "〒430-8588 静岡県浜松市中央区砂山町３２０−２",
 		"shop_date": "2024/7/31-2024/8/6",
 		"shop_time": "10:00-19:00"
 	},
+
+
+
 	{
-		"shop_flg": false,
+		"shop_flg": true,
 		"shop_name": "[大阪府]あべのハルカス近鉄本店",
 		"shop_pin": "https://maps.app.goo.gl/SKomKe3hARuxcWjr6",
 		"shop_address": "〒545-8545 大阪府大阪市阿倍野区阿倍野筋１丁目１−４３",
-		"shop_date": "2024/1/18〜2024/2/14",
+		"shop_date": "2024/8/28-2024/9/10",
 		"shop_time": "10:00-20:00"
 	},
 	{
@@ -167,6 +194,9 @@
 		"shop_date": "2024/6/7-2024/6/16",
 		"shop_time": "10:00-20:00"
 	},
+
+
+
 	{
 		"shop_flg": false,
 		"shop_name": "[三重県]御在所SA下り",
@@ -175,6 +205,9 @@
 		"shop_date": "2023/12/8〜2024/2/15",
 		"shop_time": "店舗に直接お問い合わせください"
 	},
+
+
+
 	{
 		"shop_flg": true,
 		"shop_name": "[滋賀県]多賀SA下り",
@@ -183,6 +216,20 @@
 		"shop_date": "2024/6/20-2024/9/17",
 		"shop_time": "店舗に直接お問い合わせください"
 	},
+
+
+
+	{
+		"shop_flg": true,
+		"shop_name": "[富山県]大和富山",
+		"shop_pin": "https://maps.app.goo.gl/q2u3fvkobqUHXzo26",
+		"shop_address": "〒930-8505 富山県富山市一番町３丁目８−６ フェリオ B1～6F",
+		"shop_date": "2024/8/21-2024/8/27",
+		"shop_time": "10:00-19:00"
+	},
+
+
+
 	{
 		"shop_flg": false,
 		"shop_name": "[愛知県]名古屋タカシマヤ",
@@ -200,13 +247,16 @@
 		"shop_time": "10:00-20:00"
 	},
 	{
-		"shop_flg": true,
+		"shop_flg": false,
 		"shop_name": "[愛知県]ららぽーと愛知東郷",
 		"shop_pin": "https://maps.app.goo.gl/7aSnYXmbLMMVtpjLA",
 		"shop_address": "〒470-0186 愛知県愛知郡東郷町 東郷中央土地区画整理事業６２街区１・３",
 		"shop_date": "2024/6/26-2024/7/9",
 		"shop_time": "10:00-20:00"
 	},
+
+
+
 	{
 		"shop_flg": false,
 		"shop_name": "[奈良県]近鉄百貨店 奈良店",
@@ -215,6 +265,9 @@
 		"shop_date": "2024/4/24〜2024/5/7",
 		"shop_time": "10:00-19:00"
 	},
+
+
+
 	{
 		"shop_flg": false,
 		"shop_name": "[広島県]そごう広島",
@@ -223,6 +276,9 @@
 		"shop_date": "2024/5/21〜2024/5/27",
 		"shop_time": "10:00-20:00"
 	},
+
+
+
 	{
 		"shop_flg": false,
 		"shop_name": "[熊本県]鶴屋百貨店",
@@ -231,6 +287,9 @@
 		"shop_date": "2024/6/19-2024/6/25",
 		"shop_time": "10:00-19:00"
 	},
+
+
+
 	{
 		"shop_flg": false,
 		"shop_name": "[岩手県]川徳百貨店",
@@ -239,12 +298,15 @@
 		"shop_date": "2024/2/21〜2024/2/28",
 		"shop_time": "店舗に直接お問い合わせください"
 	},
+
+
+
 	{
-		"shop_flg": false,
+		"shop_flg": true,
 		"shop_name": "[北海道]札幌大丸",
 		"shop_pin": "https://maps.app.goo.gl/HZVAfaXNfDLVFbBt7",
 		"shop_address": "〒060-0005 北海道札幌市中央区北５条西４丁目７",
-		"shop_date": "2024/3/20〜2024/3/26",
+		"shop_date": "2024/8/7-2024/8/13",
 		"shop_time": "店舗に直接お問い合わせください"
 	}
 ]
